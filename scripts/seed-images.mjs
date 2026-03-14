@@ -39,11 +39,13 @@ const images = [
 ];
 
 async function generateAndDownload(entry) {
-  // Generate via Fal.ai
-  const result = await fal.run("fal-ai/flux/dev", {
+  // Generate via Fal.ai (Nano Banana 2)
+  const result = await fal.run("fal-ai/nano-banana-2", {
     input: {
-      prompt: `${entry.prompt}, cinematic, high quality, 4k, photorealistic`,
-      image_size: "landscape_16_9",
+      prompt: `${entry.prompt}, cinematic, high quality, photorealistic`,
+      aspect_ratio: "16:9",
+      resolution: "2K",
+      output_format: "jpeg",
       num_images: 1,
     },
   });
