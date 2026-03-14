@@ -30,13 +30,13 @@ export function Button({
 
   const variants = {
     primary:
-      "bg-primary-500 text-white hover:bg-primary-600 shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40",
+      "bg-primary-500 text-white hover:bg-primary-400 shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40",
     secondary:
-      "bg-slate-100 text-slate-700 hover:bg-slate-200",
+      "bg-slate-800 text-slate-200 hover:bg-slate-700",
     outline:
-      "border-2 border-primary-500 text-primary-500 hover:bg-primary-50",
+      "border-2 border-primary-500 text-primary-400 hover:bg-primary-500/10",
     ghost:
-      "text-slate-600 hover:text-primary-500 hover:bg-slate-50",
+      "text-slate-300 hover:text-primary-400 hover:bg-slate-800",
   };
 
   const sizes = {

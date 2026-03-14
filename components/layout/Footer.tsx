@@ -29,13 +29,13 @@ export function Footer({ locale, dict }: FooterProps) {
   };
 
   return (
-    <footer className="bg-slate-50 border-t border-slate-100">
+    <footer className="bg-slate-950 border-t border-slate-800">
       {/* CTA Banner */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="bg-gradient-to-br from-primary-400 via-primary-500 to-primary-600 rounded-3xl p-8 md:p-12 text-center text-white relative overflow-hidden">
+        <div className="bg-gradient-to-br from-primary-700 via-primary-800 to-slate-900 rounded-3xl p-8 md:p-12 text-center text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djItSDI0di0yaDEyem0wLTRWMjhIMjR2MmgxMnpNMjQgMjBoMTJ2MkgyNHYtMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-30" />
           <div className="relative z-10">
-            <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-white/10">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
               </svg>
@@ -43,12 +43,12 @@ export function Footer({ locale, dict }: FooterProps) {
             <h3 className="text-2xl md:text-3xl font-bold mb-3">
               {dict.footer.ctaTitle}
             </h3>
-            <p className="text-white/80 mb-8 max-w-lg mx-auto">
+            <p className="text-white/60 mb-8 max-w-lg mx-auto">
               {dict.footer.ctaSubtitle}
             </p>
             <Link
               href={`/${locale}/contact`}
-              className="inline-flex items-center gap-2 bg-white text-primary-600 px-8 py-3.5 rounded-full font-medium hover:bg-white/90 transition-colors"
+              className="inline-flex items-center gap-2 bg-white text-primary-700 px-8 py-3.5 rounded-full font-medium hover:bg-white/90 transition-colors"
             >
               {dict.nav.cta}
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -70,7 +70,7 @@ export function Footer({ locale, dict }: FooterProps) {
                   <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
                 </svg>
               </div>
-              <span className="text-xl font-bold text-slate-800">leftflow</span>
+              <span className="text-xl font-bold text-white">leftflow</span>
             </Link>
             <p className="text-sm text-slate-500 max-w-xs mb-6">
               {dict.footer.description}
@@ -80,7 +80,7 @@ export function Footer({ locale, dict }: FooterProps) {
                 <a
                   key={social}
                   href="#"
-                  className="w-9 h-9 rounded-lg bg-slate-100 hover:bg-primary-50 flex items-center justify-center text-slate-400 hover:text-primary-500 transition-all"
+                  className="w-9 h-9 rounded-lg bg-slate-800 hover:bg-primary-500/10 flex items-center justify-center text-slate-500 hover:text-primary-400 transition-all"
                 >
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                     {social === "twitter" && (
@@ -101,7 +101,7 @@ export function Footer({ locale, dict }: FooterProps) {
           {/* Link Columns */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
-              <h4 className="font-semibold text-slate-800 mb-4 text-sm">
+              <h4 className="font-semibold text-slate-200 mb-4 text-sm">
                 {title}
               </h4>
               <ul className="space-y-3">
@@ -109,7 +109,7 @@ export function Footer({ locale, dict }: FooterProps) {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-slate-500 hover:text-primary-600 transition-colors"
+                      className="text-sm text-slate-500 hover:text-primary-400 transition-colors"
                     >
                       {link.label}
                     </Link>
@@ -121,8 +121,8 @@ export function Footer({ locale, dict }: FooterProps) {
         </div>
 
         {/* Bottom */}
-        <div className="mt-12 pt-8 border-t border-slate-200 text-center">
-          <p className="text-sm text-slate-400">
+        <div className="mt-12 pt-8 border-t border-slate-800 text-center">
+          <p className="text-sm text-slate-600">
             &copy; {new Date().getFullYear()} LeftFlow. {dict.footer.copyright}
           </p>
         </div>

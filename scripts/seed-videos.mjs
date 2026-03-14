@@ -33,6 +33,37 @@ const videos = [
     imagePrompt: "Clean modern workflow automation diagram showing connected nodes with icons for email, chat, analytics and CRM, floating in a 3D space with soft blue glow, professional UI design, dark background, motion graphics style",
     videoPrompt: "Workflow nodes lighting up sequentially as data flows between them, animated connections with glowing particles traveling along paths, smooth 3D camera orbit, each node pulses when activated, professional motion graphics, clean and modern",
   },
+  // Phase 2: Service motion graphic videos
+  {
+    key: "service-content-generation",
+    imagePrompt: "Professional motion graphic dark dashboard showing AI content generation pipeline, text being generated on screen, neural network data flow, dark navy blue and black, corporate consulting style, glowing blue accent lines, 16:9 cinematic",
+    videoPrompt: "Smooth animation of AI generating text content on dashboard screens, data particles flowing through neural network pathways, text appearing and formatting in real-time, charts updating, professional motion graphics style, dark corporate atmosphere",
+  },
+  {
+    key: "service-ai-agents",
+    imagePrompt: "Professional dark interface showing AI chatbot agent responding to messages, conversation bubbles, connected service integrations, dark navy blue background, corporate tech, glowing connections, 16:9 cinematic",
+    videoPrompt: "Smooth animation of AI chatbot responding with text appearing in bubbles, service connection lines lighting up, integration nodes pulsing with activity, professional motion graphics, clean corporate aesthetic",
+  },
+  {
+    key: "service-workflow-automation",
+    imagePrompt: "Professional dark dashboard showing workflow automation nodes connected by data flow lines, efficiency metrics and KPI panels, dark blue and black, corporate style, neon blue accents, 16:9 cinematic",
+    videoPrompt: "Smooth animation of workflow nodes activating sequentially, data flowing through automation pipeline, efficiency metrics counting up, progress bars filling, professional motion graphics, dark corporate theme",
+  },
+  {
+    key: "service-llm-development",
+    imagePrompt: "Professional visualization of large language model neural network architecture, transformer layers with data flowing through, training metrics dashboard, dark navy, enterprise tech, glowing nodes, 16:9 cinematic",
+    videoPrompt: "Smooth animation of neural network layers activating with data flowing through transformer blocks, training loss decreasing on chart, accuracy improving, model architecture visualization pulsing, professional motion graphics",
+  },
+  {
+    key: "hero-motion",
+    imagePrompt: "Professional dark corporate hero visual with abstract AI neural network patterns, flowing data particles and light trails, dark navy blue to black gradient, premium consulting aesthetic, subtle blue glow, 16:9 cinematic",
+    videoPrompt: "Smooth cinematic animation of abstract AI technology patterns, subtle particle movement flowing through neural pathways, light trails gently animating, premium corporate atmosphere, slow elegant camera movement",
+  },
+  {
+    key: "process-motion",
+    imagePrompt: "Professional dark infographic showing 4-step business automation process with connected stages, glowing icons and data flow lines, dark blue gradient, McKinsey consulting style, premium dark theme, 16:9 cinematic",
+    videoPrompt: "Smooth animation of business process steps lighting up one by one sequentially, data flowing between stages with glowing particles, icons animating as each step activates, professional motion graphics, corporate style",
+  },
 ];
 
 async function generateVideo(entry) {

@@ -36,6 +36,15 @@ const images = [
   { key: "blog-business-automation-trends-2025", prompt: "Futuristic workspace with floating holographic UI panels showing automation workflow trends, blue and white color scheme, clean and modern" },
   { key: "blog-small-business-automation-starter-guide", prompt: "Small business owner at clean modern desk with laptop showing simple automation dashboard, warm natural light, approachable professional setting" },
   { key: "blog-finance-compliance-automation", prompt: "Financial compliance monitoring center with screens showing regulatory tracking and automated risk alerts, professional blue-lit environment" },
+  // Phase 2: Service visualizations & motion graphic base images
+  { key: "service-content-generation", prompt: "Professional motion graphic style dark dashboard showing AI content generation pipeline, futuristic UI with text being generated and flowing through neural network nodes, dark navy blue and black color scheme, corporate consulting aesthetic, glowing blue accent lines" },
+  { key: "service-ai-agents", prompt: "Professional motion graphic style dark interface showing AI chatbot agent conversation UI with automated responses flowing, connected service nodes and integrations, dark navy blue background, corporate tech aesthetic, glowing data connections" },
+  { key: "service-workflow-automation", prompt: "Professional motion graphic style dark dashboard showing workflow automation with connected process nodes and data flowing between them, efficiency metrics and KPIs, dark blue and black background, corporate consulting style, neon blue accents" },
+  { key: "service-llm-development", prompt: "Professional motion graphic style visualization of large language model architecture, neural network layers with data flowing through transformer blocks, training metrics dashboard, dark navy color scheme, enterprise tech aesthetic, glowing nodes" },
+  { key: "feature-dashboard", prompt: "Professional corporate analytics dashboard UI showing real-time KPI metrics, data charts, performance graphs, pie charts, dark navy theme with glowing blue accents, consulting firm quality, premium dark interface" },
+  { key: "process-overview", prompt: "Professional infographic showing 4-step business automation process, connected stages with glowing icons and data flow lines, dark blue gradient background, McKinsey-style consulting visual, premium dark theme" },
+  { key: "hero-dark", prompt: "Professional dark corporate hero visual, abstract AI automation technology with neural network patterns and flowing data particles, dark navy blue to black gradient, premium consulting firm aesthetic, subtle glowing blue light trails" },
+  { key: "stats-background", prompt: "Professional dark abstract background with subtle data visualization patterns, flowing blue light particles and geometric data grid, navy blue to black gradient, corporate premium feel, minimal and elegant" },
 ];
 
 async function generateAndDownload(entry) {

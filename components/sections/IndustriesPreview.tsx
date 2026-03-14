@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations";
-import { Card, SectionLabel, Button } from "@/components/ui";
+import { SectionLabel, Button } from "@/components/ui";
 import type { Dictionary, Locale } from "@/lib/i18n";
 import type { Industry } from "@/lib/industries";
 import { type ReactNode } from "react";
@@ -27,14 +27,14 @@ const industryIcons: Record<string, ReactNode> = {
 
 export function IndustriesPreview({ dict, locale, industries }: Props) {
   return (
-    <section id="industries" className="py-20 lg:py-32 bg-white">
+    <section id="industries" className="py-20 lg:py-32 bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <SectionLabel>{dict.industries.label}</SectionLabel>
-          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 text-center mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white text-center mb-4">
             {dict.industries.title}
           </h2>
-          <p className="text-slate-500 text-center max-w-2xl mx-auto mb-16">
+          <p className="text-slate-400 text-center max-w-2xl mx-auto mb-16">
             {dict.industries.subtitle}
           </p>
         </FadeIn>
@@ -43,17 +43,17 @@ export function IndustriesPreview({ dict, locale, industries }: Props) {
           {industries.slice(0, 6).map((industry) => (
             <StaggerItem key={industry.slug}>
               <Link href={`/${locale}/industries/${industry.slug}`}>
-                <Card className="h-full group cursor-pointer">
-                  <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center text-primary-500 mb-4 group-hover:bg-primary-500 group-hover:text-white transition-all">
+                <div className="h-full group cursor-pointer p-6 rounded-2xl bg-slate-900/60 border border-slate-800 hover:border-primary-500/30 transition-all duration-300">
+                  <div className="w-12 h-12 rounded-xl bg-primary-500/10 border border-primary-500/20 flex items-center justify-center text-primary-400 mb-4 group-hover:bg-primary-500 group-hover:text-white transition-all">
                     {industryIcons[industry.slug]}
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-800 mb-2 group-hover:text-primary-600 transition-colors">
+                  <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-primary-400 transition-colors">
                     {industry.name}
                   </h3>
-                  <p className="text-sm text-slate-500 line-clamp-2">
+                  <p className="text-sm text-slate-400 line-clamp-2">
                     {industry.description}
                   </p>
-                </Card>
+                </div>
               </Link>
             </StaggerItem>
           ))}

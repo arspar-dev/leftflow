@@ -24,12 +24,12 @@ export function TestimonialSection({ dict }: { dict: Dictionary }) {
   }, [items.length]);
 
   return (
-    <section className="py-20 lg:py-32 bg-slate-50">
+    <section className="py-20 lg:py-32 bg-slate-950">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <div className="text-center mb-12">
             <SectionLabel>{dict.testimonials?.label || "Testimonials"}</SectionLabel>
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white">
               {dict.testimonials?.title || "What our clients say"}
             </h2>
           </div>
@@ -47,12 +47,12 @@ export function TestimonialSection({ dict }: { dict: Dictionary }) {
               <blockquote className="text-center">
                 <div className="flex justify-center mb-6">
                   {[...Array(5)].map((_, i) => (
-                    <svg key={i} width="20" height="20" viewBox="0 0 24 24" fill="#2563eb" className="mx-0.5">
+                    <svg key={i} width="20" height="20" viewBox="0 0 24 24" fill="#1d4ed8" className="mx-0.5">
                       <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                     </svg>
                   ))}
                 </div>
-                <p className="text-xl lg:text-2xl text-slate-700 leading-relaxed italic mb-8">
+                <p className="text-xl lg:text-2xl text-slate-300 leading-relaxed italic mb-8">
                   &ldquo;{items[active].quote}&rdquo;
                 </p>
                 <div className="flex items-center justify-center gap-4">
@@ -60,7 +60,7 @@ export function TestimonialSection({ dict }: { dict: Dictionary }) {
                     {items[active].name?.charAt(0)}
                   </div>
                   <div className="text-left">
-                    <p className="font-semibold text-slate-800">{items[active].name}</p>
+                    <p className="font-semibold text-white">{items[active].name}</p>
                     <p className="text-sm text-slate-500">{items[active].role}</p>
                   </div>
                 </div>
@@ -75,7 +75,7 @@ export function TestimonialSection({ dict }: { dict: Dictionary }) {
               key={i}
               onClick={() => setActive(i)}
               className={`w-3 h-3 rounded-full transition-all ${
-                i === active ? "bg-primary-500 w-8" : "bg-slate-300 hover:bg-slate-400"
+                i === active ? "bg-primary-500 w-8" : "bg-slate-700 hover:bg-slate-600"
               }`}
             />
           ))}

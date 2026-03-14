@@ -26,13 +26,13 @@ export function DataIntelligenceClient({ dict, locale }: Props) {
       {/* Hero */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-slate-50" />
-          <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary-100/20 rounded-full blur-3xl" />
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950" />
+          <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary-900/20 rounded-full blur-3xl" />
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
             <SectionLabel>{d.label}</SectionLabel>
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-slate-900 mb-6">
+            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6">
               {d.title}
             </h1>
             <p className="text-lg text-slate-500 max-w-2xl mx-auto mb-10">
@@ -73,17 +73,17 @@ export function DataIntelligenceClient({ dict, locale }: Props) {
       </section>
 
       {/* Process */}
-      <section className="py-20 lg:py-28 bg-white">
+      <section className="py-20 lg:py-28 bg-slate-900">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <h2 className="text-3xl font-bold text-slate-900 text-center mb-16">
+            <h2 className="text-3xl font-bold text-white text-center mb-16">
               {d.processTitle}
             </h2>
           </FadeIn>
 
           <div className="relative">
             {/* Connection line */}
-            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-primary-100 -translate-y-1/2" />
+            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-slate-700 -translate-y-1/2" />
 
             <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-6 relative">
               {d.processSteps.map((step: any, i: number) => (
@@ -92,7 +92,7 @@ export function DataIntelligenceClient({ dict, locale }: Props) {
                     <div className="w-16 h-16 rounded-2xl bg-primary-500 text-white flex items-center justify-center mx-auto mb-4 relative z-10 shadow-lg shadow-primary-500/20">
                       <span className="text-xl font-bold">{i + 1}</span>
                     </div>
-                    <h3 className="font-semibold text-slate-800 mb-1">{step.title}</h3>
+                    <h3 className="font-semibold text-white mb-1">{step.title}</h3>
                     <p className="text-sm text-slate-500">{step.description}</p>
                     {i < 3 && (
                       <div className="hidden md:block absolute top-8 left-full -translate-x-1/2 z-20">
@@ -110,11 +110,11 @@ export function DataIntelligenceClient({ dict, locale }: Props) {
       </section>
 
       {/* Capabilities */}
-      <section className="py-20 lg:py-28 bg-slate-50">
+      <section className="py-20 lg:py-28 bg-slate-950">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <SectionLabel>{d.capabilities}</SectionLabel>
-            <h2 className="text-3xl font-bold text-slate-900 text-center mb-16">
+            <h2 className="text-3xl font-bold text-white text-center mb-16">
               {d.capabilities}
             </h2>
           </FadeIn>
@@ -124,11 +124,11 @@ export function DataIntelligenceClient({ dict, locale }: Props) {
               <StaggerItem key={i}>
                 <Card padding="lg" className="h-full">
                   <div className="flex gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center text-primary-500 shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-primary-900/30 flex items-center justify-center text-primary-400 shrink-0">
                       {capIcons[i]}
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-slate-800 mb-2">{item.title}</h3>
+                      <h3 className="text-lg font-semibold text-white mb-2">{item.title}</h3>
                       <p className="text-sm text-slate-500 leading-relaxed">{item.description}</p>
                     </div>
                   </div>
@@ -140,7 +140,7 @@ export function DataIntelligenceClient({ dict, locale }: Props) {
       </section>
 
       {/* CTA */}
-      <section className="py-20 lg:py-28 bg-gradient-to-br from-primary-500 to-primary-700 text-white">
+      <section className="py-20 lg:py-28 bg-gradient-to-br from-primary-700 via-primary-800 to-slate-900 text-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">{d.ctaTitle}</h2>

@@ -14,21 +14,21 @@ const integrations = [
   { name: "AWS", color: "#FF9900", path: "M6.763 10.036a.674.674 0 0 0 .035.293c.093.209.186.418.302.604a.432.432 0 0 0 .372.186.462.462 0 0 0 .302-.116c.093-.07.186-.186.186-.348a2.105 2.105 0 0 0-.232-.558 5.756 5.756 0 0 1-.278-.56.814.814 0 0 1-.058-.348c0-.302.186-.558.534-.766a4.158 4.158 0 0 1 2.087-.488c.905 0 1.623.186 2.157.534.534.372.81.858.81 1.485 0 .418-.14.79-.395 1.114-.255.325-.604.604-.998.836l-.604.348c-.325.186-.558.372-.697.558a.88.88 0 0 0-.209.558v.325h2.55v.93H8.037v-.766c0-.465.07-.836.209-1.137.14-.302.395-.604.766-.883l.697-.534c.232-.186.418-.372.534-.534a.864.864 0 0 0 .186-.534c0-.209-.07-.372-.209-.488a.808.808 0 0 0-.558-.186c-.209 0-.395.07-.534.186a.716.716 0 0 0-.232.488h-2.133z" },
   { name: "Stripe", color: "#635BFF", path: "M13.976 9.15c-2.172-.806-3.356-1.426-3.356-2.409 0-.831.683-1.305 1.901-1.305 2.227 0 4.515.858 6.09 1.631l.89-5.494C18.252.975 15.697 0 12.165 0 9.667 0 7.589.654 6.104 1.872 4.56 3.147 3.757 4.992 3.757 7.218c0 4.039 2.467 5.76 6.476 7.219 2.585.92 3.445 1.574 3.445 2.583 0 .98-.84 1.545-2.354 1.545-1.875 0-4.965-.921-6.99-2.109l-.9 5.555C5.175 22.99 8.385 24 11.714 24c2.641 0 4.843-.624 6.328-1.813 1.664-1.305 2.525-3.236 2.525-5.732 0-4.128-2.524-5.851-6.591-7.305z" },
   { name: "Zendesk", color: "#03363D", path: "M11.084 0v17.988L0 24V6.012L11.084 0zm1.832 6.012L24 0v17.988l-11.084 6.012V6.012z" },
-  { name: "Notion", color: "#000000", path: "M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L18.08 2.09c-.42-.326-.98-.7-2.055-.607L3.01 2.63c-.466.046-.56.28-.374.466l1.823 1.112zM5.252 7.623v13.857c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.934-.56.934-1.166V6.97c0-.607-.234-.933-.747-.887l-15.177.887c-.56.047-.747.327-.747.653zM18.3 8.17c.094.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.747 0-.934-.234-1.494-.934l-4.577-7.186v6.952l1.448.327s0 .84-1.168.84l-3.222.186c-.094-.186 0-.653.327-.747l.84-.233V9.854L6.085 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.14c-.093-.514.28-.887.747-.933l3.222-.187z" },
+  { name: "Notion", color: "#ffffff", path: "M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L18.08 2.09c-.42-.326-.98-.7-2.055-.607L3.01 2.63c-.466.046-.56.28-.374.466l1.823 1.112zM5.252 7.623v13.857c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.934-.56.934-1.166V6.97c0-.607-.234-.933-.747-.887l-15.177.887c-.56.047-.747.327-.747.653zM18.3 8.17c.094.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.747 0-.934-.234-1.494-.934l-4.577-7.186v6.952l1.448.327s0 .84-1.168.84l-3.222.186c-.094-.186 0-.653.327-.747l.84-.233V9.854L6.085 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.14c-.093-.514.28-.887.747-.933l3.222-.187z" },
   { name: "Microsoft 365", color: "#0078D4", path: "M11.4 24H0V12.6h11.4V24zM24 24H12.6V12.6H24V24zM11.4 11.4H0V0h11.4v11.4zM24 11.4H12.6V0H24v11.4z" },
 ];
 
 export function IntegrationsSection({ dict }: { dict: Dictionary }) {
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section className="py-20 lg:py-28 bg-slate-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <div className="text-center mb-16">
             <SectionLabel>{dict.integrations.label}</SectionLabel>
-            <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
               {dict.integrations.title}
             </h2>
-            <p className="text-slate-500 max-w-2xl mx-auto">
+            <p className="text-slate-400 max-w-2xl mx-auto">
               {dict.integrations.subtitle}
             </p>
           </div>
@@ -37,13 +37,13 @@ export function IntegrationsSection({ dict }: { dict: Dictionary }) {
         <StaggerContainer className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
           {integrations.map((item) => (
             <StaggerItem key={item.name}>
-              <div className="group relative flex flex-col items-center justify-center p-6 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-lg hover:shadow-slate-200/50 transition-all duration-300 border border-transparent hover:border-slate-200 cursor-default">
+              <div className="group relative flex flex-col items-center justify-center p-6 rounded-2xl bg-slate-900/60 hover:bg-slate-800 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 border border-slate-800 hover:border-slate-700 cursor-default">
                 <div className="w-10 h-10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                   <svg viewBox="0 0 24 24" className="w-8 h-8" fill={item.color}>
                     <path d={item.path} />
                   </svg>
                 </div>
-                <span className="text-xs font-medium text-slate-500 group-hover:text-slate-700 transition-colors text-center">
+                <span className="text-xs font-medium text-slate-500 group-hover:text-slate-300 transition-colors text-center">
                   {item.name}
                 </span>
               </div>

@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations";
-import { Card, SectionLabel } from "@/components/ui";
+import { SectionLabel } from "@/components/ui";
 import type { Dictionary } from "@/lib/i18n";
 
 const featureIcons = [
@@ -21,11 +22,22 @@ const featureIcons = [
 
 export function FeaturesSection({ dict }: { dict: Dictionary }) {
   return (
-    <section className="py-20 lg:py-32 bg-slate-50/50">
+    <section className="relative py-20 lg:py-32 bg-slate-950 overflow-hidden">
+      {/* Background visual */}
+      <div className="absolute inset-0 -z-10">
+        <Image
+          src="/images/feature-dashboard.jpg"
+          alt=""
+          fill
+          className="object-cover opacity-10"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/95 to-slate-950" />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <SectionLabel>{dict.features.label}</SectionLabel>
-          <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 text-center mb-16">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white text-center mb-16">
             {dict.features.title}
           </h2>
         </FadeIn>
@@ -33,17 +45,17 @@ export function FeaturesSection({ dict }: { dict: Dictionary }) {
         <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {dict.features.items.map((item: any, i: number) => (
             <StaggerItem key={i}>
-              <Card className="h-full text-center" padding="lg">
-                <div className="w-14 h-14 rounded-2xl bg-primary-50 flex items-center justify-center text-primary-500 mx-auto mb-5">
+              <div className="h-full text-center p-8 rounded-2xl bg-slate-900/60 backdrop-blur-sm border border-slate-800 hover:border-primary-500/30 transition-all duration-300">
+                <div className="w-14 h-14 rounded-2xl bg-primary-500/10 border border-primary-500/20 flex items-center justify-center text-primary-400 mx-auto mb-5">
                   {featureIcons[i]}
                 </div>
-                <h3 className="text-lg font-semibold text-slate-800 mb-2">
+                <h3 className="text-lg font-semibold text-white mb-2">
                   {item.title}
                 </h3>
-                <p className="text-sm text-slate-500 leading-relaxed">
+                <p className="text-sm text-slate-400 leading-relaxed">
                   {item.description}
                 </p>
-              </Card>
+              </div>
             </StaggerItem>
           ))}
         </StaggerContainer>

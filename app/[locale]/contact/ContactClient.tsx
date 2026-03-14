@@ -53,16 +53,16 @@ export function ContactClient({ dict, locale }: Props) {
 
   return (
     <PageTransition>
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-primary-50 via-white to-slate-50" />
+      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-slate-950">
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-950" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-16">
               <SectionLabel>{c.label}</SectionLabel>
-              <h1 className="text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
+              <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
                 {c.title}
               </h1>
-              <p className="text-lg text-slate-500 max-w-2xl mx-auto">
+              <p className="text-lg text-slate-400 max-w-2xl mx-auto">
                 {c.subtitle}
               </p>
             </div>
@@ -73,10 +73,10 @@ export function ContactClient({ dict, locale }: Props) {
               <Card padding="lg" hover={false}>
                 {submitted ? (
                   <div className="text-center py-12">
-                    <div className="w-16 h-16 rounded-full bg-emerald-50 flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 rounded-full bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center mx-auto mb-4">
                       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
                     </div>
-                    <p className="text-lg text-slate-700 font-medium">{c.form.success}</p>
+                    <p className="text-lg text-white font-medium">{c.form.success}</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-5">
@@ -90,7 +90,7 @@ export function ContactClient({ dict, locale }: Props) {
                     </div>
                     <Textarea name="message" label={c.form.message} placeholder={c.form.message} rows={5} required />
                     {error && (
-                      <p className="text-sm text-red-500 bg-red-50 px-4 py-2 rounded-lg">{error}</p>
+                      <p className="text-sm text-red-400 bg-red-500/10 border border-red-500/20 px-4 py-2 rounded-lg">{error}</p>
                     )}
                     <Button type="submit" size="lg" className="w-full">
                       {loading ? (
@@ -117,12 +117,12 @@ export function ContactClient({ dict, locale }: Props) {
                 ].map((item, i) => (
                   <Card key={i} padding="md" hover={false}>
                     <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-primary-50 flex items-center justify-center text-primary-500 shrink-0">
+                      <div className="w-10 h-10 rounded-lg bg-primary-500/10 border border-primary-500/20 flex items-center justify-center text-primary-400 shrink-0">
                         {item.icon}
                       </div>
                       <div>
-                        <p className="text-xs text-slate-400 uppercase tracking-wider">{item.label}</p>
-                        <p className="text-slate-700 font-medium">{item.value}</p>
+                        <p className="text-xs text-slate-500 uppercase tracking-wider">{item.label}</p>
+                        <p className="text-white font-medium">{item.value}</p>
                       </div>
                     </div>
                   </Card>

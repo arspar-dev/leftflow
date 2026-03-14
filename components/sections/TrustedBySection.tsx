@@ -18,21 +18,21 @@ const logos = [
 
 export function TrustedBySection({ dict }: { dict: Dictionary }) {
   return (
-    <section className="py-12 bg-white border-b border-slate-100 overflow-hidden">
+    <section className="py-12 bg-slate-900/50 border-b border-slate-800/50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
-          <p className="text-center text-xs text-slate-400 mb-8 uppercase tracking-[0.2em] font-medium">
+          <p className="text-center text-xs text-slate-500 mb-8 uppercase tracking-[0.2em] font-medium">
             {dict.trustedBy.title}
           </p>
         </FadeIn>
         <div className="relative">
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10" />
+          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-slate-900/50 to-transparent z-10" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-slate-900/50 to-transparent z-10" />
           <div className="flex animate-marquee gap-16 items-center">
             {[...logos, ...logos].map((logo, i) => (
               <div
                 key={i}
-                className="text-slate-300 hover:text-slate-500 transition-colors shrink-0 flex items-center"
+                className="text-slate-600 hover:text-slate-400 transition-colors shrink-0 flex items-center"
                 style={{ minWidth: "fit-content" }}
               >
                 {logo.svg}
