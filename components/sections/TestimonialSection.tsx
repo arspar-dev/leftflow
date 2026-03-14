@@ -47,7 +47,7 @@ export function TestimonialSection({ dict }: { dict: Dictionary }) {
               <blockquote className="text-center">
                 <div className="flex justify-center mb-6">
                   {[...Array(5)].map((_, i) => (
-                    <svg key={i} width="20" height="20" viewBox="0 0 24 24" fill="#6366f1" className="mx-0.5">
+                    <svg key={i} width="20" height="20" viewBox="0 0 24 24" fill="#2563eb" className="mx-0.5">
                       <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                     </svg>
                   ))}

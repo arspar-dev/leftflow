@@ -11,6 +11,7 @@ import { IntegrationsSection } from "@/components/sections/IntegrationsSection";
 import { StatsSection } from "@/components/sections/StatsSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { IndustriesPreview } from "@/components/sections/IndustriesPreview";
+import { AutomationShowcase } from "@/components/sections/AutomationShowcase";
 import { PageTransition } from "@/components/animations";
 
 export default async function HomePage({
@@ -29,6 +30,7 @@ export default async function HomePage({
       <VideoShowcaseSection dict={dict} />
       <FeaturesSection dict={dict} />
       <IndustriesPreview dict={dict} locale={locale as Locale} industries={industries} />
+      <AutomationShowcase dict={dict} />
       <ProcessSection dict={dict} />
       <IntegrationsSection dict={dict} />
       <TestimonialSection dict={dict} />

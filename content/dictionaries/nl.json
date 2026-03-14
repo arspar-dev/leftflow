@@ -283,6 +283,25 @@
     "title": "Naadloze integratie met uw favoriete tools",
     "subtitle": "Integreer AI-oplossingen eenvoudig zonder uw bestaande workflow te verstoren."
   },
+  "automationShowcase": {
+    "label": "Automatiseringsvoorbeelden",
+    "title": "Ontdek de kracht van automatisering",
+    "subtitle": "Verken real-world automatiseringsscenario's interactief.",
+    "tabs": [
+      {
+        "title": "Voorraadbeheer",
+        "description": "Realtime voorraadniveaus, automatische herbesteltriggers en AI-gestuurde vraagvoorspelling."
+      },
+      {
+        "title": "Orderbeheer",
+        "description": "End-to-end geautomatiseerde procesopvolging en updates van bestelling tot levering."
+      },
+      {
+        "title": "Klantnotificaties",
+        "description": "Geautomatiseerde meldingen en klantcommunicatie via e-mail, sms, webhook en Slack."
+      }
+    ]
+  },
   "common": {
     "learnMore": "Meer informatie",
     "getStarted": "Aan de slag",

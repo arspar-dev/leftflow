@@ -283,6 +283,25 @@
     "title": "Favori araçlarınızla kusursuz entegrasyon",
     "subtitle": "Mevcut iş akışınızı bozmadan AI çözümlerini kolayca entegre edin."
   },
+  "automationShowcase": {
+    "label": "Otomasyon Örnekleri",
+    "title": "Otomasyonun gücünü keşfedin",
+    "subtitle": "Gerçek dünya otomasyon senaryolarını interaktif olarak inceleyin.",
+    "tabs": [
+      {
+        "title": "Envanter Takibi",
+        "description": "Gerçek zamanlı stok seviyeleri, otomatik yeniden sipariş tetikleyicileri ve AI tabanlı talep tahmini."
+      },
+      {
+        "title": "Sipariş Yönetimi",
+        "description": "Siparişten teslimata kadar uçtan uca otomatik süreç izleme ve güncelleme."
+      },
+      {
+        "title": "Müşteri Bildirimleri",
+        "description": "E-posta, SMS, webhook ve Slack üzerinden otomatik bildirim ve müşteri iletişimi."
+      }
+    ]
+  },
   "common": {
     "learnMore": "Daha Fazla",
     "getStarted": "Başlayın",

@@ -96,7 +96,7 @@ export function DataIntelligenceClient({ dict, locale }: Props) {
                     <p className="text-sm text-slate-500">{step.description}</p>
                     {i < 3 && (
                       <div className="hidden md:block absolute top-8 left-full -translate-x-1/2 z-20">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6366f1" strokeWidth="2" strokeLinecap="round">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="2" strokeLinecap="round">
                           <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                       </div>

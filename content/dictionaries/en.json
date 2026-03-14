@@ -283,6 +283,25 @@
     "title": "Seamless integration with your favorite tools",
     "subtitle": "Easily integrate AI solutions without disrupting your existing workflow."
   },
+  "automationShowcase": {
+    "label": "Automation Examples",
+    "title": "Discover the power of automation",
+    "subtitle": "Explore real-world automation scenarios interactively.",
+    "tabs": [
+      {
+        "title": "Inventory Tracking",
+        "description": "Real-time stock levels, automatic reorder triggers, and AI-based demand forecasting."
+      },
+      {
+        "title": "Order Management",
+        "description": "End-to-end automated process tracking and updates from order to delivery."
+      },
+      {
+        "title": "Customer Notifications",
+        "description": "Automated notifications and customer communication via email, SMS, webhook, and Slack."
+      }
+    ]
+  },
   "common": {
     "learnMore": "Learn More",
     "getStarted": "Get Started",
