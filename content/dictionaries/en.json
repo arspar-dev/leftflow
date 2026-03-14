@@ -246,6 +246,43 @@
     "followUs": "Follow Us",
     "copyright": "All rights reserved."
   },
+  "trustedBy": {
+    "title": "Trusted by 200+ businesses worldwide"
+  },
+  "videoShowcase": {
+    "label": "In Action",
+    "title": "Watch AI Automation in Action",
+    "subtitle": "See how our intelligent workflows transform businesses and drive real results."
+  },
+  "testimonials": {
+    "label": "Testimonials",
+    "title": "What our clients say",
+    "items": [
+      {
+        "quote": "The biggest problem I see in business is wasted time. Our AI solutions eliminate that, helping companies close deals faster and keep customers happier.",
+        "name": "Burhan Kocabıyık",
+        "role": "Founder, LeftFlow",
+        "company": "LeftFlow"
+      },
+      {
+        "quote": "LeftFlow's chatbot solution completely transformed our customer service. Response time dropped by 80% and customer satisfaction hit record levels.",
+        "name": "Selin Aktaş",
+        "role": "Operations Director",
+        "company": "TechStore"
+      },
+      {
+        "quote": "Thanks to data integration and automation, our monthly reporting went from 3 days to 2 hours. LeftFlow is a true game changer.",
+        "name": "Martijn de Vries",
+        "role": "CTO",
+        "company": "DataFlow BV"
+      }
+    ]
+  },
+  "integrations": {
+    "label": "Integrations",
+    "title": "Seamless integration with your favorite tools",
+    "subtitle": "Easily integrate AI solutions without disrupting your existing workflow."
+  },
   "common": {
     "learnMore": "Learn More",
     "getStarted": "Get Started",

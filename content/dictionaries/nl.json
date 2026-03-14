@@ -246,6 +246,43 @@
     "followUs": "Volg Ons",
     "copyright": "Alle rechten voorbehouden."
   },
+  "trustedBy": {
+    "title": "Vertrouwd door 200+ bedrijven wereldwijd"
+  },
+  "videoShowcase": {
+    "label": "In Actie",
+    "title": "Bekijk AI-automatisering in Actie",
+    "subtitle": "Ontdek hoe onze intelligente workflows bedrijven transformeren en echte resultaten opleveren."
+  },
+  "testimonials": {
+    "label": "Getuigenissen",
+    "title": "Wat onze klanten zeggen",
+    "items": [
+      {
+        "quote": "Het grootste probleem in het bedrijfsleven is verspilde tijd. Onze AI-oplossingen pakken dit aan, zodat bedrijven sneller verkopen en klanten tevredener houden.",
+        "name": "Burhan Kocabıyık",
+        "role": "Oprichter, LeftFlow",
+        "company": "LeftFlow"
+      },
+      {
+        "quote": "De chatbot-oplossing van LeftFlow heeft onze klantenservice compleet getransformeerd. De responstijd daalde met 80% en de klanttevredenheid bereikte recordniveaus.",
+        "name": "Selin Aktaş",
+        "role": "Operations Director",
+        "company": "TechStore"
+      },
+      {
+        "quote": "Dankzij data-integratie en automatisering ging onze maandelijkse rapportage van 3 dagen naar 2 uur. LeftFlow is een echte game changer.",
+        "name": "Martijn de Vries",
+        "role": "CTO",
+        "company": "DataFlow BV"
+      }
+    ]
+  },
+  "integrations": {
+    "label": "Integraties",
+    "title": "Naadloze integratie met uw favoriete tools",
+    "subtitle": "Integreer AI-oplossingen eenvoudig zonder uw bestaande workflow te verstoren."
+  },
   "common": {
     "learnMore": "Meer informatie",
     "getStarted": "Aan de slag",

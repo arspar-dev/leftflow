@@ -47,14 +47,25 @@ export function DataIntelligenceClient({ dict, locale }: Props) {
             </Button>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <div className="mt-12 max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden relative">
+            <div className="mt-12 max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden relative bg-slate-900">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                poster="/images/data-intelligence.jpg"
+                className="w-full h-full object-cover"
+              >
+                <source src="/videos/data-intelligence-motion.mp4" type="video/mp4" />
+              </video>
               <Image
                 src="/images/data-intelligence.jpg"
                 alt="Data Intelligence"
                 fill
-                className="object-cover"
+                className="object-cover video-fallback"
                 sizes="(max-width: 1200px) 100vw, 900px"
                 priority
+                style={{ position: "absolute", zIndex: -1 }}
               />
             </div>
           </FadeIn>

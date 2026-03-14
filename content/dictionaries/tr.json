@@ -246,6 +246,43 @@
     "followUs": "Bizi Takip Edin",
     "copyright": "Tüm hakları saklıdır."
   },
+  "trustedBy": {
+    "title": "200+ işletme tarafından güveniliyor"
+  },
+  "videoShowcase": {
+    "label": "Aksiyonda",
+    "title": "AI Otomasyonunu İzleyin",
+    "subtitle": "Akıllı iş akışlarımızın işletmeleri nasıl dönüştürdüğünü görün."
+  },
+  "testimonials": {
+    "label": "Müşteri Yorumları",
+    "title": "Müşterilerimiz ne diyor?",
+    "items": [
+      {
+        "quote": "İş dünyasında gördüğüm en büyük sorun boşa harcanan zamandır. AI çözümlerimiz bu sorunu ortadan kaldırarak şirketlerin daha hızlı satış yapmasını sağlar.",
+        "name": "Burhan Kocabıyık",
+        "role": "Kurucu, LeftFlow",
+        "company": "LeftFlow"
+      },
+      {
+        "quote": "LeftFlow'un chatbot çözümü müşteri hizmetlerimizi tamamen dönüştürdü. Yanıt süremiz %80 azaldı ve müşteri memnuniyeti rekor seviyeye ulaştı.",
+        "name": "Selin Aktaş",
+        "role": "Operasyon Direktörü",
+        "company": "TechStore"
+      },
+      {
+        "quote": "Veri entegrasyonu ve otomasyon çözümleri sayesinde aylık raporlama süremiz 3 günden 2 saate düştü. LeftFlow gerçek bir oyun değiştirici.",
+        "name": "Martijn de Vries",
+        "role": "CTO",
+        "company": "DataFlow BV"
+      }
+    ]
+  },
+  "integrations": {
+    "label": "Entegrasyonlar",
+    "title": "Favori araçlarınızla kusursuz entegrasyon",
+    "subtitle": "Mevcut iş akışınızı bozmadan AI çözümlerini kolayca entegre edin."
+  },
   "common": {
     "learnMore": "Daha Fazla",
     "getStarted": "Başlayın",
