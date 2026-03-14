@@ -1,0 +1,1 @@
+export { IndustryPageClient } from "./IndustryPageClient";

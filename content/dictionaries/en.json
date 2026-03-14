@@ -1,0 +1,255 @@
+{
+  "nav": {
+    "services": "Services",
+    "industries": "Industries",
+    "dataIntelligence": "Data Intelligence",
+    "blog": "Blog",
+    "about": "About Us",
+    "contact": "Contact",
+    "cta": "Let's Talk"
+  },
+  "hero": {
+    "badge": "200+ businesses scaled",
+    "rating": "4.7/5",
+    "title": "Rapid automation and growth with intelligent AI tools",
+    "subtitle": "Automate your workflows, accelerate your processes, and drive growth with future-ready intelligent solutions.",
+    "cta": "Let's Talk"
+  },
+  "services": {
+    "label": "Services",
+    "title": "Custom AI solutions for your business",
+    "items": [
+      {
+        "number": "01",
+        "title": "Content Generation",
+        "description": "Our AI-powered solutions produce high-quality, brand-aligned content that engages your target audience effortlessly."
+      },
+      {
+        "number": "02",
+        "title": "AI Agent Development",
+        "description": "We build intelligent AI agents powered by advanced NLP to scale your customer interactions and operations."
+      },
+      {
+        "number": "03",
+        "title": "Workflow Automation",
+        "description": "We automate repetitive tasks to boost operational efficiency, increase productivity, and save valuable time."
+      },
+      {
+        "number": "04",
+        "title": "LLM Development",
+        "description": "We develop custom Large Language Models to revolutionize your business processes."
+      }
+    ]
+  },
+  "features": {
+    "label": "Features",
+    "title": "AI features that supercharge your workflow",
+    "items": [
+      {
+        "title": "AI-Powered Insights",
+        "description": "Make faster, smarter decisions with real-time data analysis."
+      },
+      {
+        "title": "AI Chatbots",
+        "description": "Engage your customers with intelligent, human-like chatbot interactions."
+      },
+      {
+        "title": "Automated Workflows",
+        "description": "Streamline your operations with AI-driven task automation."
+      },
+      {
+        "title": "Data Protection",
+        "description": "Ensure security with encrypted AI models and compliance tools."
+      },
+      {
+        "title": "AI-Powered Collaboration",
+        "description": "Enhance teamwork with smart recommendations and automation."
+      },
+      {
+        "title": "Seamless Integrations",
+        "description": "Connect AI to your favorite tools for a frictionless workflow."
+      }
+    ]
+  },
+  "process": {
+    "label": "How It Works",
+    "title": "How AI solutions come to life",
+    "steps": [
+      {
+        "title": "Discovery Call",
+        "description": "We start with a brief consultation to understand your business, challenges, and goals."
+      },
+      {
+        "title": "Custom AI Solution",
+        "description": "We design a tailored chatbot, voice assistant, or RAG assistant to meet your specific needs."
+      },
+      {
+        "title": "Launch & Growth",
+        "description": "We integrate the solution into your systems, monitor performance, and help you scale."
+      }
+    ]
+  },
+  "testimonial": {
+    "quote": "The biggest problem I see in business is wasted time. Our AI solutions eliminate that problem, helping companies close deals faster and keep their customers happier.",
+    "name": "Burhan Kocabıyık",
+    "role": "Founder, LeftFlow"
+  },
+  "stats": {
+    "label": "About Us",
+    "title": "Learn more about our journey and AI expertise",
+    "description": "LeftFlow is an AI automation agency specializing in chatbot development, voice assistants, RAG-powered assistants, LLM development, AI consulting, and end-to-end AI solutions.",
+    "items": [
+      { "value": "55", "label": "Active Projects" },
+      { "value": "20%", "label": "Process Automation Level" },
+      { "value": "35", "label": "Satisfied Clients" },
+      { "value": "904", "label": "Hours Saved" }
+    ]
+  },
+  "faq": {
+    "label": "FAQ",
+    "title": "Answers to frequently asked AI questions",
+    "items": [
+      {
+        "question": "What is LeftFlow?",
+        "answer": "LeftFlow is an AI automation agency offering content generation, AI agents, workflow automation, and LLM development services. Our goal is to save you time and boost efficiency."
+      },
+      {
+        "question": "What problems can your AI solutions solve?",
+        "answer": "We provide solutions across customer service automation, data analysis, content generation, business process optimization, and many more areas."
+      },
+      {
+        "question": "Is LeftFlow suitable for businesses of all sizes?",
+        "answer": "Absolutely! We offer customized AI solutions for businesses of every size, from startups to enterprise organizations."
+      },
+      {
+        "question": "Why are RAG or LLM development valuable?",
+        "answer": "RAG and LLM technologies transform your company data into intelligent assistants, improving customer experience and increasing operational efficiency."
+      },
+      {
+        "question": "How much does LeftFlow cost?",
+        "answer": "We customize every project to fit your needs. During our free discovery call, we'll recommend a solution that works within your budget."
+      }
+    ]
+  },
+  "industries": {
+    "label": "Industries",
+    "title": "Automation solutions for every industry",
+    "subtitle": "Accelerate your digital transformation with AI and automation solutions tailored to your sector.",
+    "viewAll": "View All",
+    "learnMore": "Learn More",
+    "useCases": "Use Cases",
+    "benefits": "Benefits",
+    "caseStudy": "Success Story",
+    "challenge": "Challenge",
+    "solution": "Solution",
+    "result": "Result",
+    "ctaTitle": "Ready for automation in this industry?",
+    "ctaDescription": "Get in touch with us to explore AI solutions tailored to your business.",
+    "ctaButton": "Get a Free Consultation"
+  },
+  "dataIntelligence": {
+    "label": "Data Intelligence",
+    "title": "We Turn Your Company's Data Into Actionable Insights",
+    "subtitle": "We deliver comprehensive data analysis and AI solutions that transform your raw data into strategic decisions.",
+    "processTitle": "Data Transformation Process",
+    "processSteps": [
+      { "title": "Raw Data", "description": "Collecting data from diverse sources" },
+      { "title": "Cleansing", "description": "Improving data quality and standardization" },
+      { "title": "Analysis", "description": "AI-powered deep data analysis" },
+      { "title": "Action", "description": "Data-driven strategic decisions" }
+    ],
+    "capabilities": "Technical Capabilities",
+    "capabilityItems": [
+      { "title": "Data Pipelines", "description": "ETL processes, real-time data streaming, and automated data collection." },
+      { "title": "Integrations", "description": "ERP, CRM, e-commerce, and third-party API integrations." },
+      { "title": "Reporting", "description": "Customizable dashboards, automated reports, and real-time metrics." },
+      { "title": "Predictive Analytics", "description": "Forecasting, trend analysis, and anomaly detection with AI/ML models." }
+    ],
+    "ctaTitle": "Ready to Turn Your Data Into Value?",
+    "ctaButton": "Free Data Assessment"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "The latest articles on automation, artificial intelligence, and digital transformation.",
+    "search": "Search articles...",
+    "categories": {
+      "all": "All",
+      "automation": "Automation",
+      "ai": "Artificial Intelligence",
+      "industry": "Industry",
+      "caseStudy": "Case Study",
+      "guide": "Guide"
+    },
+    "readMore": "Read More",
+    "readTime": "min read",
+    "toc": "Table of Contents",
+    "relatedPosts": "Related Articles",
+    "publishedOn": "Published"
+  },
+  "about": {
+    "label": "About Us",
+    "title": "Meet LeftFlow",
+    "subtitle": "We're a team transforming business processes with artificial intelligence.",
+    "mission": {
+      "title": "Our Mission",
+      "description": "To empower businesses to work more efficiently, more intelligently, and faster with AI. To make technology accessible to everyone."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "description": "To build a future where every business benefits from AI-powered automation and makes data-driven decisions."
+    },
+    "values": {
+      "title": "Our Values",
+      "items": [
+        { "title": "Innovation", "description": "We are a team that continuously learns and evolves." },
+        { "title": "Transparency", "description": "We maintain open and honest communication with our clients." },
+        { "title": "Results-Driven", "description": "We focus on delivering measurable outcomes." },
+        { "title": "Collaboration", "description": "We see our clients as true partners." }
+      ]
+    },
+    "team": {
+      "title": "Our Team",
+      "members": [
+        { "name": "Burhan Kocabıyık", "role": "Founder & CEO", "description": "10+ years of experience in AI and automation." },
+        { "name": "Ayse Demir", "role": "CTO", "description": "Machine learning and NLP specialist." },
+        { "name": "Mehmet Yilmaz", "role": "Lead Developer", "description": "Full-stack development and AI integrations." },
+        { "name": "Elif Arslan", "role": "Business Development", "description": "Client relations and strategic partnerships." }
+      ]
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Get in Touch",
+    "subtitle": "Want to discuss your project? Fill out the form and we'll get back to you within 24 hours.",
+    "form": {
+      "name": "Your Name",
+      "email": "Email",
+      "company": "Company (Optional)",
+      "phone": "Phone (Optional)",
+      "message": "Your Message",
+      "submit": "Send Message",
+      "success": "Your message has been sent successfully! We'll get back to you as soon as possible."
+    },
+    "info": {
+      "email": "info@leftflow.ai",
+      "phone": "+31 6 12345678",
+      "address": "Amsterdam, Netherlands",
+      "hours": "Mon-Fri: 09:00 - 18:00"
+    }
+  },
+  "footer": {
+    "description": "We help businesses grow and gain efficiency with AI-powered automation solutions.",
+    "ctaTitle": "Transform Your Business Processes with AI",
+    "ctaSubtitle": "Discover the power of automation with LeftFlow",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "followUs": "Follow Us",
+    "copyright": "All rights reserved."
+  },
+  "common": {
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "contactUs": "Contact Us",
+    "backToHome": "Back to Home"
+  }
+}

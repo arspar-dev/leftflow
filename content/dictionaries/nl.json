@@ -1,0 +1,255 @@
+{
+  "nav": {
+    "services": "Diensten",
+    "industries": "Industrie\u00ebn",
+    "dataIntelligence": "Data-intelligentie",
+    "blog": "Blog",
+    "about": "Over ons",
+    "contact": "Contact",
+    "cta": "Laten we praten"
+  },
+  "hero": {
+    "badge": "200+ bedrijven opgeschaald",
+    "rating": "4.7/5",
+    "title": "Snelle automatisering en groei met slimme AI-tools",
+    "subtitle": "Automatiseer uw workflows, versnel uw processen en stimuleer groei met toekomstgerichte intelligente oplossingen.",
+    "cta": "Laten we praten"
+  },
+  "services": {
+    "label": "Diensten",
+    "title": "Op maat gemaakte AI-oplossingen voor uw bedrijf",
+    "items": [
+      {
+        "number": "01",
+        "title": "Contentcreatie",
+        "description": "Onze AI-gestuurde oplossingen produceren hoogwaardige content die aansluit bij uw merk en moeiteloos uw doelgroep aanspreekt."
+      },
+      {
+        "number": "02",
+        "title": "AI-agent Ontwikkeling",
+        "description": "Wij bouwen intelligente AI-agents, aangedreven door geavanceerde NLP, om klantinteracties en bedrijfsprocessen op te schalen."
+      },
+      {
+        "number": "03",
+        "title": "Workflow Automatisering",
+        "description": "Wij automatiseren repetitieve taken om de operationele effici\u00ebntie te verhogen, productiviteit te verbeteren en tijd te besparen."
+      },
+      {
+        "number": "04",
+        "title": "LLM-ontwikkeling",
+        "description": "Wij ontwikkelen op maat gemaakte Large Language Models om uw bedrijfsprocessen te transformeren."
+      }
+    ]
+  },
+  "features": {
+    "label": "Kenmerken",
+    "title": "AI-functies die uw workflow versterken",
+    "items": [
+      {
+        "title": "AI-gestuurde Inzichten",
+        "description": "Neem snellere en slimmere beslissingen met realtime data-analyse."
+      },
+      {
+        "title": "AI-chatbots",
+        "description": "Bereik uw klanten met intelligente, menselijke chatbot-interacties."
+      },
+      {
+        "title": "Geautomatiseerde Workflows",
+        "description": "Versnel uw bedrijfsprocessen met AI-gestuurde taakautomatisering."
+      },
+      {
+        "title": "Gegevensbescherming",
+        "description": "Waarborg de veiligheid met versleutelde AI-modellen en compliance-tools."
+      },
+      {
+        "title": "AI-gestuurde Samenwerking",
+        "description": "Versterk teamwerk met slimme aanbevelingen en automatisering."
+      },
+      {
+        "title": "Naadloze Integraties",
+        "description": "Koppel AI aan uw favoriete tools voor een soepele workflow."
+      }
+    ]
+  },
+  "process": {
+    "label": "Hoe het werkt",
+    "title": "Hoe AI-oplossingen tot leven komen",
+    "steps": [
+      {
+        "title": "Kennismakingsgesprek",
+        "description": "We voeren een kort gesprek om uw bedrijf, uitdagingen en doelstellingen te begrijpen."
+      },
+      {
+        "title": "AI-oplossing op Maat",
+        "description": "Wij ontwerpen een chatbot, spraakassistent of RAG-assistent die aansluit bij uw behoeften."
+      },
+      {
+        "title": "Lancering en Groei",
+        "description": "Wij integreren de oplossing in uw systemen, monitoren de prestaties en helpen u opschalen."
+      }
+    ]
+  },
+  "testimonial": {
+    "quote": "Het grootste probleem dat ik in het bedrijfsleven zie, is verspilde tijd. Onze AI-oplossingen pakken dit probleem aan, zodat bedrijven sneller verkopen en hun klanten tevredener houden.",
+    "name": "Burhan Kocab\u0131y\u0131k",
+    "role": "Oprichter, LeftFlow"
+  },
+  "stats": {
+    "label": "Over ons",
+    "title": "Meer over onze reis en AI-expertise",
+    "description": "LeftFlow is een AI-automatiseringsbureau gespecialiseerd in chatbotontwikkeling, spraakassistenten, RAG-gestuurde assistenten, LLM-ontwikkeling, AI-advies en complete AI-oplossingen.",
+    "items": [
+      { "value": "55", "label": "Actieve Projecten" },
+      { "value": "20%", "label": "Procesautomatiseringsgraad" },
+      { "value": "35", "label": "Tevreden Klanten" },
+      { "value": "904", "label": "Bespaarde Uren" }
+    ]
+  },
+  "faq": {
+    "label": "Veelgestelde vragen",
+    "title": "Antwoorden op veelgestelde AI-vragen",
+    "items": [
+      {
+        "question": "Wat is LeftFlow?",
+        "answer": "LeftFlow is een AI-automatiseringsbureau dat diensten aanbiedt op het gebied van contentcreatie, AI-agents, workflowautomatisering en LLM-ontwikkeling. Ons doel is tijd besparen en effici\u00ebntie verhogen."
+      },
+      {
+        "question": "Welke problemen kunnen uw AI-oplossingen aanpakken?",
+        "answer": "Wij bieden oplossingen op het gebied van klantenservice-automatisering, data-analyse, contentcreatie, optimalisatie van bedrijfsprocessen en nog veel meer."
+      },
+      {
+        "question": "Is LeftFlow geschikt voor bedrijven van elke omvang?",
+        "answer": "Jazeker! Wij bieden op maat gemaakte AI-oplossingen voor zowel het mkb als grote ondernemingen."
+      },
+      {
+        "question": "Waarom zijn RAG- of LLM-ontwikkeling waardevol?",
+        "answer": "RAG- en LLM-technologie\u00ebn zetten uw bedrijfsdata om in intelligente assistenten, waardoor de klantervaring verbetert en de operationele effici\u00ebntie toeneemt."
+      },
+      {
+        "question": "Wat kost LeftFlow?",
+        "answer": "Elk project stemmen wij af op uw specifieke behoeften. Tijdens ons gratis kennismakingsgesprek doen wij u een voorstel dat past bij uw budget."
+      }
+    ]
+  },
+  "industries": {
+    "label": "Industrie\u00ebn",
+    "title": "Automatiseringsoplossingen voor elke sector",
+    "subtitle": "Versnel uw digitale transformatie met AI- en automatiseringsoplossingen die zijn afgestemd op uw branche.",
+    "viewAll": "Alles bekijken",
+    "learnMore": "Meer informatie",
+    "useCases": "Toepassingen",
+    "benefits": "Voordelen",
+    "caseStudy": "Succesverhaal",
+    "challenge": "Uitdaging",
+    "solution": "Oplossing",
+    "result": "Resultaat",
+    "ctaTitle": "Klaar voor automatisering in uw sector?",
+    "ctaDescription": "Neem contact met ons op om AI-oplossingen op maat voor uw bedrijf te ontdekken.",
+    "ctaButton": "Gratis adviesgesprek aanvragen"
+  },
+  "dataIntelligence": {
+    "label": "Data-intelligentie",
+    "title": "Wij maken uw bedrijfsdata bruikbaar",
+    "subtitle": "Wij bieden uitgebreide data-analyse en AI-oplossingen die uw ruwe data omzetten in strategische beslissingen.",
+    "processTitle": "Het datatransformatieproces",
+    "processSteps": [
+      { "title": "Ruwe Data", "description": "Verzameling van data uit diverse bronnen" },
+      { "title": "Opschoning", "description": "Verbetering van datakwaliteit en standaardisatie" },
+      { "title": "Analyse", "description": "Diepgaande data-analyse met AI-ondersteuning" },
+      { "title": "Actie", "description": "Datagedreven strategische beslissingen" }
+    ],
+    "capabilities": "Technische Mogelijkheden",
+    "capabilityItems": [
+      { "title": "Data Pipelines", "description": "ETL-processen, realtime datastromen en geautomatiseerde dataverzameling." },
+      { "title": "Integraties", "description": "ERP-, CRM-, e-commerce- en externe API-integraties." },
+      { "title": "Rapportage", "description": "Aanpasbare dashboards, geautomatiseerde rapporten en realtime metrics." },
+      { "title": "Predictieve Analyse", "description": "Voorspellingen, trendanalyse en anomaliedetectie met AI/ML-modellen." }
+    ],
+    "ctaTitle": "Klaar om uw data om te zetten in waarde?",
+    "ctaButton": "Gratis data-evaluatie"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "De nieuwste artikelen over automatisering, kunstmatige intelligentie en digitale transformatie.",
+    "search": "Artikelen zoeken...",
+    "categories": {
+      "all": "Alles",
+      "automation": "Automatisering",
+      "ai": "Kunstmatige Intelligentie",
+      "industry": "Industrie",
+      "caseStudy": "Succesverhaal",
+      "guide": "Handleiding"
+    },
+    "readMore": "Lees verder",
+    "readTime": "min leestijd",
+    "toc": "Inhoudsopgave",
+    "relatedPosts": "Gerelateerde Artikelen",
+    "publishedOn": "Gepubliceerd op"
+  },
+  "about": {
+    "label": "Over ons",
+    "title": "Maak kennis met LeftFlow",
+    "subtitle": "Wij zijn een team dat bedrijfsprocessen transformeert met kunstmatige intelligentie.",
+    "mission": {
+      "title": "Onze Missie",
+      "description": "Bedrijven in staat stellen effici\u00ebnter, slimmer en sneller te werken met AI. Technologie toegankelijk maken voor iedereen."
+    },
+    "vision": {
+      "title": "Onze Visie",
+      "description": "Een toekomst bouwen waarin elk bedrijf profiteert van AI-gestuurde automatisering en datagedreven beslissingen neemt."
+    },
+    "values": {
+      "title": "Onze Waarden",
+      "items": [
+        { "title": "Innovatie", "description": "Wij zijn een team dat continu leert en zich ontwikkelt." },
+        { "title": "Transparantie", "description": "Wij communiceren open en eerlijk met onze klanten." },
+        { "title": "Resultaatgerichtheid", "description": "Wij richten ons op het leveren van meetbare resultaten." },
+        { "title": "Samenwerking", "description": "Wij beschouwen onze klanten als zakelijke partners." }
+      ]
+    },
+    "team": {
+      "title": "Ons Team",
+      "members": [
+        { "name": "Burhan Kocab\u0131y\u0131k", "role": "Oprichter & CEO", "description": "Meer dan 10 jaar ervaring in AI en automatisering." },
+        { "name": "Ayşe Demir", "role": "CTO", "description": "Specialist in machine learning en NLP." },
+        { "name": "Mehmet Y\u0131lmaz", "role": "Lead Developer", "description": "Full-stack ontwikkeling en AI-integraties." },
+        { "name": "Elif Arslan", "role": "Business Development", "description": "Klantrelaties en strategische partnerships." }
+      ]
+    }
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Neem contact met ons op",
+    "subtitle": "Wilt u over uw project praten? Vul het formulier in en wij nemen binnen 24 uur contact met u op.",
+    "form": {
+      "name": "Uw naam",
+      "email": "E-mailadres",
+      "company": "Bedrijf (optioneel)",
+      "phone": "Telefoonnummer (optioneel)",
+      "message": "Uw bericht",
+      "submit": "Bericht versturen",
+      "success": "Uw bericht is succesvol verzonden! Wij nemen zo snel mogelijk contact met u op."
+    },
+    "info": {
+      "email": "info@leftflow.ai",
+      "phone": "+31 6 12345678",
+      "address": "Amsterdam, Nederland",
+      "hours": "Ma-Vr: 09:00 - 18:00"
+    }
+  },
+  "footer": {
+    "description": "Wij helpen bedrijven groeien en effici\u00ebntie winnen met AI-gestuurde automatiseringsoplossingen.",
+    "ctaTitle": "Transformeer uw bedrijfsprocessen met AI",
+    "ctaSubtitle": "Ontdek de kracht van automatisering met LeftFlow",
+    "quickLinks": "Snelle Links",
+    "services": "Diensten",
+    "followUs": "Volg Ons",
+    "copyright": "Alle rechten voorbehouden."
+  },
+  "common": {
+    "learnMore": "Meer informatie",
+    "getStarted": "Aan de slag",
+    "contactUs": "Neem contact op",
+    "backToHome": "Terug naar home"
+  }
+}

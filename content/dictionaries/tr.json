@@ -1,0 +1,255 @@
+{
+  "nav": {
+    "services": "Hizmetler",
+    "industries": "Endüstriler",
+    "dataIntelligence": "Veri Zekası",
+    "blog": "Blog",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "cta": "Hadi Konuşalım"
+  },
+  "hero": {
+    "badge": "200+ işletme ölçeklendi",
+    "rating": "4.7/5",
+    "title": "Akıllı AI araçları ile hızlı otomasyon ve büyüme",
+    "subtitle": "İş akışlarınızı otomatikleştirin, süreçlerinizi hızlandırın ve geleceğe yönelik akıllı çözümlerle büyümeyi sürükleyin.",
+    "cta": "Hadi Konuşalım"
+  },
+  "services": {
+    "label": "Hizmetler",
+    "title": "İşletmeniz için özel AI çözümleri",
+    "items": [
+      {
+        "number": "01",
+        "title": "İçerik Üretimi",
+        "description": "AI destekli çözümlerimiz, markanıza uygun yüksek kaliteli içerikler üreterek hedef kitlenizi zahmetsizce etkiler."
+      },
+      {
+        "number": "02",
+        "title": "AI Agent Geliştirme",
+        "description": "Gelişmiş NLP ile güçlendirilmiş akıllı AI agentlar oluşturarak müşteri etkileşimlerini ve operasyonlarını büyütüyoruz."
+      },
+      {
+        "number": "03",
+        "title": "İş Akışı Otomasyonu",
+        "description": "Tekrarlayan görevleri otomatikleştirerek operasyonel verimliliği artırıyor, üretkenliği yükseltiyor ve zaman kazandırıyoruz."
+      },
+      {
+        "number": "04",
+        "title": "LLM Geliştirme",
+        "description": "İş süreçlerini devrimleştirmek için özel Büyük Dil Modelleri geliştiriyoruz."
+      }
+    ]
+  },
+  "features": {
+    "label": "Özellikler",
+    "title": "İş akışınızı güçlendiren AI özellikleri",
+    "items": [
+      {
+        "title": "AI Destekli İçgörüler",
+        "description": "Gerçek zamanlı veri analizi ile daha hızlı ve akıllı kararlar alın."
+      },
+      {
+        "title": "AI Chatbotlar",
+        "description": "Akıllı, insan benzeri chatbot etkileşimleri ile müşterilerinize ulaşın."
+      },
+      {
+        "title": "Otomatik İş Akışları",
+        "description": "AI destekli görev otomasyonu ile operasyonlarınızı hızlandırın."
+      },
+      {
+        "title": "Veri Koruma",
+        "description": "Şifreli AI modelleri ve uyumluluk araçları ile güvenliği sağlayın."
+      },
+      {
+        "title": "AI Destekli İşbirliği",
+        "description": "Akıllı öneriler ve otomasyon ile ekip çalışmasını güçlendirin."
+      },
+      {
+        "title": "Kusursuz Entegrasyonlar",
+        "description": "AI'ı favori araçlarınıza bağlayarak sorunsuz bir iş akışı oluşturun."
+      }
+    ]
+  },
+  "process": {
+    "label": "Nasıl Çalışır",
+    "title": "AI çözümleri nasıl hayata geçer",
+    "steps": [
+      {
+        "title": "Keşif Görüşmesi",
+        "description": "İşletmenizi, zorluklarınızı ve hedeflerinizi anlamak için kısa bir görüşme yapıyoruz."
+      },
+      {
+        "title": "Özel AI Çözümü",
+        "description": "İhtiyaçlarınıza özel chatbot, sesli asistan veya RAG asistanı tasarlıyoruz."
+      },
+      {
+        "title": "Lansman ve Büyüme",
+        "description": "Çözümü sistemlerinize entegre ediyoruz, performansı izliyoruz ve ölçeklendirmenize yardımcı oluyoruz."
+      }
+    ]
+  },
+  "testimonial": {
+    "quote": "İş dünyasında gördüğüm en büyük sorun boşa harcanan zamandır. AI çözümlerimiz bu sorunu ortadan kaldırarak şirketlerin daha hızlı satış yapmasını ve müşterilerini daha mutlu tutmasını sağlar.",
+    "name": "Burhan Kocabıyık",
+    "role": "Kurucu, LeftFlow"
+  },
+  "stats": {
+    "label": "Hakkımızda",
+    "title": "Yolculuğumuz ve AI uzmanlığımız hakkında daha fazla bilgi",
+    "description": "LeftFlow, chatbot geliştirme, sesli asistanlar, RAG destekli asistanlar, LLM geliştirme, AI danışmanlığı ve tam kapsamlı AI çözümlerinde uzmanlaşmış bir AI otomasyon ajansıdır.",
+    "items": [
+      { "value": "55", "label": "Aktif Proje" },
+      { "value": "20%", "label": "Süreç Otomasyon Seviyesi" },
+      { "value": "35", "label": "Memnun Müşteri" },
+      { "value": "904", "label": "Kazanılan Saat" }
+    ]
+  },
+  "faq": {
+    "label": "SSS",
+    "title": "Sık sorulan AI sorularının yanıtları",
+    "items": [
+      {
+        "question": "LeftFlow nedir?",
+        "answer": "LeftFlow, içerik üretimi, AI agentlar, iş akışı otomasyonları ve LLM geliştirme hizmetleri sunan bir AI otomasyon ajansıdır. Amacımız zaman kazandırmak ve verimliliği artırmaktır."
+      },
+      {
+        "question": "AI çözümleriniz hangi sorunları çözebilir?",
+        "answer": "Müşteri hizmetleri otomasyonu, veri analizi, içerik üretimi, iş süreci optimizasyonu, ve daha birçok alanda çözümler sunuyoruz."
+      },
+      {
+        "question": "LeftFlow her ölçekteki işletme için uygun mu?",
+        "answer": "Evet! Küçük işletmelerden kurumsal şirketlere kadar her ölçekte özelleştirilmiş AI çözümleri sunuyoruz."
+      },
+      {
+        "question": "RAG veya LLM geliştirme neden değerli?",
+        "answer": "RAG ve LLM teknolojileri, şirket verilerinizi akıllı asistanlara dönüştürerek müşteri deneyimini iyileştirir ve operasyonel verimliliği artırır."
+      },
+      {
+        "question": "LeftFlow'un maliyeti nedir?",
+        "answer": "Her projeyi ihtiyaçlarınıza göre özelleştiriyoruz. Ücretsiz keşif görüşmemizde bütçenize uygun bir çözüm öneriyoruz."
+      }
+    ]
+  },
+  "industries": {
+    "label": "Endüstriler",
+    "title": "Her sektörde otomasyon çözümleri",
+    "subtitle": "Sektörünüze özel AI ve otomasyon çözümleri ile dijital dönüşümünüzü hızlandırın.",
+    "viewAll": "Tümünü Gör",
+    "learnMore": "Detaylı Bilgi",
+    "useCases": "Kullanım Senaryoları",
+    "benefits": "Faydalar",
+    "caseStudy": "Başarı Hikayesi",
+    "challenge": "Zorluk",
+    "solution": "Çözüm",
+    "result": "Sonuç",
+    "ctaTitle": "Bu sektörde otomasyona hazır mısınız?",
+    "ctaDescription": "İşletmenize özel AI çözümlerini keşfetmek için bizimle iletişime geçin.",
+    "ctaButton": "Ücretsiz Danışmanlık Alın"
+  },
+  "dataIntelligence": {
+    "label": "Veri Zekası",
+    "title": "Şirketinizin Verisini Kullanılabilir Hale Getiriyoruz",
+    "subtitle": "Ham verilerinizi stratejik kararlara dönüştüren kapsamlı veri analizi ve AI çözümleri sunuyoruz.",
+    "processTitle": "Veri Dönüşüm Süreci",
+    "processSteps": [
+      { "title": "Ham Veri", "description": "Farklı kaynaklardan verilerin toplanması" },
+      { "title": "Temizleme", "description": "Veri kalitesinin artırılması ve standartlaştırma" },
+      { "title": "Analiz", "description": "AI destekli derin veri analizi" },
+      { "title": "Aksiyon", "description": "Veri odaklı stratejik kararlar" }
+    ],
+    "capabilities": "Teknik Yetenekler",
+    "capabilityItems": [
+      { "title": "Veri Pipeline'ları", "description": "ETL süreçleri, gerçek zamanlı veri akışı ve otomatik veri toplama." },
+      { "title": "Entegrasyonlar", "description": "ERP, CRM, e-ticaret ve üçüncü parti API entegrasyonları." },
+      { "title": "Raporlama", "description": "Özelleştirilebilir dashboard'lar, otomatik raporlar ve gerçek zamanlı metrikler." },
+      { "title": "Prediktif Analiz", "description": "AI/ML modelleri ile tahminleme, trend analizi ve anomali tespiti." }
+    ],
+    "ctaTitle": "Verilerinizi Değere Dönüştürmeye Hazır mısınız?",
+    "ctaButton": "Ücretsiz Veri Değerlendirmesi"
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Otomasyon, yapay zeka ve dijital dönüşüm hakkında en güncel yazılar.",
+    "search": "Yazı ara...",
+    "categories": {
+      "all": "Tümü",
+      "automation": "Otomasyon",
+      "ai": "Yapay Zeka",
+      "industry": "Endüstri",
+      "caseStudy": "Başarı Hikayesi",
+      "guide": "Rehber"
+    },
+    "readMore": "Devamını Oku",
+    "readTime": "dk okuma",
+    "toc": "İçindekiler",
+    "relatedPosts": "İlgili Yazılar",
+    "publishedOn": "Yayınlanma"
+  },
+  "about": {
+    "label": "Hakkımızda",
+    "title": "LeftFlow'u Tanıyın",
+    "subtitle": "Yapay zeka ile iş süreçlerini dönüştüren bir ekibiz.",
+    "mission": {
+      "title": "Misyonumuz",
+      "description": "İşletmelerin AI ile daha verimli, daha akıllı ve daha hızlı çalışmasını sağlamak. Teknolojiyi herkes için erişilebilir kılmak."
+    },
+    "vision": {
+      "title": "Vizyonumuz",
+      "description": "Her işletmenin AI destekli otomasyondan faydalandığı, veri odaklı kararlar aldığı bir gelecek inşa etmek."
+    },
+    "values": {
+      "title": "Değerlerimiz",
+      "items": [
+        { "title": "İnovasyon", "description": "Sürekli öğrenen ve gelişen bir ekibiz." },
+        { "title": "Şeffaflık", "description": "Müşterilerimizle açık ve dürüst iletişim kurarız." },
+        { "title": "Sonuç Odaklılık", "description": "Ölçülebilir sonuçlar üretmeye odaklanırız." },
+        { "title": "İşbirliği", "description": "Müşterilerimizi iş ortağımız olarak görürüz." }
+      ]
+    },
+    "team": {
+      "title": "Ekibimiz",
+      "members": [
+        { "name": "Burhan Kocabıyık", "role": "Kurucu & CEO", "description": "AI ve otomasyon alanında 10+ yıl deneyim." },
+        { "name": "Ayşe Demir", "role": "CTO", "description": "Makine öğrenimi ve NLP uzmanı." },
+        { "name": "Mehmet Yılmaz", "role": "Baş Geliştirici", "description": "Full-stack geliştirme ve AI entegrasyonları." },
+        { "name": "Elif Arslan", "role": "İş Geliştirme", "description": "Müşteri ilişkileri ve stratejik ortaklıklar." }
+      ]
+    }
+  },
+  "contact": {
+    "label": "İletişim",
+    "title": "Bizimle İletişime Geçin",
+    "subtitle": "Projeniz hakkında konuşmak ister misiniz? Formu doldurun, size 24 saat içinde dönüş yapalım.",
+    "form": {
+      "name": "Adınız",
+      "email": "E-posta",
+      "company": "Şirket (Opsiyonel)",
+      "phone": "Telefon (Opsiyonel)",
+      "message": "Mesajınız",
+      "submit": "Mesaj Gönder",
+      "success": "Mesajınız başarıyla gönderildi! En kısa sürede dönüş yapacağız."
+    },
+    "info": {
+      "email": "info@leftflow.ai",
+      "phone": "+31 6 12345678",
+      "address": "Amsterdam, Hollanda",
+      "hours": "Pzt-Cum: 09:00 - 18:00"
+    }
+  },
+  "footer": {
+    "description": "AI destekli otomasyon çözümleri ile işletmelerin büyümesine ve verimlilik kazanmasına yardımcı oluyoruz.",
+    "ctaTitle": "AI ile İş Süreçlerinizi Dönüştürün",
+    "ctaSubtitle": "LeftFlow ile otomasyonun gücünü keşfedin",
+    "quickLinks": "Hızlı Linkler",
+    "services": "Hizmetler",
+    "followUs": "Bizi Takip Edin",
+    "copyright": "Tüm hakları saklıdır."
+  },
+  "common": {
+    "learnMore": "Daha Fazla",
+    "getStarted": "Başlayın",
+    "contactUs": "Bize Ulaşın",
+    "backToHome": "Ana Sayfaya Dön"
+  }
+}
