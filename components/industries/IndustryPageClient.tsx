@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { FadeIn, StaggerContainer, StaggerItem, PageTransition } from "@/components/animations";
 import { Button, Card, SectionLabel, Badge } from "@/components/ui";
@@ -71,6 +72,20 @@ export function IndustryPageClient({ industry, dict, locale, allIndustries }: Pr
             >
               {dict.industries.ctaButton}
             </Button>
+          </FadeIn>
+
+          {/* Industry Hero Image */}
+          <FadeIn delay={0.2}>
+            <div className="mt-12 relative aspect-video max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src={`/images/industry-${industry.slug}.jpg`}
+                alt={industry.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1200px) 100vw, 900px"
+                priority
+              />
+            </div>
           </FadeIn>
         </div>
       </section>

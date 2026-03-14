@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { FadeIn, PageTransition } from "@/components/animations";
 import { Badge, Card } from "@/components/ui";
 import type { Dictionary, Locale } from "@/lib/i18n";
@@ -45,10 +46,17 @@ export function BlogDetailClient({ post, dict, locale, relatedPosts }: Props) {
             </div>
           </FadeIn>
 
-          {/* Cover Image Placeholder */}
+          {/* Cover Image */}
           <FadeIn delay={0.1}>
-            <div className="aspect-video bg-gradient-to-br from-primary-100 to-primary-200 rounded-2xl mb-12 flex items-center justify-center text-primary-300">
-              <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+            <div className="aspect-video rounded-2xl mb-12 overflow-hidden relative">
+              <Image
+                src={`/images/blog-${post.slug}.jpg`}
+                alt={postData.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1200px) 100vw, 900px"
+                priority
+              />
             </div>
           </FadeIn>
 

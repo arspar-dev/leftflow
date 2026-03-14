@@ -1,1 +1,22 @@
-{}
+{
+  "hero": "/images/hero.jpg",
+  "about-team": "/images/about-team.jpg",
+  "data-intelligence": "/images/data-intelligence.jpg",
+  "industry-ecommerce": "/images/industry-ecommerce.jpg",
+  "industry-healthcare": "/images/industry-healthcare.jpg",
+  "industry-finance": "/images/industry-finance.jpg",
+  "industry-manufacturing": "/images/industry-manufacturing.jpg",
+  "industry-logistics": "/images/industry-logistics.jpg",
+  "industry-retail": "/images/industry-retail.jpg",
+  "industry-real-estate": "/images/industry-real-estate.jpg",
+  "industry-education": "/images/industry-education.jpg",
+  "industry-hr": "/images/industry-hr.jpg",
+  "blog-ecommerce-order-automation-guide": "/images/blog-ecommerce-order-automation-guide.jpg",
+  "blog-healthcare-ai-appointment-management": "/images/blog-healthcare-ai-appointment-management.jpg",
+  "blog-data-silos-holding-companies-back": "/images/blog-data-silos-holding-companies-back.jpg",
+  "blog-logistics-automation-roi": "/images/blog-logistics-automation-roi.jpg",
+  "blog-hr-recruitment-automation": "/images/blog-hr-recruitment-automation.jpg",
+  "blog-business-automation-trends-2025": "/images/blog-business-automation-trends-2025.jpg",
+  "blog-small-business-automation-starter-guide": "/images/blog-small-business-automation-starter-guide.jpg",
+  "blog-finance-compliance-automation": "/images/blog-finance-compliance-automation.jpg"
+}

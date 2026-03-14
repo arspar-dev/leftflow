@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import Image from "next/image";
 import { Button } from "@/components/ui";
 import { FadeIn } from "@/components/animations";
 import type { Dictionary, Locale } from "@/lib/i18n";
@@ -105,8 +105,22 @@ export function HeroSection({ dict, locale }: HeroProps) {
           </Button>
         </FadeIn>
 
-        {/* Partner logos placeholder */}
+        {/* Hero image */}
         <FadeIn delay={0.4}>
+          <div className="mt-16 relative max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl shadow-primary-500/10">
+            <Image
+              src="/images/hero.jpg"
+              alt="LeftFlow AI Automation"
+              width={1200}
+              height={675}
+              className="w-full h-auto"
+              priority
+            />
+          </div>
+        </FadeIn>
+
+        {/* Partner logos */}
+        <FadeIn delay={0.5}>
           <div className="mt-16 flex items-center justify-center gap-8 lg:gap-12 opacity-40">
             {["TechCorp", "Steellify", "BSS", "YENA", "CoreMap"].map(
               (name) => (

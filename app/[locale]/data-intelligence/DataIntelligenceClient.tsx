@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { FadeIn, StaggerContainer, StaggerItem, PageTransition } from "@/components/animations";
 import { Button, Card, SectionLabel } from "@/components/ui";
@@ -44,6 +45,18 @@ export function DataIntelligenceClient({ dict, locale }: Props) {
             >
               {d.ctaButton}
             </Button>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <div className="mt-12 max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden relative">
+              <Image
+                src="/images/data-intelligence.jpg"
+                alt="Data Intelligence"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1200px) 100vw, 900px"
+                priority
+              />
+            </div>
           </FadeIn>
         </div>
       </section>

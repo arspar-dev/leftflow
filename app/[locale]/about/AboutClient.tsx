@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { FadeIn, StaggerContainer, StaggerItem, PageTransition } from "@/components/animations";
 import { Card, SectionLabel, Button } from "@/components/ui";
 import type { Dictionary, Locale } from "@/lib/i18n";
@@ -33,6 +34,18 @@ export function AboutClient({ dict, locale }: Props) {
             <p className="text-lg text-slate-500 max-w-2xl mx-auto">
               {a.subtitle}
             </p>
+          </FadeIn>
+          <FadeIn delay={0.2}>
+            <div className="mt-12 max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden relative">
+              <Image
+                src="/images/about-team.jpg"
+                alt="LeftFlow Team"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1200px) 100vw, 900px"
+                priority
+              />
+            </div>
           </FadeIn>
         </div>
       </section>
