@@ -4,7 +4,6 @@ import { useState, useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FadeIn, StaggerContainer, StaggerItem, PageTransition } from "@/components/animations";
-import { Card, SectionLabel } from "@/components/ui";
 import type { Dictionary, Locale } from "@/lib/i18n";
 import type { BlogPost } from "@/lib/blog";
 
@@ -15,11 +14,11 @@ interface Props {
 }
 
 const categoryColors: Record<string, string> = {
-  automation: "bg-blue-500/10 text-blue-400 border border-blue-500/20",
-  ai: "bg-purple-500/10 text-purple-400 border border-purple-500/20",
-  industry: "bg-amber-500/10 text-amber-400 border border-amber-500/20",
-  caseStudy: "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20",
-  guide: "bg-rose-500/10 text-rose-400 border border-rose-500/20",
+  automation: "bg-primary-50 text-primary-600",
+  ai: "bg-secondary-400/10 text-secondary-500",
+  industry: "bg-accent-400/10 text-accent-500",
+  caseStudy: "bg-success-500/10 text-success-600",
+  guide: "bg-red-50 text-red-500",
 };
 
 export function BlogListClient({ posts, dict, locale }: Props) {
@@ -41,16 +40,19 @@ export function BlogListClient({ posts, dict, locale }: Props) {
 
   return (
     <PageTransition>
-      <section className="pt-32 pb-20 lg:pt-40 bg-slate-950">
+      <section className="pt-32 pb-20 lg:pt-40 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <FadeIn>
             <div className="text-center mb-12">
-              <SectionLabel>{dict.blog.title}</SectionLabel>
-              <h1 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+              <div className="inline-flex items-center gap-2 text-primary-500 text-sm font-medium mb-3">
+                <span className="w-1.5 h-1.5 bg-primary-500 rounded-full" />
+                Insights
+              </div>
+              <h1 className="text-4xl lg:text-5xl font-bold text-charcoal-800 mb-4">
                 {dict.blog.title}
               </h1>
-              <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+              <p className="text-lg text-charcoal-500 max-w-2xl mx-auto">
                 {dict.blog.subtitle}
               </p>
             </div>
@@ -61,13 +63,13 @@ export function BlogListClient({ posts, dict, locale }: Props) {
             <div className="mb-12 space-y-4">
               <div className="max-w-md mx-auto">
                 <div className="relative">
-                  <svg className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                  <svg className="absolute left-4 top-1/2 -translate-y-1/2 text-charcoal-400" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
                   <input
                     type="text"
                     placeholder={dict.blog.search}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-12 pr-4 py-3 rounded-xl border border-slate-700 bg-slate-800/50 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all"
+                    className="w-full pl-12 pr-4 py-3 rounded-xl border border-charcoal-200 bg-white text-charcoal-800 placeholder:text-charcoal-400 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all"
                   />
                 </div>
               </div>
@@ -80,7 +82,7 @@ export function BlogListClient({ posts, dict, locale }: Props) {
                     className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
                       activeCategory === cat
                         ? "bg-primary-500 text-white shadow-md"
-                        : "bg-slate-800 text-slate-400 hover:bg-slate-700"
+                        : "bg-charcoal-100 text-charcoal-600 hover:bg-charcoal-200"
                     }`}
                   >
                     {dict.blog.categories[cat as keyof typeof dict.blog.categories]}
@@ -97,9 +99,8 @@ export function BlogListClient({ posts, dict, locale }: Props) {
               return (
                 <StaggerItem key={post.slug}>
                   <Link href={`/${locale}/blog/${post.slug}`}>
-                    <Card className="h-full group cursor-pointer overflow-hidden" padding="sm">
-                      {/* Cover image */}
-                      <div className="aspect-video rounded-xl mb-4 overflow-hidden relative">
+                    <div className="h-full group cursor-pointer bg-charcoal-50 rounded-2xl overflow-hidden border border-charcoal-200/60 hover:border-primary-300 hover:shadow-lg transition-all">
+                      <div className="aspect-video overflow-hidden relative">
                         <Image
                           src={`/images/blog-${post.slug}.jpg`}
                           alt={postData.title}
@@ -108,26 +109,26 @@ export function BlogListClient({ posts, dict, locale }: Props) {
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                       </div>
-                      <div className="p-2">
+                      <div className="p-5">
                         <div className="flex items-center gap-2 mb-3">
                           <span className={`px-2.5 py-0.5 rounded-full text-xs font-medium ${categoryColors[post.category]}`}>
                             {dict.blog.categories[post.category as keyof typeof dict.blog.categories]}
                           </span>
-                          <span className="text-xs text-slate-500">{post.readTime} {dict.blog.readTime}</span>
+                          <span className="text-xs text-charcoal-400">{post.readTime} {dict.blog.readTime}</span>
                         </div>
-                        <h3 className="font-semibold text-white mb-2 group-hover:text-primary-400 transition-colors line-clamp-2">
+                        <h3 className="font-semibold text-charcoal-800 mb-2 group-hover:text-primary-500 transition-colors line-clamp-2">
                           {postData.title}
                         </h3>
-                        <p className="text-sm text-slate-400 line-clamp-2">{postData.excerpt}</p>
+                        <p className="text-sm text-charcoal-500 line-clamp-2">{postData.excerpt}</p>
                         <div className="mt-3 flex items-center justify-between">
-                          <span className="text-xs text-slate-500">{post.date}</span>
-                          <span className="text-sm font-medium text-primary-400 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+                          <span className="text-xs text-charcoal-400">{post.date}</span>
+                          <span className="text-sm font-medium text-primary-500 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
                             {dict.blog.readMore}
                             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                           </span>
                         </div>
                       </div>
-                    </Card>
+                    </div>
                   </Link>
                 </StaggerItem>
               );

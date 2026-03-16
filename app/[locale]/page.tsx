@@ -2,16 +2,15 @@ import { getDictionary, type Locale } from "@/lib/i18n";
 import { industries } from "@/lib/industries";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { TrustedBySection } from "@/components/sections/TrustedBySection";
+import { TrendingSection } from "@/components/sections/TrendingSection";
+import { CasesPreview } from "@/components/sections/CasesPreview";
 import { ServicesSection } from "@/components/sections/ServicesSection";
-import { VideoShowcaseSection } from "@/components/sections/VideoShowcaseSection";
-import { FeaturesSection } from "@/components/sections/FeaturesSection";
-import { ProcessSection } from "@/components/sections/ProcessSection";
+import { IndustriesPreview } from "@/components/sections/IndustriesPreview";
+import { LocationsSection } from "@/components/sections/LocationsSection";
 import { TestimonialSection } from "@/components/sections/TestimonialSection";
-import { IntegrationsSection } from "@/components/sections/IntegrationsSection";
 import { StatsSection } from "@/components/sections/StatsSection";
 import { FAQSection } from "@/components/sections/FAQSection";
-import { IndustriesPreview } from "@/components/sections/IndustriesPreview";
-import { AutomationShowcase } from "@/components/sections/AutomationShowcase";
+import { ContactCTA } from "@/components/sections/ContactCTA";
 import { PageTransition } from "@/components/animations";
 
 export default async function HomePage({
@@ -26,16 +25,15 @@ export default async function HomePage({
     <PageTransition>
       <HeroSection dict={dict} locale={locale as Locale} />
       <TrustedBySection dict={dict} />
+      <TrendingSection dict={dict} />
+      <CasesPreview locale={locale as Locale} />
       <ServicesSection dict={dict} locale={locale as Locale} />
-      <VideoShowcaseSection dict={dict} />
-      <FeaturesSection dict={dict} />
       <IndustriesPreview dict={dict} locale={locale as Locale} industries={industries} />
-      <AutomationShowcase dict={dict} />
-      <ProcessSection dict={dict} />
-      <IntegrationsSection dict={dict} />
-      <TestimonialSection dict={dict} />
       <StatsSection dict={dict} locale={locale as Locale} />
+      <TestimonialSection dict={dict} />
+      <LocationsSection />
       <FAQSection dict={dict} />
+      <ContactCTA locale={locale as Locale} />
     </PageTransition>
   );
 }

@@ -15,11 +15,11 @@ interface Props {
 }
 
 const categoryColors: Record<string, string> = {
-  automation: "bg-blue-500/10 text-blue-400 border border-blue-500/20",
-  ai: "bg-purple-500/10 text-purple-400 border border-purple-500/20",
-  industry: "bg-amber-500/10 text-amber-400 border border-amber-500/20",
-  caseStudy: "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20",
-  guide: "bg-rose-500/10 text-rose-400 border border-rose-500/20",
+  automation: "bg-primary-50 text-primary-500 border border-primary-200",
+  ai: "bg-secondary-400/10 text-secondary-500 border border-secondary-400/20",
+  industry: "bg-accent-400/10 text-accent-500 border border-accent-400/20",
+  caseStudy: "bg-success-500/10 text-success-600 border border-success-500/20",
+  guide: "bg-rose-50 text-rose-500 border border-rose-200",
 };
 
 export function BlogDetailClient({ post, dict, locale, relatedPosts }: Props) {
@@ -27,7 +27,7 @@ export function BlogDetailClient({ post, dict, locale, relatedPosts }: Props) {
 
   return (
     <PageTransition>
-      <article className="pt-32 pb-20 lg:pt-40">
+      <article className="pt-32 pb-20 lg:pt-40 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <FadeIn>
@@ -36,13 +36,13 @@ export function BlogDetailClient({ post, dict, locale, relatedPosts }: Props) {
                 <span className={`px-3 py-1 rounded-full text-xs font-medium ${categoryColors[post.category]}`}>
                   {dict.blog.categories[post.category as keyof typeof dict.blog.categories]}
                 </span>
-                <span className="text-sm text-slate-400">{post.date}</span>
-                <span className="text-sm text-slate-400">{post.readTime} {dict.blog.readTime}</span>
+                <span className="text-sm text-charcoal-400">{post.date}</span>
+                <span className="text-sm text-charcoal-400">{post.readTime} {dict.blog.readTime}</span>
               </div>
-              <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 leading-tight">
+              <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-charcoal-800 mb-4 leading-tight">
                 {postData.title}
               </h1>
-              <p className="text-lg text-slate-500">{postData.excerpt}</p>
+              <p className="text-lg text-charcoal-500">{postData.excerpt}</p>
             </div>
           </FadeIn>
 
@@ -64,13 +64,13 @@ export function BlogDetailClient({ post, dict, locale, relatedPosts }: Props) {
             {/* TOC Sidebar */}
             <FadeIn direction="left" className="hidden lg:block">
               <div className="sticky top-28">
-                <h4 className="text-sm font-semibold text-white mb-4">{dict.blog.toc}</h4>
+                <h4 className="text-sm font-semibold text-charcoal-800 mb-4">{dict.blog.toc}</h4>
                 <nav className="space-y-2">
                   {postData.headings.map((heading, i) => (
                     <a
                       key={i}
                       href={`#section-${i}`}
-                      className="block text-sm text-slate-500 hover:text-primary-400 transition-colors py-1"
+                      className="block text-sm text-charcoal-500 hover:text-primary-500 transition-colors py-1"
                     >
                       {heading}
                     </a>
@@ -84,10 +84,10 @@ export function BlogDetailClient({ post, dict, locale, relatedPosts }: Props) {
               {postData.content.map((paragraph, i) => (
                 <FadeIn key={i} delay={i * 0.05}>
                   <div className="mb-8" id={`section-${i}`}>
-                    <h2 className="text-xl lg:text-2xl font-bold text-white mb-4">
+                    <h2 className="text-xl lg:text-2xl font-bold text-charcoal-800 mb-4">
                       {postData.headings[i]}
                     </h2>
-                    <p className="text-slate-400 leading-relaxed">{paragraph}</p>
+                    <p className="text-charcoal-500 leading-relaxed">{paragraph}</p>
                   </div>
                 </FadeIn>
               ))}
@@ -95,9 +95,9 @@ export function BlogDetailClient({ post, dict, locale, relatedPosts }: Props) {
           </div>
 
           {/* Related Posts */}
-          <div className="mt-20 pt-12 border-t border-slate-800">
+          <div className="mt-20 pt-12 border-t border-charcoal-200">
             <FadeIn>
-              <h3 className="text-2xl font-bold text-white mb-8">{dict.blog.relatedPosts}</h3>
+              <h3 className="text-2xl font-bold text-charcoal-800 mb-8">{dict.blog.relatedPosts}</h3>
             </FadeIn>
             <div className="grid md:grid-cols-3 gap-6">
               {relatedPosts.map((related) => {
@@ -105,15 +105,15 @@ export function BlogDetailClient({ post, dict, locale, relatedPosts }: Props) {
                 return (
                   <FadeIn key={related.slug}>
                     <Link href={`/${locale}/blog/${related.slug}`}>
-                      <Card className="h-full group cursor-pointer" padding="md">
+                      <div className="h-full group cursor-pointer p-6 rounded-2xl bg-charcoal-50 border border-charcoal-200/60 hover:shadow-lg transition-all">
                         <span className={`px-2.5 py-0.5 rounded-full text-xs font-medium ${categoryColors[related.category]}`}>
                           {dict.blog.categories[related.category as keyof typeof dict.blog.categories]}
                         </span>
-                        <h4 className="font-semibold text-white mt-3 mb-2 group-hover:text-primary-400 transition-colors line-clamp-2">
+                        <h4 className="font-semibold text-charcoal-800 mt-3 mb-2 group-hover:text-primary-500 transition-colors line-clamp-2">
                           {relData.title}
                         </h4>
-                        <p className="text-sm text-slate-500 line-clamp-2">{relData.excerpt}</p>
-                      </Card>
+                        <p className="text-sm text-charcoal-500 line-clamp-2">{relData.excerpt}</p>
+                      </div>
                     </Link>
                   </FadeIn>
                 );

@@ -53,8 +53,8 @@ export function IndustryPageClient({ industry, dict, locale, allIndustries }: Pr
       {/* Hero */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-950" />
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-900/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4" />
+          <div className="absolute inset-0 bg-gradient-to-br from-charcoal-800 via-charcoal-900 to-charcoal-900" />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary-500/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/4" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
@@ -62,7 +62,7 @@ export function IndustryPageClient({ industry, dict, locale, allIndustries }: Pr
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 max-w-3xl">
               {industry.title}
             </h1>
-            <p className="text-lg text-slate-500 max-w-2xl mb-8 leading-relaxed">
+            <p className="text-lg text-charcoal-400 max-w-2xl mb-8 leading-relaxed">
               {industry.heroDescription}
             </p>
             <Button
@@ -91,11 +91,11 @@ export function IndustryPageClient({ industry, dict, locale, allIndustries }: Pr
       </section>
 
       {/* Use Cases */}
-      <section className="py-20 lg:py-28 bg-slate-900">
+      <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <SectionLabel>{dict.industries.useCases}</SectionLabel>
-            <h2 className="text-3xl lg:text-4xl font-bold text-white text-center mb-16">
+            <h2 className="text-3xl lg:text-4xl font-bold text-charcoal-800 text-center mb-16">
               {industry.name} — {dict.industries.useCases}
             </h2>
           </FadeIn>
@@ -103,17 +103,17 @@ export function IndustryPageClient({ industry, dict, locale, allIndustries }: Pr
           <StaggerContainer className="grid md:grid-cols-2 gap-6">
             {industry.useCases.map((uc, i) => (
               <StaggerItem key={i}>
-                <Card padding="lg" className="h-full">
-                  <div className="w-12 h-12 rounded-xl bg-primary-500/10 flex items-center justify-center text-primary-500 mb-4">
+                <div className="h-full p-8 rounded-2xl bg-charcoal-50 border border-charcoal-200/60 hover:shadow-lg transition-shadow">
+                  <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center text-primary-500 mb-4">
                     {useCaseIcons[uc.icon] || useCaseIcons.settings}
                   </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">
+                  <h3 className="text-lg font-semibold text-charcoal-800 mb-2">
                     {uc.title}
                   </h3>
-                  <p className="text-slate-500 leading-relaxed text-sm">
+                  <p className="text-charcoal-500 leading-relaxed text-sm">
                     {uc.description}
                   </p>
-                </Card>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -121,7 +121,7 @@ export function IndustryPageClient({ industry, dict, locale, allIndustries }: Pr
       </section>
 
       {/* Stats */}
-      <section className="py-20 lg:py-28 bg-slate-950">
+      <section className="py-20 lg:py-28 bg-charcoal-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <SectionLabel>{dict.industries.benefits}</SectionLabel>
@@ -129,11 +129,11 @@ export function IndustryPageClient({ industry, dict, locale, allIndustries }: Pr
           <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
             {industry.stats.map((stat, i) => (
               <StaggerItem key={i}>
-                <div className="text-center p-6 bg-slate-900 rounded-2xl border border-slate-800">
-                  <p className="text-3xl lg:text-4xl font-bold text-primary-400 mb-2">
+                <div className="text-center p-6 bg-white rounded-2xl border border-charcoal-200/60">
+                  <p className="text-3xl lg:text-4xl font-bold text-primary-500 mb-2">
                     {stat.value}
                   </p>
-                  <p className="text-sm text-slate-500">{stat.label}</p>
+                  <p className="text-sm text-charcoal-500">{stat.label}</p>
                 </div>
               </StaggerItem>
             ))}
@@ -142,27 +142,27 @@ export function IndustryPageClient({ industry, dict, locale, allIndustries }: Pr
       </section>
 
       {/* Case Study */}
-      <section className="py-20 lg:py-28 bg-slate-900">
+      <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <SectionLabel>{dict.industries.caseStudy}</SectionLabel>
-            <h2 className="text-2xl lg:text-3xl font-bold text-white text-center mb-12">
+            <h2 className="text-2xl lg:text-3xl font-bold text-charcoal-800 text-center mb-12">
               {industry.caseStudy.title}
             </h2>
           </FadeIn>
 
           <StaggerContainer className="grid md:grid-cols-3 gap-6">
             {[
-              { label: dict.industries.challenge, text: industry.caseStudy.challenge, color: "bg-red-500/10 text-red-400" },
-              { label: dict.industries.solution, text: industry.caseStudy.solution, color: "bg-primary-500/10 text-primary-400 border border-primary-500/20" },
-              { label: dict.industries.result, text: industry.caseStudy.result, color: "bg-emerald-500/10 text-emerald-400" },
+              { label: dict.industries.challenge, text: industry.caseStudy.challenge, color: "bg-red-50 text-red-500 border border-red-200" },
+              { label: dict.industries.solution, text: industry.caseStudy.solution, color: "bg-primary-50 text-primary-500 border border-primary-200" },
+              { label: dict.industries.result, text: industry.caseStudy.result, color: "bg-success-500/10 text-success-600 border border-success-500/20" },
             ].map((item, i) => (
               <StaggerItem key={i}>
-                <div className="p-6 rounded-2xl bg-slate-950 h-full">
+                <div className="p-6 rounded-2xl bg-charcoal-50 border border-charcoal-200/60 h-full">
                   <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 ${item.color}`}>
                     {item.label}
                   </span>
-                  <p className="text-slate-400 leading-relaxed text-sm">{item.text}</p>
+                  <p className="text-charcoal-500 leading-relaxed text-sm">{item.text}</p>
                 </div>
               </StaggerItem>
             ))}
@@ -171,19 +171,19 @@ export function IndustryPageClient({ industry, dict, locale, allIndustries }: Pr
       </section>
 
       {/* CTA */}
-      <section className="py-20 lg:py-28 bg-gradient-to-br from-primary-700 via-primary-800 to-slate-900 text-white">
+      <section className="py-20 lg:py-28 bg-charcoal-800 text-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">
               {dict.industries.ctaTitle}
             </h2>
-            <p className="text-white/60 mb-8 text-lg">
+            <p className="text-charcoal-400 mb-8 text-lg">
               {dict.industries.ctaDescription}
             </p>
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Link
                 href={`/${locale}/contact`}
-                className="inline-flex items-center gap-2 bg-slate-900 text-primary-400 px-8 py-4 rounded-full font-medium hover:bg-slate-900/90 transition-colors text-lg"
+                className="inline-flex items-center gap-2 bg-white text-charcoal-800 px-8 py-4 rounded-full font-medium hover:bg-white/90 transition-colors text-lg"
               >
                 {dict.industries.ctaButton}
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
@@ -194,10 +194,10 @@ export function IndustryPageClient({ industry, dict, locale, allIndustries }: Pr
       </section>
 
       {/* Other Industries */}
-      <section className="py-20 bg-slate-900">
+      <section className="py-20 bg-charcoal-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <h3 className="text-2xl font-bold text-white text-center mb-12">
+            <h3 className="text-2xl font-bold text-charcoal-800 text-center mb-12">
               {dict.industries.label}
             </h3>
           </FadeIn>
@@ -205,10 +205,10 @@ export function IndustryPageClient({ industry, dict, locale, allIndustries }: Pr
             {otherIndustries.map((ind) => (
               <StaggerItem key={ind.slug}>
                 <Link href={`/${locale}/industries/${ind.slug}`}>
-                  <Card className="group cursor-pointer">
-                    <h4 className="font-semibold text-white mb-1 group-hover:text-primary-400 transition-colors">{ind.name}</h4>
-                    <p className="text-sm text-slate-500 line-clamp-2">{ind.description}</p>
-                  </Card>
+                  <div className="group cursor-pointer p-6 rounded-2xl bg-white border border-charcoal-200/60 hover:shadow-lg transition-all">
+                    <h4 className="font-semibold text-charcoal-800 mb-1 group-hover:text-primary-500 transition-colors">{ind.name}</h4>
+                    <p className="text-sm text-charcoal-500 line-clamp-2">{ind.description}</p>
+                  </div>
                 </Link>
               </StaggerItem>
             ))}

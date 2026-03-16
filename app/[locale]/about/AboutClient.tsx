@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { FadeIn, StaggerContainer, StaggerItem, PageTransition } from "@/components/animations";
-import { Card, SectionLabel, Button } from "@/components/ui";
+import { Button } from "@/components/ui";
 import type { Dictionary, Locale } from "@/lib/i18n";
 
 interface Props {
@@ -17,26 +17,38 @@ const valueIcons = [
   <svg key="4" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
 ];
 
+const avatarGradients = [
+  "from-primary-400 to-primary-600",
+  "from-secondary-400 to-secondary-600",
+  "from-success-400 to-success-600",
+  "from-accent-400 to-accent-600",
+];
+
 export function AboutClient({ dict, locale }: Props) {
   const a = dict.about;
 
   return (
     <PageTransition>
       {/* Hero */}
-      <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-slate-950">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-950" />
+      <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden bg-charcoal-800">
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary-500/10 rounded-full blur-3xl" />
+        </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
-            <SectionLabel>{a.label}</SectionLabel>
+            <div className="inline-flex items-center gap-2 text-primary-400 text-sm font-medium mb-4">
+              <span className="w-1.5 h-1.5 bg-primary-400 rounded-full" />
+              Culture
+            </div>
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6">
               {a.title}
             </h1>
-            <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+            <p className="text-lg text-charcoal-400 max-w-2xl mx-auto">
               {a.subtitle}
             </p>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <div className="mt-12 max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden relative border border-slate-800/50">
+            <div className="mt-12 max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden relative border border-charcoal-700/50">
               <Image
                 src="/images/about-team.jpg"
                 alt="LeftFlow Team"
@@ -51,25 +63,25 @@ export function AboutClient({ dict, locale }: Props) {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-20 lg:py-28 bg-slate-900">
+      <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <StaggerContainer className="grid md:grid-cols-2 gap-8">
             <StaggerItem>
-              <div className="p-8 rounded-2xl bg-primary-500/5 border border-primary-500/20 h-full">
+              <div className="p-8 rounded-2xl bg-primary-50 border border-primary-100 h-full">
                 <div className="w-12 h-12 rounded-xl bg-primary-500 text-white flex items-center justify-center mb-5">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="m16 10-4 4-4-4"/></svg>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3">{a.mission.title}</h3>
-                <p className="text-slate-400 leading-relaxed">{a.mission.description}</p>
+                <h3 className="text-2xl font-bold text-charcoal-800 mb-3">{a.mission.title}</h3>
+                <p className="text-charcoal-600 leading-relaxed">{a.mission.description}</p>
               </div>
             </StaggerItem>
             <StaggerItem>
-              <div className="p-8 rounded-2xl bg-slate-800/50 border border-slate-700 h-full">
-                <div className="w-12 h-12 rounded-xl bg-slate-700 text-white flex items-center justify-center mb-5">
+              <div className="p-8 rounded-2xl bg-charcoal-50 border border-charcoal-200/60 h-full">
+                <div className="w-12 h-12 rounded-xl bg-charcoal-700 text-white flex items-center justify-center mb-5">
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
                 </div>
-                <h3 className="text-2xl font-bold text-white mb-3">{a.vision.title}</h3>
-                <p className="text-slate-400 leading-relaxed">{a.vision.description}</p>
+                <h3 className="text-2xl font-bold text-charcoal-800 mb-3">{a.vision.title}</h3>
+                <p className="text-charcoal-600 leading-relaxed">{a.vision.description}</p>
               </div>
             </StaggerItem>
           </StaggerContainer>
@@ -77,23 +89,23 @@ export function AboutClient({ dict, locale }: Props) {
       </section>
 
       {/* Values */}
-      <section className="py-20 lg:py-28 bg-slate-950">
+      <section className="py-20 lg:py-28 bg-charcoal-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <h2 className="text-3xl font-bold text-white text-center mb-16">
+            <h2 className="text-3xl font-bold text-charcoal-800 text-center mb-16">
               {a.values.title}
             </h2>
           </FadeIn>
           <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {a.values.items.map((v: any, i: number) => (
               <StaggerItem key={i}>
-                <Card padding="lg" className="h-full text-center">
-                  <div className="w-12 h-12 rounded-xl bg-primary-500/10 border border-primary-500/20 flex items-center justify-center text-primary-400 mx-auto mb-4">
+                <div className="bg-white rounded-2xl p-6 border border-charcoal-200/60 h-full text-center hover:shadow-lg transition-all">
+                  <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center text-primary-500 mx-auto mb-4">
                     {valueIcons[i]}
                   </div>
-                  <h3 className="font-semibold text-white mb-2">{v.title}</h3>
-                  <p className="text-sm text-slate-400">{v.description}</p>
-                </Card>
+                  <h3 className="font-semibold text-charcoal-800 mb-2">{v.title}</h3>
+                  <p className="text-sm text-charcoal-500">{v.description}</p>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -101,38 +113,68 @@ export function AboutClient({ dict, locale }: Props) {
       </section>
 
       {/* Team */}
-      <section className="py-20 lg:py-28 bg-slate-900">
+      <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <h2 className="text-3xl font-bold text-white text-center mb-16">
+            <h2 className="text-3xl font-bold text-charcoal-800 text-center mb-16">
               {a.team.title}
             </h2>
           </FadeIn>
           <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {a.team.members.map((m: any, i: number) => (
               <StaggerItem key={i}>
-                <Card padding="lg" className="text-center h-full">
-                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary-400 to-primary-600 mx-auto mb-4" />
-                  <h3 className="font-semibold text-white">{m.name}</h3>
-                  <p className="text-sm text-primary-400 font-medium mb-2">{m.role}</p>
-                  <p className="text-sm text-slate-400">{m.description}</p>
-                </Card>
+                <div className="bg-charcoal-50 rounded-2xl p-6 border border-charcoal-200/60 text-center h-full hover:shadow-lg transition-all">
+                  <div className={`w-20 h-20 rounded-full bg-gradient-to-br ${avatarGradients[i % avatarGradients.length]} mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold`}>
+                    {m.name.charAt(0)}
+                  </div>
+                  <h3 className="font-semibold text-charcoal-800">{m.name}</h3>
+                  <p className="text-sm text-primary-500 font-medium mb-2">{m.role}</p>
+                  <p className="text-sm text-charcoal-500">{m.description}</p>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
         </div>
       </section>
 
+      {/* Office Locations */}
+      <section className="py-20 bg-charcoal-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <h2 className="text-3xl font-bold text-charcoal-800 text-center mb-12">
+              Our Offices
+            </h2>
+          </FadeIn>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {[
+              { city: "Amsterdam", address: "Oudezijds Voorburgwal", zip: "Amsterdam, Netherlands", mapUrl: "https://www.google.com/maps/dir//Oudezijds+Voorburgwal,+Amsterdam" },
+              { city: "Rotterdam", address: "Stationsplein 45", zip: "3013 AK Rotterdam", mapUrl: "https://www.google.com/maps/dir//Stationsplein+45,+3013+AK+Rotterdam" },
+            ].map((office) => (
+              <FadeIn key={office.city}>
+                <div className="bg-white rounded-2xl p-8 border border-charcoal-200/60">
+                  <h3 className="text-xl font-bold text-charcoal-800 mb-2">{office.city}</h3>
+                  <p className="text-sm text-charcoal-500 mb-4">{office.address}<br />{office.zip}</p>
+                  <a href={office.mapUrl} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-primary-500 hover:text-primary-600">
+                    Get directions →
+                  </a>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
-      <section className="py-20 bg-slate-950">
+      <section className="py-20 bg-charcoal-800">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
             <h2 className="text-3xl font-bold text-white mb-4">
               {dict.footer.ctaTitle}
             </h2>
-            <p className="text-slate-400 mb-8">{dict.footer.ctaSubtitle}</p>
+            <p className="text-charcoal-400 mb-8">{dict.footer.ctaSubtitle}</p>
             <Button
               href={`/${locale}/contact`}
+              variant="white"
               size="lg"
               icon={<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>}
             >

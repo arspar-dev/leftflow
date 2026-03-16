@@ -3,13 +3,12 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FadeIn } from "@/components/animations";
-import { SectionLabel } from "@/components/ui";
 import type { Dictionary } from "@/lib/i18n";
 
 const avatarColors = [
   "from-primary-400 to-primary-600",
-  "from-emerald-400 to-emerald-600",
-  "from-amber-400 to-amber-600",
+  "from-success-400 to-success-600",
+  "from-secondary-400 to-secondary-600",
 ];
 
 export function TestimonialSection({ dict }: { dict: Dictionary }) {
@@ -24,12 +23,15 @@ export function TestimonialSection({ dict }: { dict: Dictionary }) {
   }, [items.length]);
 
   return (
-    <section className="py-20 lg:py-32 bg-slate-950">
+    <section className="py-20 lg:py-32 bg-charcoal-50">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <div className="text-center mb-12">
-            <SectionLabel>{dict.testimonials?.label || "Testimonials"}</SectionLabel>
-            <h2 className="text-3xl lg:text-4xl font-bold text-white">
+            <div className="inline-flex items-center gap-2 text-primary-500 text-sm font-medium mb-3">
+              <span className="w-1.5 h-1.5 bg-primary-500 rounded-full" />
+              {dict.testimonials?.label || "Testimonials"}
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-bold text-charcoal-800">
               {dict.testimonials?.title || "What our clients say"}
             </h2>
           </div>
@@ -47,12 +49,12 @@ export function TestimonialSection({ dict }: { dict: Dictionary }) {
               <blockquote className="text-center">
                 <div className="flex justify-center mb-6">
                   {[...Array(5)].map((_, i) => (
-                    <svg key={i} width="20" height="20" viewBox="0 0 24 24" fill="#1d4ed8" className="mx-0.5">
+                    <svg key={i} width="20" height="20" viewBox="0 0 24 24" fill="#0693e3" className="mx-0.5">
                       <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
                     </svg>
                   ))}
                 </div>
-                <p className="text-xl lg:text-2xl text-slate-300 leading-relaxed italic mb-8">
+                <p className="text-xl lg:text-2xl text-charcoal-600 leading-relaxed italic mb-8">
                   &ldquo;{items[active].quote}&rdquo;
                 </p>
                 <div className="flex items-center justify-center gap-4">
@@ -60,8 +62,8 @@ export function TestimonialSection({ dict }: { dict: Dictionary }) {
                     {items[active].name?.charAt(0)}
                   </div>
                   <div className="text-left">
-                    <p className="font-semibold text-white">{items[active].name}</p>
-                    <p className="text-sm text-slate-500">{items[active].role}</p>
+                    <p className="font-semibold text-charcoal-800">{items[active].name}</p>
+                    <p className="text-sm text-charcoal-500">{items[active].role}</p>
                   </div>
                 </div>
               </blockquote>
@@ -75,7 +77,7 @@ export function TestimonialSection({ dict }: { dict: Dictionary }) {
               key={i}
               onClick={() => setActive(i)}
               className={`w-3 h-3 rounded-full transition-all ${
-                i === active ? "bg-primary-500 w-8" : "bg-slate-700 hover:bg-slate-600"
+                i === active ? "bg-primary-500 w-8" : "bg-charcoal-300 hover:bg-charcoal-400"
               }`}
             />
           ))}

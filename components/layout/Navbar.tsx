@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
+import { AnimatedLogo } from "@/components/AnimatedLogo";
 import { Button } from "@/components/ui";
 import { type Locale, locales, localeNames, localeFlags } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/i18n";
@@ -21,10 +22,10 @@ export function Navbar({ locale, dict }: NavbarProps) {
 
   const navLinks = [
     { label: dict.nav.services, href: `/${locale}/#services` },
+    { label: "Cases", href: `/${locale}/cases` },
     { label: dict.nav.industries, href: `/${locale}/#industries` },
-    { label: dict.nav.dataIntelligence, href: `/${locale}/data-intelligence` },
-    { label: dict.nav.blog, href: `/${locale}/blog` },
-    { label: dict.nav.about, href: `/${locale}/about` },
+    { label: "Insights", href: `/${locale}/blog` },
+    { label: "Culture", href: `/${locale}/about` },
   ];
 
   useEffect(() => {
@@ -33,7 +34,6 @@ export function Navbar({ locale, dict }: NavbarProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Get path without locale prefix for language switching
   const pathWithoutLocale = pathname.replace(/^\/(tr|en|nl)/, "") || "/";
 
   return (
@@ -43,35 +43,33 @@ export function Navbar({ locale, dict }: NavbarProps) {
       transition={{ duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-slate-950/90 backdrop-blur-xl shadow-sm border-b border-slate-800/50"
+          ? "bg-white/95 backdrop-blur-xl shadow-sm border-b border-charcoal-200/50"
           : "bg-transparent"
       }`}
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href={`/${locale}`} className="flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
-              </svg>
-            </div>
-            <span className="text-xl font-bold text-white group-hover:text-primary-400 transition-colors">
-              leftflow
-            </span>
-          </Link>
+          <AnimatedLogo locale={locale} variant={scrolled ? "dark" : "dark"} />
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="px-4 py-2 text-sm font-medium text-slate-300 hover:text-primary-400 rounded-lg hover:bg-slate-800/50 transition-all"
-              >
-                {link.label}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href || (link.href.includes('#') && pathname === `/${locale}`);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
+                    isActive
+                      ? "text-primary-500 bg-primary-50"
+                      : "text-charcoal-600 hover:text-primary-500 hover:bg-charcoal-50"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
           </div>
 
           {/* CTA + Language + Mobile Toggle */}
@@ -80,7 +78,7 @@ export function Navbar({ locale, dict }: NavbarProps) {
             <div className="relative">
               <button
                 onClick={() => setLangOpen(!langOpen)}
-                className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-300 hover:text-primary-400 rounded-lg hover:bg-slate-800/50 transition-all"
+                className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-charcoal-600 hover:text-primary-500 rounded-lg hover:bg-charcoal-50 transition-all"
               >
                 <span>{localeFlags[locale]}</span>
                 <span className="hidden sm:inline">{localeNames[locale]}</span>
@@ -96,7 +94,7 @@ export function Navbar({ locale, dict }: NavbarProps) {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -8, scale: 0.95 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute right-0 top-full mt-1 bg-slate-900 rounded-xl shadow-lg border border-slate-700 py-1 min-w-[140px] z-50"
+                    className="absolute right-0 top-full mt-1 bg-white rounded-xl shadow-lg border border-charcoal-200 py-1 min-w-[140px] z-50"
                   >
                     {locales.map((loc) => (
                       <Link
@@ -105,8 +103,8 @@ export function Navbar({ locale, dict }: NavbarProps) {
                         onClick={() => setLangOpen(false)}
                         className={`flex items-center gap-2 px-4 py-2.5 text-sm transition-colors ${
                           loc === locale
-                            ? "text-primary-400 bg-primary-500/10 font-medium"
-                            : "text-slate-300 hover:text-primary-400 hover:bg-slate-800"
+                            ? "text-primary-500 bg-primary-50 font-medium"
+                            : "text-charcoal-600 hover:text-primary-500 hover:bg-charcoal-50"
                         }`}
                       >
                         <span>{localeFlags[loc]}</span>
@@ -135,7 +133,7 @@ export function Navbar({ locale, dict }: NavbarProps) {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2 rounded-lg hover:bg-slate-800 transition-colors text-white"
+              className="lg:hidden p-2 rounded-lg hover:bg-charcoal-100 transition-colors text-charcoal-700"
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
                 {mobileOpen ? (
@@ -162,7 +160,7 @@ export function Navbar({ locale, dict }: NavbarProps) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-slate-950 border-t border-slate-800 overflow-hidden"
+            className="lg:hidden bg-white border-t border-charcoal-200 overflow-hidden shadow-lg"
           >
             <div className="px-4 py-4 space-y-1">
               {navLinks.map((link) => (
@@ -170,7 +168,7 @@ export function Navbar({ locale, dict }: NavbarProps) {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="block px-4 py-3 text-sm font-medium text-slate-300 hover:text-primary-400 rounded-lg hover:bg-slate-800/50 transition-all"
+                  className="block px-4 py-3 text-sm font-medium text-charcoal-600 hover:text-primary-500 rounded-lg hover:bg-charcoal-50 transition-all"
                 >
                   {link.label}
                 </Link>

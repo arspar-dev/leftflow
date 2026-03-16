@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FadeIn, StaggerContainer, StaggerItem, PageTransition } from "@/components/animations";
-import { Button, Card, SectionLabel } from "@/components/ui";
+import { Button, SectionLabel } from "@/components/ui";
 import type { Dictionary, Locale } from "@/lib/i18n";
 
 interface Props {
@@ -26,8 +26,8 @@ export function DataIntelligenceClient({ dict, locale }: Props) {
       {/* Hero */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950" />
-          <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary-900/20 rounded-full blur-3xl" />
+          <div className="absolute inset-0 bg-gradient-to-br from-charcoal-800 via-charcoal-900 to-charcoal-900" />
+          <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary-500/10 rounded-full blur-3xl" />
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
@@ -35,7 +35,7 @@ export function DataIntelligenceClient({ dict, locale }: Props) {
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6">
               {d.title}
             </h1>
-            <p className="text-lg text-slate-500 max-w-2xl mx-auto mb-10">
+            <p className="text-lg text-charcoal-400 max-w-2xl mx-auto mb-10">
               {d.subtitle}
             </p>
             <Button
@@ -47,7 +47,7 @@ export function DataIntelligenceClient({ dict, locale }: Props) {
             </Button>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <div className="mt-12 max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden relative bg-slate-900">
+            <div className="mt-12 max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden relative bg-charcoal-800">
               <video
                 autoPlay
                 loop
@@ -73,17 +73,17 @@ export function DataIntelligenceClient({ dict, locale }: Props) {
       </section>
 
       {/* Process */}
-      <section className="py-20 lg:py-28 bg-slate-900">
+      <section className="py-20 lg:py-28 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <h2 className="text-3xl font-bold text-white text-center mb-16">
+            <h2 className="text-3xl font-bold text-charcoal-800 text-center mb-16">
               {d.processTitle}
             </h2>
           </FadeIn>
 
           <div className="relative">
             {/* Connection line */}
-            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-slate-700 -translate-y-1/2" />
+            <div className="hidden md:block absolute top-1/2 left-0 right-0 h-0.5 bg-charcoal-200 -translate-y-1/2" />
 
             <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-6 relative">
               {d.processSteps.map((step: any, i: number) => (
@@ -92,11 +92,11 @@ export function DataIntelligenceClient({ dict, locale }: Props) {
                     <div className="w-16 h-16 rounded-2xl bg-primary-500 text-white flex items-center justify-center mx-auto mb-4 relative z-10 shadow-lg shadow-primary-500/20">
                       <span className="text-xl font-bold">{i + 1}</span>
                     </div>
-                    <h3 className="font-semibold text-white mb-1">{step.title}</h3>
-                    <p className="text-sm text-slate-500">{step.description}</p>
+                    <h3 className="font-semibold text-charcoal-800 mb-1">{step.title}</h3>
+                    <p className="text-sm text-charcoal-500">{step.description}</p>
                     {i < 3 && (
                       <div className="hidden md:block absolute top-8 left-full -translate-x-1/2 z-20">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="2" strokeLinecap="round">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0693e3" strokeWidth="2" strokeLinecap="round">
                           <path d="M5 12h14M12 5l7 7-7 7" />
                         </svg>
                       </div>
@@ -110,11 +110,11 @@ export function DataIntelligenceClient({ dict, locale }: Props) {
       </section>
 
       {/* Capabilities */}
-      <section className="py-20 lg:py-28 bg-slate-950">
+      <section className="py-20 lg:py-28 bg-charcoal-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <SectionLabel>{d.capabilities}</SectionLabel>
-            <h2 className="text-3xl font-bold text-white text-center mb-16">
+            <h2 className="text-3xl font-bold text-charcoal-800 text-center mb-16">
               {d.capabilities}
             </h2>
           </FadeIn>
@@ -122,17 +122,17 @@ export function DataIntelligenceClient({ dict, locale }: Props) {
           <StaggerContainer className="grid md:grid-cols-2 gap-6">
             {d.capabilityItems.map((item: any, i: number) => (
               <StaggerItem key={i}>
-                <Card padding="lg" className="h-full">
+                <div className="h-full p-8 rounded-2xl bg-white border border-charcoal-200/60 hover:shadow-lg transition-shadow">
                   <div className="flex gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-primary-900/30 flex items-center justify-center text-primary-400 shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center text-primary-500 shrink-0">
                       {capIcons[i]}
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-white mb-2">{item.title}</h3>
-                      <p className="text-sm text-slate-500 leading-relaxed">{item.description}</p>
+                      <h3 className="text-lg font-semibold text-charcoal-800 mb-2">{item.title}</h3>
+                      <p className="text-sm text-charcoal-500 leading-relaxed">{item.description}</p>
                     </div>
                   </div>
-                </Card>
+                </div>
               </StaggerItem>
             ))}
           </StaggerContainer>
@@ -140,14 +140,14 @@ export function DataIntelligenceClient({ dict, locale }: Props) {
       </section>
 
       {/* CTA */}
-      <section className="py-20 lg:py-28 bg-gradient-to-br from-primary-700 via-primary-800 to-slate-900 text-white">
+      <section className="py-20 lg:py-28 bg-charcoal-800 text-white">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">{d.ctaTitle}</h2>
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }} className="inline-block mt-8">
               <a
                 href={`/${locale}/contact`}
-                className="inline-flex items-center gap-2 bg-white text-primary-600 px-8 py-4 rounded-full font-medium hover:bg-white/90 transition-colors text-lg"
+                className="inline-flex items-center gap-2 bg-white text-charcoal-800 px-8 py-4 rounded-full font-medium hover:bg-white/90 transition-colors text-lg"
               >
                 {d.ctaButton}
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>

@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { SplashScreen } from "@/components/SplashScreen";
 import { locales, type Locale } from "@/lib/i18n";
 import { getDictionary } from "@/lib/i18n";
 
@@ -29,6 +30,7 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={inter.className}>
       <body className="min-h-screen flex flex-col">
+        <SplashScreen />
         <Navbar locale={locale as Locale} dict={dict} />
         <main className="flex-1">{children}</main>
         <Footer locale={locale as Locale} dict={dict} />
