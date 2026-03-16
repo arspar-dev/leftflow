@@ -1,13 +1,10 @@
 /**
- * Image Generation Seed Script
+ * Professional Image Generation Script - Happy Horizon Style
  *
- * Generates all site images via Fal.ai and saves URLs to content/images.json
- * Budget: Max 40 images total
+ * Generates photorealistic corporate imagery via Fal.ai
+ * Uses prompts designed for professional agency photography
  *
  * Usage: npx ts-node scripts/generate-images.ts
- *
- * Note: Requires FAL_KEY in .env.local
- * Optional: BLOB_READ_WRITE_TOKEN for Vercel Blob storage
  */
 
 import * as fal from "@fal-ai/serverless-client";
@@ -15,7 +12,6 @@ import * as fs from "fs";
 import * as path from "path";
 import * as dotenv from "dotenv";
 
-// Load env
 dotenv.config({ path: path.resolve(__dirname, "../.env.local") });
 
 fal.config({
@@ -28,120 +24,142 @@ interface ImageEntry {
   url?: string;
 }
 
-// Image budget: 40 total
-// - 1 hero image
-// - 9 industry images
-// - 8 blog cover images
-// - 4 misc (about, data-intelligence, etc.)
-// Total: 22 images (well within budget)
-
 const imageEntries: ImageEntry[] = [
-  // Hero
+  // Hero - Happy Horizon style team photo
   {
     key: "hero",
-    prompt: "Modern AI-powered office workspace with holographic displays showing automation workflows, blue and white color scheme, futuristic yet professional, cinematic lighting",
+    prompt: "Professional corporate team photo in a bright modern office space, diverse group of 8 people smiling at camera, natural daylight through large windows, contemporary minimal office interior with white walls and wooden accents, shot on Canon EOS R5, 35mm f/1.8, editorial photography, warm natural tones, shallow depth of field",
   },
-  // About
+  // About team
   {
     key: "about-team",
-    prompt: "Diverse professional tech team in modern office space collaborating on AI project, warm lighting, corporate photography style",
+    prompt: "Group of young creative professionals collaborating around a large table in a bright open-plan office, laptops and notebooks on table, some standing some sitting, casual business attire, natural daylight, candid moment of discussion and laughter, modern Scandinavian interior, editorial photography, warm tones, shot on Sony A7IV",
   },
   // Data Intelligence
   {
     key: "data-intelligence",
-    prompt: "Abstract data visualization with flowing streams of data transforming into insights, blue digital art, modern corporate, futuristic dashboard",
+    prompt: "Professional business analyst presenting data dashboard on a large screen to colleagues in a modern meeting room, clean minimal office, data visualization charts visible on screen, natural lighting, corporate photography, neutral color palette, shot on Canon EOS R5",
   },
   // Industries
   {
     key: "industry-ecommerce",
-    prompt: "Modern e-commerce warehouse with automated conveyor belts and robotic arms, digital screens showing order tracking dashboards, cinematic lighting, professional, blue and white color scheme",
+    prompt: "Modern e-commerce fulfillment center with organized shelves, a professional worker scanning packages with a tablet, clean bright industrial space, natural lighting from skylights, professional photography, neutral tones, editorial quality",
   },
   {
     key: "industry-healthcare",
-    prompt: "Modern hospital reception with digital check-in screens, clean white and blue medical environment, professional healthcare technology",
+    prompt: "Modern healthcare reception area with a professional receptionist helping a patient at a clean white desk, digital check-in screen visible, bright clinical interior, natural daylight, professional healthcare photography, clean and minimal",
   },
   {
     key: "industry-finance",
-    prompt: "Modern financial trading floor with multiple screens showing charts and data analytics, blue-lit environment, professional, futuristic finance",
+    prompt: "Professional financial advisor in a sleek modern office reviewing documents with a client, clean desk with laptop showing charts, floor-to-ceiling windows with city skyline, natural light, corporate photography, neutral professional tones",
   },
   {
     key: "industry-manufacturing",
-    prompt: "Modern smart factory with robotic arms on assembly line, digital quality control displays, industrial automation, blue tones",
+    prompt: "Modern smart factory floor with a professional engineer in clean workwear inspecting automated machinery, bright well-lit industrial space, digital control panels visible, professional industrial photography, clean composition",
   },
   {
     key: "industry-logistics",
-    prompt: "Modern logistics hub with automated sorting systems, delivery trucks with GPS tracking, digital route optimization map, professional",
+    prompt: "Modern logistics command center with a professional logistics coordinator at a workstation with multiple screens showing maps and routes, clean bright office, professional corporate photography, natural daylight",
   },
   {
     key: "industry-retail",
-    prompt: "Modern retail store with digital price tags and AI-powered analytics screens, customer engagement technology, warm lighting",
+    prompt: "Modern retail store interior with a professional store manager reviewing inventory on a tablet, clean contemporary retail space with products on minimal shelving, warm natural lighting, professional retail photography",
   },
   {
     key: "industry-real-estate",
-    prompt: "Modern real estate office with digital property displays, virtual property tour setup, CRM dashboard on screen, professional",
+    prompt: "Professional real estate agent showing a modern apartment to clients, bright spacious interior with large windows, city views, contemporary furnishing, professional real estate photography, natural daylight, warm tones",
   },
   {
     key: "industry-education",
-    prompt: "Modern smart classroom with interactive digital boards, students using tablets, AI-powered learning analytics on teacher screen",
+    prompt: "Modern university lecture hall with students working on laptops, professor at front with digital presentation board, bright academic interior, natural lighting, professional educational photography, clean composition",
   },
   {
     key: "industry-hr",
-    prompt: "Modern HR office with AI-powered recruitment dashboard, video interview setup, digital onboarding screens, warm corporate tones",
+    prompt: "Professional HR manager conducting an interview with a candidate in a bright modern office meeting room, glass walls, contemporary furniture, natural daylight, corporate photography, warm professional atmosphere",
   },
-  // Blog covers
+  // Blog covers - professional editorial photography
   {
     key: "blog-ecommerce-order-automation-guide",
-    prompt: "Modern e-commerce dashboard showing automated order processing workflow, digital screens with charts, professional business technology",
+    prompt: "Close-up of a professional using a laptop showing an e-commerce dashboard with order management interface, clean desk setup, coffee cup nearby, bright natural light from window, editorial photography, warm tones, shallow depth of field",
   },
   {
     key: "blog-healthcare-ai-appointment-management",
-    prompt: "Modern hospital reception with AI-powered digital appointment system, clean medical environment, professional healthcare",
+    prompt: "Healthcare professional in white coat using a modern tablet device in a bright hospital corridor, clean clinical environment, blurred background with other staff, professional medical photography, natural lighting",
   },
   {
     key: "blog-data-silos-holding-companies-back",
-    prompt: "Abstract data visualization showing disconnected data silos transforming into connected streams, blue digital art",
+    prompt: "Overhead view of a team meeting in a modern conference room, papers and laptops on a large wooden table, people discussing and pointing at documents, bright natural daylight from above, professional bird's-eye corporate photography",
   },
   {
     key: "blog-logistics-automation-roi",
-    prompt: "Modern logistics control room with multiple screens showing route optimization and fleet management, professional corporate",
+    prompt: "Professional delivery truck driver checking packages with a handheld scanner at a modern loading dock, clean organized warehouse in background, bright daylight, professional logistics photography, clean composition",
   },
   {
     key: "blog-hr-recruitment-automation",
-    prompt: "Modern HR office with AI recruitment dashboard, resume screening interface, professional corporate technology",
+    prompt: "Professional recruiter reviewing resumes on a laptop in a bright modern office, comfortable workspace with plants and natural light, shallow depth of field, editorial corporate photography, warm inviting atmosphere",
   },
   {
     key: "blog-business-automation-trends-2025",
-    prompt: "Futuristic office with holographic displays showing automation trends and AI dashboards, blue tones, professional",
+    prompt: "Modern open-plan tech office with professionals working at standing desks, multiple screens visible, bright contemporary workspace with indoor plants, natural daylight, wide-angle editorial photography, clean minimal aesthetic",
   },
   {
     key: "blog-small-business-automation-starter-guide",
-    prompt: "Small business owner at desk with laptop showing automation workflow dashboard, warm office environment, professional",
+    prompt: "Small business owner at a clean desk with laptop and notebook, focusing on screen, cozy but professional home office setup, warm natural window light, shallow depth of field, lifestyle editorial photography",
   },
   {
     key: "blog-finance-compliance-automation",
-    prompt: "Modern finance office with compliance monitoring screens and automated reporting dashboards, blue corporate tones",
+    prompt: "Professional in a suit working at a clean modern desk with dual monitors showing financial charts, contemporary office with city view through window, warm professional lighting, corporate photography, neutral tones",
+  },
+  // Service images
+  {
+    key: "service-content-generation",
+    prompt: "Creative professional writing on a laptop in a bright modern studio space, colorful mood boards on wall behind, artistic but professional atmosphere, natural lighting, editorial photography, warm creative tones",
+  },
+  {
+    key: "service-ai-agents",
+    prompt: "Two tech professionals discussing code on a large screen in a modern development office, standing at a whiteboard with diagrams, bright contemporary tech office, natural daylight, professional tech photography",
+  },
+  {
+    key: "service-workflow-automation",
+    prompt: "Professional working at a clean minimalist desk with multiple organized screens showing workflow diagrams and dashboards, bright modern office, natural light, clean professional photography, focused composition",
+  },
+  {
+    key: "service-llm-development",
+    prompt: "Developer team pair-programming at a modern workstation, code visible on ultra-wide monitor, bright tech office with exposed brick and industrial modern design, natural daylight, professional tech editorial photography",
   },
 ];
 
 async function generateImage(prompt: string): Promise<string> {
   const result = await fal.run("fal-ai/flux/dev", {
     input: {
-      prompt: `${prompt}, cinematic, professional, high quality, modern corporate`,
+      prompt: `${prompt}, photorealistic, high resolution, 8k quality, professional photography`,
       image_size: "landscape_16_9",
       num_images: 1,
+      num_inference_steps: 28,
+      guidance_scale: 3.5,
     },
   });
   return (result as any).images[0].url;
 }
 
-async function main() {
-  console.log(`\n🎨 LeftFlow Image Generation Script`);
-  console.log(`📊 Total images to generate: ${imageEntries.length}`);
-  console.log(`💰 Budget: 40 max | Using: ${imageEntries.length}\n`);
+async function downloadImage(url: string, filepath: string): Promise<void> {
+  const response = await fetch(url);
+  const buffer = await response.arrayBuffer();
+  fs.writeFileSync(filepath, Buffer.from(buffer));
+}
 
+async function main() {
+  console.log(`\n🎨 LeftFlow Professional Image Generation`);
+  console.log(`📊 Total images: ${imageEntries.length}`);
+  console.log(`🎯 Style: Happy Horizon corporate photography\n`);
+
+  const imagesDir = path.resolve(__dirname, "../public/images");
   const outputPath = path.resolve(__dirname, "../content/images.json");
 
-  // Load existing images if any
+  if (!fs.existsSync(imagesDir)) {
+    fs.mkdirSync(imagesDir, { recursive: true });
+  }
+
   let existingImages: Record<string, string> = {};
   if (fs.existsSync(outputPath)) {
     existingImages = JSON.parse(fs.readFileSync(outputPath, "utf-8"));
@@ -153,24 +171,24 @@ async function main() {
   let skipped = 0;
 
   for (const entry of imageEntries) {
-    if (images[entry.key]) {
-      console.log(`⏭️  Skipping "${entry.key}" (already exists)`);
-      skipped++;
-      continue;
-    }
-
+    // Always regenerate to get professional quality
     try {
       console.log(`🖼️  Generating "${entry.key}"...`);
       const url = await generateImage(entry.prompt);
-      images[entry.key] = url;
-      generated++;
-      console.log(`✅ Done! (${generated}/${imageEntries.length - skipped})`);
 
-      // Save after each generation to avoid losing progress
+      // Download to public/images/
+      const filename = `${entry.key}.jpg`;
+      const filepath = path.join(imagesDir, filename);
+      await downloadImage(url, filepath);
+
+      images[entry.key] = `/images/${filename}`;
+      generated++;
+      console.log(`✅ Done! (${generated}/${imageEntries.length})`);
+
       fs.writeFileSync(outputPath, JSON.stringify(images, null, 2));
 
-      // Rate limiting - wait 2 seconds between requests
-      if (generated < imageEntries.length - skipped) {
+      // Rate limiting
+      if (generated < imageEntries.length) {
         await new Promise((r) => setTimeout(r, 2000));
       }
     } catch (error) {
@@ -178,8 +196,8 @@ async function main() {
     }
   }
 
-  console.log(`\n✨ Done! Generated ${generated} images, skipped ${skipped}`);
-  console.log(`📁 Saved to: ${outputPath}\n`);
+  console.log(`\n✨ Done! Generated ${generated} professional images`);
+  console.log(`📁 Saved to: ${imagesDir}\n`);
 }
 
 main().catch(console.error);

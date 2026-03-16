@@ -1,7 +1,37 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Mont";
+  font-weight: 300;
+  src: url("/fonts/mont-light.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Mont";
+  font-weight: 400;
+  src: url("/fonts/mont-regular.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Mont";
+  font-weight: 600;
+  src: url("/fonts/mont-semibold.woff2") format("woff2");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Mont";
+  font-weight: 700;
+  src: url("/fonts/mont-bold.woff2") format("woff2");
+  font-display: swap;
+}
+
 @theme {
-  /* Primary - Vivid Cyan Blue (Happy Horizon inspired) */
+  /* Happy Horizon exact color system */
+  --color-hh-dark: #070733;
+  --color-hh-body: #32373c;
+  --color-hh-muted: #6c757d;
+
+  /* Primary - Vivid Cyan Blue */
   --color-primary-50: #e6f4ff;
   --color-primary-100: #bae0ff;
   --color-primary-200: #7cc4fa;
@@ -28,57 +58,112 @@
   --color-success-500: #00d084;
   --color-success-600: #00a86a;
 
-  /* Neutral / Charcoal */
+  /* Neutral grays - Happy Horizon exact */
   --color-charcoal-50: #f8f9fa;
   --color-charcoal-100: #f0f1f3;
-  --color-charcoal-200: #e0e2e6;
-  --color-charcoal-300: #c8ccd2;
-  --color-charcoal-400: #9ca3af;
+  --color-charcoal-200: #e9ecef;
+  --color-charcoal-300: #dee2e6;
+  --color-charcoal-400: #adb5bd;
   --color-charcoal-500: #6c757d;
-  --color-charcoal-600: #4a5568;
-  --color-charcoal-700: #32373c;
-  --color-charcoal-800: #1a1a2e;
-  --color-charcoal-900: #16213e;
-  --color-charcoal-950: #0f0f23;
+  --color-charcoal-600: #495057;
+  --color-charcoal-700: #343a40;
+  --color-charcoal-800: #32373c;
+  --color-charcoal-900: #212529;
+  --color-charcoal-950: #070733;
 
-  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-sans: "Mont", "Inter", system-ui, -apple-system, sans-serif;
 }
 
 html {
+  font-size: 16px;
   scroll-behavior: smooth;
 }
 
 body {
   font-family: var(--font-sans);
-  background-color: #ffffff;
-  color: var(--color-charcoal-700);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #070733;
+  font-weight: 400;
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.6;
+  background-color: #fff;
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-track {
-  background: #f0f1f3;
-}
-::-webkit-scrollbar-thumb {
-  background: #c8ccd2;
-  border-radius: 4px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #9ca3af;
-}
-
-/* Selection */
+/* Selection - Happy Horizon exact */
 ::selection {
-  background-color: var(--color-primary-100);
-  color: var(--color-primary-800);
+  background-color: #3c3c3b;
+  color: #fff;
+  text-shadow: none;
 }
 
-/* Marquee animation */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f8f9fa; }
+::-webkit-scrollbar-thumb { background: #dee2e6; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #adb5bd; }
+
+/* Happy Horizon pill buttons */
+.btn-hh {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  color: #fff;
+  background-color: #32373c;
+  border-radius: 9999px;
+  text-decoration: none;
+  padding: calc(0.667em + 2px) calc(1.333em + 2px);
+  font-size: 1.125em;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+.btn-hh:hover {
+  background-color: #070733;
+  transform: translateY(-1px);
+}
+
+.btn-hh-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  color: #32373c;
+  background-color: transparent;
+  border: 2px solid #32373c;
+  border-radius: 9999px;
+  text-decoration: none;
+  padding: calc(0.667em + 2px) calc(1.333em + 2px);
+  font-size: 1.125em;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.btn-hh-outline:hover {
+  background-color: #32373c;
+  color: #fff;
+}
+
+.btn-hh-white {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  color: #32373c;
+  background-color: #fff;
+  border-radius: 9999px;
+  text-decoration: none;
+  padding: calc(0.667em + 2px) calc(1.333em + 2px);
+  font-size: 1.125em;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+.btn-hh-white:hover {
+  background-color: #f8f9fa;
+}
+
+/* Marquee */
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -90,7 +175,7 @@ body {
   animation-play-state: paused;
 }
 
-/* Logo draw animation */
+/* Logo draw */
 @keyframes logo-draw {
   0% { stroke-dashoffset: 200; }
   100% { stroke-dashoffset: 0; }
@@ -100,34 +185,26 @@ body {
   animation: logo-draw 2s ease-in-out forwards;
 }
 
-/* Splash fade out */
+/* Splash */
 @keyframes splash-fade {
   0% { opacity: 1; }
   80% { opacity: 1; }
   100% { opacity: 0; pointer-events: none; }
 }
 
-/* Pulse glow */
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(6, 147, 227, 0.4); }
-  50% { box-shadow: 0 0 20px 10px rgba(6, 147, 227, 0.1); }
-}
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #070733;
+  font-weight: 700;
+  line-height: 1.2;
 }
 
-/* Section transitions */
-.section-light {
-  background-color: #ffffff;
-  color: var(--color-charcoal-700);
+/* Section spacing - Happy Horizon pattern */
+.section-hh {
+  padding: 3rem 0;
 }
-
-.section-dark {
-  background-color: var(--color-charcoal-800);
-  color: #ffffff;
-}
-
-.section-gray {
-  background-color: var(--color-charcoal-50);
-  color: var(--color-charcoal-700);
+@media (min-width: 768px) {
+  .section-hh {
+    padding: 5rem 0;
+  }
 }

@@ -38,6 +38,11 @@
         "number": "04",
         "title": "LLM-ontwikkeling",
         "description": "Wij ontwikkelen op maat gemaakte Large Language Models om uw bedrijfsprocessen te transformeren."
+      },
+      {
+        "number": "05",
+        "title": "Data & Intelligentie",
+        "description": "Transformeer ruwe data naar bruikbare inzichten met AI-gestuurde analytics en business intelligence."
       }
     ]
   },

@@ -3,44 +3,40 @@
 import { FadeIn } from "@/components/animations";
 import type { Dictionary } from "@/lib/i18n";
 
-const clientLogos = [
-  { name: "BoutiqueRugs", display: "BoutiqueRugs" },
-  { name: "Westwing", display: "Westwing" },
-  { name: "YENA", display: "YENA" },
-  { name: "Tolon", display: "Tolon" },
-  { name: "Arkman", display: "Arkman" },
-  { name: "Naz Teknik", display: "Naz Teknik" },
-  { name: "Octo", display: "Octo" },
-  { name: "Steps Agency", display: "Steps" },
-  { name: "Steelify", display: "Steelify" },
-  { name: "Tuva Home", display: "Tuva Home" },
+const clientNames = [
+  "BoutiqueRugs",
+  "Westwing",
+  "YENA",
+  "Tolon",
+  "Arkman",
+  "Naz Teknik",
+  "Octo",
+  "Steps Agency",
+  "Steelify",
+  "Tuva Home",
 ];
 
 export function TrustedBySection({ dict }: { dict: Dictionary }) {
   return (
-    <section className="py-12 bg-white border-b border-charcoal-100 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-charcoal-50">
+      <div className="max-w-[1200px] mx-auto px-6">
         <FadeIn>
-          <p className="text-center text-xs text-charcoal-400 mb-8 uppercase tracking-[0.2em] font-medium">
+          <h2 className="text-center text-2xl font-bold text-charcoal-950 mb-12">
             {dict.trustedBy.title}
-          </p>
+          </h2>
         </FadeIn>
-        <div className="relative">
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white to-transparent z-10" />
-          <div className="flex animate-marquee gap-16 items-center">
-            {[...clientLogos, ...clientLogos].map((logo, i) => (
-              <div
-                key={i}
-                className="text-charcoal-400 hover:text-charcoal-700 transition-colors shrink-0 flex items-center"
-                style={{ minWidth: "fit-content" }}
-              >
-                <span className="font-bold text-lg tracking-tight whitespace-nowrap">
-                  {logo.display}
-                </span>
-              </div>
-            ))}
-          </div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
+          {clientNames.map((name) => (
+            <div
+              key={name}
+              className="flex items-center justify-center py-6"
+            >
+              <span className="text-xl font-bold text-charcoal-400">
+                {name}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
     </section>

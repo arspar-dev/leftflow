@@ -10,10 +10,15 @@ export default async function CasesPage({
   const { locale } = await params;
   const dict = await getDictionary(locale as Locale);
 
+  // Extract category strings (exclude "all" — handled by the "-- Filter --" default)
+  const categoryStrings = caseCategories
+    .filter((c) => c.value !== "all")
+    .map((c) => c.value);
+
   return (
     <CasesListClient
       cases={caseStudies}
-      categories={caseCategories}
+      categories={categoryStrings}
       locale={locale as Locale}
       dict={dict}
     />

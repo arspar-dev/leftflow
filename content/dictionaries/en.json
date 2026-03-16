@@ -38,6 +38,11 @@
         "number": "04",
         "title": "LLM Development",
         "description": "We develop custom Large Language Models to revolutionize your business processes."
+      },
+      {
+        "number": "05",
+        "title": "Data & Intelligence",
+        "description": "Transform raw data into actionable insights with AI-driven analytics and business intelligence."
       }
     ]
   },

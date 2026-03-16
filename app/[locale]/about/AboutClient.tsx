@@ -1,21 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { FadeIn, StaggerContainer, StaggerItem, PageTransition } from "@/components/animations";
-import { Button } from "@/components/ui";
+import Link from "next/link";
 import type { Dictionary, Locale } from "@/lib/i18n";
 
 interface Props {
   dict: Dictionary;
   locale: Locale;
 }
-
-const valueIcons = [
-  <svg key="1" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>,
-  <svg key="2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>,
-  <svg key="3" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>,
-  <svg key="4" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
-];
 
 const avatarGradients = [
   "from-primary-400 to-primary-600",
@@ -28,161 +20,139 @@ export function AboutClient({ dict, locale }: Props) {
   const a = dict.about;
 
   return (
-    <PageTransition>
-      {/* Hero */}
-      <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-28 overflow-hidden bg-charcoal-800">
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-primary-500/10 rounded-full blur-3xl" />
-        </div>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <FadeIn>
-            <div className="inline-flex items-center gap-2 text-primary-400 text-sm font-medium mb-4">
-              <span className="w-1.5 h-1.5 bg-primary-400 rounded-full" />
-              Culture
-            </div>
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6">
-              {a.title}
-            </h1>
-            <p className="text-lg text-charcoal-400 max-w-2xl mx-auto">
-              {a.subtitle}
-            </p>
-          </FadeIn>
-          <FadeIn delay={0.2}>
-            <div className="mt-12 max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden relative border border-charcoal-700/50">
-              <Image
-                src="/images/about-team.jpg"
-                alt="LeftFlow Team"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1200px) 100vw, 900px"
-                priority
-              />
-            </div>
-          </FadeIn>
-        </div>
-      </section>
+    <main>
+      {/* Section 1: Hero */}
+      <section className="bg-white pt-32 pb-12">
+        <div className="max-w-[1200px] mx-auto px-6">
+          {/* Breadcrumb */}
+          <nav className="text-sm text-charcoal-500 mb-8">
+            <Link href={`/${locale}`} className="hover:text-charcoal-950 transition-colors">
+              Home
+            </Link>
+            <span className="mx-2">&gt;</span>
+            <span className="text-charcoal-950">Culture</span>
+          </nav>
 
-      {/* Mission & Vision */}
-      <section className="py-20 lg:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <StaggerContainer className="grid md:grid-cols-2 gap-8">
-            <StaggerItem>
-              <div className="p-8 rounded-2xl bg-primary-50 border border-primary-100 h-full">
-                <div className="w-12 h-12 rounded-xl bg-primary-500 text-white flex items-center justify-center mb-5">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="m16 10-4 4-4-4"/></svg>
-                </div>
-                <h3 className="text-2xl font-bold text-charcoal-800 mb-3">{a.mission.title}</h3>
-                <p className="text-charcoal-600 leading-relaxed">{a.mission.description}</p>
-              </div>
-            </StaggerItem>
-            <StaggerItem>
-              <div className="p-8 rounded-2xl bg-charcoal-50 border border-charcoal-200/60 h-full">
-                <div className="w-12 h-12 rounded-xl bg-charcoal-700 text-white flex items-center justify-center mb-5">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-                </div>
-                <h3 className="text-2xl font-bold text-charcoal-800 mb-3">{a.vision.title}</h3>
-                <p className="text-charcoal-600 leading-relaxed">{a.vision.description}</p>
-              </div>
-            </StaggerItem>
-          </StaggerContainer>
-        </div>
-      </section>
+          {/* Heading */}
+          <h1 className="text-5xl font-bold text-charcoal-950 mb-4">
+            Our Culture
+          </h1>
+          <p className="text-lg text-charcoal-500 max-w-2xl mb-8">
+            {a.subtitle}
+          </p>
 
-      {/* Values */}
-      <section className="py-20 lg:py-28 bg-charcoal-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <h2 className="text-3xl font-bold text-charcoal-800 text-center mb-16">
-              {a.values.title}
-            </h2>
-          </FadeIn>
-          <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {a.values.items.map((v: any, i: number) => (
-              <StaggerItem key={i}>
-                <div className="bg-white rounded-2xl p-6 border border-charcoal-200/60 h-full text-center hover:shadow-lg transition-all">
-                  <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center text-primary-500 mx-auto mb-4">
-                    {valueIcons[i]}
-                  </div>
-                  <h3 className="font-semibold text-charcoal-800 mb-2">{v.title}</h3>
-                  <p className="text-sm text-charcoal-500">{v.description}</p>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </div>
-      </section>
+          {/* CTA */}
+          <Link href={`/${locale}/contact`} className="btn-hh">
+            {dict.common.contactUs}
+          </Link>
 
-      {/* Team */}
-      <section className="py-20 lg:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <h2 className="text-3xl font-bold text-charcoal-800 text-center mb-16">
-              {a.team.title}
-            </h2>
-          </FadeIn>
-          <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {a.team.members.map((m: any, i: number) => (
-              <StaggerItem key={i}>
-                <div className="bg-charcoal-50 rounded-2xl p-6 border border-charcoal-200/60 text-center h-full hover:shadow-lg transition-all">
-                  <div className={`w-20 h-20 rounded-full bg-gradient-to-br ${avatarGradients[i % avatarGradients.length]} mx-auto mb-4 flex items-center justify-center text-white text-2xl font-bold`}>
-                    {m.name.charAt(0)}
-                  </div>
-                  <h3 className="font-semibold text-charcoal-800">{m.name}</h3>
-                  <p className="text-sm text-primary-500 font-medium mb-2">{m.role}</p>
-                  <p className="text-sm text-charcoal-500">{m.description}</p>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </div>
-      </section>
-
-      {/* Office Locations */}
-      <section className="py-20 bg-charcoal-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <h2 className="text-3xl font-bold text-charcoal-800 text-center mb-12">
-              Our Offices
-            </h2>
-          </FadeIn>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {[
-              { city: "Amsterdam", address: "Oudezijds Voorburgwal", zip: "Amsterdam, Netherlands", mapUrl: "https://www.google.com/maps/dir//Oudezijds+Voorburgwal,+Amsterdam" },
-              { city: "Rotterdam", address: "Stationsplein 45", zip: "3013 AK Rotterdam", mapUrl: "https://www.google.com/maps/dir//Stationsplein+45,+3013+AK+Rotterdam" },
-            ].map((office) => (
-              <FadeIn key={office.city}>
-                <div className="bg-white rounded-2xl p-8 border border-charcoal-200/60">
-                  <h3 className="text-xl font-bold text-charcoal-800 mb-2">{office.city}</h3>
-                  <p className="text-sm text-charcoal-500 mb-4">{office.address}<br />{office.zip}</p>
-                  <a href={office.mapUrl} target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-primary-500 hover:text-primary-600">
-                    Get directions →
-                  </a>
-                </div>
-              </FadeIn>
-            ))}
+          {/* Hero image */}
+          <div className="mt-12 w-full aspect-video rounded-xl overflow-hidden relative">
+            <Image
+              src="/images/about-team.jpg"
+              alt="LeftFlow Team"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1200px) 100vw, 1200px"
+              priority
+            />
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-charcoal-800">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <FadeIn>
-            <h2 className="text-3xl font-bold text-white mb-4">
-              {dict.footer.ctaTitle}
+      {/* Section 2: Introduction */}
+      <section className="bg-white py-16">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-charcoal-950 mb-6">
+              Hi, we&apos;re LeftFlow
             </h2>
-            <p className="text-charcoal-400 mb-8">{dict.footer.ctaSubtitle}</p>
-            <Button
-              href={`/${locale}/contact`}
-              variant="white"
-              size="lg"
-              icon={<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>}
-            >
-              {dict.nav.cta}
-            </Button>
-          </FadeIn>
+            <p className="text-charcoal-500 leading-relaxed text-lg">
+              {a.mission.description}
+            </p>
+          </div>
         </div>
       </section>
-    </PageTransition>
+
+      {/* Section 3: Values — "Things that keep us going" */}
+      <section className="bg-white py-16">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <h2 className="text-3xl font-bold text-charcoal-950 mb-16 text-center">
+            {a.values.title}
+          </h2>
+          <div className="space-y-16">
+            {a.values.items.map((v: any, i: number) => {
+              const isEven = i % 2 === 0;
+              return (
+                <div
+                  key={i}
+                  className={`flex flex-col md:flex-row items-start gap-8 ${
+                    isEven ? "" : "md:flex-row-reverse"
+                  }`}
+                >
+                  {/* Decorative number */}
+                  <div className="flex-shrink-0 md:w-32">
+                    <span className="text-6xl font-bold text-charcoal-200">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                  </div>
+                  {/* Content */}
+                  <div className={`flex-1 ${isEven ? "" : "md:text-right"}`}>
+                    <h3 className="text-2xl font-bold text-charcoal-950 mb-3">
+                      {v.title}
+                    </h3>
+                    <p className="text-charcoal-500 leading-relaxed max-w-xl">
+                      {v.description}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4: Team */}
+      <section className="bg-charcoal-50 py-16">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <h2 className="text-3xl font-bold text-charcoal-950 mb-12 text-center">
+            {a.team.title}
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {a.team.members.map((m: any, i: number) => {
+              const initials = m.name
+                .split(" ")
+                .map((n: string) => n.charAt(0))
+                .join("");
+              return (
+                <div key={i} className="text-center">
+                  <div
+                    className={`w-20 h-20 rounded-full bg-gradient-to-br ${
+                      avatarGradients[i % avatarGradients.length]
+                    } mx-auto mb-4 flex items-center justify-center text-white text-xl font-bold`}
+                  >
+                    {initials}
+                  </div>
+                  <h3 className="font-bold text-charcoal-950">{m.name}</h3>
+                  <p className="text-sm text-charcoal-500">{m.role}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5: CTA */}
+      <section className="bg-white py-16">
+        <div className="max-w-[1200px] mx-auto px-6 text-center">
+          <h2 className="text-3xl font-bold text-charcoal-950 mb-8">
+            Ready to work together?
+          </h2>
+          <Link href={`/${locale}/contact`} className="btn-hh">
+            {dict.common.contactUs}
+          </Link>
+        </div>
+      </section>
+    </main>
   );
 }

@@ -38,6 +38,11 @@
         "number": "04",
         "title": "LLM Geliştirme",
         "description": "İş süreçlerini devrimleştirmek için özel Büyük Dil Modelleri geliştiriyoruz."
+      },
+      {
+        "number": "05",
+        "title": "Veri & Zeka",
+        "description": "AI destekli analitik ve iş zekası ile ham veriyi eyleme dönüştürülebilir içgörülere dönüştürün."
       }
     ]
   },

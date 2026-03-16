@@ -1,11 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { AnimatedLogo } from "@/components/AnimatedLogo";
-import { Button } from "@/components/ui";
 import { type Locale, locales, localeNames, localeFlags } from "@/lib/i18n";
 import type { Dictionary } from "@/lib/i18n";
 
@@ -14,19 +13,32 @@ interface NavbarProps {
   dict: Dictionary;
 }
 
+const serviceItems = [
+  { label: "AI Agent Development", href: "/#services" },
+  { label: "Workflow Automation", href: "/#services" },
+  { label: "Content Generation", href: "/#services" },
+  { label: "LLM Development", href: "/#services" },
+  { label: "Data & Intelligence", href: "/data-intelligence" },
+];
+
+const industryItems = [
+  { label: "E-commerce", href: "/industries/ecommerce" },
+  { label: "Healthcare", href: "/industries/healthcare" },
+  { label: "Finance", href: "/industries/finance" },
+  { label: "Manufacturing", href: "/industries/manufacturing" },
+  { label: "Logistics", href: "/industries/logistics" },
+  { label: "Retail", href: "/industries/retail" },
+];
+
 export function Navbar({ locale, dict }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [industriesOpen, setIndustriesOpen] = useState(false);
   const pathname = usePathname();
-
-  const navLinks = [
-    { label: dict.nav.services, href: `/${locale}/#services` },
-    { label: "Cases", href: `/${locale}/cases` },
-    { label: dict.nav.industries, href: `/${locale}/#industries` },
-    { label: "Insights", href: `/${locale}/blog` },
-    { label: "Culture", href: `/${locale}/about` },
-  ];
+  const servicesRef = useRef<HTMLDivElement>(null);
+  const industriesRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -34,37 +46,103 @@ export function Navbar({ locale, dict }: NavbarProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) {
+        setServicesOpen(false);
+      }
+      if (industriesRef.current && !industriesRef.current.contains(e.target as Node)) {
+        setIndustriesOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, []);
+
   const pathWithoutLocale = pathname.replace(/^\/(tr|en|nl)/, "") || "/";
 
+  const navLinks = [
+    { label: dict.nav.services, href: `/${locale}/#services`, hasDropdown: true, dropdownType: "services" as const },
+    { label: dict.nav.industries, href: `/${locale}/#industries`, hasDropdown: true, dropdownType: "industries" as const },
+    { label: "Insights", href: `/${locale}/blog` },
+    { label: "Cases", href: `/${locale}/cases` },
+    { label: "Culture", href: `/${locale}/about` },
+  ];
+
   return (
-    <motion.header
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-xl shadow-sm border-b border-charcoal-200/50"
-          : "bg-transparent"
+          ? "bg-white shadow-sm border-b border-charcoal-200"
+          : "bg-white"
       }`}
     >
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+      <nav className="max-w-[1200px] mx-auto px-6">
+        <div className="flex items-center justify-between h-[72px]">
           {/* Logo */}
-          <AnimatedLogo locale={locale} variant={scrolled ? "dark" : "dark"} />
+          <AnimatedLogo locale={locale} variant="dark" />
 
-          {/* Desktop Nav */}
+          {/* Desktop Nav - centered */}
           <div className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href || (link.href.includes('#') && pathname === `/${locale}`);
+              if (link.hasDropdown) {
+                const isServices = link.dropdownType === "services";
+                const isOpen = isServices ? servicesOpen : industriesOpen;
+                const setOpen = isServices ? setServicesOpen : setIndustriesOpen;
+                const items = isServices ? serviceItems : industryItems;
+                const ref = isServices ? servicesRef : industriesRef;
+
+                return (
+                  <div key={link.href} className="relative" ref={ref}>
+                    <button
+                      onClick={() => setOpen(!isOpen)}
+                      className="flex items-center gap-1 px-4 py-2 text-[15px] font-medium text-charcoal-950 hover:text-primary-500 transition-colors"
+                    >
+                      {link.label}
+                      <svg
+                        width="10"
+                        height="10"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        className={`transition-transform ${isOpen ? "rotate-180" : ""}`}
+                      >
+                        <path d="M6 9l6 6 6-6" />
+                      </svg>
+                    </button>
+
+                    <AnimatePresence>
+                      {isOpen && (
+                        <motion.div
+                          initial={{ opacity: 0, y: -4 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -4 }}
+                          transition={{ duration: 0.15 }}
+                          className="absolute left-0 top-full mt-1 bg-white rounded-lg shadow-lg border border-charcoal-200 py-2 min-w-[240px] z-50"
+                        >
+                          {items.map((item) => (
+                            <Link
+                              key={item.label}
+                              href={`/${locale}${item.href}`}
+                              onClick={() => setOpen(false)}
+                              className="block px-5 py-2.5 text-[14px] text-charcoal-700 hover:text-primary-500 hover:bg-charcoal-50 transition-colors"
+                            >
+                              {item.label}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              }
+
               return (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
-                    isActive
-                      ? "text-primary-500 bg-primary-50"
-                      : "text-charcoal-600 hover:text-primary-500 hover:bg-charcoal-50"
-                  }`}
+                  className="px-4 py-2 text-[15px] font-medium text-charcoal-950 hover:text-primary-500 transition-colors"
                 >
                   {link.label}
                 </Link>
@@ -72,29 +150,34 @@ export function Navbar({ locale, dict }: NavbarProps) {
             })}
           </div>
 
-          {/* CTA + Language + Mobile Toggle */}
-          <div className="flex items-center gap-2">
+          {/* Right: CTA + Lang + Mobile */}
+          <div className="flex items-center gap-3">
+            {/* Desktop CTA */}
+            <Link
+              href={`/${locale}/contact`}
+              className="hidden lg:inline-flex btn-hh text-sm"
+            >
+              {dict.nav.cta}
+            </Link>
+
             {/* Language Switcher */}
             <div className="relative">
               <button
                 onClick={() => setLangOpen(!langOpen)}
-                className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-charcoal-600 hover:text-primary-500 rounded-lg hover:bg-charcoal-50 transition-all"
+                className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-charcoal-700 hover:text-primary-500 transition-colors"
               >
                 <span>{localeFlags[locale]}</span>
-                <span className="hidden sm:inline">{localeNames[locale]}</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-                  <path d="M6 9l6 6 6-6" />
-                </svg>
+                <span className="hidden sm:inline text-xs uppercase">{locale}</span>
               </button>
 
               <AnimatePresence>
                 {langOpen && (
                   <motion.div
-                    initial={{ opacity: 0, y: -8, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: -8, scale: 0.95 }}
+                    initial={{ opacity: 0, y: -4 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -4 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute right-0 top-full mt-1 bg-white rounded-xl shadow-lg border border-charcoal-200 py-1 min-w-[140px] z-50"
+                    className="absolute right-0 top-full mt-1 bg-white rounded-lg shadow-lg border border-charcoal-200 py-1 min-w-[140px] z-50"
                   >
                     {locales.map((loc) => (
                       <Link
@@ -103,8 +186,8 @@ export function Navbar({ locale, dict }: NavbarProps) {
                         onClick={() => setLangOpen(false)}
                         className={`flex items-center gap-2 px-4 py-2.5 text-sm transition-colors ${
                           loc === locale
-                            ? "text-primary-500 bg-primary-50 font-medium"
-                            : "text-charcoal-600 hover:text-primary-500 hover:bg-charcoal-50"
+                            ? "text-primary-500 font-medium bg-charcoal-50"
+                            : "text-charcoal-700 hover:text-primary-500 hover:bg-charcoal-50"
                         }`}
                       >
                         <span>{localeFlags[loc]}</span>
@@ -116,26 +199,12 @@ export function Navbar({ locale, dict }: NavbarProps) {
               </AnimatePresence>
             </div>
 
-            <div className="hidden lg:block">
-              <Button
-                href={`/${locale}/contact`}
-                size="sm"
-                icon={
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 12h14M12 5l7 7-7 7" />
-                  </svg>
-                }
-              >
-                {dict.nav.cta}
-              </Button>
-            </div>
-
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2 rounded-lg hover:bg-charcoal-100 transition-colors text-charcoal-700"
+              className="lg:hidden p-2 text-charcoal-950"
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 {mobileOpen ? (
                   <>
                     <line x1="18" y1="6" x2="6" y2="18" />
@@ -160,28 +229,28 @@ export function Navbar({ locale, dict }: NavbarProps) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t border-charcoal-200 overflow-hidden shadow-lg"
+            className="lg:hidden bg-white border-t border-charcoal-200 overflow-hidden"
           >
-            <div className="px-4 py-4 space-y-1">
+            <div className="px-6 py-4 space-y-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="block px-4 py-3 text-sm font-medium text-charcoal-600 hover:text-primary-500 rounded-lg hover:bg-charcoal-50 transition-all"
+                  className="block py-3 text-[15px] font-medium text-charcoal-950 hover:text-primary-500 border-b border-charcoal-100"
                 >
                   {link.label}
                 </Link>
               ))}
-              <div className="pt-2">
-                <Button href={`/${locale}/contact`} size="md" className="w-full">
+              <div className="pt-4">
+                <Link href={`/${locale}/contact`} className="btn-hh w-full justify-center text-sm">
                   {dict.nav.cta}
-                </Button>
+                </Link>
               </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.header>
+    </header>
   );
 }
