@@ -1,10 +1,9 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FadeIn } from "@/components/animations";
-import { caseStudies, caseCategories } from "@/lib/cases";
+import { caseStudies } from "@/lib/cases";
 import type { Locale, Dictionary } from "@/lib/i18n";
 
 interface CasesPreviewProps {
@@ -13,80 +12,65 @@ interface CasesPreviewProps {
 }
 
 export function CasesPreview({ locale, dict }: CasesPreviewProps) {
-  const [activeFilter, setActiveFilter] = useState("all");
-
-  const filters = (dict as any).casesPreview?.filters || {};
-  const categoryLabelMap: Record<string, string> = {
-    all: filters.all || "Filter op ...",
-    ai: filters.ai || "AI",
-    automation: filters.automation || "Automation",
-    b2b: filters.b2b || "B2B",
-    ecommerce: filters.ecommerce || "E-commerce",
-  };
-
-  const filtered =
-    activeFilter === "all"
-      ? caseStudies.slice(0, 3)
-      : caseStudies.filter((c) => c.category === activeFilter).slice(0, 3);
+  const featured = caseStudies[0];
+  const featuredData = featured[locale] ?? featured.en;
 
   return (
-    <section className="py-12 md:py-16 bg-white">
+    <section className="py-16 md:py-24 bg-charcoal-50">
       <div className="max-w-[1200px] mx-auto px-6">
-        {/* Heading + dropdown filter - HH style */}
         <FadeIn>
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-10">
-            <h2 className="text-[32px] font-bold text-charcoal-950">
-              {(dict as any).casesPreview?.title || "Our Success Stories"}
-            </h2>
-
-            {/* Dropdown filter like HH */}
-            <select
-              value={activeFilter}
-              onChange={(e) => setActiveFilter(e.target.value)}
-              className="border border-charcoal-300 text-charcoal-700 text-sm px-4 py-2.5 bg-white focus:outline-none focus:border-charcoal-950 min-w-[180px]"
-            >
-              <option value="all">{categoryLabelMap.all}</option>
-              <option value="ai">{categoryLabelMap.ai}</option>
-              <option value="automation">{categoryLabelMap.automation}</option>
-              <option value="b2b">{categoryLabelMap.b2b}</option>
-              <option value="ecommerce">{categoryLabelMap.ecommerce}</option>
-            </select>
-          </div>
+          <p className="text-sm font-medium text-primary-500 uppercase tracking-wide mb-3">
+            {(dict as any).casesPreview?.title || "Success Stories"}
+          </p>
         </FadeIn>
 
-        {/* Cases grid - HH style: large image cards */}
-        <div className="grid md:grid-cols-3 gap-6">
-          {filtered.map((c) => {
-            const localeData = c[locale] ?? c.en;
-            return (
-              <FadeIn key={c.slug}>
-                <Link
-                  href={`/${locale}/cases/${c.slug}`}
-                  className="group block"
-                >
-                  {/* Thumbnail */}
-                  <div className="relative aspect-[4/3] overflow-hidden mb-4">
-                    <Image
-                      src={c.image}
-                      alt={localeData.title}
-                      fill
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
+        <div className="grid lg:grid-cols-2 gap-8 items-center mt-8">
+          <FadeIn direction="left">
+            <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
+              <Image
+                src={featured.image}
+                alt={featuredData.title}
+                fill
+                className="object-cover"
+              />
+            </div>
+          </FadeIn>
 
-                  {/* Category tags */}
-                  <p className="text-xs font-medium text-charcoal-500 uppercase tracking-wide mb-2">
-                    {c.category === "ecommerce" ? "E-commerce" : c.category.charAt(0).toUpperCase() + c.category.slice(1)}
-                  </p>
+          <FadeIn direction="right">
+            <div>
+              <p className="text-xs font-medium text-primary-500 uppercase tracking-wide mb-2">
+                {featured.category === "ecommerce" ? "E-commerce" : featured.category.charAt(0).toUpperCase() + featured.category.slice(1)}
+              </p>
+              <p className="text-sm font-semibold text-charcoal-500 mb-3">
+                {featured.client}
+              </p>
+              <h3 className="text-2xl md:text-3xl font-bold text-charcoal-950 mb-4">
+                {featuredData.title}
+              </h3>
+              <p className="text-charcoal-500 leading-relaxed mb-8">
+                {featuredData.excerpt}
+              </p>
 
-                  {/* Title */}
-                  <h3 className="text-lg font-semibold text-charcoal-950 group-hover:text-charcoal-700 transition-colors">
-                    {localeData.title}
-                  </h3>
-                </Link>
-              </FadeIn>
-            );
-          })}
+              <div className="grid grid-cols-3 gap-4 mb-8">
+                <div className="text-center p-4 bg-white rounded-lg border border-charcoal-200">
+                  <p className="text-2xl font-bold text-primary-500">{featured.metric}</p>
+                  <p className="text-xs text-charcoal-500 mt-1">{(dict as any).caseDetail?.keyResult || "Key Result"}</p>
+                </div>
+                <div className="text-center p-4 bg-white rounded-lg border border-charcoal-200">
+                  <p className="text-2xl font-bold text-primary-500">3x</p>
+                  <p className="text-xs text-charcoal-500 mt-1">ROI</p>
+                </div>
+                <div className="text-center p-4 bg-white rounded-lg border border-charcoal-200">
+                  <p className="text-2xl font-bold text-primary-500">-40%</p>
+                  <p className="text-xs text-charcoal-500 mt-1">Cost</p>
+                </div>
+              </div>
+
+              <Link href={`/${locale}/cases/${featured.slug}`} className="btn-hh text-sm">
+                {(dict as any).casesPreview?.readMore || "Read case"} →
+              </Link>
+            </div>
+          </FadeIn>
         </div>
       </div>
     </section>

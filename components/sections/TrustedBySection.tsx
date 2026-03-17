@@ -6,23 +6,27 @@ import type { Dictionary } from "@/lib/i18n";
 
 export function TrustedBySection({ dict }: { dict: Dictionary }) {
   return (
-    <section className="py-12 md:py-16 bg-white">
+    <section className="py-12 bg-charcoal-50">
       <div className="max-w-[1200px] mx-auto px-6">
         <FadeIn>
-          <h2 className="text-[32px] font-bold text-charcoal-950 mb-10">
+          <p className="text-sm text-charcoal-500 text-center mb-8">
             {dict.trustedBy.title}
-          </h2>
+          </p>
         </FadeIn>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 items-center">
-          {allClientLogos.map(({ name, Logo }) => (
-            <div
-              key={name}
-              className="flex items-center justify-center py-4 opacity-50 hover:opacity-80 transition-opacity duration-300"
-            >
-              <Logo className="h-8 w-auto text-charcoal-950" />
-            </div>
-          ))}
+        {/* Auto-scrolling marquee carousel */}
+        <div className="overflow-hidden">
+          <div className="flex animate-marquee">
+            {/* Duplicate logos for seamless loop */}
+            {[...allClientLogos, ...allClientLogos].map(({ name, Logo }, i) => (
+              <div
+                key={`${name}-${i}`}
+                className="flex items-center justify-center px-8 min-w-[160px] grayscale hover:grayscale-0 opacity-40 hover:opacity-80 transition-all duration-300"
+              >
+                <Logo className="h-8 w-auto text-charcoal-950" />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

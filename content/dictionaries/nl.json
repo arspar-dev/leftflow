@@ -29,9 +29,9 @@
   "hero": {
     "badge": "200+ bedrijven opgeschaald",
     "rating": "4.7/5",
-    "title": "Snelle automatisering en groei met slimme AI-tools",
-    "subtitle": "Automatiseer uw workflows, versnel uw processen en stimuleer groei met toekomstgerichte intelligente oplossingen.",
-    "cta": "Laten we praten"
+    "title": "Transformeer uw bedrijf met AI",
+    "subtitle": "Chatbots, spraakassistenten, automatiseringsworkflows en op maat gemaakte AI-oplossingen om uw bedrijfsefficiëntie tot 300% te verhogen.",
+    "cta": "Gratis adviesgesprek"
   },
   "services": {
     "label": "Diensten",
@@ -39,28 +39,33 @@
     "items": [
       {
         "number": "01",
-        "title": "Contentcreatie",
-        "description": "Onze AI-gestuurde oplossingen produceren hoogwaardige content die aansluit bij uw merk en moeiteloos uw doelgroep aanspreekt."
+        "title": "AI Chatbots & Spraakassistenten",
+        "description": "Transformeer klantervaring met 24/7 ondersteuning, verkoopbots en spraak-AI-agents."
       },
       {
         "number": "02",
-        "title": "AI-agent Ontwikkeling",
-        "description": "Wij bouwen intelligente AI-agents, aangedreven door geavanceerde NLP, om klantinteracties en bedrijfsprocessen op te schalen."
+        "title": "Workflow Automatisering",
+        "description": "Verbind, automatiseer en optimaliseer uw bedrijfsprocessen met n8n, Make en custom integraties."
       },
       {
         "number": "03",
-        "title": "Workflow Automatisering",
-        "description": "Wij automatiseren repetitieve taken om de operationele efficiëntie te verhogen, productiviteit te verbeteren en tijd te besparen."
+        "title": "B2B Sales Automatisering",
+        "description": "Versterk uw verkoop met AI-gestuurde leadgeneratie, outreach automatisering en CRM-integraties."
       },
       {
         "number": "04",
-        "title": "LLM-ontwikkeling",
-        "description": "Wij ontwikkelen op maat gemaakte Large Language Models om uw bedrijfsprocessen te transformeren."
+        "title": "Custom AI-oplossingen",
+        "description": "RAG-systemen, fijn-afgestemde modellen en op maat gemaakte LLM-toepassingen voor uw bedrijf."
       },
       {
         "number": "05",
-        "title": "Data & Intelligentie",
-        "description": "Transformeer ruwe data naar bruikbare inzichten met AI-gestuurde analytics en business intelligence."
+        "title": "Content Creatie & Social Media",
+        "description": "AI-gestuurde contentproductie, videocreatie en social media management om uw merk te laten groeien."
+      },
+      {
+        "number": "06",
+        "title": "Website & E-Commerce",
+        "description": "Professionele bedrijfswebsites, Shopify en WooCommerce oplossingen gebouwd voor conversie."
       }
     ]
   },
@@ -222,12 +227,13 @@
       "description": "Een toekomst bouwen waarin elk bedrijf profiteert van AI-gestuurde automatisering en datagedreven beslissingen neemt."
     },
     "values": {
-      "title": "Onze Waarden",
+      "title": "5 Dingen Die Ons Drijven",
       "items": [
-        { "title": "Innovatie", "description": "Wij zijn een team dat continu leert en zich ontwikkelt." },
-        { "title": "Transparantie", "description": "Wij communiceren open en eerlijk met onze klanten." },
-        { "title": "Resultaatgerichtheid", "description": "Wij richten ons op het leveren van meetbare resultaten." },
-        { "title": "Samenwerking", "description": "Wij beschouwen onze klanten als zakelijke partners." }
+        { "title": "Innovation First", "description": "We blijven voorop lopen met de nieuwste AI-technologieën en leveren innovatieve oplossingen bij elk project. We bouwen de toekomst vandaag." },
+        { "title": "Klantsucces = Ons Succes", "description": "We nemen de doelen van onze klanten over als onze eigen doelen. Hun groei is onze motivatie." },
+        { "title": "Continu Leren", "description": "Technologie evolueert elke dag, en wij ook. Ons team blijft bij de besten door voortdurend hun vaardigheden te upgraden." },
+        { "title": "Transparantie", "description": "We communiceren open, eerlijk en duidelijk met onze partners. Volledige transparantie bij elke stap." },
+        { "title": "Remote-First, Global Mindset", "description": "Vanuit Rotterdam en Istanbul denkt ons team globaal en levert lokale oplossingen. Onze remote-first cultuur brengt het beste talent samen." }
       ]
     },
     "team": {
@@ -383,9 +389,9 @@
     "readMore": "Lees verder"
   },
   "contactCTA": {
-    "title": "Plan een kennismakingsgesprek van 15 minuten",
-    "description": "Tijdens het gesprek bespreken we uw uitdaging. Liever direct bellen?",
-    "button": "Plan een gesprek",
+    "title": "Klaar om te groeien met AI?",
+    "description": "Ontdek de juiste AI-oplossing voor uw bedrijf met een gratis adviesgesprek van 15 minuten.",
+    "button": "Plan een afspraak",
     "or": "of"
   },
   "locations": {

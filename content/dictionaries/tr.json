@@ -29,9 +29,9 @@
   "hero": {
     "badge": "200+ işletme ölçeklendi",
     "rating": "4.7/5",
-    "title": "Akıllı AI araçları ile hızlı otomasyon ve büyüme",
-    "subtitle": "İş akışlarınızı otomatikleştirin, süreçlerinizi hızlandırın ve geleceğe yönelik akıllı çözümlerle büyümeyi sürükleyin.",
-    "cta": "Hadi Konuşalım"
+    "title": "AI ile İşinizi Dönüştürün",
+    "subtitle": "Chatbotlar, sesli asistanlar, otomasyon iş akışları ve özel AI çözümleri ile işletmenizin verimliliğini %300'e kadar artırın.",
+    "cta": "Ücretsiz Danışmanlık Al"
   },
   "services": {
     "label": "Hizmetler",
@@ -39,28 +39,33 @@
     "items": [
       {
         "number": "01",
-        "title": "İçerik Üretimi",
-        "description": "AI destekli çözümlerimiz, markanıza uygun yüksek kaliteli içerikler üreterek hedef kitlenizi zahmetsizce etkiler."
+        "title": "AI Chatbots & Sesli Asistanlar",
+        "description": "7/24 müşteri desteği, satış asistanları ve sesli AI ajanları ile müşteri deneyimini dönüştürün."
       },
       {
         "number": "02",
-        "title": "AI Agent Geliştirme",
-        "description": "Gelişmiş NLP ile güçlendirilmiş akıllı AI agentlar oluşturarak müşteri etkileşimlerini ve operasyonlarını büyütüyoruz."
+        "title": "Workflow Automation",
+        "description": "n8n, Make ve özel entegrasyonlarla iş süreçlerinizi bağlayın, otomatikleştirin ve optimize edin."
       },
       {
         "number": "03",
-        "title": "İş Akışı Otomasyonu",
-        "description": "Tekrarlayan görevleri otomatikleştirerek operasyonel verimliliği artırıyor, üretkenliği yükseltiyor ve zaman kazandırıyoruz."
+        "title": "B2B Sales Automation",
+        "description": "Lead generation, outreach otomasyonu ve CRM entegrasyonları ile satış süreçlerinizi AI ile güçlendirin."
       },
       {
         "number": "04",
-        "title": "LLM Geliştirme",
-        "description": "İş süreçlerini devrimleştirmek için özel Büyük Dil Modelleri geliştiriyoruz."
+        "title": "Özel AI Çözümleri",
+        "description": "RAG sistemleri, fine-tuned modeller ve özel LLM uygulamaları ile işletmenize özel AI geliştiriyoruz."
       },
       {
         "number": "05",
-        "title": "Veri & Zeka",
-        "description": "AI destekli analitik ve iş zekası ile ham veriyi eyleme dönüştürülebilir içgörülere dönüştürün."
+        "title": "Content Creation & Social Media",
+        "description": "AI destekli içerik üretimi, video production ve sosyal medya yönetimi ile markanızı büyütün."
+      },
+      {
+        "number": "06",
+        "title": "Web Sitesi & E-Commerce",
+        "description": "Profesyonel kurumsal web siteleri, Shopify ve WooCommerce ile satış odaklı e-ticaret çözümleri."
       }
     ]
   },
@@ -222,12 +227,13 @@
       "description": "Her işletmenin AI destekli otomasyondan faydalandığı, veri odaklı kararlar aldığı bir gelecek inşa etmek."
     },
     "values": {
-      "title": "Değerlerimiz",
+      "title": "Bizi Harekete Geçiren 5 Şey",
       "items": [
-        { "title": "İnovasyon", "description": "Sürekli öğrenen ve gelişen bir ekibiz." },
-        { "title": "Şeffaflık", "description": "Müşterilerimizle açık ve dürüst iletişim kurarız." },
-        { "title": "Sonuç Odaklılık", "description": "Ölçülebilir sonuçlar üretmeye odaklanırız." },
-        { "title": "İşbirliği", "description": "Müşterilerimizi iş ortağımız olarak görürüz." }
+        { "title": "Innovation First", "description": "En son AI teknolojilerini takip eder, her projede yenilikçi çözümler sunarız. Geleceği bugünden inşa ederiz." },
+        { "title": "Müşteri Başarısı = Bizim Başarımız", "description": "Müşterilerimizin hedeflerini kendi hedeflerimiz olarak benimseriz. Onların büyümesi, bizim motivasyonumuz." },
+        { "title": "Sürekli Öğrenme", "description": "Teknoloji her gün gelişiyor, biz de. Ekibimiz sürekli kendini güncelleyerek sektörün en iyileri arasında kalır." },
+        { "title": "Şeffaflık", "description": "İş ortaklarımızla açık, dürüst ve net iletişim kurarız. Her adımda tam şeffaflık sağlarız." },
+        { "title": "Remote-First, Global Mindset", "description": "Rotterdam ve İstanbul merkezli ekibimiz, global düşünerek lokal çözümler üretir. Uzaktan çalışma kültürümüz, en iyi yetenekleri bir araya getirir." }
       ]
     },
     "team": {
@@ -383,9 +389,9 @@
     "readMore": "Devamını Oku"
   },
   "contactCTA": {
-    "title": "15 dakikalık keşif görüşmesi planlayın",
-    "description": "Görüşmede, zorluklarınızı tartışacağız. Doğrudan aramayı mı tercih edersiniz?",
-    "button": "Görüşme Planla",
+    "title": "AI ile Büyümeye Hazır mısınız?",
+    "description": "15 dakikalık ücretsiz danışmanlık görüşmesi ile işletmeniz için en uygun AI çözümünü keşfedin.",
+    "button": "Toplantı Planla",
     "or": "veya"
   },
   "locations": {

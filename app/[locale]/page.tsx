@@ -1,12 +1,12 @@
 import { getDictionary, type Locale } from "@/lib/i18n";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { TrendingSection } from "@/components/sections/TrendingSection";
-import { CasesPreview } from "@/components/sections/CasesPreview";
-import { ServicesSection } from "@/components/sections/ServicesSection";
 import { TrustedBySection } from "@/components/sections/TrustedBySection";
-import { LocationsSection } from "@/components/sections/LocationsSection";
-import { ContactCTA } from "@/components/sections/ContactCTA";
+import { ServicesSection } from "@/components/sections/ServicesSection";
+import { CasesPreview } from "@/components/sections/CasesPreview";
+import { WorkflowSection } from "@/components/sections/WorkflowSection";
+import { StatsSection } from "@/components/sections/StatsSection";
 import { BlogPreview } from "@/components/sections/BlogPreview";
+import { ContactCTA } from "@/components/sections/ContactCTA";
 
 export default async function HomePage({
   params,
@@ -18,15 +18,15 @@ export default async function HomePage({
 
   return (
     <>
-      {/* HH section order: Hero → Trending → Cases → Services → Logos → Locations → Contact/Meeting → News */}
+      {/* Blueprint homepage: Hero → Logos → Services → Featured Case → How We Work → Stats → Blog → CTA */}
       <HeroSection dict={dict} locale={locale as Locale} />
-      <TrendingSection dict={dict} />
-      <CasesPreview locale={locale as Locale} dict={dict} />
-      <ServicesSection dict={dict} locale={locale as Locale} />
       <TrustedBySection dict={dict} />
-      <LocationsSection dict={dict} />
-      <ContactCTA locale={locale as Locale} dict={dict} />
+      <ServicesSection dict={dict} locale={locale as Locale} />
+      <CasesPreview locale={locale as Locale} dict={dict} />
+      <WorkflowSection dict={dict} />
+      <StatsSection dict={dict} locale={locale as Locale} />
       <BlogPreview locale={locale as Locale} dict={dict} />
+      <ContactCTA locale={locale as Locale} dict={dict} />
     </>
   );
 }

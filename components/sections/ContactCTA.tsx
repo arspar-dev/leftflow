@@ -13,52 +13,34 @@ export function ContactCTA({ locale, dict }: ContactCTAProps) {
   const cta = (dict as any).contactCTA || {};
 
   return (
-    <section className="py-12 md:py-16 bg-white">
-      <div className="max-w-[1200px] mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-12">
-          {/* Left: Meeting booking text */}
-          <FadeIn>
-            <div>
-              <h2 className="text-[32px] font-bold text-charcoal-950 mb-4">
-                {cta.title || "Schedule a 15-minute discovery call"}
-              </h2>
-              <p className="text-charcoal-500 mb-6">
-                {cta.description || "During the call, we'll discuss your challenge. Prefer to call directly?"}
-              </p>
-              <p className="text-lg font-bold text-charcoal-950 mb-1">
-                <a href="tel:+31612345678" className="hover:underline">
-                  +31 6 12345678
-                </a>
-              </p>
-              <p className="text-charcoal-500 mb-8">
-                <a href="mailto:info@leftflow.ai" className="hover:text-charcoal-950 transition-colors">
-                  info@leftflow.ai
-                </a>
-              </p>
-              <Link href={`/${locale}/contact`} className="btn-hh">
-                {cta.button || "Schedule a call"}
-              </Link>
-            </div>
-          </FadeIn>
+    <section className="py-20 md:py-28 relative overflow-hidden">
+      {/* Gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-600 via-primary-700 to-secondary-600" />
+      <div className="absolute inset-0 opacity-10" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+      }} />
 
-          {/* Right: Challenge form teaser */}
-          <FadeIn delay={0.1}>
-            <div>
-              <h3 className="text-xl font-bold text-charcoal-950 mb-4">
-                {(dict as any).contact?.challengeTitle || "What is your challenge?"}
-              </h3>
-              <p className="text-charcoal-500 mb-6 text-sm">
-                {(dict as any).contact?.challengeDescription || "Curious about what we can do for your results? Challenge us and we'll get in touch within 2 business days."}
-              </p>
-              <Link
-                href={`/${locale}/contact`}
-                className="btn-hh-outline text-sm"
-              >
-                {cta.button || "Contact us"} →
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
+      <div className="relative max-w-[800px] mx-auto px-6 text-center">
+        <FadeIn>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">
+            {cta.title || "Ready to transform your business with AI?"}
+          </h2>
+        </FadeIn>
+        <FadeIn delay={0.1}>
+          <p className="text-lg text-white/80 mb-10 max-w-xl mx-auto">
+            {cta.description || "Schedule a free 15-minute consultation call"}
+          </p>
+        </FadeIn>
+        <FadeIn delay={0.2}>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href={`/${locale}/contact`} className="btn-hh-white">
+              {cta.button || "Schedule a call"} →
+            </Link>
+            <a href="mailto:info@leftflow.ai" className="inline-flex items-center gap-2 text-white border-2 border-white/30 rounded-full px-6 py-3 font-semibold hover:bg-white/10 transition-colors">
+              {(dict as any).common?.contactUs || "Contact us"}
+            </a>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );

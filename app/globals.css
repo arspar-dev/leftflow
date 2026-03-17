@@ -26,50 +26,50 @@
 }
 
 @theme {
-  /* Happy Horizon exact color system */
-  --color-hh-dark: #070733;
-  --color-hh-body: #32373c;
-  --color-hh-muted: #6c757d;
+  /* Blueprint color system */
+  --color-hh-dark: #0D0D0D;
+  --color-hh-body: #0D0D0D;
+  --color-hh-muted: #6b7280;
 
-  /* Primary - Vivid Cyan Blue */
-  --color-primary-50: #e6f4ff;
-  --color-primary-100: #bae0ff;
-  --color-primary-200: #7cc4fa;
-  --color-primary-300: #47a3f3;
-  --color-primary-400: #2186eb;
-  --color-primary-500: #0693e3;
-  --color-primary-600: #0574b8;
-  --color-primary-700: #04588c;
-  --color-primary-800: #033d61;
-  --color-primary-900: #022436;
+  /* Primary - Accent Blue */
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #2563EB;
+  --color-primary-600: #1d4ed8;
+  --color-primary-700: #1e40af;
+  --color-primary-800: #1e3a8a;
+  --color-primary-900: #172554;
 
-  /* Secondary - Vivid Purple */
-  --color-secondary-400: #b47ee5;
-  --color-secondary-500: #9b51e0;
-  --color-secondary-600: #7b3bb5;
+  /* Secondary - Accent Purple */
+  --color-secondary-400: #a78bfa;
+  --color-secondary-500: #7C3AED;
+  --color-secondary-600: #6d28d9;
 
   /* Accent - Luminous Orange */
   --color-accent-400: #ff8533;
   --color-accent-500: #ff6900;
   --color-accent-600: #cc5400;
 
-  /* Success - Green Cyan */
-  --color-success-400: #38e8a0;
-  --color-success-500: #00d084;
-  --color-success-600: #00a86a;
+  /* Success - Green */
+  --color-success-400: #34d399;
+  --color-success-500: #10B981;
+  --color-success-600: #059669;
 
-  /* Neutral grays - Happy Horizon exact */
-  --color-charcoal-50: #f8f9fa;
-  --color-charcoal-100: #f0f1f3;
-  --color-charcoal-200: #e9ecef;
-  --color-charcoal-300: #dee2e6;
-  --color-charcoal-400: #adb5bd;
-  --color-charcoal-500: #6c757d;
-  --color-charcoal-600: #495057;
-  --color-charcoal-700: #343a40;
-  --color-charcoal-800: #32373c;
-  --color-charcoal-900: #212529;
-  --color-charcoal-950: #070733;
+  /* Neutral grays */
+  --color-charcoal-50: #F8FAFC;
+  --color-charcoal-100: #f1f5f9;
+  --color-charcoal-200: #e2e8f0;
+  --color-charcoal-300: #cbd5e1;
+  --color-charcoal-400: #94a3b8;
+  --color-charcoal-500: #64748b;
+  --color-charcoal-600: #475569;
+  --color-charcoal-700: #334155;
+  --color-charcoal-800: #1e293b;
+  --color-charcoal-900: #111827;
+  --color-charcoal-950: #0D0D0D;
 
   --font-sans: "Mont", "Inter", system-ui, -apple-system, sans-serif;
 }
@@ -83,7 +83,7 @@ body {
   font-family: var(--font-sans);
   font-size: 1rem;
   line-height: 1.7;
-  color: #070733;
+  color: #0D0D0D;
   font-weight: 400;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -91,25 +91,25 @@ body {
   background-color: #fff;
 }
 
-/* Selection - Happy Horizon exact */
+/* Selection */
 ::selection {
-  background-color: #3c3c3b;
+  background-color: #2563EB;
   color: #fff;
   text-shadow: none;
 }
 
 ::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #f8f9fa; }
-::-webkit-scrollbar-thumb { background: #dee2e6; border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background: #adb5bd; }
+::-webkit-scrollbar-track { background: #F8FAFC; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
-/* Happy Horizon pill buttons */
+/* Primary CTA button - Blue pill */
 .btn-hh {
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
   color: #fff;
-  background-color: #32373c;
+  background-color: #2563EB;
   border-radius: 9999px;
   text-decoration: none;
   padding: calc(0.667em + 2px) calc(1.333em + 2px);
@@ -120,17 +120,19 @@ body {
   cursor: pointer;
 }
 .btn-hh:hover {
-  background-color: #070733;
+  background-color: #1d4ed8;
   transform: translateY(-1px);
+  box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
 }
 
+/* Outline button */
 .btn-hh-outline {
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
-  color: #32373c;
+  color: #0D0D0D;
   background-color: transparent;
-  border: 2px solid #32373c;
+  border: 2px solid #0D0D0D;
   border-radius: 9999px;
   text-decoration: none;
   padding: calc(0.667em + 2px) calc(1.333em + 2px);
@@ -140,15 +142,16 @@ body {
   cursor: pointer;
 }
 .btn-hh-outline:hover {
-  background-color: #32373c;
+  background-color: #0D0D0D;
   color: #fff;
 }
 
+/* White button (for dark backgrounds) */
 .btn-hh-white {
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
-  color: #32373c;
+  color: #0D0D0D;
   background-color: #fff;
   border-radius: 9999px;
   text-decoration: none;
@@ -160,7 +163,28 @@ body {
   cursor: pointer;
 }
 .btn-hh-white:hover {
-  background-color: #f8f9fa;
+  background-color: #F8FAFC;
+}
+
+/* Glow button variant */
+.btn-glow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  color: #fff;
+  background: linear-gradient(135deg, #2563EB, #7C3AED);
+  border-radius: 9999px;
+  text-decoration: none;
+  padding: calc(0.75em + 2px) calc(1.5em + 2px);
+  font-size: 1.125em;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+.btn-glow:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(37, 99, 235, 0.5), 0 0 60px rgba(124, 58, 237, 0.3);
 }
 
 /* Marquee */
@@ -194,12 +218,12 @@ body {
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
-  color: #070733;
+  color: #0D0D0D;
   font-weight: 700;
   line-height: 1.2;
 }
 
-/* Section spacing - Happy Horizon pattern */
+/* Section spacing */
 .section-hh {
   padding: 3rem 0;
 }

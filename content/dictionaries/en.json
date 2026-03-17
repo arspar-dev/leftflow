@@ -29,9 +29,9 @@
   "hero": {
     "badge": "200+ businesses scaled",
     "rating": "4.7/5",
-    "title": "Rapid automation and growth with intelligent AI tools",
-    "subtitle": "Automate your workflows, accelerate your processes, and drive growth with future-ready intelligent solutions.",
-    "cta": "Let's Talk"
+    "title": "Transform Your Business with AI",
+    "subtitle": "Chatbots, voice assistants, automation workflows and custom AI solutions to boost your business efficiency by up to 300%.",
+    "cta": "Get Free Consultation"
   },
   "services": {
     "label": "Services",
@@ -39,28 +39,33 @@
     "items": [
       {
         "number": "01",
-        "title": "Content Generation",
-        "description": "Our AI-powered solutions produce high-quality, brand-aligned content that engages your target audience effortlessly."
+        "title": "AI Chatbots & Voice Agents",
+        "description": "Transform customer experience with 24/7 support, sales assistants, and voice AI agents."
       },
       {
         "number": "02",
-        "title": "AI Agent Development",
-        "description": "We build intelligent AI agents powered by advanced NLP to scale your customer interactions and operations."
+        "title": "Workflow Automation",
+        "description": "Connect, automate, and optimize your business processes with n8n, Make, and custom integrations."
       },
       {
         "number": "03",
-        "title": "Workflow Automation",
-        "description": "We automate repetitive tasks to boost operational efficiency, increase productivity, and save valuable time."
+        "title": "B2B Sales Automation",
+        "description": "Supercharge your sales with AI-powered lead generation, outreach automation, and CRM integrations."
       },
       {
         "number": "04",
-        "title": "LLM Development",
-        "description": "We develop custom Large Language Models to revolutionize your business processes."
+        "title": "Custom AI Solutions",
+        "description": "RAG systems, fine-tuned models, and custom LLM applications built specifically for your business."
       },
       {
         "number": "05",
-        "title": "Data & Intelligence",
-        "description": "Transform raw data into actionable insights with AI-driven analytics and business intelligence."
+        "title": "Content Creation & Social Media",
+        "description": "AI-powered content production, video creation, and social media management to grow your brand."
+      },
+      {
+        "number": "06",
+        "title": "Website & E-Commerce",
+        "description": "Professional corporate websites, Shopify and WooCommerce solutions built for conversion."
       }
     ]
   },
@@ -222,12 +227,13 @@
       "description": "To build a future where every business benefits from AI-powered automation and makes data-driven decisions."
     },
     "values": {
-      "title": "Our Values",
+      "title": "5 Things That Keep Us Going",
       "items": [
-        { "title": "Innovation", "description": "We are a team that continuously learns and evolves." },
-        { "title": "Transparency", "description": "We maintain open and honest communication with our clients." },
-        { "title": "Results-Driven", "description": "We focus on delivering measurable outcomes." },
-        { "title": "Collaboration", "description": "We see our clients as true partners." }
+        { "title": "Innovation First", "description": "We stay ahead of the latest AI technologies and deliver innovative solutions in every project. We build the future today." },
+        { "title": "Client Success = Our Success", "description": "We adopt our clients' goals as our own. Their growth is our motivation." },
+        { "title": "Continuous Learning", "description": "Technology evolves every day, and so do we. Our team stays among the best by constantly upgrading their skills." },
+        { "title": "Transparency", "description": "We communicate openly, honestly, and clearly with our partners. Full transparency at every step." },
+        { "title": "Remote-First, Global Mindset", "description": "Based in Rotterdam and Istanbul, our team thinks globally while delivering local solutions. Our remote-first culture brings together the best talent." }
       ]
     },
     "team": {
@@ -383,9 +389,9 @@
     "readMore": "Read more"
   },
   "contactCTA": {
-    "title": "Schedule a 15-minute discovery call",
-    "description": "During the call, we'll discuss your challenge. Prefer to call directly?",
-    "button": "Schedule a call",
+    "title": "Ready to Grow with AI?",
+    "description": "Discover the right AI solution for your business with a free 15-minute consultation.",
+    "button": "Schedule a Meeting",
     "or": "or"
   },
   "locations": {
