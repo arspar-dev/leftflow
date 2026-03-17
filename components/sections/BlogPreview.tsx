@@ -4,13 +4,14 @@ import Link from "next/link";
 import Image from "next/image";
 import { FadeIn } from "@/components/animations";
 import { blogPosts } from "@/lib/blog";
-import type { Locale } from "@/lib/i18n";
+import type { Locale, Dictionary } from "@/lib/i18n";
 
 interface Props {
   locale: Locale;
+  dict: Dictionary;
 }
 
-export function BlogPreview({ locale }: Props) {
+export function BlogPreview({ locale, dict }: Props) {
   const latestPosts = blogPosts.slice(0, 3);
 
   return (
@@ -18,7 +19,7 @@ export function BlogPreview({ locale }: Props) {
       <div className="max-w-[1200px] mx-auto px-6">
         <FadeIn>
           <h2 className="text-3xl font-bold text-charcoal-950 text-center mb-12">
-            Latest Insights
+            {(dict as any).blogPreview?.title || "Latest Insights"}
           </h2>
         </FadeIn>
 

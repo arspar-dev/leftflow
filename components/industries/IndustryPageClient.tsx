@@ -47,6 +47,7 @@ const useCaseIcons: Record<string, ReactNode> = {
 
 export function IndustryPageClient({ industry, dict, locale, allIndustries }: Props) {
   const otherIndustries = allIndustries.filter((i) => i.slug !== industry.slug).slice(0, 3);
+  const localeData = industry[locale as keyof Pick<Industry, 'tr' | 'en' | 'nl'>] || industry.en;
 
   return (
     <PageTransition>
@@ -58,12 +59,12 @@ export function IndustryPageClient({ industry, dict, locale, allIndustries }: Pr
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <Badge variant="primary" className="mb-4">{industry.name}</Badge>
+            <Badge variant="primary" className="mb-4">{localeData.name}</Badge>
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 max-w-3xl">
-              {industry.title}
+              {localeData.title}
             </h1>
             <p className="text-lg text-charcoal-400 max-w-2xl mb-8 leading-relaxed">
-              {industry.heroDescription}
+              {localeData.heroDescription}
             </p>
             <Button
               href={`/${locale}/contact`}
@@ -79,7 +80,7 @@ export function IndustryPageClient({ industry, dict, locale, allIndustries }: Pr
             <div className="mt-12 relative aspect-video max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src={`/images/industry-${industry.slug}.jpg`}
-                alt={industry.title}
+                alt={localeData.title}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1200px) 100vw, 900px"
@@ -96,16 +97,16 @@ export function IndustryPageClient({ industry, dict, locale, allIndustries }: Pr
           <FadeIn>
             <SectionLabel>{dict.industries.useCases}</SectionLabel>
             <h2 className="text-3xl lg:text-4xl font-bold text-charcoal-800 text-center mb-16">
-              {industry.name} — {dict.industries.useCases}
+              {localeData.name} — {dict.industries.useCases}
             </h2>
           </FadeIn>
 
           <StaggerContainer className="grid md:grid-cols-2 gap-6">
-            {industry.useCases.map((uc, i) => (
+            {localeData.useCases.map((uc, i) => (
               <StaggerItem key={i}>
                 <div className="h-full p-8 rounded-2xl bg-charcoal-50 border border-charcoal-200/60 hover:shadow-lg transition-shadow">
                   <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center text-primary-500 mb-4">
-                    {useCaseIcons[uc.icon] || useCaseIcons.settings}
+                    {useCaseIcons[industry.icons[i]] || useCaseIcons.settings}
                   </div>
                   <h3 className="text-lg font-semibold text-charcoal-800 mb-2">
                     {uc.title}
@@ -127,7 +128,7 @@ export function IndustryPageClient({ industry, dict, locale, allIndustries }: Pr
             <SectionLabel>{dict.industries.benefits}</SectionLabel>
           </FadeIn>
           <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-            {industry.stats.map((stat, i) => (
+            {localeData.stats.map((stat, i) => (
               <StaggerItem key={i}>
                 <div className="text-center p-6 bg-white rounded-2xl border border-charcoal-200/60">
                   <p className="text-3xl lg:text-4xl font-bold text-primary-500 mb-2">
@@ -147,15 +148,15 @@ export function IndustryPageClient({ industry, dict, locale, allIndustries }: Pr
           <FadeIn>
             <SectionLabel>{dict.industries.caseStudy}</SectionLabel>
             <h2 className="text-2xl lg:text-3xl font-bold text-charcoal-800 text-center mb-12">
-              {industry.caseStudy.title}
+              {localeData.caseStudy.title}
             </h2>
           </FadeIn>
 
           <StaggerContainer className="grid md:grid-cols-3 gap-6">
             {[
-              { label: dict.industries.challenge, text: industry.caseStudy.challenge, color: "bg-red-50 text-red-500 border border-red-200" },
-              { label: dict.industries.solution, text: industry.caseStudy.solution, color: "bg-primary-50 text-primary-500 border border-primary-200" },
-              { label: dict.industries.result, text: industry.caseStudy.result, color: "bg-success-500/10 text-success-600 border border-success-500/20" },
+              { label: dict.industries.challenge, text: localeData.caseStudy.challenge, color: "bg-red-50 text-red-500 border border-red-200" },
+              { label: dict.industries.solution, text: localeData.caseStudy.solution, color: "bg-primary-50 text-primary-500 border border-primary-200" },
+              { label: dict.industries.result, text: localeData.caseStudy.result, color: "bg-success-500/10 text-success-600 border border-success-500/20" },
             ].map((item, i) => (
               <StaggerItem key={i}>
                 <div className="p-6 rounded-2xl bg-charcoal-50 border border-charcoal-200/60 h-full">
@@ -202,16 +203,19 @@ export function IndustryPageClient({ industry, dict, locale, allIndustries }: Pr
             </h3>
           </FadeIn>
           <StaggerContainer className="grid sm:grid-cols-3 gap-4">
-            {otherIndustries.map((ind) => (
-              <StaggerItem key={ind.slug}>
-                <Link href={`/${locale}/industries/${ind.slug}`}>
-                  <div className="group cursor-pointer p-6 rounded-2xl bg-white border border-charcoal-200/60 hover:shadow-lg transition-all">
-                    <h4 className="font-semibold text-charcoal-800 mb-1 group-hover:text-primary-500 transition-colors">{ind.name}</h4>
-                    <p className="text-sm text-charcoal-500 line-clamp-2">{ind.description}</p>
-                  </div>
-                </Link>
-              </StaggerItem>
-            ))}
+            {otherIndustries.map((ind) => {
+              const indLocale = ind[locale as keyof Pick<Industry, 'tr' | 'en' | 'nl'>] || ind.en;
+              return (
+                <StaggerItem key={ind.slug}>
+                  <Link href={`/${locale}/industries/${ind.slug}`}>
+                    <div className="group cursor-pointer p-6 rounded-2xl bg-white border border-charcoal-200/60 hover:shadow-lg transition-all">
+                      <h4 className="font-semibold text-charcoal-800 mb-1 group-hover:text-primary-500 transition-colors">{indLocale.name}</h4>
+                      <p className="text-sm text-charcoal-500 line-clamp-2">{indLocale.description}</p>
+                    </div>
+                  </Link>
+                </StaggerItem>
+              );
+            })}
           </StaggerContainer>
         </div>
       </section>

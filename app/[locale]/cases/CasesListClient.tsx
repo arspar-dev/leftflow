@@ -45,12 +45,12 @@ export function CasesListClient({ cases, categories, locale, dict }: Props) {
             Home
           </Link>
           <span className="mx-2">&gt;</span>
-          <span className="text-charcoal-950">Cases</span>
+          <span className="text-charcoal-950">{(dict as any).casesPage?.breadcrumb || "Cases"}</span>
         </nav>
 
         {/* Page title */}
         <h1 className="text-5xl font-bold text-charcoal-950 pb-8">
-          Cases
+          {(dict as any).casesPage?.title || "Cases"}
         </h1>
 
         {/* Filter dropdown */}
@@ -60,7 +60,7 @@ export function CasesListClient({ cases, categories, locale, dict }: Props) {
             onChange={(e) => handleFilterChange(e.target.value)}
             className="border border-charcoal-200 rounded-lg px-4 py-2 text-sm text-charcoal-950 bg-white focus:outline-none focus:ring-2 focus:ring-charcoal-200"
           >
-            <option value="">-- Filter --</option>
+            <option value="">{(dict as any).casesPage?.filterPlaceholder || "-- Filter --"}</option>
             {categories.map((cat) => (
               <option key={cat} value={cat}>
                 {cat.charAt(0).toUpperCase() + cat.slice(1)}
@@ -107,7 +107,7 @@ export function CasesListClient({ cases, categories, locale, dict }: Props) {
 
                 {/* Read more link */}
                 <span className="text-sm font-medium text-charcoal-950 group-hover:text-primary-500 transition-colors">
-                  Read more &rarr;
+                  {(dict as any).casesPage?.readMore || "Read more"} &rarr;
                 </span>
               </Link>
             );
@@ -117,7 +117,7 @@ export function CasesListClient({ cases, categories, locale, dict }: Props) {
         {/* Empty state */}
         {filtered.length === 0 && (
           <div className="text-center py-20 text-charcoal-500">
-            No cases found for this category.
+            {(dict as any).casesPage?.noResults || "No cases found for this filter."}
           </div>
         )}
 
@@ -125,7 +125,7 @@ export function CasesListClient({ cases, categories, locale, dict }: Props) {
         {totalPages > 1 && (
           <div className="flex items-center justify-between py-16">
             <p className="text-sm text-charcoal-500">
-              Showing {startIndex + 1} - {endIndex} of {totalItems}
+              {(dict as any).casesPage?.showing || "Showing"} {startIndex + 1} - {endIndex} {(dict as any).casesPage?.of || "of"} {totalItems}
             </p>
             <div className="flex items-center gap-2">
               {Array.from({ length: totalPages }, (_, i) => i + 1).map(

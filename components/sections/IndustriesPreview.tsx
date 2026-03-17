@@ -25,21 +25,24 @@ export function IndustriesPreview({ dict, locale, industries }: Props) {
         </FadeIn>
 
         <StaggerContainer className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {industries.slice(0, 6).map((industry) => (
-            <StaggerItem key={industry.slug}>
-              <Link
-                href={`/${locale}/industries/${industry.slug}`}
-                className="block bg-charcoal-50 rounded-xl p-6 border border-charcoal-200 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
-              >
-                <h3 className="font-semibold text-charcoal-950 mb-2">
-                  {industry.name}
-                </h3>
-                <p className="text-sm text-charcoal-500 line-clamp-2">
-                  {industry.description}
-                </p>
-              </Link>
-            </StaggerItem>
-          ))}
+          {industries.slice(0, 6).map((industry) => {
+            const localeData = industry[locale as keyof Pick<Industry, 'tr' | 'en' | 'nl'>] || industry.en;
+            return (
+              <StaggerItem key={industry.slug}>
+                <Link
+                  href={`/${locale}/industries/${industry.slug}`}
+                  className="block bg-charcoal-50 rounded-xl p-6 border border-charcoal-200 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                >
+                  <h3 className="font-semibold text-charcoal-950 mb-2">
+                    {localeData.name}
+                  </h3>
+                  <p className="text-sm text-charcoal-500 line-clamp-2">
+                    {localeData.description}
+                  </p>
+                </Link>
+              </StaggerItem>
+            );
+          })}
         </StaggerContainer>
       </div>
     </section>

@@ -6,7 +6,25 @@
     "blog": "Blog",
     "about": "About Us",
     "contact": "Contact",
-    "cta": "Let's Talk"
+    "cta": "Let's Talk",
+    "insights": "Insights",
+    "cases": "Cases",
+    "culture": "Culture",
+    "serviceItems": [
+      "Content Generation",
+      "AI Agent Development",
+      "Workflow Automation",
+      "LLM Development",
+      "Data & Intelligence"
+    ],
+    "industryItems": [
+      "E-commerce",
+      "Healthcare",
+      "Finance",
+      "Manufacturing",
+      "Logistics",
+      "Retail"
+    ]
   },
   "hero": {
     "badge": "200+ businesses scaled",
@@ -220,7 +238,11 @@
         { "name": "Mehmet Yilmaz", "role": "Lead Developer", "description": "Full-stack development and AI integrations." },
         { "name": "Elif Arslan", "role": "Business Development", "description": "Client relations and strategic partnerships." }
       ]
-    }
+    },
+    "breadcrumb": "Culture",
+    "intro": "Hi, we're LeftFlow. Your AI automation agency. We are experts in AI strategy, development, automation, and data intelligence. Combined with our industry knowledge, we ensure your goals become reality.",
+    "readyToWork": "Ready to work together?",
+    "scheduleCall": "Schedule a Call"
   },
   "contact": {
     "label": "Contact",
@@ -240,7 +262,15 @@
       "phone": "+31 6 12345678",
       "address": "Amsterdam, Netherlands",
       "hours": "Mon-Fri: 09:00 - 18:00"
-    }
+    },
+    "heroTitle": "What's your challenge?",
+    "scheduleTitle": "Schedule a 15-minute discovery call",
+    "scheduleDescription": "During the call, we'll discuss your challenge. Prefer to call directly?",
+    "bookCall": "Book a call",
+    "challengeTitle": "What's your challenge?",
+    "challengeDescription": "Curious about what we can do for your results? Challenge us and we'll contact you within 2 business days.",
+    "officesTitle": "Our Offices",
+    "officesSubtitle": "Visit us at our locations in the Netherlands."
   },
   "footer": {
     "description": "We help businesses grow and gain efficiency with AI-powered automation solutions.",
@@ -249,7 +279,19 @@
     "quickLinks": "Quick Links",
     "services": "Services",
     "followUs": "Follow Us",
-    "copyright": "All rights reserved."
+    "copyright": "All rights reserved.",
+    "hubs": "Hubs",
+    "content": "Content",
+    "industries": "Industries",
+    "culture": "Culture",
+    "cases": "Cases",
+    "blog": "Blog",
+    "aboutUs": "About Us",
+    "contact": "Contact",
+    "newsletter": "Subscribe to our newsletter",
+    "privacyPolicy": "Privacy Policy",
+    "terms": "Terms & Conditions",
+    "allRightsReserved": "All Rights Reserved"
   },
   "trustedBy": {
     "title": "Trusted by 200+ businesses worldwide"
@@ -312,5 +354,88 @@
     "getStarted": "Get Started",
     "contactUs": "Contact Us",
     "backToHome": "Back to Home"
+  },
+  "trending": {
+    "topics": [
+      { "label": "AI Solutions" },
+      { "label": "Workflow Automation" },
+      { "label": "AI Chatbots" },
+      { "label": "Data Intelligence" },
+      { "label": "E-commerce AI" }
+    ]
+  },
+  "casesPreview": {
+    "title": "Our Success Stories",
+    "readMore": "Read more",
+    "viewAll": "View all cases",
+    "filters": {
+      "all": "All",
+      "ai": "AI",
+      "automation": "Automation",
+      "b2b": "B2B",
+      "ecommerce": "E-commerce"
+    }
+  },
+  "blogPreview": {
+    "title": "Latest Insights",
+    "readMore": "Read more"
+  },
+  "contactCTA": {
+    "title": "Schedule a 15-minute discovery call",
+    "description": "During the call, we'll discuss your challenge. Prefer to call directly?",
+    "button": "Schedule a call",
+    "or": "or"
+  },
+  "locations": {
+    "title": "Our Offices",
+    "subtitle": "Visit us at our locations",
+    "getDirections": "Get directions",
+    "route": "Route",
+    "mondayFriday": "Monday - Friday",
+    "weekend": "Saturday & Sunday Closed"
+  },
+  "workflow": {
+    "label": "How We Work",
+    "title": "From challenge to result in 4 steps",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Discovery & Analysis",
+        "description": "We start by understanding your business challenges, current processes, and growth objectives through a thorough analysis."
+      },
+      {
+        "number": "02",
+        "title": "Strategy & Design",
+        "description": "We design tailored AI-powered solutions that fit your specific needs, choosing the right technologies and integration approach."
+      },
+      {
+        "number": "03",
+        "title": "Implementation",
+        "description": "Our expert team builds and deploys automation workflows, AI agents, and integrations into your existing systems."
+      },
+      {
+        "number": "04",
+        "title": "Optimization & Growth",
+        "description": "We continuously monitor performance, optimize processes, and scale solutions as your business grows."
+      }
+    ]
+  },
+  "casesPage": {
+    "breadcrumb": "Cases",
+    "title": "Cases",
+    "noResults": "No cases found for this filter.",
+    "showing": "Showing",
+    "of": "of",
+    "readMore": "Read more",
+    "filterPlaceholder": "Filter by category"
+  },
+  "caseDetail": {
+    "challenge": "Challenge",
+    "solution": "Solution",
+    "result": "Result",
+    "keyResult": "Key Result",
+    "ctaTitle": "Ready for similar results?",
+    "ctaButton": "Schedule a Call",
+    "moreCases": "More Cases"
   }
 }

@@ -1,12 +1,30 @@
 {
   "nav": {
     "services": "Diensten",
-    "industries": "Industrie\u00ebn",
+    "industries": "Industrieën",
     "dataIntelligence": "Data-intelligentie",
     "blog": "Blog",
     "about": "Over ons",
     "contact": "Contact",
-    "cta": "Laten we praten"
+    "cta": "Laten we praten",
+    "insights": "Inzichten",
+    "cases": "Cases",
+    "culture": "Cultuur",
+    "serviceItems": [
+      "Contentcreatie",
+      "AI-agent Ontwikkeling",
+      "Workflow Automatisering",
+      "LLM-ontwikkeling",
+      "Data & Intelligentie"
+    ],
+    "industryItems": [
+      "E-commerce",
+      "Gezondheidszorg",
+      "Financiën",
+      "Productie",
+      "Logistiek",
+      "Retail"
+    ]
   },
   "hero": {
     "badge": "200+ bedrijven opgeschaald",
@@ -32,7 +50,7 @@
       {
         "number": "03",
         "title": "Workflow Automatisering",
-        "description": "Wij automatiseren repetitieve taken om de operationele effici\u00ebntie te verhogen, productiviteit te verbeteren en tijd te besparen."
+        "description": "Wij automatiseren repetitieve taken om de operationele efficiëntie te verhogen, productiviteit te verbeteren en tijd te besparen."
       },
       {
         "number": "04",
@@ -96,7 +114,7 @@
   },
   "testimonial": {
     "quote": "Het grootste probleem dat ik in het bedrijfsleven zie, is verspilde tijd. Onze AI-oplossingen pakken dit probleem aan, zodat bedrijven sneller verkopen en hun klanten tevredener houden.",
-    "name": "Burhan Kocab\u0131y\u0131k",
+    "name": "Burhan Kocabıyık",
     "role": "Oprichter, LeftFlow"
   },
   "stats": {
@@ -116,7 +134,7 @@
     "items": [
       {
         "question": "Wat is LeftFlow?",
-        "answer": "LeftFlow is een AI-automatiseringsbureau dat diensten aanbiedt op het gebied van contentcreatie, AI-agents, workflowautomatisering en LLM-ontwikkeling. Ons doel is tijd besparen en effici\u00ebntie verhogen."
+        "answer": "LeftFlow is een AI-automatiseringsbureau dat diensten aanbiedt op het gebied van contentcreatie, AI-agents, workflowautomatisering en LLM-ontwikkeling. Ons doel is tijd besparen en efficiëntie verhogen."
       },
       {
         "question": "Welke problemen kunnen uw AI-oplossingen aanpakken?",
@@ -128,7 +146,7 @@
       },
       {
         "question": "Waarom zijn RAG- of LLM-ontwikkeling waardevol?",
-        "answer": "RAG- en LLM-technologie\u00ebn zetten uw bedrijfsdata om in intelligente assistenten, waardoor de klantervaring verbetert en de operationele effici\u00ebntie toeneemt."
+        "answer": "RAG- en LLM-technologieën zetten uw bedrijfsdata om in intelligente assistenten, waardoor de klantervaring verbetert en de operationele efficiëntie toeneemt."
       },
       {
         "question": "Wat kost LeftFlow?",
@@ -137,7 +155,7 @@
     ]
   },
   "industries": {
-    "label": "Industrie\u00ebn",
+    "label": "Industrieën",
     "title": "Automatiseringsoplossingen voor elke sector",
     "subtitle": "Versnel uw digitale transformatie met AI- en automatiseringsoplossingen die zijn afgestemd op uw branche.",
     "viewAll": "Alles bekijken",
@@ -197,7 +215,7 @@
     "subtitle": "Wij zijn een team dat bedrijfsprocessen transformeert met kunstmatige intelligentie.",
     "mission": {
       "title": "Onze Missie",
-      "description": "Bedrijven in staat stellen effici\u00ebnter, slimmer en sneller te werken met AI. Technologie toegankelijk maken voor iedereen."
+      "description": "Bedrijven in staat stellen efficiënter, slimmer en sneller te werken met AI. Technologie toegankelijk maken voor iedereen."
     },
     "vision": {
       "title": "Onze Visie",
@@ -215,12 +233,16 @@
     "team": {
       "title": "Ons Team",
       "members": [
-        { "name": "Burhan Kocab\u0131y\u0131k", "role": "Oprichter & CEO", "description": "Meer dan 10 jaar ervaring in AI en automatisering." },
+        { "name": "Burhan Kocabıyık", "role": "Oprichter & CEO", "description": "Meer dan 10 jaar ervaring in AI en automatisering." },
         { "name": "Ayşe Demir", "role": "CTO", "description": "Specialist in machine learning en NLP." },
-        { "name": "Mehmet Y\u0131lmaz", "role": "Lead Developer", "description": "Full-stack ontwikkeling en AI-integraties." },
+        { "name": "Mehmet Yılmaz", "role": "Lead Developer", "description": "Full-stack ontwikkeling en AI-integraties." },
         { "name": "Elif Arslan", "role": "Business Development", "description": "Klantrelaties en strategische partnerships." }
       ]
-    }
+    },
+    "breadcrumb": "Cultuur",
+    "intro": "Hallo, wij zijn LeftFlow. Uw AI-automatiseringsbureau. Wij zijn experts in AI-strategie, ontwikkeling, automatisering en data-intelligentie. Gecombineerd met onze branchekennis zorgen we ervoor dat uw doelen werkelijkheid worden.",
+    "readyToWork": "Klaar om samen te werken?",
+    "scheduleCall": "Plan een gesprek"
   },
   "contact": {
     "label": "Contact",
@@ -240,16 +262,36 @@
       "phone": "+31 6 12345678",
       "address": "Amsterdam, Nederland",
       "hours": "Ma-Vr: 09:00 - 18:00"
-    }
+    },
+    "heroTitle": "Wat is uw uitdaging?",
+    "scheduleTitle": "Plan een kennismakingsgesprek van 15 minuten",
+    "scheduleDescription": "Tijdens het gesprek bespreken we uw uitdaging. Liever direct bellen?",
+    "bookCall": "Plan een gesprek",
+    "challengeTitle": "Wat is uw uitdaging?",
+    "challengeDescription": "Benieuwd wat we voor uw resultaten kunnen doen? Daag ons uit en we nemen binnen 2 werkdagen contact met u op.",
+    "officesTitle": "Onze Kantoren",
+    "officesSubtitle": "Bezoek ons op onze locaties in Nederland."
   },
   "footer": {
-    "description": "Wij helpen bedrijven groeien en effici\u00ebntie winnen met AI-gestuurde automatiseringsoplossingen.",
+    "description": "Wij helpen bedrijven groeien en efficiëntie winnen met AI-gestuurde automatiseringsoplossingen.",
     "ctaTitle": "Transformeer uw bedrijfsprocessen met AI",
     "ctaSubtitle": "Ontdek de kracht van automatisering met LeftFlow",
     "quickLinks": "Snelle Links",
     "services": "Diensten",
     "followUs": "Volg Ons",
-    "copyright": "Alle rechten voorbehouden."
+    "copyright": "Alle rechten voorbehouden.",
+    "hubs": "Hubs",
+    "content": "Content",
+    "industries": "Industrieën",
+    "culture": "Cultuur",
+    "cases": "Cases",
+    "blog": "Blog",
+    "aboutUs": "Over ons",
+    "contact": "Contact",
+    "newsletter": "Schrijf je in voor onze nieuwsbrief",
+    "privacyPolicy": "Privacybeleid",
+    "terms": "Algemene Voorwaarden",
+    "allRightsReserved": "Alle rechten voorbehouden"
   },
   "trustedBy": {
     "title": "Vertrouwd door 200+ bedrijven wereldwijd"
@@ -312,5 +354,88 @@
     "getStarted": "Aan de slag",
     "contactUs": "Neem contact op",
     "backToHome": "Terug naar home"
+  },
+  "trending": {
+    "topics": [
+      { "label": "AI-oplossingen" },
+      { "label": "Workflow Automatisering" },
+      { "label": "AI-chatbots" },
+      { "label": "Data-intelligentie" },
+      { "label": "E-commerce AI" }
+    ]
+  },
+  "casesPreview": {
+    "title": "Onze Succesverhalen",
+    "readMore": "Lees verder",
+    "viewAll": "Bekijk alle cases",
+    "filters": {
+      "all": "Alles",
+      "ai": "AI",
+      "automation": "Automatisering",
+      "b2b": "B2B",
+      "ecommerce": "E-commerce"
+    }
+  },
+  "blogPreview": {
+    "title": "Laatste Inzichten",
+    "readMore": "Lees verder"
+  },
+  "contactCTA": {
+    "title": "Plan een kennismakingsgesprek van 15 minuten",
+    "description": "Tijdens het gesprek bespreken we uw uitdaging. Liever direct bellen?",
+    "button": "Plan een gesprek",
+    "or": "of"
+  },
+  "locations": {
+    "title": "Onze Kantoren",
+    "subtitle": "Bezoek ons op onze locaties",
+    "getDirections": "Routebeschrijving",
+    "route": "Route",
+    "mondayFriday": "Maandag - Vrijdag",
+    "weekend": "Zaterdag & Zondag Gesloten"
+  },
+  "workflow": {
+    "label": "Hoe wij werken",
+    "title": "Van uitdaging naar resultaat in 4 stappen",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Ontdekking & Analyse",
+        "description": "We beginnen met het begrijpen van uw bedrijfsuitdagingen, huidige processen en groeisdoelstellingen door middel van een grondige analyse."
+      },
+      {
+        "number": "02",
+        "title": "Strategie & Ontwerp",
+        "description": "We ontwerpen op maat gemaakte AI-gestuurde oplossingen die passen bij uw specifieke behoeften, waarbij we de juiste technologieën en integratiemethode kiezen."
+      },
+      {
+        "number": "03",
+        "title": "Implementatie",
+        "description": "Ons expertteam bouwt en implementeert automatiseringsworkflows, AI-agents en integraties in uw bestaande systemen."
+      },
+      {
+        "number": "04",
+        "title": "Optimalisatie & Groei",
+        "description": "We monitoren continu de prestaties, optimaliseren processen en schalen oplossingen naarmate uw bedrijf groeit."
+      }
+    ]
+  },
+  "casesPage": {
+    "breadcrumb": "Cases",
+    "title": "Cases",
+    "noResults": "Geen cases gevonden voor dit filter.",
+    "showing": "Toon",
+    "of": "van",
+    "readMore": "Lees verder",
+    "filterPlaceholder": "Filter op categorie"
+  },
+  "caseDetail": {
+    "challenge": "Uitdaging",
+    "solution": "Oplossing",
+    "result": "Resultaat",
+    "keyResult": "Belangrijkste Resultaat",
+    "ctaTitle": "Klaar voor vergelijkbare resultaten?",
+    "ctaButton": "Plan een gesprek",
+    "moreCases": "Meer Cases"
   }
 }

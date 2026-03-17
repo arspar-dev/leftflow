@@ -2,26 +2,26 @@
 
 import Link from "next/link";
 import { FadeIn } from "@/components/animations";
-import type { Locale } from "@/lib/i18n";
+import type { Locale, Dictionary } from "@/lib/i18n";
 
 interface ContactCTAProps {
   locale: Locale;
+  dict: Dictionary;
 }
 
-export function ContactCTA({ locale }: ContactCTAProps) {
+export function ContactCTA({ locale, dict }: ContactCTAProps) {
   return (
     <section className="py-20 bg-charcoal-50">
       <div className="max-w-[1200px] mx-auto px-6 text-center">
         <FadeIn>
           {/* Heading */}
           <h2 className="text-3xl font-bold text-charcoal-950 mb-4">
-            Schedule a 15-minute discovery call
+            {(dict as any).contactCTA?.title || "Schedule a 15-minute discovery call"}
           </h2>
 
           {/* Body text */}
           <p className="text-charcoal-500 max-w-xl mx-auto mb-8">
-            During the call, we&apos;ll discuss your challenge. Prefer to call
-            directly?
+            {(dict as any).contactCTA?.description || "During the call, we'll discuss your challenge. Prefer to call directly?"}
           </p>
 
           {/* Phone number */}
@@ -46,7 +46,7 @@ export function ContactCTA({ locale }: ContactCTAProps) {
 
           {/* CTA button */}
           <Link href={`/${locale}/contact`} className="btn-hh">
-            Schedule a call
+            {(dict as any).contactCTA?.button || "Schedule a call"}
           </Link>
         </FadeIn>
       </div>

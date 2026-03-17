@@ -6,7 +6,25 @@
     "blog": "Blog",
     "about": "Hakkımızda",
     "contact": "İletişim",
-    "cta": "Hadi Konuşalım"
+    "cta": "Hadi Konuşalım",
+    "insights": "Blog",
+    "cases": "Projeler",
+    "culture": "Kültür",
+    "serviceItems": [
+      "İçerik Üretimi",
+      "AI Agent Geliştirme",
+      "İş Akışı Otomasyonu",
+      "LLM Geliştirme",
+      "Veri & Zeka"
+    ],
+    "industryItems": [
+      "E-ticaret",
+      "Sağlık",
+      "Finans",
+      "Üretim",
+      "Lojistik",
+      "Perakende"
+    ]
   },
   "hero": {
     "badge": "200+ işletme ölçeklendi",
@@ -220,7 +238,11 @@
         { "name": "Mehmet Yılmaz", "role": "Baş Geliştirici", "description": "Full-stack geliştirme ve AI entegrasyonları." },
         { "name": "Elif Arslan", "role": "İş Geliştirme", "description": "Müşteri ilişkileri ve stratejik ortaklıklar." }
       ]
-    }
+    },
+    "breadcrumb": "Kültür",
+    "intro": "Merhaba, biz LeftFlow. AI otomasyon ajansınız. AI stratejisi, geliştirme, otomasyon ve veri zekası konusunda uzmanız. Sektör bilgimizle birlikte hedeflerinizi gerçeğe dönüştürüyoruz.",
+    "readyToWork": "Birlikte çalışmaya hazır mısınız?",
+    "scheduleCall": "Görüşme Planla"
   },
   "contact": {
     "label": "İletişim",
@@ -240,7 +262,15 @@
       "phone": "+31 6 12345678",
       "address": "Amsterdam, Hollanda",
       "hours": "Pzt-Cum: 09:00 - 18:00"
-    }
+    },
+    "heroTitle": "Zorluğunuz ne?",
+    "scheduleTitle": "15 dakikalık keşif görüşmesi planlayın",
+    "scheduleDescription": "Görüşmede zorluklarınızı tartışacağız. Doğrudan aramayı mı tercih edersiniz?",
+    "bookCall": "Görüşme Planla",
+    "challengeTitle": "Zorluğunuz nedir?",
+    "challengeDescription": "Sonuçlarınız için neler yapabileceğimizi merak ediyor musunuz? Bize meydan okuyun, 2 iş günü içinde sizinle iletişime geçelim.",
+    "officesTitle": "Ofislerimiz",
+    "officesSubtitle": "Hollanda'daki lokasyonlarımızı ziyaret edin."
   },
   "footer": {
     "description": "AI destekli otomasyon çözümleri ile işletmelerin büyümesine ve verimlilik kazanmasına yardımcı oluyoruz.",
@@ -249,7 +279,19 @@
     "quickLinks": "Hızlı Linkler",
     "services": "Hizmetler",
     "followUs": "Bizi Takip Edin",
-    "copyright": "Tüm hakları saklıdır."
+    "copyright": "Tüm hakları saklıdır.",
+    "hubs": "Merkezler",
+    "content": "İçerik",
+    "industries": "Endüstriler",
+    "culture": "Kültür",
+    "cases": "Projeler",
+    "blog": "Blog",
+    "aboutUs": "Hakkımızda",
+    "contact": "İletişim",
+    "newsletter": "Bültenimize abone olun",
+    "privacyPolicy": "Gizlilik Politikası",
+    "terms": "Kullanım Koşulları",
+    "allRightsReserved": "Tüm hakları saklıdır"
   },
   "trustedBy": {
     "title": "200+ işletme tarafından güveniliyor"
@@ -312,5 +354,88 @@
     "getStarted": "Başlayın",
     "contactUs": "Bize Ulaşın",
     "backToHome": "Ana Sayfaya Dön"
+  },
+  "trending": {
+    "topics": [
+      { "label": "AI Çözümleri" },
+      { "label": "İş Akışı Otomasyonu" },
+      { "label": "AI Chatbotlar" },
+      { "label": "Veri Zekası" },
+      { "label": "E-ticaret AI" }
+    ]
+  },
+  "casesPreview": {
+    "title": "Başarı Hikayelerimiz",
+    "readMore": "Devamını Oku",
+    "viewAll": "Tüm projeleri gör",
+    "filters": {
+      "all": "Tümü",
+      "ai": "AI",
+      "automation": "Otomasyon",
+      "b2b": "B2B",
+      "ecommerce": "E-ticaret"
+    }
+  },
+  "blogPreview": {
+    "title": "Son Yazılar",
+    "readMore": "Devamını Oku"
+  },
+  "contactCTA": {
+    "title": "15 dakikalık keşif görüşmesi planlayın",
+    "description": "Görüşmede, zorluklarınızı tartışacağız. Doğrudan aramayı mı tercih edersiniz?",
+    "button": "Görüşme Planla",
+    "or": "veya"
+  },
+  "locations": {
+    "title": "Ofislerimiz",
+    "subtitle": "Lokasyonlarımızı ziyaret edin",
+    "getDirections": "Yol tarifi al",
+    "route": "Rota",
+    "mondayFriday": "Pazartesi - Cuma",
+    "weekend": "Cumartesi & Pazar Kapalı"
+  },
+  "workflow": {
+    "label": "Nasıl Çalışıyoruz",
+    "title": "Zorluklardan sonuca 4 adımda",
+    "steps": [
+      {
+        "number": "01",
+        "title": "Keşif & Analiz",
+        "description": "İşletmenizin zorluklarını, mevcut süreçlerini ve büyüme hedeflerini kapsamlı bir analizle anlayarak başlıyoruz."
+      },
+      {
+        "number": "02",
+        "title": "Strateji & Tasarım",
+        "description": "İhtiyaçlarınıza uygun AI destekli çözümler tasarlıyor, doğru teknolojileri ve entegrasyon yaklaşımını seçiyoruz."
+      },
+      {
+        "number": "03",
+        "title": "Uygulama",
+        "description": "Uzman ekibimiz otomasyon iş akışlarını, AI agentları ve entegrasyonları mevcut sistemlerinize kurar ve dağıtır."
+      },
+      {
+        "number": "04",
+        "title": "Optimizasyon & Büyüme",
+        "description": "Performansı sürekli izliyor, süreçleri optimize ediyor ve işletmeniz büyüdükçe çözümleri ölçeklendiriyoruz."
+      }
+    ]
+  },
+  "casesPage": {
+    "breadcrumb": "Projeler",
+    "title": "Projelerimiz",
+    "noResults": "Bu filtre için proje bulunamadı.",
+    "showing": "Gösterilen",
+    "of": "/",
+    "readMore": "Devamını Oku",
+    "filterPlaceholder": "Kategoriye göre filtrele"
+  },
+  "caseDetail": {
+    "challenge": "Zorluk",
+    "solution": "Çözüm",
+    "result": "Sonuç",
+    "keyResult": "Önemli Sonuç",
+    "ctaTitle": "Benzer sonuçlara hazır mısınız?",
+    "ctaButton": "Görüşme Planla",
+    "moreCases": "Diğer Projeler"
   }
 }

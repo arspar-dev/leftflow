@@ -12,12 +12,13 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { slug } = await params;
+  const { locale, slug } = await params;
   const industry = getIndustry(slug);
   if (!industry) return {};
+  const localeData = industry[locale as keyof Pick<typeof industry, 'tr' | 'en' | 'nl'>] || industry.en;
   return {
-    title: `${industry.title} | LeftFlow`,
-    description: industry.description,
+    title: `${localeData.title} | LeftFlow`,
+    description: localeData.description,
   };
 }
 

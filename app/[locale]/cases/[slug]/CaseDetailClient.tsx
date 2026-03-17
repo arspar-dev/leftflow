@@ -26,7 +26,7 @@ export function CaseDetailClient({ caseStudy, otherCases, locale, dict }: Props)
             <div className="flex items-center gap-2 text-sm text-charcoal-400 mb-8">
               <Link href={`/${locale}`} className="hover:text-primary-500 transition-colors">Home</Link>
               <span>/</span>
-              <Link href={`/${locale}/cases`} className="hover:text-primary-500 transition-colors">Cases</Link>
+              <Link href={`/${locale}/cases`} className="hover:text-primary-500 transition-colors">{(dict as any).casesPage?.breadcrumb || "Cases"}</Link>
               <span>/</span>
               <span className="text-charcoal-700">{caseStudy.client}</span>
             </div>
@@ -64,7 +64,7 @@ export function CaseDetailClient({ caseStudy, otherCases, locale, dict }: Props)
           <FadeIn delay={0.15}>
             <div className="text-center mb-16 py-8 bg-charcoal-50 rounded-2xl border border-charcoal-200/60">
               <div className="text-5xl font-bold text-primary-500 mb-2">{caseStudy.metric}</div>
-              <div className="text-sm text-charcoal-500 uppercase tracking-wider">Key Result</div>
+              <div className="text-sm text-charcoal-500 uppercase tracking-wider">{(dict as any).caseDetail?.keyResult || "Key Result"}</div>
             </div>
           </FadeIn>
 
@@ -79,7 +79,7 @@ export function CaseDetailClient({ caseStudy, otherCases, locale, dict }: Props)
                     <line x1="12" y1="16" x2="12.01" y2="16" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-charcoal-800 mb-2">Challenge</h3>
+                <h3 className="text-lg font-semibold text-charcoal-800 mb-2">{(dict as any).caseDetail?.challenge || "Challenge"}</h3>
                 <p className="text-sm text-charcoal-600 leading-relaxed">{content.challenge}</p>
               </div>
             </FadeIn>
@@ -91,7 +91,7 @@ export function CaseDetailClient({ caseStudy, otherCases, locale, dict }: Props)
                     <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-charcoal-800 mb-2">Solution</h3>
+                <h3 className="text-lg font-semibold text-charcoal-800 mb-2">{(dict as any).caseDetail?.solution || "Solution"}</h3>
                 <p className="text-sm text-charcoal-600 leading-relaxed">{content.solution}</p>
               </div>
             </FadeIn>
@@ -103,7 +103,7 @@ export function CaseDetailClient({ caseStudy, otherCases, locale, dict }: Props)
                     <polyline points="20 6 9 17 4 12" />
                   </svg>
                 </div>
-                <h3 className="text-lg font-semibold text-charcoal-800 mb-2">Result</h3>
+                <h3 className="text-lg font-semibold text-charcoal-800 mb-2">{(dict as any).caseDetail?.result || "Result"}</h3>
                 <p className="text-sm text-charcoal-600 leading-relaxed">{content.result}</p>
               </div>
             </FadeIn>
@@ -113,10 +113,10 @@ export function CaseDetailClient({ caseStudy, otherCases, locale, dict }: Props)
           <FadeIn>
             <div className="text-center mb-16 py-12 bg-charcoal-800 rounded-3xl">
               <h3 className="text-2xl font-bold text-white mb-4">
-                Ready for similar results?
+                {(dict as any).caseDetail?.ctaTitle || "Ready for similar results?"}
               </h3>
               <Button href={`/${locale}/contact`} variant="white" size="lg">
-                Schedule a Call
+                {(dict as any).caseDetail?.ctaButton || "Schedule a Call"}
               </Button>
             </div>
           </FadeIn>
@@ -124,7 +124,7 @@ export function CaseDetailClient({ caseStudy, otherCases, locale, dict }: Props)
           {/* Other Cases */}
           {otherCases.length > 0 && (
             <div>
-              <h3 className="text-2xl font-bold text-charcoal-800 mb-8">More Cases</h3>
+              <h3 className="text-2xl font-bold text-charcoal-800 mb-8">{(dict as any).caseDetail?.moreCases || "More Cases"}</h3>
               <div className="grid sm:grid-cols-3 gap-6">
                 {otherCases.map((c) => {
                   const cContent = c[locale] || c.en;

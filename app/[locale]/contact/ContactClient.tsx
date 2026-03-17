@@ -65,10 +65,10 @@ export function ContactClient({ dict, locale }: Props) {
         setSubmitted(true);
       } else {
         const json = await res.json();
-        setError(json.error || "Something went wrong.");
+        setError(json.error || ((dict as any).contact?.errorGeneric || "Something went wrong."));
       }
     } catch {
-      setError("Network error. Please try again.");
+      setError((dict as any).contact?.errorNetwork || "Network error. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -81,7 +81,7 @@ export function ContactClient({ dict, locale }: Props) {
         <div className="relative aspect-[3/1] w-full overflow-hidden">
           <Image
             src="/images/hero.jpg"
-            alt="What's your challenge?"
+            alt={(dict as any).contact?.heroTitle || "What's your challenge?"}
             fill
             priority
             className="object-cover"
@@ -89,7 +89,7 @@ export function ContactClient({ dict, locale }: Props) {
           <div className="absolute inset-0 bg-black/30" />
           <div className="absolute inset-0 flex items-center justify-center">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-center">
-              What&apos;s your challenge?
+              {(dict as any).contact?.heroTitle || "What's your challenge?"}
             </h1>
           </div>
         </div>
@@ -99,10 +99,10 @@ export function ContactClient({ dict, locale }: Props) {
       <section className="py-16 bg-white">
         <div className="max-w-[1200px] mx-auto px-6 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-charcoal-950 mb-4">
-            Schedule a 15-minute discovery call
+            {(dict as any).contact?.scheduleTitle || "Schedule a 15-minute discovery call"}
           </h2>
           <p className="text-charcoal-500 text-lg mb-8">
-            During the call, we&apos;ll discuss your challenge.
+            {(dict as any).contact?.scheduleDescription || "During the call, we'll discuss your challenge."}
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
             <a
@@ -120,7 +120,7 @@ export function ContactClient({ dict, locale }: Props) {
             </a>
           </div>
           <a href="#calendly" className="btn-hh">
-            Book a call
+            {(dict as any).contact?.bookCall || "Book a call"}
           </a>
         </div>
       </section>
@@ -149,11 +149,10 @@ export function ContactClient({ dict, locale }: Props) {
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-charcoal-950 mb-4">
-              What&apos;s your challenge?
+              {(dict as any).contact?.challengeTitle || "What's your challenge?"}
             </h2>
             <p className="text-charcoal-500 text-lg max-w-2xl mx-auto">
-              Curious about what we can do for your results? Challenge us and
-              we&apos;ll contact you within 2 business days.
+              {(dict as any).contact?.challengeDescription || "Curious about what we can do for your results? Challenge us and we'll contact you within 2 business days."}
             </p>
           </div>
 
@@ -283,10 +282,10 @@ export function ContactClient({ dict, locale }: Props) {
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl lg:text-4xl font-bold text-charcoal-950 mb-4">
-              Our Offices
+              {(dict as any).contact?.officesTitle || (dict as any).locations?.title || "Our Offices"}
             </h2>
             <p className="text-charcoal-500 text-lg">
-              Visit us at our locations in the Netherlands.
+              {(dict as any).contact?.officesSubtitle || (dict as any).locations?.subtitle || "Visit us at our locations in the Netherlands."}
             </p>
           </div>
 
@@ -309,8 +308,8 @@ export function ContactClient({ dict, locale }: Props) {
                   <p>info@leftflow.ai</p>
                 </div>
                 <div className="text-charcoal-500 mb-6">
-                  <p>{office.hours}</p>
-                  <p>{office.closed}</p>
+                  <p>{(dict as any).locations?.mondayFriday || "Monday - Friday"} 09:00 - 18:00</p>
+                  <p>{(dict as any).locations?.weekend || "Saturday & Sunday Closed"}</p>
                 </div>
                 <div className="flex items-center gap-4">
                   <a
@@ -319,7 +318,7 @@ export function ContactClient({ dict, locale }: Props) {
                     rel="noopener noreferrer"
                     className="text-charcoal-950 font-medium hover:underline transition-colors"
                   >
-                    Get directions
+                    {(dict as any).locations?.getDirections || "Get directions"}
                   </a>
                   <a
                     href={office.mapUrl}
@@ -327,7 +326,7 @@ export function ContactClient({ dict, locale }: Props) {
                     rel="noopener noreferrer"
                     className="btn-hh-outline"
                   >
-                    Route
+                    {(dict as any).locations?.route || "Route"}
                   </a>
                 </div>
               </div>

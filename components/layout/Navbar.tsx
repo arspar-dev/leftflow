@@ -13,23 +13,6 @@ interface NavbarProps {
   dict: Dictionary;
 }
 
-const serviceItems = [
-  { label: "AI Agent Development", href: "/#services" },
-  { label: "Workflow Automation", href: "/#services" },
-  { label: "Content Generation", href: "/#services" },
-  { label: "LLM Development", href: "/#services" },
-  { label: "Data & Intelligence", href: "/data-intelligence" },
-];
-
-const industryItems = [
-  { label: "E-commerce", href: "/industries/ecommerce" },
-  { label: "Healthcare", href: "/industries/healthcare" },
-  { label: "Finance", href: "/industries/finance" },
-  { label: "Manufacturing", href: "/industries/manufacturing" },
-  { label: "Logistics", href: "/industries/logistics" },
-  { label: "Retail", href: "/industries/retail" },
-];
-
 export function Navbar({ locale, dict }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -39,6 +22,29 @@ export function Navbar({ locale, dict }: NavbarProps) {
   const pathname = usePathname();
   const servicesRef = useRef<HTMLDivElement>(null);
   const industriesRef = useRef<HTMLDivElement>(null);
+
+  const serviceLabels = (dict as any).nav?.serviceItems || [
+    "Content Generation", "AI Agent Development", "Workflow Automation", "LLM Development", "Data & Intelligence"
+  ];
+  const serviceItems = [
+    { label: serviceLabels[0], href: "/#services" },
+    { label: serviceLabels[1], href: "/#services" },
+    { label: serviceLabels[2], href: "/#services" },
+    { label: serviceLabels[3], href: "/#services" },
+    { label: serviceLabels[4], href: "/data-intelligence" },
+  ];
+
+  const industryLabels = (dict as any).nav?.industryItems || [
+    "E-commerce", "Healthcare", "Finance", "Manufacturing", "Logistics", "Retail"
+  ];
+  const industryItems = [
+    { label: industryLabels[0], href: "/industries/ecommerce" },
+    { label: industryLabels[1], href: "/industries/healthcare" },
+    { label: industryLabels[2], href: "/industries/finance" },
+    { label: industryLabels[3], href: "/industries/manufacturing" },
+    { label: industryLabels[4], href: "/industries/logistics" },
+    { label: industryLabels[5], href: "/industries/retail" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -64,9 +70,9 @@ export function Navbar({ locale, dict }: NavbarProps) {
   const navLinks = [
     { label: dict.nav.services, href: `/${locale}/#services`, hasDropdown: true, dropdownType: "services" as const },
     { label: dict.nav.industries, href: `/${locale}/#industries`, hasDropdown: true, dropdownType: "industries" as const },
-    { label: "Insights", href: `/${locale}/blog` },
-    { label: "Cases", href: `/${locale}/cases` },
-    { label: "Culture", href: `/${locale}/about` },
+    { label: (dict as any).nav?.insights || "Insights", href: `/${locale}/blog` },
+    { label: (dict as any).nav?.cases || "Cases", href: `/${locale}/cases` },
+    { label: (dict as any).nav?.culture || "Culture", href: `/${locale}/about` },
   ];
 
   return (

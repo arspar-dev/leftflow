@@ -1,14 +1,17 @@
 "use client";
 
 import { FadeIn } from "@/components/animations";
+import type { Dictionary } from "@/lib/i18n";
+
+interface LocationsSectionProps {
+  dict: Dictionary;
+}
 
 const offices = [
   {
     city: "Amsterdam",
     address: "Oudezijds Voorburgwal, Amsterdam",
     phone: "+31 6 12345678",
-    hours: "Monday - Friday 09:00 - 18:00",
-    closed: "Saturday & Sunday Closed",
     mapUrl:
       "https://www.google.com/maps/dir//Oudezijds+Voorburgwal,+Amsterdam",
   },
@@ -16,21 +19,19 @@ const offices = [
     city: "Rotterdam",
     address: "Stationsplein 45, 3013 AK Rotterdam",
     phone: "+31 6 12345678",
-    hours: "Monday - Friday 09:00 - 18:00",
-    closed: "Saturday & Sunday Closed",
     mapUrl:
       "https://www.google.com/maps/dir//Stationsplein+45,+3013+AK+Rotterdam",
   },
 ];
 
-export function LocationsSection() {
+export function LocationsSection({ dict }: LocationsSectionProps) {
   return (
     <section className="py-20 bg-white">
       <div className="max-w-[1200px] mx-auto px-6">
         {/* Section heading */}
         <FadeIn>
           <h2 className="text-3xl font-bold text-charcoal-950 text-center mb-12">
-            Our Offices
+            {(dict as any).locations?.title || "Our Offices"}
           </h2>
         </FadeIn>
 
@@ -55,8 +56,8 @@ export function LocationsSection() {
                       {office.phone}
                     </a>
                   </p>
-                  <p>{office.hours}</p>
-                  <p>{office.closed}</p>
+                  <p>{(dict as any).locations?.mondayFriday || "Monday - Friday"} 09:00 - 18:00</p>
+                  <p>{(dict as any).locations?.weekend || "Saturday & Sunday Closed"}</p>
                 </div>
 
                 {/* Actions */}
@@ -67,7 +68,7 @@ export function LocationsSection() {
                     rel="noopener noreferrer"
                     className="text-sm font-medium text-charcoal-950 hover:underline transition-colors"
                   >
-                    Get directions
+                    {(dict as any).locations?.getDirections || "Get directions"}
                   </a>
                   <a
                     href={office.mapUrl}
@@ -75,7 +76,7 @@ export function LocationsSection() {
                     rel="noopener noreferrer"
                     className="btn-hh-outline text-sm px-4 py-1.5"
                   >
-                    Route
+                    {(dict as any).locations?.route || "Route"}
                   </a>
                 </div>
               </div>

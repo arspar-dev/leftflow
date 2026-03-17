@@ -30,12 +30,12 @@ export function AboutClient({ dict, locale }: Props) {
               Home
             </Link>
             <span className="mx-2">&gt;</span>
-            <span className="text-charcoal-950">Culture</span>
+            <span className="text-charcoal-950">{(dict as any).about?.breadcrumb || a.label || "Culture"}</span>
           </nav>
 
           {/* Heading */}
           <h1 className="text-5xl font-bold text-charcoal-950 mb-4">
-            Our Culture
+            {(dict as any).about?.breadcrumb || a.label || "Our Culture"}
           </h1>
           <p className="text-lg text-charcoal-500 max-w-2xl mb-8">
             {a.subtitle}
@@ -65,10 +65,10 @@ export function AboutClient({ dict, locale }: Props) {
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-charcoal-950 mb-6">
-              Hi, we&apos;re LeftFlow
+              {a.title || "Hi, we're LeftFlow"}
             </h2>
             <p className="text-charcoal-500 leading-relaxed text-lg">
-              {a.mission.description}
+              {(dict as any).about?.intro || a.mission.description}
             </p>
           </div>
         </div>
@@ -146,10 +146,10 @@ export function AboutClient({ dict, locale }: Props) {
       <section className="bg-white py-16">
         <div className="max-w-[1200px] mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold text-charcoal-950 mb-8">
-            Ready to work together?
+            {(dict as any).about?.readyToWork || "Ready to work together?"}
           </h2>
           <Link href={`/${locale}/contact`} className="btn-hh">
-            {dict.common.contactUs}
+            {(dict as any).about?.scheduleCall || dict.common.contactUs}
           </Link>
         </div>
       </section>

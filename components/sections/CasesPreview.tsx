@@ -5,26 +5,28 @@ import Image from "next/image";
 import Link from "next/link";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations";
 import { caseStudies, caseCategories } from "@/lib/cases";
-import type { Locale } from "@/lib/i18n";
+import type { Locale, Dictionary } from "@/lib/i18n";
 
 interface CasesPreviewProps {
   locale: Locale;
+  dict: Dictionary;
 }
-
-const categoryLabelMap: Record<string, string> = {
-  all: "All",
-  ai: "AI",
-  automation: "Automation",
-  b2b: "B2B",
-  ecommerce: "E-commerce",
-};
 
 const displayCategories = caseCategories.filter((c) =>
   ["all", "ai", "automation", "b2b", "ecommerce"].includes(c.value)
 );
 
-export function CasesPreview({ locale }: CasesPreviewProps) {
+export function CasesPreview({ locale, dict }: CasesPreviewProps) {
   const [activeFilter, setActiveFilter] = useState("all");
+
+  const filters = (dict as any).casesPreview?.filters || {};
+  const categoryLabelMap: Record<string, string> = {
+    all: filters.all || "All",
+    ai: filters.ai || "AI",
+    automation: filters.automation || "Automation",
+    b2b: filters.b2b || "B2B",
+    ecommerce: filters.ecommerce || "E-commerce",
+  };
 
   const filtered =
     activeFilter === "all"
@@ -37,7 +39,7 @@ export function CasesPreview({ locale }: CasesPreviewProps) {
         {/* Section heading */}
         <FadeIn>
           <h2 className="text-3xl font-bold text-charcoal-950 text-center mb-10">
-            Our Success Stories
+            {(dict as any).casesPreview?.title || "Our Success Stories"}
           </h2>
         </FadeIn>
 
@@ -102,7 +104,7 @@ export function CasesPreview({ locale }: CasesPreviewProps) {
 
                   {/* Read more link */}
                   <span className="text-sm font-medium text-charcoal-950 inline-flex items-center gap-1 group-hover:gap-2 transition-all">
-                    Read more
+                    {(dict as any).casesPreview?.readMore || "Read more"}
                     <span aria-hidden="true">&rarr;</span>
                   </span>
                 </Link>
@@ -118,7 +120,7 @@ export function CasesPreview({ locale }: CasesPreviewProps) {
               href={`/${locale}/cases`}
               className="btn-hh"
             >
-              View all cases
+              {(dict as any).casesPreview?.viewAll || "View all cases"}
             </Link>
           </div>
         </FadeIn>
