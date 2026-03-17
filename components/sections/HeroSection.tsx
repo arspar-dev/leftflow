@@ -14,14 +14,27 @@ interface HeroSectionProps {
 export function HeroSection({ dict, locale }: HeroSectionProps) {
   return (
     <>
-      {/* Dark hero with image - HH style */}
+      {/* Dark hero with video background - HH style */}
       <section className="relative bg-charcoal-950 pt-[72px]">
         <div className="relative w-full aspect-[16/7] max-h-[600px] overflow-hidden">
+          {/* Video background - like HH's YouTube embed */}
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover opacity-70"
+            poster="/images/hero.jpg"
+          >
+            <source src="/videos/hero-reel.mp4" type="video/mp4" />
+          </video>
+
+          {/* Fallback image for when video doesn't load */}
           <Image
             src="/images/hero.jpg"
             alt="LeftFlow AI Automation"
             fill
-            className="object-cover opacity-60"
+            className="object-cover opacity-60 -z-10"
             priority
           />
         </div>
