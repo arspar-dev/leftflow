@@ -160,7 +160,7 @@ export function IndustryPageClient({ industry, dict, locale, allIndustries }: Pr
             ].map((item, i) => (
               <StaggerItem key={i}>
                 <div className="p-6 rounded-2xl bg-charcoal-50 border border-charcoal-200/60 h-full">
-                  <span className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 ${item.color}`}>
+                  <span className={`inline-block px-3 py-1 text-xs font-medium mb-4 ${item.color}`}>
                     {item.label}
                   </span>
                   <p className="text-charcoal-500 leading-relaxed text-sm">{item.text}</p>
@@ -184,7 +184,7 @@ export function IndustryPageClient({ industry, dict, locale, allIndustries }: Pr
             <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
               <Link
                 href={`/${locale}/contact`}
-                className="inline-flex items-center gap-2 bg-white text-charcoal-800 px-8 py-4 rounded-full font-medium hover:bg-white/90 transition-colors text-lg"
+                className="inline-flex items-center gap-2 bg-white text-charcoal-800 px-8 py-4 font-medium hover:bg-white/90 transition-colors text-lg"
               >
                 {dict.industries.ctaButton}
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>

@@ -175,7 +175,7 @@ export function AboutClient({ dict, locale }: Props) {
               <Link href={`/${locale}/contact`} className="btn-hh-white">
                 {(dict as any).about?.scheduleCall || dict.common.contactUs} →
               </Link>
-              <a href="mailto:info@leftflow.ai" className="inline-flex items-center gap-2 text-white border-2 border-white/30 rounded-full px-6 py-3 font-semibold hover:bg-white/10 transition-colors">
+              <a href="mailto:info@leftflow.ai" className="inline-flex items-center gap-2 text-white border-2 border-white/30 px-6 py-3 font-semibold hover:bg-white/10 transition-colors">
                 info@leftflow.ai
               </a>
             </div>

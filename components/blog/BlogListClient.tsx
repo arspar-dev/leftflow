@@ -69,7 +69,7 @@ export function BlogListClient({ posts, dict, locale }: Props) {
                     placeholder={dict.blog.search}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full pl-12 pr-4 py-3 rounded-xl border border-charcoal-200 bg-white text-charcoal-800 placeholder:text-charcoal-400 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all"
+                    className="w-full pl-12 pr-4 py-3 border border-charcoal-200 bg-white text-charcoal-800 placeholder:text-charcoal-400 focus:outline-none focus:ring-2 focus:ring-primary-500/20 focus:border-primary-500 transition-all"
                   />
                 </div>
               </div>
@@ -79,7 +79,7 @@ export function BlogListClient({ posts, dict, locale }: Props) {
                   <button
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
-                    className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                    className={`px-4 py-2 text-sm font-medium transition-all ${
                       activeCategory === cat
                         ? "bg-primary-500 text-white shadow-md"
                         : "bg-charcoal-100 text-charcoal-600 hover:bg-charcoal-200"
@@ -99,7 +99,7 @@ export function BlogListClient({ posts, dict, locale }: Props) {
               return (
                 <StaggerItem key={post.slug}>
                   <Link href={`/${locale}/blog/${post.slug}`}>
-                    <div className="h-full group cursor-pointer bg-charcoal-50 rounded-2xl overflow-hidden border border-charcoal-200/60 hover:border-primary-300 hover:shadow-lg transition-all">
+                    <div className="h-full group cursor-pointer bg-charcoal-50 overflow-hidden border border-charcoal-200/60 hover:border-primary-300 hover:shadow-lg transition-all">
                       <div className="aspect-video overflow-hidden relative">
                         <Image
                           src={`/images/blog-${post.slug}.jpg`}
@@ -111,7 +111,7 @@ export function BlogListClient({ posts, dict, locale }: Props) {
                       </div>
                       <div className="p-5">
                         <div className="flex items-center gap-2 mb-3">
-                          <span className={`px-2.5 py-0.5 rounded-full text-xs font-medium ${categoryColors[post.category]}`}>
+                          <span className={`px-2.5 py-0.5 text-xs font-medium ${categoryColors[post.category]}`}>
                             {dict.blog.categories[post.category as keyof typeof dict.blog.categories]}
                           </span>
                           <span className="text-xs text-charcoal-400">{post.readTime} {dict.blog.readTime}</span>

@@ -158,7 +158,7 @@ export function AutomationShowcase({ dict }: { dict: Dictionary }) {
               <button
                 key={i}
                 onClick={() => setActiveTab(i)}
-                className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
+                className={`flex items-center gap-2 px-5 py-2.5 text-sm font-medium transition-all ${
                   i === activeTab
                     ? "bg-primary-500 text-white shadow-lg shadow-primary-500/25"
                     : "bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-white"

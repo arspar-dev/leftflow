@@ -36,7 +36,7 @@ export function CaseDetailClient({ caseStudy, otherCases, locale, dict }: Props)
           <FadeIn>
             <div className="mb-12">
               <div className="inline-flex items-center gap-3 mb-4">
-                <span className="text-xs font-medium px-3 py-1 rounded-full bg-primary-50 text-primary-600">
+                <span className="text-xs font-medium px-3 py-1 bg-primary-50 text-primary-600">
                   {caseStudy.category.toUpperCase()}
                 </span>
                 <span className="text-sm text-charcoal-500">{caseStudy.client}</span>

@@ -16,8 +16,11 @@ export function ServicePageClient({ service, slug, locale, dict }: Props) {
   return (
     <>
       {/* Hero */}
-      <section className="relative bg-charcoal-950 pt-[72px]">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0D0D0D] via-[#111827] to-[#1a1a2e]" />
+      <section className="relative bg-charcoal-950 pt-[72px] overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={`/images/service-${slug}.jpg`} alt="" className="w-full h-full object-cover opacity-20" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0D0D0D] via-[#0D0D0D]/85 to-transparent" />
         <div className="relative max-w-[1200px] mx-auto px-6 py-20 md:py-28">
           <FadeIn>
             <p className="text-sm font-medium text-primary-400 uppercase tracking-wide mb-4">
@@ -150,7 +153,7 @@ export function ServicePageClient({ service, slug, locale, dict }: Props) {
           <div className="flex flex-wrap justify-center gap-4">
             {service.techStack.map((tech, i) => (
               <FadeIn key={i} delay={i * 0.05}>
-                <span className="px-5 py-2.5 bg-white border border-charcoal-200 rounded-full text-sm font-medium text-charcoal-700">
+                <span className="px-5 py-2.5 bg-white border border-charcoal-200 text-sm font-medium text-charcoal-700">
                   {tech}
                 </span>
               </FadeIn>
