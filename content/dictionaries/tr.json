@@ -356,6 +356,8 @@
     "backToHome": "Ana Sayfaya Dön"
   },
   "trending": {
+    "title": "Trend konular",
+    "subtitle": "Bu temalar ve konular müşterilerimizde ve piyasada sıkça karşımıza çıkıyor. Sizin için de ilginç mi?",
     "topics": [
       { "label": "AI Çözümleri" },
       { "label": "İş Akışı Otomasyonu" },

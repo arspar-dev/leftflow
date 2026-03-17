@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations";
+import { FadeIn } from "@/components/animations";
 import type { Dictionary, Locale } from "@/lib/i18n";
 
 interface Props {
@@ -9,43 +9,31 @@ interface Props {
   locale: Locale;
 }
 
-const serviceLinks = [
-  "#content-generation",
-  "#ai-agents",
-  "#workflow-automation",
-  "#llm-development",
-  "#data-intelligence",
-];
-
 export function ServicesSection({ dict, locale }: Props) {
   return (
-    <section id="services" className="py-20 bg-white">
+    <section id="services" className="py-12 md:py-16 bg-white">
       <div className="max-w-[1200px] mx-auto px-6">
         <FadeIn>
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-charcoal-950">
-              {dict.services.label}
-            </h2>
-          </div>
+          <h2 className="text-[32px] font-bold text-charcoal-950 mb-8">
+            {dict.services.label}
+          </h2>
         </FadeIn>
 
-        <StaggerContainer className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        {/* HH style: simple linked blocks with just service name */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {dict.services.items.map((item: any, i: number) => (
-            <StaggerItem key={i}>
+            <FadeIn key={i} delay={i * 0.05}>
               <Link
-                href={serviceLinks[i] || "#"}
-                className="block bg-charcoal-50 rounded-xl p-6 border border-charcoal-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg h-full"
+                href={`/${locale}/#services`}
+                className="block p-5 border border-charcoal-200 hover:border-charcoal-400 transition-colors group"
               >
-                <h3 className="font-semibold text-lg text-charcoal-950 mb-2">
+                <h4 className="font-semibold text-charcoal-950 group-hover:text-charcoal-700 transition-colors">
                   {item.title}
-                </h3>
-                <p className="text-sm text-charcoal-500 leading-relaxed">
-                  {item.description}
-                </p>
+                </h4>
               </Link>
-            </StaggerItem>
+            </FadeIn>
           ))}
-        </StaggerContainer>
+        </div>
       </div>
     </section>
   );

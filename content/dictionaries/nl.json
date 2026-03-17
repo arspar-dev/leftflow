@@ -356,6 +356,8 @@
     "backToHome": "Terug naar home"
   },
   "trending": {
+    "title": "Trending topics",
+    "subtitle": "Deze thema's en onderwerpen zien we veel terug bij onze opdrachtgevers en in de markt. Voor jou ook interessant?",
     "topics": [
       { "label": "AI-oplossingen" },
       { "label": "Workflow Automatisering" },

@@ -356,6 +356,8 @@
     "backToHome": "Back to Home"
   },
   "trending": {
+    "title": "Trending topics",
+    "subtitle": "These themes and topics come up frequently with our clients and in the market. Relevant for you too?",
     "topics": [
       { "label": "AI Solutions" },
       { "label": "Workflow Automation" },
