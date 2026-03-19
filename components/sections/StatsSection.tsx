@@ -30,7 +30,7 @@ export function StatsSection({ dict }: Props) {
           {stats.map((stat, i) => (
             <StaggerItem key={i}>
               <div className="text-center">
-                <p className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary-400 to-secondary-400 bg-clip-text text-transparent mb-3">
+                <p className="text-5xl md:text-6xl font-semibold text-white tracking-tight font-mono mb-3">
                   {stat.value}
                 </p>
                 <p className="text-sm text-charcoal-400 uppercase tracking-wide">

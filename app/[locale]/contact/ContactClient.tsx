@@ -88,7 +88,7 @@ export function ContactClient({ dict, locale }: Props) {
     <main>
       {/* Hero */}
       <section className="relative bg-charcoal-950 pt-[72px] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0D0D0D] via-[#111827] to-[#1a1a2e]" />
+        <div className="absolute inset-0 bg-charcoal-950" />
         <div className="relative max-w-[1200px] mx-auto px-6 py-20 md:py-28">
           <FadeIn>
             <nav className="text-sm text-white/50 mb-8">

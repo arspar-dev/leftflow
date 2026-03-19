@@ -15,7 +15,7 @@ interface Props {
 
 const categoryColors: Record<string, string> = {
   automation: "bg-primary-50 text-primary-600",
-  ai: "bg-secondary-400/10 text-secondary-500",
+  ai: "bg-charcoal-100 text-charcoal-700",
   industry: "bg-accent-400/10 text-accent-500",
   caseStudy: "bg-success-500/10 text-success-600",
   guide: "bg-red-50 text-red-500",

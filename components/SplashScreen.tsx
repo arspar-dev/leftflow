@@ -33,7 +33,7 @@ export function SplashScreen() {
           {/* Background pattern */}
           <div className="absolute inset-0 opacity-5">
             <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary-500 rounded-full blur-[120px]" />
-            <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-secondary-500 rounded-full blur-[120px]" />
+            <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-primary-500 rounded-full blur-[120px]" />
           </div>
 
           <div className="relative flex flex-col items-center">
@@ -109,7 +109,7 @@ export function SplashScreen() {
                 initial={{ width: 0 }}
                 animate={{ width: "100%" }}
                 transition={{ duration: 2.2, ease: "easeInOut" }}
-                className="h-full bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full"
+                className="h-full bg-gradient-to-r from-primary-500 to-primary-500 rounded-full"
               />
             </motion.div>
           </div>

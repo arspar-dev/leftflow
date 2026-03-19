@@ -328,7 +328,7 @@ export function Navbar({ locale, dict }: NavbarProps) {
                     onClick={() => setMegaMenu(null)}
                     className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 transition-colors group"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-secondary-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-primary-500 opacity-0 group-hover:opacity-100 transition-opacity" />
                     {item[locale]}
                   </Link>
                 ))}

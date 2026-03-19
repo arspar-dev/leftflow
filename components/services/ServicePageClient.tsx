@@ -17,10 +17,7 @@ export function ServicePageClient({ service, slug, locale, dict }: Props) {
     <>
       {/* Hero */}
       <section className="relative bg-charcoal-950 pt-[72px] overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={`/images/service-${slug}.jpg`} alt="" className="w-full h-full object-cover opacity-20" />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0D0D0D] via-[#0D0D0D]/85 to-transparent" />
+        <div className="absolute inset-0 bg-charcoal-900" />
         <div className="relative max-w-[1200px] mx-auto px-6 py-20 md:py-28">
           <FadeIn>
             <p className="text-sm font-medium text-primary-400 uppercase tracking-wide mb-4">
@@ -45,16 +42,14 @@ export function ServicePageClient({ service, slug, locale, dict }: Props) {
           <div className="grid md:grid-cols-2 gap-12">
             {/* Problem */}
             <FadeIn direction="left">
-              <div className="p-8 bg-red-50 rounded-xl border border-red-100">
-                <h2 className="text-xl font-bold text-charcoal-950 mb-6">
+              <div className="p-8 border border-charcoal-200">
+                <h2 className="text-xl font-semibold text-charcoal-950 mb-6">
                   {service.problemTitle}
                 </h2>
                 <ul className="space-y-4">
                   {service.problems.map((p, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <span className="mt-1 w-5 h-5 rounded-full bg-red-100 text-red-600 flex items-center justify-center flex-shrink-0">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M18 6L6 18M6 6l12 12"/></svg>
-                      </span>
+                      <span className="mt-1.5 w-1.5 h-1.5 bg-charcoal-400 flex-shrink-0" />
                       <span className="text-charcoal-600">{p}</span>
                     </li>
                   ))}
@@ -64,16 +59,14 @@ export function ServicePageClient({ service, slug, locale, dict }: Props) {
 
             {/* Solution */}
             <FadeIn direction="right">
-              <div className="p-8 bg-green-50 rounded-xl border border-green-100">
-                <h2 className="text-xl font-bold text-charcoal-950 mb-6">
+              <div className="p-8 border border-charcoal-200 bg-charcoal-50">
+                <h2 className="text-xl font-semibold text-charcoal-950 mb-6">
                   {service.solutionTitle}
                 </h2>
                 <ul className="space-y-4">
                   {service.solutions.map((s, i) => (
                     <li key={i} className="flex items-start gap-3">
-                      <span className="mt-1 w-5 h-5 rounded-full bg-green-100 text-green-600 flex items-center justify-center flex-shrink-0">
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><polyline points="20 6 9 17 4 12"/></svg>
-                      </span>
+                      <span className="mt-1.5 w-1.5 h-1.5 bg-primary-500 flex-shrink-0" />
                       <span className="text-charcoal-600">{s}</span>
                     </li>
                   ))}
@@ -126,9 +119,7 @@ export function ServicePageClient({ service, slug, locale, dict }: Props) {
             {service.processSteps.map((step, i) => (
               <StaggerItem key={i}>
                 <div className="text-center">
-                  <div className="w-14 h-14 rounded-full bg-primary-500 text-white flex items-center justify-center mx-auto mb-4 text-lg font-bold">
-                    {i + 1}
-                  </div>
+                  <p className="text-xs font-mono text-charcoal-400 mb-2">{String(i + 1).padStart(2, "0")}</p>
                   <h3 className="text-lg font-semibold text-charcoal-950 mb-2">
                     {step.title}
                   </h3>
@@ -166,10 +157,10 @@ export function ServicePageClient({ service, slug, locale, dict }: Props) {
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-[600px] mx-auto px-6">
           <FadeIn>
-            <div className="text-center p-8 bg-charcoal-50 rounded-2xl border border-charcoal-200">
+            <div className="text-center p-8 bg-charcoal-50 border border-charcoal-200">
               {/* Placeholder avatar */}
-              <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 mx-auto mb-4 flex items-center justify-center">
-                <span className="text-2xl font-bold text-white">BK</span>
+              <div className="w-16 h-16 bg-charcoal-950 mx-auto mb-4 flex items-center justify-center">
+                <span className="text-lg font-medium text-white tracking-tight">BK</span>
               </div>
               <h3 className="text-lg font-bold text-charcoal-950 mb-1">
                 Burhan Kocabıyık
@@ -190,7 +181,7 @@ export function ServicePageClient({ service, slug, locale, dict }: Props) {
 
       {/* CTA */}
       <section className="py-16 md:py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-600 via-primary-700 to-secondary-600" />
+        <div className="absolute inset-0 bg-charcoal-950" />
         <div className="relative max-w-[800px] mx-auto px-6 text-center">
           <FadeIn>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">

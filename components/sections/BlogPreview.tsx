@@ -42,7 +42,7 @@ export function BlogPreview({ locale, dict }: Props) {
                   className="group block"
                 >
                   {/* Color block placeholder */}
-                  <div className="relative aspect-[16/10] rounded-lg overflow-hidden mb-4 bg-gradient-to-br from-primary-100 to-secondary-100 flex items-center justify-center">
+                  <div className="relative aspect-[16/10] rounded-lg overflow-hidden mb-4 bg-charcoal-100 flex items-center justify-center">
                     <span className="text-4xl font-bold text-primary-500/20">{String(i + 1).padStart(2, "0")}</span>
                   </div>
 

@@ -30,7 +30,7 @@ const tabs = [
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: i * 0.1 }}
-            className="flex items-center gap-3 bg-slate-800/50 rounded-lg p-3"
+            className="flex items-center gap-3 bg-slate-800/50 p-3"
           >
             <span className="text-xs text-slate-400 font-mono w-20">{item.name}</span>
             <div className="flex-1 bg-slate-700 rounded-full h-2">
@@ -47,7 +47,7 @@ const tabs = [
           </motion.div>
         ))}
         <div className="flex items-center gap-2 mt-4 pt-3 border-t border-slate-700">
-          <div className="w-2 h-2 rounded-full bg-red-500 animate-pulse" />
+          <div className="w-2 h-2 rounded-full bg-red-500 opacity-80" />
           <span className="text-xs text-red-400">1 item below reorder threshold — auto-reorder triggered</span>
         </div>
       </div>
@@ -88,7 +88,7 @@ const tabs = [
               {item.status === "done" ? (
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><polyline points="20 6 9 17 4 12"/></svg>
               ) : item.status === "active" ? (
-                <div className="w-2.5 h-2.5 bg-primary-400 rounded-full animate-pulse" />
+                <div className="w-2.5 h-2.5 bg-primary-400 rounded-full opacity-80" />
               ) : (
                 <span className="text-xs">{i + 1}</span>
               )}
@@ -125,7 +125,7 @@ const tabs = [
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.12 }}
-            className="flex items-start gap-3 bg-slate-800/50 rounded-lg p-3"
+            className="flex items-start gap-3 bg-slate-800/50 p-3"
           >
             <span className={`text-xs font-mono uppercase mt-0.5 ${item.color} shrink-0 w-16`}>{item.type}</span>
             <span className="text-sm text-slate-300 flex-1">{item.msg}</span>
@@ -172,14 +172,8 @@ export function AutomationShowcase({ dict }: { dict: Dictionary }) {
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <div className="bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden">
-            <div className="flex items-center gap-2 px-4 py-3 border-b border-slate-800">
-              <div className="w-3 h-3 rounded-full bg-red-500/60" />
-              <div className="w-3 h-3 rounded-full bg-amber-500/60" />
-              <div className="w-3 h-3 rounded-full bg-emerald-500/60" />
-              <span className="ml-3 text-xs text-slate-500 font-mono">LeftFlow Dashboard</span>
-            </div>
-            <div className="p-6 min-h-[320px]">
+          <div className="bg-slate-900 border border-slate-800 overflow-hidden">
+            <div className="p-6 md:p-8 min-h-[320px]">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeTab}

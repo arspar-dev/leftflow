@@ -16,7 +16,7 @@ interface Props {
 
 const categoryColors: Record<string, string> = {
   automation: "bg-primary-50 text-primary-500 border border-primary-200",
-  ai: "bg-secondary-400/10 text-secondary-500 border border-secondary-400/20",
+  ai: "bg-charcoal-100 text-charcoal-700 border border-charcoal-200",
   industry: "bg-accent-400/10 text-accent-500 border border-accent-400/20",
   caseStudy: "bg-success-500/10 text-success-600 border border-success-500/20",
   guide: "bg-rose-50 text-rose-500 border border-rose-200",
@@ -40,7 +40,7 @@ export function BlogDetailClient({ post, dict, locale, relatedPosts }: Props) {
       {/* Reading progress bar */}
       <div className="fixed top-0 left-0 right-0 z-[60] h-0.5 bg-charcoal-200">
         <div
-          className="h-full bg-gradient-to-r from-primary-500 to-secondary-500 transition-all duration-150"
+          className="h-full bg-primary-500 transition-all duration-150"
           style={{ width: `${progress}%` }}
         />
       </div>
@@ -56,7 +56,7 @@ export function BlogDetailClient({ post, dict, locale, relatedPosts }: Props) {
             sizes="100vw"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D] via-[#0D0D0D]/50 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-charcoal-950/60 to-transparent" />
 
           <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12">
             <div className="max-w-4xl mx-auto">

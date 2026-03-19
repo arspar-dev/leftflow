@@ -101,7 +101,7 @@ export function AIOptimizerClient({ locale, dict }: Props) {
         {/* Decorative circles */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-10">
           <div className="absolute inset-0 rounded-full border border-primary-500/30" />
-          <div className="absolute inset-12 rounded-full border border-secondary-500/30" />
+          <div className="absolute inset-12 rounded-full border border-charcoal-700" />
           <div className="absolute inset-24 rounded-full border border-primary-500/30" />
         </div>
 
@@ -165,7 +165,7 @@ export function AIOptimizerClient({ locale, dict }: Props) {
             {content.steps.map((step, i) => (
               <StaggerItem key={i}>
                 <div className="text-center">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary-500 to-secondary-500 text-white text-2xl font-bold flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary-500 to-primary-400 text-white text-2xl font-bold flex items-center justify-center mx-auto mb-6">
                     {i + 1}
                   </div>
                   <h3 className="text-lg font-bold text-charcoal-950 mb-2">{step.title}</h3>
@@ -196,7 +196,7 @@ export function AIOptimizerClient({ locale, dict }: Props) {
                 </div>
                 <div className="bg-white/5 rounded-lg p-4">
                   <p className="text-xs text-white/40 mb-1">Brand Score</p>
-                  <p className="text-2xl font-bold text-secondary-400">8.4/10</p>
+                  <p className="text-2xl font-bold text-primary-400">8.4/10</p>
                   <p className="text-xs text-green-400">+1.2 ↑</p>
                 </div>
                 <div className="bg-white/5 rounded-lg p-4">
@@ -225,7 +225,7 @@ export function AIOptimizerClient({ locale, dict }: Props) {
 
       {/* CTA */}
       <section className="relative py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-600 via-primary-700 to-secondary-600" />
+        <div className="absolute inset-0 bg-gradient-to-br from-primary-600 via-primary-700 to-charcoal-900" />
         <div className="relative max-w-[800px] mx-auto px-6 text-center">
           <FadeIn>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">

@@ -1,65 +1,30 @@
 @import "tailwindcss";
 
-@font-face {
-  font-family: "Mont";
-  font-weight: 300;
-  src: url("/fonts/mont-light.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Mont";
-  font-weight: 400;
-  src: url("/fonts/mont-regular.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Mont";
-  font-weight: 600;
-  src: url("/fonts/mont-semibold.woff2") format("woff2");
-  font-display: swap;
-}
-@font-face {
-  font-family: "Mont";
-  font-weight: 700;
-  src: url("/fonts/mont-bold.woff2") format("woff2");
-  font-display: swap;
-}
-
 @theme {
-  /* Blueprint color system */
-  --color-hh-dark: #0D0D0D;
-  --color-hh-body: #0D0D0D;
+  /* Clean, professional color system — single accent, no AI purple */
+  --color-hh-dark: #0a0a0a;
+  --color-hh-body: #0a0a0a;
   --color-hh-muted: #6b7280;
 
-  /* Primary - Accent Blue */
-  --color-primary-50: #eff6ff;
-  --color-primary-100: #dbeafe;
-  --color-primary-200: #bfdbfe;
-  --color-primary-300: #93c5fd;
-  --color-primary-400: #60a5fa;
-  --color-primary-500: #2563EB;
-  --color-primary-600: #1d4ed8;
-  --color-primary-700: #1e40af;
-  --color-primary-800: #1e3a8a;
-  --color-primary-900: #172554;
+  /* Primary - Electric Blue (single accent) */
+  --color-primary-50: #f0f7ff;
+  --color-primary-100: #e0effe;
+  --color-primary-200: #b9dffe;
+  --color-primary-300: #7cc4fd;
+  --color-primary-400: #36a3f9;
+  --color-primary-500: #0c87ea;
+  --color-primary-600: #006bc8;
+  --color-primary-700: #0155a2;
+  --color-primary-800: #064986;
+  --color-primary-900: #0b3d6f;
 
-  /* Secondary - Accent Purple */
-  --color-secondary-400: #a78bfa;
-  --color-secondary-500: #7C3AED;
-  --color-secondary-600: #6d28d9;
-
-  /* Accent - Luminous Orange */
-  --color-accent-400: #ff8533;
-  --color-accent-500: #ff6900;
-  --color-accent-600: #cc5400;
-
-  /* Success - Green */
+  /* Success - Emerald */
   --color-success-400: #34d399;
   --color-success-500: #10B981;
   --color-success-600: #059669;
 
-  /* Neutral grays */
-  --color-charcoal-50: #F8FAFC;
+  /* Neutral - Slate (consistent cool grays) */
+  --color-charcoal-50: #f8fafc;
   --color-charcoal-100: #f1f5f9;
   --color-charcoal-200: #e2e8f0;
   --color-charcoal-300: #cbd5e1;
@@ -69,9 +34,10 @@
   --color-charcoal-700: #334155;
   --color-charcoal-800: #1e293b;
   --color-charcoal-900: #111827;
-  --color-charcoal-950: #0D0D0D;
+  --color-charcoal-950: #0a0a0a;
 
-  --font-sans: "Mont", "Inter", system-ui, -apple-system, sans-serif;
+  --font-sans: "Geist", system-ui, -apple-system, sans-serif;
+  --font-mono: "Geist Mono", "JetBrains Mono", monospace;
 }
 
 html {
@@ -83,7 +49,7 @@ body {
   font-family: var(--font-sans);
   font-size: 1rem;
   line-height: 1.7;
-  color: #0D0D0D;
+  color: #0a0a0a;
   font-weight: 400;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -91,38 +57,43 @@ body {
   background-color: #fff;
 }
 
-/* Selection */
 ::selection {
-  background-color: #2563EB;
+  background-color: #0c87ea;
   color: #fff;
   text-shadow: none;
 }
 
-::-webkit-scrollbar { width: 8px; }
-::-webkit-scrollbar-track { background: #F8FAFC; }
-::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
-/* Primary CTA button - Blue pill */
+/* ── Buttons ─────────────────────────────────────────── */
+
+/* Primary CTA */
 .btn-hh {
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
   color: #fff;
-  background-color: #2563EB;
+  background-color: #0a0a0a;
   border-radius: 0;
   text-decoration: none;
-  padding: calc(0.667em + 2px) calc(1.333em + 2px);
-  font-size: 1.125em;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  padding: 0.875em 1.75em;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: all 0.3s cubic-bezier(0.32, 0.72, 0, 1);
   border: none;
   cursor: pointer;
 }
 .btn-hh:hover {
-  background-color: #1d4ed8;
+  background-color: #1a1a1a;
   transform: translateY(-1px);
-  box-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+.btn-hh:active {
+  transform: translateY(0) scale(0.98);
 }
 
 /* Outline button */
@@ -130,20 +101,24 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
-  color: #0D0D0D;
+  color: #0a0a0a;
   background-color: transparent;
-  border: 2px solid #0D0D0D;
+  border: 1.5px solid #e2e8f0;
   border-radius: 0;
   text-decoration: none;
-  padding: calc(0.667em + 2px) calc(1.333em + 2px);
-  font-size: 1.125em;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  padding: 0.875em 1.75em;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: all 0.3s cubic-bezier(0.32, 0.72, 0, 1);
   cursor: pointer;
 }
 .btn-hh-outline:hover {
-  background-color: #0D0D0D;
-  color: #fff;
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+}
+.btn-hh-outline:active {
+  transform: scale(0.98);
 }
 
 /* White button (for dark backgrounds) */
@@ -151,43 +126,53 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
-  color: #0D0D0D;
+  color: #0a0a0a;
   background-color: #fff;
   border-radius: 0;
   text-decoration: none;
-  padding: calc(0.667em + 2px) calc(1.333em + 2px);
-  font-size: 1.125em;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  padding: 0.875em 1.75em;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: all 0.3s cubic-bezier(0.32, 0.72, 0, 1);
   border: none;
   cursor: pointer;
 }
 .btn-hh-white:hover {
-  background-color: #F8FAFC;
+  background-color: #f1f5f9;
+}
+.btn-hh-white:active {
+  transform: scale(0.98);
 }
 
-/* Glow button variant */
+/* Accent button (replaces glow — clean, no neon) */
 .btn-glow {
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
   color: #fff;
-  background: linear-gradient(135deg, #2563EB, #7C3AED);
+  background-color: #0c87ea;
   border-radius: 0;
   text-decoration: none;
-  padding: calc(0.75em + 2px) calc(1.5em + 2px);
-  font-size: 1.125em;
-  font-weight: 600;
-  transition: all 0.3s ease;
+  padding: 0.875em 1.75em;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: all 0.3s cubic-bezier(0.32, 0.72, 0, 1);
   border: none;
   cursor: pointer;
 }
 .btn-glow:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 30px rgba(37, 99, 235, 0.5), 0 0 60px rgba(124, 58, 237, 0.3);
+  background-color: #006bc8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(12, 135, 234, 0.2);
+}
+.btn-glow:active {
+  transform: translateY(0) scale(0.98);
 }
 
-/* Marquee */
+/* ── Animations ──────────────────────────────────────── */
+
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
@@ -199,7 +184,6 @@ body {
   animation-play-state: paused;
 }
 
-/* Logo draw */
 @keyframes logo-draw {
   0% { stroke-dashoffset: 200; }
   100% { stroke-dashoffset: 0; }
@@ -209,26 +193,27 @@ body {
   animation: logo-draw 2s ease-in-out forwards;
 }
 
-/* Splash */
 @keyframes splash-fade {
   0% { opacity: 1; }
   80% { opacity: 1; }
   100% { opacity: 0; pointer-events: none; }
 }
 
-/* Headings */
+/* ── Typography ──────────────────────────────────────── */
+
 h1, h2, h3, h4, h5, h6 {
-  color: #0D0D0D;
-  font-weight: 700;
-  line-height: 1.2;
+  color: #0a0a0a;
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.025em;
 }
 
 /* Section spacing */
 .section-hh {
-  padding: 3rem 0;
+  padding: 4rem 0;
 }
 @media (min-width: 768px) {
   .section-hh {
-    padding: 5rem 0;
+    padding: 6rem 0;
   }
 }
