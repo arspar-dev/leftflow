@@ -25,7 +25,18 @@ export function DataIntelligenceClient({ dict, locale }: Props) {
       {/* Hero */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-charcoal-950" />
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster="/images/data-intelligence.jpg"
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src="/videos/data-intelligence-motion.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-charcoal-950/60 via-charcoal-950/80 to-charcoal-950" />
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>

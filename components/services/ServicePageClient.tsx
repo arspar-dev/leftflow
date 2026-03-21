@@ -6,6 +6,14 @@ import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations";
 import type { ServiceLocaleData } from "@/lib/services";
 import type { Dictionary, Locale } from "@/lib/i18n";
 
+const serviceVideoMap: Record<string, string> = {
+  "ai-automation": "/videos/ai-workflow-demo.mp4",
+  "chatbots-voice-agents": "/videos/service-ai-agents.mp4",
+  "workflow-automation": "/videos/service-workflow-automation.mp4",
+  "custom-ai-solutions": "/videos/service-llm-development.mp4",
+  "content-creation": "/videos/service-content-generation.mp4",
+};
+
 interface Props {
   service: ServiceLocaleData;
   slug: string;
@@ -14,11 +22,40 @@ interface Props {
 }
 
 export function ServicePageClient({ service, slug, locale, dict }: Props) {
+  const videoSrc = serviceVideoMap[slug];
+
   return (
     <>
       {/* Hero */}
       <section className="relative bg-charcoal-950 pt-[72px] overflow-hidden">
-        <div className="absolute inset-0 bg-charcoal-900" />
+        {/* Video or static background */}
+        {videoSrc ? (
+          <>
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              poster={`/images/service-${slug}.jpg`}
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source src={videoSrc} type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 bg-gradient-to-b from-charcoal-950/70 via-charcoal-950/80 to-charcoal-950/95" />
+          </>
+        ) : (
+          <div className="absolute inset-0">
+            <Image
+              src={`/images/service-${slug}.jpg`}
+              alt={service.title}
+              fill
+              className="object-cover"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-charcoal-950/70 via-charcoal-950/80 to-charcoal-950/95" />
+          </div>
+        )}
         <div className="relative max-w-[1200px] mx-auto px-6 py-20 md:py-28">
           <FadeIn>
             <p className="text-sm font-medium text-primary-400 uppercase tracking-wide mb-4">
@@ -33,20 +70,6 @@ export function ServicePageClient({ service, slug, locale, dict }: Props) {
             <Link href={`/${locale}/contact`} className="btn-glow">
               {service.ctaText} →
             </Link>
-          </FadeIn>
-
-          {/* Service Image */}
-          <FadeIn delay={0.2}>
-            <div className="mt-12 relative aspect-video max-w-4xl overflow-hidden">
-              <Image
-                src={`/images/service-${slug}.jpg`}
-                alt={service.title}
-                fill
-                className="object-cover"
-                sizes="(max-width: 1200px) 100vw, 900px"
-                priority
-              />
-            </div>
           </FadeIn>
         </div>
       </section>

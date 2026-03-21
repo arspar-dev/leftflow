@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations";
 import type { Dictionary, Locale } from "@/lib/i18n";
 
@@ -35,6 +36,24 @@ export function AboutClient({ dict, locale }: Props) {
               {dict.common.contactUs}
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </Link>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Team Photo */}
+      <section className="bg-charcoal-950">
+        <div className="max-w-[1200px] mx-auto px-6 py-12">
+          <FadeIn>
+            <div className="relative aspect-[16/7] overflow-hidden">
+              <Image
+                src="/images/about-team.jpg"
+                alt="LeftFlow Team"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1200px) 100vw, 1200px"
+                priority
+              />
+            </div>
           </FadeIn>
         </div>
       </section>
