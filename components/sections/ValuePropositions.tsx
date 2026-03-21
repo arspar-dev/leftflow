@@ -1,6 +1,7 @@
 "use client";
 
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations";
+import { motion } from "framer-motion";
+import { FadeIn, StaggerContainer, StaggerItem, TextReveal } from "@/components/animations";
 import type { Dictionary } from "@/lib/i18n";
 
 interface Props {
@@ -14,28 +15,50 @@ export function ValuePropositions({ dict }: Props) {
   const numbers = ["01", "02", "03", "04"];
 
   return (
-    <section className="py-24 md:py-32 bg-charcoal-950">
-      <div className="max-w-[1200px] mx-auto px-6">
-        <FadeIn>
-          <p className="text-xs font-medium tracking-[0.25em] uppercase text-charcoal-500 mb-4">
-            {vp.label}
-          </p>
-          <h2 className="text-3xl lg:text-4xl font-semibold text-white mb-16 max-w-2xl">
-            {vp.title}
-          </h2>
-        </FadeIn>
+    <section className="py-24 md:py-36 bg-[#0a0a0a]">
+      <div className="max-w-[1400px] mx-auto px-8 md:px-12">
+        <div className="grid md:grid-cols-12 gap-8 md:gap-16 mb-16">
+          <div className="md:col-span-3">
+            <FadeIn>
+              <p className="section-label accent-dot text-white/40">
+                {vp.label}
+              </p>
+            </FadeIn>
+          </div>
+          <div className="md:col-span-9">
+            <TextReveal
+              as="h2"
+              className="heading-display text-white text-[2rem] md:text-[2.75rem]"
+            >
+              {vp.title}
+            </TextReveal>
+          </div>
+        </div>
 
-        <StaggerContainer className="grid md:grid-cols-2 gap-px bg-charcoal-800">
+        <StaggerContainer staggerDelay={0.1} className="grid md:grid-cols-2 gap-px bg-white/[0.06]">
           {vp.items.map((item: any, i: number) => (
             <StaggerItem key={i}>
-              <div className="bg-charcoal-950 p-8 md:p-10 h-full group hover:bg-charcoal-900/50 transition-colors duration-500">
-                <p className="text-5xl md:text-6xl font-semibold text-charcoal-800 font-mono mb-6 group-hover:text-charcoal-700 transition-colors">
-                  {numbers[i]}
-                </p>
-                <h3 className="text-xl font-semibold text-white mb-3">
+              <div className="bg-[#0a0a0a] p-8 md:p-12 h-full group hover:bg-white/[0.03] transition-colors duration-500">
+                <div className="flex items-center gap-4 mb-8">
+                  <span className="text-[0.8125rem] font-medium text-[#e63b2e] tabular-nums">
+                    {numbers[i]}
+                  </span>
+                  <motion.span
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.8,
+                      delay: 0.1 + i * 0.05,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
+                    className="flex-1 h-px bg-white/[0.06] origin-left"
+                  />
+                </div>
+                <h3 className="text-lg font-medium text-white mb-3 tracking-tight">
                   {item.title}
                 </h3>
-                <p className="text-sm text-charcoal-400 leading-relaxed max-w-md">
+                <p className="body-16 text-white/40 leading-relaxed max-w-md">
                   {item.description}
                 </p>
               </div>

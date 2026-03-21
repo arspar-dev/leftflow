@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations";
+import { FadeIn } from "@/components/animations";
+import { AnimatedCounter } from "@/components/animations/AnimatedCounter";
 import type { Dictionary, Locale } from "@/lib/i18n";
 
 interface Props {
@@ -26,33 +27,32 @@ export function StatsSection({ dict }: Props) {
           className="object-cover"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-charcoal-950/85" />
+        <div className="absolute inset-0 bg-[#0a0a0a]/85" />
       </div>
 
-      <div className="relative max-w-[1200px] mx-auto px-6">
+      <div className="relative max-w-[1400px] mx-auto px-8 md:px-12">
         <FadeIn>
-          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-4">
-            {dict.stats.title}
-          </h2>
-          <p className="text-charcoal-400 text-center max-w-2xl mx-auto mb-16">
+          <p className="section-label accent-dot text-white/40 mb-4 text-center">{dict.stats.title}</p>
+          <p className="body-16 text-white/40 text-center max-w-2xl mx-auto mb-16">
             {dict.stats.description}
           </p>
         </FadeIn>
 
-        <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-white/[0.06]">
           {stats.map((stat, i) => (
-            <StaggerItem key={i}>
-              <div className="text-center">
-                <p className="text-5xl md:text-6xl font-semibold text-white tracking-tight font-mono mb-3">
-                  {stat.value}
-                </p>
-                <p className="text-sm text-charcoal-400 uppercase tracking-wide">
+            <FadeIn key={i} delay={i * 0.1}>
+              <div className="text-center py-4">
+                <AnimatedCounter
+                  value={stat.value}
+                  className="block text-[2.5rem] md:text-[3.25rem] font-light text-white tracking-tighter leading-none mb-3"
+                />
+                <p className="section-label text-white/30">
                   {stat.label}
                 </p>
               </div>
-            </StaggerItem>
+            </FadeIn>
           ))}
-        </StaggerContainer>
+        </div>
       </div>
     </section>
   );

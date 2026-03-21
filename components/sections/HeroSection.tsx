@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+import { TextReveal, LineReveal } from "@/components/animations";
 import type { Dictionary } from "@/lib/i18n/getDictionary";
 import type { Locale } from "@/lib/i18n/config";
 
@@ -11,83 +13,106 @@ interface HeroSectionProps {
 }
 
 export function HeroSection({ dict, locale }: HeroSectionProps) {
-  return (
-    <section className="relative bg-black min-h-[100dvh] flex items-center overflow-hidden">
-      {/* Video background */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        poster="/images/hero-dark.jpg"
-        className="absolute inset-0 w-full h-full object-cover"
-      >
-        <source src="/videos/hero-reel.mp4" type="video/mp4" />
-      </video>
+  const heroRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"],
+  });
+  const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/60 to-black/85" />
+  return (
+    <section ref={heroRef} className="relative bg-[#0a0a0a] min-h-[100dvh] flex items-end overflow-hidden">
+      {/* Parallax video background */}
+      <motion.div className="absolute inset-0" style={{ scale: videoScale }}>
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster="/images/hero-dark.jpg"
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/videos/hero-reel.mp4" type="video/mp4" />
+        </video>
+      </motion.div>
+
+      {/* Gradient overlays */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-[#0a0a0a]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-transparent" />
 
       {/* Content */}
-      <div className="relative z-10 max-w-[1200px] mx-auto px-6 w-full py-32 md:py-40">
+      <motion.div
+        style={{ opacity: contentOpacity }}
+        className="relative z-10 max-w-[1400px] mx-auto px-8 md:px-12 w-full pb-20 md:pb-28 pt-40"
+      >
+        {/* Red accent label */}
         <motion.p
-          className="text-xs font-medium tracking-[0.25em] uppercase text-white/50 mb-8"
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.32, 0.72, 0, 1] }}
+          className="section-label accent-dot text-white/60 mb-8"
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
         >
           AI Automation Agency
         </motion.p>
 
-        <motion.h1
-          className="text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] font-semibold text-white leading-[1.05] tracking-[-0.035em] mb-8 max-w-4xl whitespace-pre-line"
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1, ease: [0.32, 0.72, 0, 1] }}
+        {/* Display heading — word reveal */}
+        <TextReveal
+          as="h1"
+          delay={0.5}
+          staggerDelay={0.06}
+          className="heading-display text-white text-[2.75rem] md:text-[4rem] lg:text-[5rem] xl:text-[5.5rem] max-w-4xl mb-8 leading-[1.05]"
         >
           {dict.hero.title}
-        </motion.h1>
+        </TextReveal>
 
-        <motion.p
-          className="text-base md:text-lg text-white/60 leading-relaxed mb-12 max-w-xl"
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.25, ease: [0.32, 0.72, 0, 1] }}
-        >
-          {dict.hero.subtitle}
-        </motion.p>
+        {/* Subtitle */}
+        <LineReveal delay={1}>
+          <p className="body-18 text-white/55 max-w-xl mb-12">
+            {dict.hero.subtitle}
+          </p>
+        </LineReveal>
 
+        {/* CTA */}
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.4, ease: [0.32, 0.72, 0, 1] }}
+          transition={{ duration: 0.6, delay: 1.3, ease: [0.16, 1, 0.3, 1] }}
         >
-          <Link href={`/${locale}/contact`} className="btn-hh-white">
+          <Link href={`/${locale}/contact`} className="btn-hh-white group">
             {dict.hero.cta}
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg
+              className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
           </Link>
         </motion.div>
-      </div>
+      </motion.div>
 
       {/* Scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+        className="absolute bottom-8 right-8 md:right-12 z-10"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.6, delay: 1.2 }}
+        transition={{ delay: 2, duration: 1 }}
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          className="flex flex-col items-center gap-2"
         >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" opacity="0.4">
-            <path d="M12 5v14M19 12l-7 7-7-7" />
-          </svg>
+          <span className="section-label text-white/30 [writing-mode:vertical-lr]">Scroll</span>
+          <div className="w-px h-12 bg-gradient-to-b from-white/30 to-transparent" />
         </motion.div>
       </motion.div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-white/10" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-white/5" />
     </section>
   );
 }

@@ -6,38 +6,41 @@
   --color-hh-body: #0a0a0a;
   --color-hh-muted: #6b7280;
 
-  /* Primary - Electric Blue (single accent) */
-  --color-primary-50: #f0f7ff;
-  --color-primary-100: #e0effe;
-  --color-primary-200: #b9dffe;
-  --color-primary-300: #7cc4fd;
-  --color-primary-400: #36a3f9;
-  --color-primary-500: #0c87ea;
-  --color-primary-600: #006bc8;
-  --color-primary-700: #0155a2;
-  --color-primary-800: #064986;
-  --color-primary-900: #0b3d6f;
+  /* Primary - Tasman Red accent */
+  --color-primary-50: #fef2f1;
+  --color-primary-100: #fee2e0;
+  --color-primary-200: #fecac6;
+  --color-primary-300: #fca69f;
+  --color-primary-400: #f87268;
+  --color-primary-500: #e63b2e;
+  --color-primary-600: #d42e22;
+  --color-primary-700: #b22318;
+  --color-primary-800: #932118;
+  --color-primary-900: #7a211b;
 
   /* Success - Emerald */
   --color-success-400: #34d399;
   --color-success-500: #10B981;
   --color-success-600: #059669;
 
-  /* Neutral - Slate (consistent cool grays) */
-  --color-charcoal-50: #f8fafc;
-  --color-charcoal-100: #f1f5f9;
-  --color-charcoal-200: #e2e8f0;
-  --color-charcoal-300: #cbd5e1;
-  --color-charcoal-400: #94a3b8;
-  --color-charcoal-500: #64748b;
-  --color-charcoal-600: #475569;
-  --color-charcoal-700: #334155;
-  --color-charcoal-800: #1e293b;
-  --color-charcoal-900: #111827;
+  /* Neutral - Warm grays with beige tones */
+  --color-charcoal-50: #fafaf9;
+  --color-charcoal-100: #f5f4f0;
+  --color-charcoal-200: #e8e7e3;
+  --color-charcoal-300: #d4d3cf;
+  --color-charcoal-400: #a3a29e;
+  --color-charcoal-500: #737270;
+  --color-charcoal-600: #52514f;
+  --color-charcoal-700: #3a3937;
+  --color-charcoal-800: #1a1a1a;
+  --color-charcoal-900: #111111;
   --color-charcoal-950: #0a0a0a;
 
-  --font-sans: "Geist", system-ui, -apple-system, sans-serif;
-  --font-mono: "Geist Mono", "JetBrains Mono", monospace;
+  /* Font stacks — Helvetica body, Portrait headings, Roboto UI */
+  --font-helvetica: var(--font-roboto), "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-roboto), "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-portrait), Georgia, Cambria, "Times New Roman", serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
 }
 
 html {
@@ -45,8 +48,9 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: var(--font-sans);
+body,
+.body {
+  font-family: var(--font-helvetica), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
   line-height: 1.7;
   color: #0a0a0a;
@@ -55,6 +59,28 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #fff;
+}
+
+/* body-16 utility — Tasman-style compact body text */
+.body-16 {
+  font-family: var(--font-helvetica), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+/* body-14 utility — smaller body text */
+.body-14 {
+  font-family: var(--font-helvetica), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+/* Display heading utility — Portrait serif */
+.heading-display {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
 }
 
 ::selection {
@@ -197,6 +223,35 @@ body {
   transform: translateY(0) scale(0.98);
 }
 
+/* ── Tasman-style accent dot ─────────────────────────── */
+.accent-dot::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #e63b2e;
+  margin-right: 0.75em;
+  vertical-align: middle;
+}
+
+/* Section label — uppercase + red dot */
+.section-label {
+  font-family: var(--font-helvetica), ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* body-18 utility — slightly larger body text */
+.body-18 {
+  font-family: var(--font-helvetica), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6rem;
+}
+
 /* ── Animations ──────────────────────────────────────── */
 
 @keyframes marquee {
@@ -217,6 +272,23 @@ body {
 .animate-logo-draw {
   stroke-dasharray: 200;
   animation: logo-draw 2s ease-in-out forwards;
+}
+
+@keyframes line-grow {
+  0% { transform: scaleX(0); }
+  100% { transform: scaleX(1); }
+}
+.animate-line-grow {
+  animation: line-grow 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform-origin: left center;
+}
+
+@keyframes dot-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.4); }
+}
+.animate-dot-pulse {
+  animation: dot-pulse 2s ease-in-out infinite;
 }
 
 @keyframes splash-fade {

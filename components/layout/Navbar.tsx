@@ -73,7 +73,8 @@ export function Navbar({ locale, dict }: NavbarProps) {
 
   const pathWithoutLocale = pathname.replace(/^\/(tr|en|nl)/, "") || "/";
   const isHomepage = pathWithoutLocale === "/" || pathWithoutLocale === "";
-  const isTransparent = isHomepage && !scrolled && !megaMenu;
+  const hasVideoHero = isHomepage || pathWithoutLocale.startsWith("/services/");
+  const isTransparent = hasVideoHero && !scrolled && !megaMenu;
 
   const handleMenuEnter = (menu: "services" | "industries") => {
     if (megaMenuTimeout.current) clearTimeout(megaMenuTimeout.current);
@@ -84,23 +85,28 @@ export function Navbar({ locale, dict }: NavbarProps) {
     megaMenuTimeout.current = setTimeout(() => setMegaMenu(null), 200);
   };
 
-  // Mobile service expand
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [mobileIndustriesOpen, setMobileIndustriesOpen] = useState(false);
+
+  const navLinkClass = isTransparent
+    ? "text-white/80 hover:text-white"
+    : "text-black/70 hover:text-black";
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isTransparent ? "bg-transparent" : "bg-white shadow-sm"
+        isTransparent
+          ? "bg-transparent"
+          : "bg-white/95 backdrop-blur-md border-b border-black/5"
       }`}
     >
-      <nav className="max-w-[1200px] mx-auto px-6">
+      <nav className="max-w-[1400px] mx-auto px-8 md:px-12">
         <div className="flex items-center justify-between h-[72px]">
           <AnimatedLogo locale={locale} variant={isTransparent ? "light" : "dark"} />
 
           {/* Desktop Nav */}
           <div className="hidden lg:flex items-center gap-1">
-            {/* Services - Mega Menu Trigger */}
+            {/* Services */}
             <div
               onMouseEnter={() => handleMenuEnter("services")}
               onMouseLeave={handleMenuLeave}
@@ -108,69 +114,40 @@ export function Navbar({ locale, dict }: NavbarProps) {
             >
               <Link
                 href={`/${locale}/services`}
-                className={`flex items-center gap-1 px-4 py-2 text-[15px] font-medium transition-colors ${
-                  isTransparent
-                    ? "text-white/90 hover:text-white"
-                    : "text-charcoal-950 hover:text-charcoal-600"
-                }`}
+                className={`flex items-center gap-1 px-4 py-2 text-[0.8125rem] font-medium tracking-[-0.01em] transition-colors ${navLinkClass}`}
               >
                 {dict.nav.services}
-                <svg className={`w-3.5 h-3.5 transition-transform ${megaMenu === "services" ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className={`w-3 h-3 transition-transform ${megaMenu === "services" ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
               </Link>
             </div>
 
-            {/* Industries - Dropdown Trigger */}
+            {/* Industries */}
             <div
               onMouseEnter={() => handleMenuEnter("industries")}
               onMouseLeave={handleMenuLeave}
               className="relative"
             >
               <span
-                className={`flex items-center gap-1 px-4 py-2 text-[15px] font-medium transition-colors cursor-pointer ${
-                  isTransparent
-                    ? "text-white/90 hover:text-white"
-                    : "text-charcoal-950 hover:text-charcoal-600"
-                }`}
+                className={`flex items-center gap-1 px-4 py-2 text-[0.8125rem] font-medium tracking-[-0.01em] transition-colors cursor-pointer ${navLinkClass}`}
               >
                 {dict.nav.industries}
-                <svg className={`w-3.5 h-3.5 transition-transform ${megaMenu === "industries" ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <svg className={`w-3 h-3 transition-transform ${megaMenu === "industries" ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                 </svg>
               </span>
             </div>
 
-            <Link
-              href={`/${locale}/cases`}
-              className={`px-4 py-2 text-[15px] font-medium transition-colors ${
-                isTransparent
-                  ? "text-white/90 hover:text-white"
-                  : "text-charcoal-950 hover:text-charcoal-600"
-              }`}
-            >
+            <Link href={`/${locale}/cases`} className={`px-4 py-2 text-[0.8125rem] font-medium tracking-[-0.01em] transition-colors ${navLinkClass}`}>
               {(dict as any).nav?.cases || "Cases"}
             </Link>
 
-            <Link
-              href={`/${locale}/blog`}
-              className={`px-4 py-2 text-[15px] font-medium transition-colors ${
-                isTransparent
-                  ? "text-white/90 hover:text-white"
-                  : "text-charcoal-950 hover:text-charcoal-600"
-              }`}
-            >
+            <Link href={`/${locale}/blog`} className={`px-4 py-2 text-[0.8125rem] font-medium tracking-[-0.01em] transition-colors ${navLinkClass}`}>
               {(dict as any).nav?.insights || "Insights"}
             </Link>
 
-            <Link
-              href={`/${locale}/about`}
-              className={`px-4 py-2 text-[15px] font-medium transition-colors ${
-                isTransparent
-                  ? "text-white/90 hover:text-white"
-                  : "text-charcoal-950 hover:text-charcoal-600"
-              }`}
-            >
+            <Link href={`/${locale}/about`} className={`px-4 py-2 text-[0.8125rem] font-medium tracking-[-0.01em] transition-colors ${navLinkClass}`}>
               {(dict as any).nav?.culture || "Culture"}
             </Link>
           </div>
@@ -179,10 +156,10 @@ export function Navbar({ locale, dict }: NavbarProps) {
             {/* Contact CTA */}
             <Link
               href={`/${locale}/contact`}
-              className={`hidden lg:inline-flex items-center px-5 py-2 text-sm font-medium transition-all ${
+              className={`hidden lg:inline-flex items-center px-5 py-2 text-[0.8125rem] font-medium transition-all ${
                 isTransparent
-                  ? "border border-white text-white hover:bg-white hover:text-charcoal-950"
-                  : "btn-hh"
+                  ? "border border-white/30 text-white hover:bg-white hover:text-black"
+                  : "bg-black text-white hover:bg-black/85"
               }`}
             >
               {dict.nav.cta}
@@ -192,14 +169,12 @@ export function Navbar({ locale, dict }: NavbarProps) {
             <div className="relative">
               <button
                 onClick={() => setLangOpen(!langOpen)}
-                className={`flex items-center gap-1.5 px-3 py-2 text-sm font-medium transition-colors ${
-                  isTransparent
-                    ? "text-white/90 hover:text-white"
-                    : "text-charcoal-700 hover:text-charcoal-950"
+                className={`flex items-center gap-1.5 px-3 py-2 text-[0.8125rem] font-medium transition-colors ${
+                  isTransparent ? "text-white/70 hover:text-white" : "text-black/50 hover:text-black"
                 }`}
               >
                 <span>{localeFlags[locale]}</span>
-                <span className="hidden sm:inline text-xs uppercase">{locale}</span>
+                <span className="hidden sm:inline text-xs uppercase tracking-wider">{locale}</span>
               </button>
 
               <AnimatePresence>
@@ -209,7 +184,7 @@ export function Navbar({ locale, dict }: NavbarProps) {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -4 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute right-0 top-full mt-1 bg-white rounded-lg shadow-lg border border-charcoal-200 py-1 min-w-[140px] z-50"
+                    className="absolute right-0 top-full mt-1 bg-white shadow-lg border border-black/5 py-1 min-w-[140px] z-50"
                   >
                     {locales.map((loc) => (
                       <Link
@@ -218,8 +193,8 @@ export function Navbar({ locale, dict }: NavbarProps) {
                         onClick={() => setLangOpen(false)}
                         className={`flex items-center gap-2 px-4 py-2.5 text-sm transition-colors ${
                           loc === locale
-                            ? "text-charcoal-950 font-medium bg-charcoal-50"
-                            : "text-charcoal-700 hover:text-charcoal-950 hover:bg-charcoal-50"
+                            ? "text-black font-medium bg-[#f5f4f0]"
+                            : "text-black/60 hover:text-black hover:bg-[#f5f4f0]"
                         }`}
                       >
                         <span>{localeFlags[loc]}</span>
@@ -234,7 +209,7 @@ export function Navbar({ locale, dict }: NavbarProps) {
             {/* Mobile Hamburger */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className={`lg:hidden p-2 ${isTransparent ? "text-white" : "text-charcoal-950"}`}
+              className={`lg:hidden p-2 ${isTransparent ? "text-white" : "text-black"}`}
             >
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 {mobileOpen ? (
@@ -264,15 +239,15 @@ export function Navbar({ locale, dict }: NavbarProps) {
             transition={{ duration: 0.2 }}
             onMouseEnter={() => handleMenuEnter("services")}
             onMouseLeave={handleMenuLeave}
-            className="absolute left-0 right-0 bg-white shadow-xl border-t border-charcoal-100"
+            className="absolute left-0 right-0 bg-white shadow-xl border-t border-black/5"
           >
-            <div className="max-w-[1200px] mx-auto px-6 py-8">
+            <div className="max-w-[1400px] mx-auto px-8 md:px-12 py-8">
               <div className="grid grid-cols-3 gap-8">
                 {(Object.keys(serviceCategories) as Array<keyof typeof serviceCategories>).map((catKey) => {
                   const cat = serviceCategories[catKey];
                   return (
                     <div key={catKey}>
-                      <h3 className="text-xs font-bold uppercase tracking-wider text-charcoal-400 mb-4">
+                      <h3 className="section-label text-black/30 mb-4">
                         {cat[locale]}
                       </h3>
                       <ul className="space-y-1">
@@ -281,9 +256,9 @@ export function Navbar({ locale, dict }: NavbarProps) {
                             <Link
                               href={`/${locale}/services/${item.slug}`}
                               onClick={() => setMegaMenu(null)}
-                              className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 transition-colors group"
+                              className="flex items-center gap-3 px-3 py-2.5 text-sm text-black/60 hover:bg-[#f5f4f0] hover:text-black transition-colors group"
                             >
-                              <span className="w-1.5 h-1.5 rounded-full bg-primary-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+                              <span className="w-[5px] h-[5px] rounded-full bg-[#e63b2e] opacity-0 group-hover:opacity-100 transition-opacity" />
                               {item[locale]}
                             </Link>
                           </li>
@@ -293,11 +268,11 @@ export function Navbar({ locale, dict }: NavbarProps) {
                   );
                 })}
               </div>
-              <div className="mt-6 pt-6 border-t border-charcoal-100">
+              <div className="mt-6 pt-6 border-t border-black/5">
                 <Link
                   href={`/${locale}/services`}
                   onClick={() => setMegaMenu(null)}
-                  className="text-sm font-medium text-primary-600 hover:text-primary-700 transition-colors"
+                  className="text-sm font-medium text-[#e63b2e] hover:text-[#c42f24] transition-colors"
                 >
                   {(dict as any).services?.viewAll || "View all services"} →
                 </Link>
@@ -317,18 +292,18 @@ export function Navbar({ locale, dict }: NavbarProps) {
             transition={{ duration: 0.2 }}
             onMouseEnter={() => handleMenuEnter("industries")}
             onMouseLeave={handleMenuLeave}
-            className="absolute left-0 right-0 bg-white shadow-xl border-t border-charcoal-100"
+            className="absolute left-0 right-0 bg-white shadow-xl border-t border-black/5"
           >
-            <div className="max-w-[1200px] mx-auto px-6 py-8">
+            <div className="max-w-[1400px] mx-auto px-8 md:px-12 py-8">
               <div className="grid grid-cols-3 gap-x-8 gap-y-1">
                 {industryItems.map((item) => (
                   <Link
                     key={item.slug}
                     href={`/${locale}/industries/${item.slug}`}
                     onClick={() => setMegaMenu(null)}
-                    className="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-charcoal-700 hover:bg-charcoal-50 hover:text-charcoal-950 transition-colors group"
+                    className="flex items-center gap-3 px-3 py-2.5 text-sm text-black/60 hover:bg-[#f5f4f0] hover:text-black transition-colors group"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-primary-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <span className="w-[5px] h-[5px] rounded-full bg-[#e63b2e] opacity-0 group-hover:opacity-100 transition-opacity" />
                     {item[locale]}
                   </Link>
                 ))}
@@ -345,13 +320,13 @@ export function Navbar({ locale, dict }: NavbarProps) {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t border-charcoal-200 overflow-hidden"
+            className="lg:hidden bg-white border-t border-black/5 overflow-hidden"
           >
-            <div className="px-6 py-4 space-y-1 max-h-[80vh] overflow-y-auto">
+            <div className="px-8 py-4 space-y-1 max-h-[80vh] overflow-y-auto">
               {/* Services Accordion */}
               <button
                 onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                className="flex items-center justify-between w-full py-3 text-[15px] font-medium text-charcoal-950 border-b border-charcoal-100"
+                className="flex items-center justify-between w-full py-3 text-[0.9375rem] font-medium text-black border-b border-black/5"
               >
                 {dict.nav.services}
                 <svg className={`w-4 h-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -371,7 +346,7 @@ export function Navbar({ locale, dict }: NavbarProps) {
                         const cat = serviceCategories[catKey];
                         return (
                           <div key={catKey} className="mb-3">
-                            <p className="text-xs font-bold uppercase tracking-wider text-charcoal-400 py-2">
+                            <p className="section-label text-black/30 py-2">
                               {cat[locale]}
                             </p>
                             {cat.items.map((item) => (
@@ -379,7 +354,7 @@ export function Navbar({ locale, dict }: NavbarProps) {
                                 key={item.slug}
                                 href={`/${locale}/services/${item.slug}`}
                                 onClick={() => setMobileOpen(false)}
-                                className="block py-2 text-sm text-charcoal-600 hover:text-charcoal-950"
+                                className="block py-2 text-sm text-black/55 hover:text-black"
                               >
                                 {item[locale]}
                               </Link>
@@ -390,7 +365,7 @@ export function Navbar({ locale, dict }: NavbarProps) {
                       <Link
                         href={`/${locale}/services`}
                         onClick={() => setMobileOpen(false)}
-                        className="block py-2 text-sm font-medium text-primary-600"
+                        className="block py-2 text-sm font-medium text-[#e63b2e]"
                       >
                         {(dict as any).services?.viewAll || "View all services"} →
                       </Link>
@@ -402,7 +377,7 @@ export function Navbar({ locale, dict }: NavbarProps) {
               {/* Industries Accordion */}
               <button
                 onClick={() => setMobileIndustriesOpen(!mobileIndustriesOpen)}
-                className="flex items-center justify-between w-full py-3 text-[15px] font-medium text-charcoal-950 border-b border-charcoal-100"
+                className="flex items-center justify-between w-full py-3 text-[0.9375rem] font-medium text-black border-b border-black/5"
               >
                 {dict.nav.industries}
                 <svg className={`w-4 h-4 transition-transform ${mobileIndustriesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -423,7 +398,7 @@ export function Navbar({ locale, dict }: NavbarProps) {
                           key={item.slug}
                           href={`/${locale}/industries/${item.slug}`}
                           onClick={() => setMobileOpen(false)}
-                          className="block py-2 text-sm text-charcoal-600 hover:text-charcoal-950"
+                          className="block py-2 text-sm text-black/55 hover:text-black"
                         >
                           {item[locale]}
                         </Link>
@@ -434,25 +409,13 @@ export function Navbar({ locale, dict }: NavbarProps) {
               </AnimatePresence>
 
               {/* Direct Links */}
-              <Link
-                href={`/${locale}/cases`}
-                onClick={() => setMobileOpen(false)}
-                className="block py-3 text-[15px] font-medium text-charcoal-950 border-b border-charcoal-100"
-              >
+              <Link href={`/${locale}/cases`} onClick={() => setMobileOpen(false)} className="block py-3 text-[0.9375rem] font-medium text-black border-b border-black/5">
                 {(dict as any).nav?.cases || "Cases"}
               </Link>
-              <Link
-                href={`/${locale}/blog`}
-                onClick={() => setMobileOpen(false)}
-                className="block py-3 text-[15px] font-medium text-charcoal-950 border-b border-charcoal-100"
-              >
+              <Link href={`/${locale}/blog`} onClick={() => setMobileOpen(false)} className="block py-3 text-[0.9375rem] font-medium text-black border-b border-black/5">
                 {(dict as any).nav?.insights || "Insights"}
               </Link>
-              <Link
-                href={`/${locale}/about`}
-                onClick={() => setMobileOpen(false)}
-                className="block py-3 text-[15px] font-medium text-charcoal-950 border-b border-charcoal-100"
-              >
+              <Link href={`/${locale}/about`} onClick={() => setMobileOpen(false)} className="block py-3 text-[0.9375rem] font-medium text-black border-b border-black/5">
                 {(dict as any).nav?.culture || "Culture"}
               </Link>
 

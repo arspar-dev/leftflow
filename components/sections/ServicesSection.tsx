@@ -1,28 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations";
+import { motion } from "framer-motion";
+import { FadeIn, StaggerContainer, StaggerItem, TextReveal } from "@/components/animations";
 import type { Dictionary, Locale } from "@/lib/i18n";
 
 interface Props {
   dict: Dictionary;
   locale: Locale;
 }
-
-const serviceIcons = [
-  // Chatbot / message
-  <svg key="chat" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>,
-  // Workflow / flow
-  <svg key="flow" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>,
-  // Target / B2B
-  <svg key="target" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>,
-  // Brain / Custom AI
-  <svg key="brain" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 2a4 4 0 0 0-4 4v1a4 4 0 0 0-4 4v1a4 4 0 0 0 4 4h1"/><path d="M12 2a4 4 0 0 1 4 4v1a4 4 0 0 1 4 4v1a4 4 0 0 1-4 4h-1"/><line x1="12" y1="18" x2="12" y2="22"/></svg>,
-  // Pen / Content
-  <svg key="pen" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838.838-2.872a2 2 0 0 1 .506-.854z"/></svg>,
-  // Monitor / Website & E-Commerce
-  <svg key="monitor" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>,
-];
 
 const serviceSlugs = [
   "chatbots-voice-agents",
@@ -37,36 +23,66 @@ export function ServicesSection({ dict, locale }: Props) {
   const items = dict.services.items.slice(0, 6);
 
   return (
-    <section id="services" className="py-16 md:py-24 bg-white">
-      <div className="max-w-[1200px] mx-auto px-6">
-        <FadeIn>
-          <p className="text-sm font-medium text-primary-500 uppercase tracking-wide mb-3">
-            {dict.services.label}
-          </p>
-          <h2 className="text-3xl md:text-4xl font-bold text-charcoal-950 mb-4">
-            {dict.services.title}
-          </h2>
-        </FadeIn>
+    <section id="services" className="py-24 md:py-36 bg-white">
+      <div className="max-w-[1400px] mx-auto px-8 md:px-12">
+        <div className="grid md:grid-cols-12 gap-8 md:gap-16 mb-16">
+          {/* Sidebar label */}
+          <div className="md:col-span-3">
+            <FadeIn>
+              <p className="section-label accent-dot text-black/50">
+                {dict.services.label}
+              </p>
+            </FadeIn>
+          </div>
 
-        <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+          {/* Heading */}
+          <div className="md:col-span-9">
+            <TextReveal
+              as="h2"
+              className="heading-display text-black text-[2rem] md:text-[2.75rem]"
+            >
+              {dict.services.title}
+            </TextReveal>
+          </div>
+        </div>
+
+        <StaggerContainer staggerDelay={0.08} className="grid md:grid-cols-2 lg:grid-cols-3 -m-px">
           {items.map((item: any, i: number) => (
             <StaggerItem key={i}>
               <Link
                 href={`/${locale}/services/${serviceSlugs[i] || "ai-automation"}`}
-                className="group block p-6 bg-white border border-charcoal-200 hover:border-primary-500 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 h-full"
+                className="block border border-black/[0.06] p-8 md:p-10 h-full group hover:bg-[#f5f4f0] transition-all duration-500 relative"
               >
-                <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary-50 text-primary-500 mb-4 group-hover:bg-primary-500 group-hover:text-white transition-colors">
-                  {serviceIcons[i]}
+                {/* Number */}
+                <div className="flex items-center gap-4 mb-8">
+                  <span className="text-[0.8125rem] font-medium text-[#e63b2e] tabular-nums tracking-tight">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <motion.span
+                    initial={{ scaleX: 0 }}
+                    whileInView={{ scaleX: 1 }}
+                    viewport={{ once: true }}
+                    transition={{
+                      duration: 0.8,
+                      delay: 0.1 + i * 0.05,
+                      ease: [0.16, 1, 0.3, 1],
+                    }}
+                    className="flex-1 h-px bg-black/[0.06] origin-left"
+                  />
                 </div>
-                <h3 className="text-lg font-semibold text-charcoal-950 mb-2 group-hover:text-primary-600 transition-colors">
+
+                <h3 className="text-[1.0625rem] font-medium text-black mb-3 tracking-[-0.01em] group-hover:text-[#e63b2e] transition-colors duration-300">
                   {item.title}
                 </h3>
-                <p className="text-sm text-charcoal-500 leading-relaxed mb-4">
+                <p className="body-16 text-black/50 leading-relaxed mb-6 group-hover:text-black/65 transition-colors duration-300">
                   {item.description}
                 </p>
-                <span className="text-sm font-medium text-primary-500 group-hover:text-primary-600">
+                <span className="body-14 font-medium text-black/30 group-hover:text-[#e63b2e] transition-colors duration-300">
                   {(dict as any).common?.learnMore || "Learn More"} →
                 </span>
+
+                {/* Hover accent line */}
+                <div className="absolute bottom-0 left-0 w-full h-[2px] bg-[#e63b2e] scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
               </Link>
             </StaggerItem>
           ))}

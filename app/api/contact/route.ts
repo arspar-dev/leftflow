@@ -4,7 +4,7 @@ import { Resend } from "resend";
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, email, company, phone, message } = body;
+    const { name, email, company, phone, budget, message } = body;
 
     // Validate required fields
     if (!name || !email || !message) {
@@ -16,14 +16,14 @@ export async function POST(request: Request) {
 
     // Send email via Resend
     if (!process.env.RESEND_API_KEY) {
-      console.log("Contact form submission (no RESEND_API_KEY):", { name, email, company, phone, message });
+      console.log("Contact form submission (no RESEND_API_KEY):", { name, email, company, phone, budget, message });
       return NextResponse.json({ success: true });
     }
 
     const resend = new Resend(process.env.RESEND_API_KEY);
     const { error } = await resend.emails.send({
       from: "LeftFlow Contact <onboarding@resend.dev>",
-      to: process.env.CONTACT_EMAIL || "teklif@leftflow.ai",
+      to: process.env.CONTACT_EMAIL || "burhan@leftflow.ai",
       subject: `New Contact Form: ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
@@ -31,6 +31,7 @@ export async function POST(request: Request) {
         <p><strong>Email:</strong> ${email}</p>
         ${company ? `<p><strong>Company:</strong> ${company}</p>` : ""}
         ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ""}
+        ${budget ? `<p><strong>Topic:</strong> ${budget}</p>` : ""}
         <hr />
         <p><strong>Message:</strong></p>
         <p>${message.replace(/\n/g, "<br />")}</p>

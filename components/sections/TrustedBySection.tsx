@@ -6,10 +6,10 @@ import type { Dictionary } from "@/lib/i18n";
 
 export function TrustedBySection({ dict }: { dict: Dictionary }) {
   return (
-    <section className="py-12 bg-charcoal-50">
-      <div className="max-w-[1200px] mx-auto px-6">
+    <section className="py-12 bg-[#f5f4f0]">
+      <div className="max-w-[1400px] mx-auto px-8 md:px-12">
         <FadeIn>
-          <p className="text-sm text-charcoal-500 text-center mb-8">
+          <p className="section-label text-black/30 text-center mb-8">
             {dict.trustedBy.title}
           </p>
         </FadeIn>
@@ -17,13 +17,12 @@ export function TrustedBySection({ dict }: { dict: Dictionary }) {
         {/* Auto-scrolling marquee carousel */}
         <div className="overflow-hidden">
           <div className="flex animate-marquee">
-            {/* Duplicate logos for seamless loop */}
             {[...allClientLogos, ...allClientLogos].map(({ name, Logo }, i) => (
               <div
                 key={`${name}-${i}`}
-                className="flex items-center justify-center px-8 min-w-[160px] grayscale hover:grayscale-0 opacity-40 hover:opacity-80 transition-all duration-300"
+                className="flex items-center justify-center px-8 min-w-[160px] grayscale hover:grayscale-0 opacity-30 hover:opacity-70 transition-all duration-300"
               >
-                <Logo className="h-8 w-auto text-charcoal-950" />
+                <Logo className="h-8 w-auto text-black" />
               </div>
             ))}
           </div>

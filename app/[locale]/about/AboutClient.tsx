@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations";
+import { FadeIn, StaggerContainer, StaggerItem, TextReveal } from "@/components/animations";
 import type { Dictionary, Locale } from "@/lib/i18n";
 
 interface Props {
@@ -29,19 +29,24 @@ export function AboutClient({ dict, locale }: Props) {
           <source src="/videos/hero-motion.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal-950/60 via-charcoal-950/70 to-charcoal-950/90" />
-        <div className="relative max-w-[1200px] mx-auto px-6 py-20 md:py-28">
+        <div className="relative max-w-[1400px] mx-auto px-8 md:px-12 py-20 md:py-28">
           <FadeIn>
-            <nav className="text-sm text-charcoal-500 mb-8">
-              <Link href={`/${locale}`} className="hover:text-charcoal-300 transition-colors">
+            <nav className="text-sm text-white/40 mb-8">
+              <Link href={`/${locale}`} className="hover:text-white/70 transition-colors">
                 Home
               </Link>
               <span className="mx-2">/</span>
-              <span className="text-charcoal-300">{(dict as any).about?.breadcrumb || "Culture"}</span>
+              <span className="text-white/70">{(dict as any).about?.breadcrumb || "Culture"}</span>
             </nav>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-6 max-w-3xl tracking-tighter leading-[1.08]">
-              {(dict as any).about?.breadcrumb || a.label || "Our Culture"}
-            </h1>
-            <p className="text-base md:text-lg text-charcoal-400 max-w-2xl mb-8 leading-relaxed">
+          </FadeIn>
+          <TextReveal
+            as="h1"
+            className="heading-display text-white text-[2.5rem] md:text-[3.5rem] lg:text-[4rem] mb-6 max-w-3xl leading-[1.08]"
+          >
+            {(dict as any).about?.breadcrumb || a.label || "Our Culture"}
+          </TextReveal>
+          <FadeIn delay={0.6}>
+            <p className="body-18 text-white/50 max-w-2xl mb-8">
               {a.subtitle}
             </p>
             <Link href={`/${locale}/contact`} className="btn-hh-white">
@@ -54,7 +59,7 @@ export function AboutClient({ dict, locale }: Props) {
 
       {/* Team Photo */}
       <section className="bg-charcoal-950">
-        <div className="max-w-[1200px] mx-auto px-6 py-12">
+        <div className="max-w-[1400px] mx-auto px-8 md:px-12 py-12">
           <FadeIn>
             <div className="relative aspect-[16/7] overflow-hidden">
               <Image
@@ -62,7 +67,7 @@ export function AboutClient({ dict, locale }: Props) {
                 alt="LeftFlow Team"
                 fill
                 className="object-cover"
-                sizes="(max-width: 1200px) 100vw, 1200px"
+                sizes="(max-width: 1400px) 100vw, 1400px"
                 priority
               />
             </div>
@@ -72,48 +77,65 @@ export function AboutClient({ dict, locale }: Props) {
 
       {/* Introduction */}
       <section className="bg-white py-24 md:py-32">
-        <div className="max-w-[800px] mx-auto px-6">
-          <FadeIn>
-            <p className="text-xs font-medium tracking-[0.2em] uppercase text-charcoal-400 mb-4">
-              LeftFlow
-            </p>
-            <h2 className="text-3xl md:text-4xl font-semibold text-charcoal-950 mb-8 tracking-tight">
-              {a.title || "Hi, we're LeftFlow"}
-            </h2>
-            <p className="text-base text-charcoal-500 leading-relaxed max-w-[65ch]">
-              {(dict as any).about?.intro || a.mission.description}
-            </p>
-          </FadeIn>
+        <div className="max-w-[1400px] mx-auto px-8 md:px-12">
+          <div className="grid md:grid-cols-12 gap-8 md:gap-16">
+            <div className="md:col-span-3">
+              <FadeIn>
+                <p className="section-label accent-dot text-black/40">
+                  LeftFlow
+                </p>
+              </FadeIn>
+            </div>
+            <div className="md:col-span-9">
+              <FadeIn>
+                <h2 className="heading-display text-black text-[2rem] md:text-[2.75rem] mb-8">
+                  {a.title || "Hi, we're LeftFlow"}
+                </h2>
+                <p className="body-16 text-black/50 leading-relaxed max-w-[65ch]">
+                  {(dict as any).about?.intro || a.mission.description}
+                </p>
+              </FadeIn>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Values */}
-      <section className="bg-charcoal-50 py-24 md:py-32">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <FadeIn>
-            <p className="text-xs font-medium tracking-[0.2em] uppercase text-charcoal-400 mb-4">
-              {(dict as any).about?.valuesLabel || "Our Values"}
-            </p>
-            <h2 className="text-3xl md:text-4xl font-semibold text-charcoal-950 mb-16 tracking-tight">
-              {a.values.title}
-            </h2>
-          </FadeIn>
+      <section className="bg-charcoal-100 py-24 md:py-32">
+        <div className="max-w-[1400px] mx-auto px-8 md:px-12">
+          <div className="grid md:grid-cols-12 gap-8 md:gap-16 mb-16">
+            <div className="md:col-span-3">
+              <FadeIn>
+                <p className="section-label accent-dot text-black/40">
+                  {(dict as any).about?.valuesLabel || "Our Values"}
+                </p>
+              </FadeIn>
+            </div>
+            <div className="md:col-span-9">
+              <TextReveal
+                as="h2"
+                className="heading-display text-black text-[2rem] md:text-[2.75rem]"
+              >
+                {a.values.title}
+              </TextReveal>
+            </div>
+          </div>
 
           <StaggerContainer className="space-y-0">
             {a.values.items.map((v: any, i: number) => (
               <StaggerItem key={i}>
-                <div className="border-t border-charcoal-200 last:border-b">
+                <div className="border-t border-black/10 last:border-b">
                   <div className="max-w-[1000px] flex items-start gap-8 md:gap-12 py-10 md:py-14">
                     <div className="flex-shrink-0">
-                      <span className="text-xs font-mono text-charcoal-400">
+                      <span className="text-[0.75rem] font-medium text-primary-500 tabular-nums">
                         {String(i + 1).padStart(2, "0")}
                       </span>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg md:text-xl font-semibold text-charcoal-950 mb-2">
+                      <h3 className="text-lg md:text-xl font-medium text-black mb-2 tracking-tight">
                         {v.title}
                       </h3>
-                      <p className="text-charcoal-500 leading-relaxed max-w-xl">
+                      <p className="body-14 text-black/50 max-w-xl">
                         {v.description}
                       </p>
                     </div>
@@ -127,15 +149,24 @@ export function AboutClient({ dict, locale }: Props) {
 
       {/* Team */}
       <section className="bg-white py-24 md:py-32">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <FadeIn>
-            <p className="text-xs font-medium tracking-[0.2em] uppercase text-charcoal-400 mb-4">
-              LeftFlow
-            </p>
-            <h2 className="text-3xl md:text-4xl font-semibold text-charcoal-950 mb-16 tracking-tight">
-              {a.team.title}
-            </h2>
-          </FadeIn>
+        <div className="max-w-[1400px] mx-auto px-8 md:px-12">
+          <div className="grid md:grid-cols-12 gap-8 md:gap-16 mb-16">
+            <div className="md:col-span-3">
+              <FadeIn>
+                <p className="section-label accent-dot text-black/40">
+                  LeftFlow
+                </p>
+              </FadeIn>
+            </div>
+            <div className="md:col-span-9">
+              <TextReveal
+                as="h2"
+                className="heading-display text-black text-[2rem] md:text-[2.75rem]"
+              >
+                {a.team.title}
+              </TextReveal>
+            </div>
+          </div>
 
           <StaggerContainer className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {a.team.members.map((m: any, i: number) => {
@@ -149,9 +180,9 @@ export function AboutClient({ dict, locale }: Props) {
                     <div className="w-14 h-14 bg-charcoal-950 mb-4 flex items-center justify-center">
                       <span className="text-sm font-medium text-white tracking-tight">{initials}</span>
                     </div>
-                    <h3 className="font-medium text-charcoal-950">{m.name}</h3>
-                    <p className="text-sm text-charcoal-500 mb-1">{m.role}</p>
-                    <p className="text-xs text-charcoal-400 leading-relaxed">{m.description}</p>
+                    <h3 className="font-medium text-black">{m.name}</h3>
+                    <p className="body-14 text-black/50 mb-1">{m.role}</p>
+                    <p className="text-xs text-black/35 leading-relaxed">{m.description}</p>
                   </div>
                 </StaggerItem>
               );
@@ -162,12 +193,15 @@ export function AboutClient({ dict, locale }: Props) {
 
       {/* CTA */}
       <section className="bg-charcoal-950 py-24 md:py-32">
-        <div className="max-w-[800px] mx-auto px-6 text-center">
+        <div className="max-w-[800px] mx-auto px-8 md:px-12 text-center">
           <FadeIn>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-6 tracking-tight">
+            <TextReveal
+              as="h2"
+              className="heading-display text-white text-[2rem] md:text-[2.75rem] lg:text-[3.25rem] mb-6"
+            >
               {(dict as any).about?.readyToWork || "Ready to work together?"}
-            </h2>
-            <p className="text-base text-charcoal-400 mb-10 max-w-xl mx-auto leading-relaxed">
+            </TextReveal>
+            <p className="body-16 text-white/40 mb-10 max-w-xl mx-auto">
               {a.mission.description}
             </p>
             <div className="flex flex-wrap justify-center gap-4">
@@ -175,7 +209,7 @@ export function AboutClient({ dict, locale }: Props) {
                 {(dict as any).about?.scheduleCall || dict.common.contactUs}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
               </Link>
-              <a href="mailto:info@leftflow.ai" className="inline-flex items-center gap-2 text-charcoal-400 border border-charcoal-700 px-6 py-3 text-sm font-medium hover:text-white hover:border-charcoal-500 transition-all duration-300">
+              <a href="mailto:info@leftflow.ai" className="inline-flex items-center gap-2 text-white/40 border border-white/10 px-6 py-3 text-sm font-medium hover:text-white hover:border-white/30 transition-all duration-300">
                 info@leftflow.ai
               </a>
             </div>
