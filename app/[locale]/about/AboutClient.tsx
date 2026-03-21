@@ -15,9 +15,21 @@ export function AboutClient({ dict, locale }: Props) {
 
   return (
     <main>
-      {/* Hero */}
-      <section className="bg-charcoal-950 pt-[72px]">
-        <div className="max-w-[1200px] mx-auto px-6 py-20 md:py-28">
+      {/* Hero with video */}
+      <section className="relative bg-charcoal-950 pt-[72px] overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster="/images/about-team.jpg"
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/videos/hero-motion.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-charcoal-950/60 via-charcoal-950/70 to-charcoal-950/90" />
+        <div className="relative max-w-[1200px] mx-auto px-6 py-20 md:py-28">
           <FadeIn>
             <nav className="text-sm text-charcoal-500 mb-8">
               <Link href={`/${locale}`} className="hover:text-charcoal-300 transition-colors">

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations";
 import type { Dictionary, Locale } from "@/lib/i18n";
 
@@ -15,8 +16,20 @@ export function StatsSection({ dict }: Props) {
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-charcoal-900">
-      <div className="max-w-[1200px] mx-auto px-6">
+    <section className="relative py-20 md:py-28 overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/stats-background.jpg"
+          alt=""
+          fill
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-charcoal-950/85" />
+      </div>
+
+      <div className="relative max-w-[1200px] mx-auto px-6">
         <FadeIn>
           <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-4">
             {dict.stats.title}

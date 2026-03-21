@@ -97,7 +97,18 @@ export function AIOptimizerClient({ locale, dict }: Props) {
     <main>
       {/* Hero */}
       <section className="relative bg-charcoal-950 pt-[72px] overflow-hidden">
-        <div className="absolute inset-0 bg-charcoal-950" />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster="/images/hero-dark.jpg"
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/videos/hero-ai.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-b from-charcoal-950/70 via-charcoal-950/80 to-charcoal-950" />
 
         <div className="relative max-w-[1200px] mx-auto px-6 py-20 md:py-32 text-center">
           <FadeIn>

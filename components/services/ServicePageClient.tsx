@@ -14,6 +14,49 @@ const serviceVideoMap: Record<string, string> = {
   "content-creation": "/videos/service-content-generation.mp4",
 };
 
+const serviceMetrics: Record<string, { value: string; label: string }[]> = {
+  "ai-automation": [
+    { value: "%300", label: "Efficiency Increase" },
+    { value: "2wk", label: "Setup Time" },
+    { value: "1.8x", label: "ROI in 6 months" },
+  ],
+  "chatbots-voice-agents": [
+    { value: "80%", label: "Query Resolution" },
+    { value: "24/7", label: "Availability" },
+    { value: "3x", label: "Faster Response" },
+  ],
+  "workflow-automation": [
+    { value: "%65", label: "Time Saved" },
+    { value: "1 Sprint", label: "Setup" },
+    { value: "99.9%", label: "Uptime" },
+  ],
+  "custom-ai-solutions": [
+    { value: "15%", label: "Retention Lift" },
+    { value: "3.5x", label: "Faster Insights" },
+    { value: "25%", label: "Marketing ROI" },
+  ],
+  "b2b-sales-automation": [
+    { value: "3x", label: "Lead Pipeline" },
+    { value: "40%", label: "Shorter Cycle" },
+    { value: "65K+", label: "Revenue Generated" },
+  ],
+  "content-creation": [
+    { value: "10x", label: "Content Speed" },
+    { value: "60%", label: "Cost Reduction" },
+    { value: "3x", label: "Engagement" },
+  ],
+  "corporate-website": [
+    { value: "95+", label: "Lighthouse Score" },
+    { value: "2x", label: "Conversion Rate" },
+    { value: "<1s", label: "Load Time" },
+  ],
+  "e-commerce-webshop": [
+    { value: "2.5x", label: "Sales Growth" },
+    { value: "80%", label: "Conv. Increase" },
+    { value: "50%", label: "Cart Recovery" },
+  ],
+};
+
 interface Props {
   service: ServiceLocaleData;
   slug: string;
@@ -23,6 +66,7 @@ interface Props {
 
 export function ServicePageClient({ service, slug, locale, dict }: Props) {
   const videoSrc = serviceVideoMap[slug];
+  const metrics = serviceMetrics[slug];
 
   return (
     <>
@@ -73,6 +117,28 @@ export function ServicePageClient({ service, slug, locale, dict }: Props) {
           </FadeIn>
         </div>
       </section>
+
+      {/* 3 Big Metrics — Tasman pattern */}
+      {metrics && (
+        <section className="bg-charcoal-950">
+          <div className="max-w-[1200px] mx-auto px-6">
+            <FadeIn>
+              <div className="grid grid-cols-3 gap-px bg-charcoal-800">
+                {metrics.map((m, i) => (
+                  <div key={i} className="bg-charcoal-950 p-8 md:p-12 text-center">
+                    <p className="text-4xl md:text-5xl font-semibold text-white tracking-tight font-mono mb-2">
+                      {m.value}
+                    </p>
+                    <p className="text-xs md:text-sm text-charcoal-500 uppercase tracking-wide">
+                      {m.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </FadeIn>
+          </div>
+        </section>
+      )}
 
       {/* Problem-Solution */}
       <section className="py-16 md:py-24 bg-white">
