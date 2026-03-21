@@ -23,7 +23,7 @@ export async function POST(request: Request) {
     const resend = new Resend(process.env.RESEND_API_KEY);
     const { error } = await resend.emails.send({
       from: "LeftFlow Contact <onboarding@resend.dev>",
-      to: process.env.CONTACT_EMAIL || "burhan@leftflow.ai",
+      to: process.env.CONTACT_EMAIL || "teklif@leftflow.ai",
       subject: `New Contact Form: ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
