@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { FadeIn, StaggerContainer, StaggerItem, PageTransition } from "@/components/animations";
 import { Button, SectionLabel } from "@/components/ui";
@@ -26,8 +25,7 @@ export function DataIntelligenceClient({ dict, locale }: Props) {
       {/* Hero */}
       <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
         <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-charcoal-800 via-charcoal-900 to-charcoal-900" />
-          <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-primary-500/10 rounded-full blur-3xl" />
+          <div className="absolute inset-0 bg-charcoal-950" />
         </div>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
@@ -47,26 +45,17 @@ export function DataIntelligenceClient({ dict, locale }: Props) {
             </Button>
           </FadeIn>
           <FadeIn delay={0.2}>
-            <div className="mt-12 max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden relative bg-charcoal-800">
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                poster="/images/data-intelligence.jpg"
-                className="w-full h-full object-cover"
-              >
-                <source src="/videos/data-intelligence-motion.mp4" type="video/mp4" />
-              </video>
-              <Image
-                src="/images/data-intelligence.jpg"
-                alt="Data Intelligence"
-                fill
-                className="object-cover video-fallback"
-                sizes="(max-width: 1200px) 100vw, 900px"
-                priority
-                style={{ position: "absolute", zIndex: -1 }}
-              />
+            <div className="mt-12 max-w-3xl mx-auto grid grid-cols-3 gap-px bg-charcoal-800">
+              {[
+                { value: "10x", label: "Data Processing" },
+                { value: "98%", label: "Accuracy" },
+                { value: "24/7", label: "Monitoring" },
+              ].map((stat, i) => (
+                <div key={i} className="bg-charcoal-950 p-6 md:p-8">
+                  <p className="text-xl md:text-2xl font-semibold text-white tracking-tight font-mono">{stat.value}</p>
+                  <p className="text-xs text-charcoal-500 mt-1">{stat.label}</p>
+                </div>
+              ))}
             </div>
           </FadeIn>
         </div>
@@ -89,7 +78,7 @@ export function DataIntelligenceClient({ dict, locale }: Props) {
               {d.processSteps.map((step: any, i: number) => (
                 <StaggerItem key={i}>
                   <div className="text-center relative">
-                    <div className="w-16 h-16 rounded-2xl bg-primary-500 text-white flex items-center justify-center mx-auto mb-4 relative z-10 shadow-lg shadow-primary-500/20">
+                    <div className="w-16 h-16 bg-primary-500 text-white flex items-center justify-center mx-auto mb-4 relative z-10">
                       <span className="text-xl font-bold">{i + 1}</span>
                     </div>
                     <h3 className="font-semibold text-charcoal-800 mb-1">{step.title}</h3>
@@ -122,7 +111,7 @@ export function DataIntelligenceClient({ dict, locale }: Props) {
           <StaggerContainer className="grid md:grid-cols-2 gap-6">
             {d.capabilityItems.map((item: any, i: number) => (
               <StaggerItem key={i}>
-                <div className="h-full p-8 rounded-2xl bg-white border border-charcoal-200/60 hover:shadow-lg transition-shadow">
+                <div className="h-full p-8  bg-white border border-charcoal-200/60 hover:shadow-lg transition-shadow">
                   <div className="flex gap-4">
                     <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center text-primary-500 shrink-0">
                       {capIcons[i]}

@@ -19,10 +19,10 @@ export function FadeIn({
   className = "",
 }: FadeInProps) {
   const directions = {
-    up: { y: 40 },
-    down: { y: -40 },
-    left: { x: 40 },
-    right: { x: -40 },
+    up: { y: 24 },
+    down: { y: -24 },
+    left: { x: 24 },
+    right: { x: -24 },
   };
 
   return (
@@ -30,7 +30,7 @@ export function FadeIn({
       initial={{ opacity: 0, ...directions[direction] }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once: true, amount: 0.1 }}
-      transition={{ duration, delay, ease: [0.21, 0.47, 0.32, 0.98] }}
+      transition={{ duration, delay, ease: [0.32, 0.72, 0, 1] }}
       className={className}
     >
       {children}

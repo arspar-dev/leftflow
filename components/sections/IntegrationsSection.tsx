@@ -20,7 +20,7 @@ const integrations = [
 
 export function IntegrationsSection({ dict }: { dict: Dictionary }) {
   return (
-    <section className="py-20 lg:py-28 bg-slate-950">
+    <section className="py-20 lg:py-28 bg-charcoal-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <div className="text-center mb-16">
@@ -28,7 +28,7 @@ export function IntegrationsSection({ dict }: { dict: Dictionary }) {
             <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">
               {dict.integrations.title}
             </h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">
+            <p className="text-charcoal-400 max-w-2xl mx-auto">
               {dict.integrations.subtitle}
             </p>
           </div>
@@ -37,13 +37,13 @@ export function IntegrationsSection({ dict }: { dict: Dictionary }) {
         <StaggerContainer className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
           {integrations.map((item) => (
             <StaggerItem key={item.name}>
-              <div className="group relative flex flex-col items-center justify-center p-6 rounded-2xl bg-slate-900/60 hover:bg-slate-800 hover:shadow-lg hover:shadow-primary-500/5 transition-all duration-300 border border-slate-800 hover:border-slate-700 cursor-default">
+              <div className="group relative flex flex-col items-center justify-center p-6 bg-charcoal-900 hover:bg-charcoal-800 transition-colors duration-300 border border-charcoal-800 hover:border-charcoal-700 cursor-default">
                 <div className="w-10 h-10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                   <svg viewBox="0 0 24 24" className="w-8 h-8" fill={item.color}>
                     <path d={item.path} />
                   </svg>
                 </div>
-                <span className="text-xs font-medium text-slate-500 group-hover:text-slate-300 transition-colors text-center">
+                <span className="text-xs font-medium text-charcoal-500 group-hover:text-charcoal-300 transition-colors text-center">
                   {item.name}
                 </span>
               </div>

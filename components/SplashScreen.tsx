@@ -49,7 +49,7 @@ export function SplashScreen() {
                   initial={{ scale: 0.8, opacity: 0 }}
                   animate={{ scale: 1.2, opacity: [0, 0.5, 0] }}
                   transition={{ duration: 2, repeat: 1, ease: "easeInOut" }}
-                  className="absolute inset-0 w-24 h-24 rounded-2xl bg-primary-500/20 blur-xl"
+                  className="absolute inset-0 w-24 h-24 bg-primary-500/20"
                 />
 
                 {/* Logo icon */}
@@ -57,7 +57,7 @@ export function SplashScreen() {
                   initial={{ rotate: -10 }}
                   animate={{ rotate: 0 }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="w-24 h-24 bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl flex items-center justify-center shadow-2xl"
+                  className="w-24 h-24 bg-primary-500 flex items-center justify-center"
                 >
                   <svg
                     width="48"

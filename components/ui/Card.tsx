@@ -26,7 +26,7 @@ export function Card({
     <motion.div
       whileHover={hover ? { y: -4, scale: 1.01 } : undefined}
       transition={{ duration: 0.2 }}
-      className={`bg-charcoal-800/60 rounded-2xl border border-charcoal-700 shadow-sm hover:shadow-md hover:border-charcoal-600 transition-shadow ${paddings[padding]} ${className}`}
+      className={`bg-charcoal-800/60  border border-charcoal-700 shadow-sm hover:shadow-md hover:border-charcoal-600 transition-shadow ${paddings[padding]} ${className}`}
     >
       {children}
     </motion.div>

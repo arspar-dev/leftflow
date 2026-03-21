@@ -1,6 +1,7 @@
 import { getDictionary, type Locale } from "@/lib/i18n";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { TrustedBySection } from "@/components/sections/TrustedBySection";
+import { ValuePropositions } from "@/components/sections/ValuePropositions";
 import { ServicesSection } from "@/components/sections/ServicesSection";
 import { CasesPreview } from "@/components/sections/CasesPreview";
 import { WorkflowSection } from "@/components/sections/WorkflowSection";
@@ -18,9 +19,9 @@ export default async function HomePage({
 
   return (
     <>
-      {/* Blueprint homepage: Hero → Logos → Services → Featured Case → How We Work → Stats → Blog → CTA */}
       <HeroSection dict={dict} locale={locale as Locale} />
       <TrustedBySection dict={dict} />
+      <ValuePropositions dict={dict} />
       <ServicesSection dict={dict} locale={locale as Locale} />
       <CasesPreview locale={locale as Locale} dict={dict} />
       <WorkflowSection dict={dict} />

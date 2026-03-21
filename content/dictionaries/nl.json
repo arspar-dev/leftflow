@@ -29,9 +29,9 @@
   "hero": {
     "badge": "200+ bedrijven opgeschaald",
     "rating": "4.7/5",
-    "title": "Transformeer uw bedrijf met AI",
-    "subtitle": "Chatbots, spraakassistenten, automatiseringsworkflows en op maat gemaakte AI-oplossingen om uw bedrijfsefficiëntie tot 300% te verhogen.",
-    "cta": "Gratis adviesgesprek"
+    "title": "Werk slimmer.\nAutomatiseer alles.",
+    "subtitle": "AI-gestuurde automatisering die de manier waarop uw bedrijf werkt transformeert.",
+    "cta": "Plan een gesprek"
   },
   "services": {
     "label": "Diensten",
@@ -275,6 +275,11 @@
     "bookCall": "Plan een gesprek",
     "challengeTitle": "Wat is uw uitdaging?",
     "challengeDescription": "Benieuwd wat we voor uw resultaten kunnen doen? Daag ons uit en we nemen binnen 2 werkdagen contact met u op.",
+    "emailSection": {
+      "label": "Direct Contact",
+      "title": "Liever een e-mail?",
+      "description": "Stuur ons uw projectdetails en wij nemen binnen 24 uur contact met u op."
+    },
     "officesTitle": "Onze Kantoren",
     "officesSubtitle": "Bezoek ons op onze locaties in Nederland."
   },
@@ -445,5 +450,67 @@
     "ctaTitle": "Klaar voor vergelijkbare resultaten?",
     "ctaButton": "Plan een gesprek",
     "moreCases": "Meer Cases"
+  },
+  "valuePropositions": {
+    "label": "Waarom LeftFlow",
+    "title": "Wij maken van complexiteit een concurrentievoordeel",
+    "items": [
+      {
+        "title": "Procesautomatisering",
+        "description": "We brengen uw workflows in kaart en automatiseren repetitieve taken — zodat uw team zich richt op wat belangrijk is."
+      },
+      {
+        "title": "Intelligente Assistenten",
+        "description": "Chatbots en spraakagenten die 80% van de vragen afhandelen, 24/7 beschikbaar zonder burn-out."
+      },
+      {
+        "title": "ROI in Weken",
+        "description": "Sprint-gebaseerde levering met meetbare resultaten vanaf dag één. Geen langdurige roadmaps."
+      },
+      {
+        "title": "Volledig Eigendom",
+        "description": "Wij bouwen het, trainen uw team en overhandigen de sleutels. Geen vendor lock-in, ooit."
+      }
+    ]
+  },
+  "howWeWork": {
+    "label": "Hoe wij werken",
+    "title": "Van uitdaging naar resultaat",
+    "tabs": [
+      {
+        "title": "Analyse",
+        "heading": "Diepgaande analyse van uw operaties",
+        "description": "We beginnen met het in kaart brengen van uw huidige processen, het identificeren van knelpunten en het definiëren van duidelijke automatiseringsmogelijkheden met meetbare KPI's.",
+        "points": [
+          "Stakeholder-interviews & procesanalyse",
+          "Datastroomanalyse & integratie-audit",
+          "Geprioriteerde automatiseringsroadmap",
+          "ROI-projectie per initiatief"
+        ]
+      },
+      {
+        "title": "Technologie",
+        "heading": "De juiste tools voor de klus",
+        "description": "We combineren de beste AI-platforms met bewezen automatiseringstools om oplossingen te bouwen die meeschalen met uw bedrijf.",
+        "points": [
+          "OpenAI, LangChain & custom LLM's",
+          "n8n, Make & Zapier voor workflow-orchestratie",
+          "Supabase, Pinecone & vectordatabases",
+          "Next.js, Vercel & moderne webstack"
+        ]
+      },
+      {
+        "title": "Team",
+        "heading": "Sprint-gebaseerde, transparante levering",
+        "description": "Ons cross-functionele team werkt in gerichte sprints met wekelijkse demo's, zodat u altijd weet wat er gebeurt en de richting kunt bepalen.",
+        "points": [
+          "Toegewijde projectleider & wekelijkse check-ins",
+          "2-wekelijkse sprintcycli met live demo's",
+          "Continue deployment & testen",
+          "Kennisoverdracht & documentatie"
+        ],
+        "sprintLabels": ["Ontdekking & Setup", "Bouwen & Itereren", "Lancering & Optimalisatie"]
+      }
+    ]
   }
 }

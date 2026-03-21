@@ -97,13 +97,7 @@ export function AIOptimizerClient({ locale, dict }: Props) {
     <main>
       {/* Hero */}
       <section className="relative bg-charcoal-950 pt-[72px] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0D0D0D] via-[#111827] to-[#1e1b4b]" />
-        {/* Decorative circles */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] opacity-10">
-          <div className="absolute inset-0 rounded-full border border-primary-500/30" />
-          <div className="absolute inset-12 rounded-full border border-charcoal-700" />
-          <div className="absolute inset-24 rounded-full border border-primary-500/30" />
-        </div>
+        <div className="absolute inset-0 bg-charcoal-950" />
 
         <div className="relative max-w-[1200px] mx-auto px-6 py-20 md:py-32 text-center">
           <FadeIn>
@@ -139,7 +133,7 @@ export function AIOptimizerClient({ locale, dict }: Props) {
           <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {content.features.map((feature, i) => (
               <StaggerItem key={i}>
-                <div className="group p-6 rounded-xl border border-charcoal-200 hover:border-primary-500 hover:shadow-lg transition-all duration-300 h-full">
+                <div className="group p-6 border border-charcoal-200 hover:border-primary-500 hover:shadow-lg transition-all duration-300 h-full">
                   <div className="w-12 h-12 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center mb-4 group-hover:bg-primary-500 group-hover:text-white transition-colors">
                     {featureIcons[feature.icon]}
                   </div>
@@ -165,7 +159,7 @@ export function AIOptimizerClient({ locale, dict }: Props) {
             {content.steps.map((step, i) => (
               <StaggerItem key={i}>
                 <div className="text-center">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary-500 to-primary-400 text-white text-2xl font-bold flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 bg-primary-500 text-white text-2xl font-bold flex items-center justify-center mx-auto mb-6">
                     {i + 1}
                   </div>
                   <h3 className="text-lg font-bold text-charcoal-950 mb-2">{step.title}</h3>
@@ -181,7 +175,7 @@ export function AIOptimizerClient({ locale, dict }: Props) {
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-[1000px] mx-auto px-6">
           <FadeIn>
-            <div className="bg-charcoal-950 rounded-2xl p-6 md:p-10 shadow-2xl">
+            <div className="bg-charcoal-950  p-6 md:p-10 shadow-2xl">
               <div className="flex items-center gap-2 mb-6">
                 <div className="w-3 h-3 rounded-full bg-red-500" />
                 <div className="w-3 h-3 rounded-full bg-yellow-500" />
@@ -225,7 +219,7 @@ export function AIOptimizerClient({ locale, dict }: Props) {
 
       {/* CTA */}
       <section className="relative py-20 md:py-28 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary-600 via-primary-700 to-charcoal-900" />
+        <div className="absolute inset-0 bg-charcoal-950" />
         <div className="relative max-w-[800px] mx-auto px-6 text-center">
           <FadeIn>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6">

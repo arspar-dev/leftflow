@@ -74,9 +74,21 @@ export function IndustryPageClient({ industry, dict, locale, allIndustries }: Pr
             </Button>
           </FadeIn>
 
-          {/* Industry Hero Image */}
+          {/* Industry Stats Preview */}
           <FadeIn delay={0.2}>
-            <div className="mt-12 relative aspect-video max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-xl">
+            <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-px bg-charcoal-800 max-w-3xl">
+              {localeData.stats.slice(0, 4).map((stat, i) => (
+                <div key={i} className="bg-charcoal-950 p-6 md:p-8">
+                  <p className="text-xl md:text-2xl font-semibold text-white tracking-tight font-mono">{stat.value}</p>
+                  <p className="text-xs text-charcoal-500 mt-1">{stat.label}</p>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+
+          {/* Industry Image */}
+          <FadeIn delay={0.3}>
+            <div className="mt-8 relative aspect-video max-w-4xl mx-auto overflow-hidden">
               <Image
                 src={`/images/industry-${industry.slug}.jpg`}
                 alt={localeData.title}
@@ -103,7 +115,7 @@ export function IndustryPageClient({ industry, dict, locale, allIndustries }: Pr
           <StaggerContainer className="grid md:grid-cols-2 gap-6">
             {localeData.useCases.map((uc, i) => (
               <StaggerItem key={i}>
-                <div className="h-full p-8 rounded-2xl bg-charcoal-50 border border-charcoal-200/60 hover:shadow-lg transition-shadow">
+                <div className="h-full p-8  bg-charcoal-50 border border-charcoal-200/60 hover:shadow-lg transition-shadow">
                   <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center text-primary-500 mb-4">
                     {useCaseIcons[industry.icons[i]] || useCaseIcons.settings}
                   </div>
@@ -129,7 +141,7 @@ export function IndustryPageClient({ industry, dict, locale, allIndustries }: Pr
           <StaggerContainer className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
             {localeData.stats.map((stat, i) => (
               <StaggerItem key={i}>
-                <div className="text-center p-6 bg-white rounded-2xl border border-charcoal-200/60">
+                <div className="text-center p-6 bg-white  border border-charcoal-200/60">
                   <p className="text-3xl lg:text-4xl font-bold text-primary-500 mb-2">
                     {stat.value}
                   </p>
@@ -158,7 +170,7 @@ export function IndustryPageClient({ industry, dict, locale, allIndustries }: Pr
               { label: dict.industries.result, text: localeData.caseStudy.result, color: "bg-success-500/10 text-success-600 border border-success-500/20" },
             ].map((item, i) => (
               <StaggerItem key={i}>
-                <div className="p-6 rounded-2xl bg-charcoal-50 border border-charcoal-200/60 h-full">
+                <div className="p-6  bg-charcoal-50 border border-charcoal-200/60 h-full">
                   <span className={`inline-block px-3 py-1 text-xs font-medium mb-4 ${item.color}`}>
                     {item.label}
                   </span>
@@ -207,7 +219,7 @@ export function IndustryPageClient({ industry, dict, locale, allIndustries }: Pr
               return (
                 <StaggerItem key={ind.slug}>
                   <Link href={`/${locale}/industries/${ind.slug}`}>
-                    <div className="group cursor-pointer p-6 rounded-2xl bg-white border border-charcoal-200/60 hover:shadow-lg transition-all">
+                    <div className="group cursor-pointer p-6  bg-white border border-charcoal-200/60 hover:shadow-lg transition-all">
                       <h4 className="font-semibold text-charcoal-800 mb-1 group-hover:text-primary-500 transition-colors">{indLocale.name}</h4>
                       <p className="text-sm text-charcoal-500 line-clamp-2">{indLocale.description}</p>
                     </div>

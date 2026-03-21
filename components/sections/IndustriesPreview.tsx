@@ -31,7 +31,7 @@ export function IndustriesPreview({ dict, locale, industries }: Props) {
               <StaggerItem key={industry.slug}>
                 <Link
                   href={`/${locale}/industries/${industry.slug}`}
-                  className="block bg-charcoal-50 rounded-xl p-6 border border-charcoal-200 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
+                  className="block bg-charcoal-50 p-6 border border-charcoal-200 hover:-translate-y-1 hover:shadow-lg transition-all duration-300"
                 >
                   <h3 className="font-semibold text-charcoal-950 mb-2">
                     {localeData.name}

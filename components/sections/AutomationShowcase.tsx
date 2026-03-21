@@ -30,10 +30,10 @@ const tabs = [
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: i * 0.1 }}
-            className="flex items-center gap-3 bg-slate-800/50 p-3"
+            className="flex items-center gap-3 bg-charcoal-800/50 p-3"
           >
-            <span className="text-xs text-slate-400 font-mono w-20">{item.name}</span>
-            <div className="flex-1 bg-slate-700 rounded-full h-2">
+            <span className="text-xs text-charcoal-400 font-mono w-20">{item.name}</span>
+            <div className="flex-1 bg-charcoal-700 rounded-full h-2">
               <motion.div
                 className={`h-2 rounded-full ${item.color}`}
                 initial={{ width: 0 }}
@@ -46,7 +46,7 @@ const tabs = [
             </span>
           </motion.div>
         ))}
-        <div className="flex items-center gap-2 mt-4 pt-3 border-t border-slate-700">
+        <div className="flex items-center gap-2 mt-4 pt-3 border-t border-charcoal-700">
           <div className="w-2 h-2 rounded-full bg-red-500 opacity-80" />
           <span className="text-xs text-red-400">1 item below reorder threshold — auto-reorder triggered</span>
         </div>
@@ -83,7 +83,7 @@ const tabs = [
             <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${
               item.status === "done" ? "bg-emerald-500/20 text-emerald-400" :
               item.status === "active" ? "bg-primary-500/20 text-primary-400 ring-2 ring-primary-500/30" :
-              "bg-slate-700 text-slate-500"
+              "bg-charcoal-700 text-charcoal-500"
             }`}>
               {item.status === "done" ? (
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><polyline points="20 6 9 17 4 12"/></svg>
@@ -93,11 +93,11 @@ const tabs = [
                 <span className="text-xs">{i + 1}</span>
               )}
             </div>
-            {i < 4 && <div className={`absolute ml-4 mt-10 w-0.5 h-5 ${item.status === "done" ? "bg-emerald-500/30" : "bg-slate-700"}`} />}
+            {i < 4 && <div className={`absolute ml-4 mt-10 w-0.5 h-5 ${item.status === "done" ? "bg-emerald-500/30" : "bg-charcoal-700"}`} />}
             <div className="flex-1">
-              <span className={`text-sm ${item.status === "pending" ? "text-slate-500" : "text-slate-200"}`}>{item.step}</span>
+              <span className={`text-sm ${item.status === "pending" ? "text-charcoal-500" : "text-charcoal-200"}`}>{item.step}</span>
             </div>
-            <span className="text-xs text-slate-500 font-mono">{item.time}</span>
+            <span className="text-xs text-charcoal-500 font-mono">{item.time}</span>
           </motion.div>
         ))}
       </div>
@@ -125,11 +125,11 @@ const tabs = [
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.12 }}
-            className="flex items-start gap-3 bg-slate-800/50 p-3"
+            className="flex items-start gap-3 bg-charcoal-800/50 p-3"
           >
             <span className={`text-xs font-mono uppercase mt-0.5 ${item.color} shrink-0 w-16`}>{item.type}</span>
-            <span className="text-sm text-slate-300 flex-1">{item.msg}</span>
-            <span className="text-xs text-slate-500 shrink-0">{item.time}</span>
+            <span className="text-sm text-charcoal-300 flex-1">{item.msg}</span>
+            <span className="text-xs text-charcoal-500 shrink-0">{item.time}</span>
           </motion.div>
         ))}
       </div>
@@ -142,13 +142,13 @@ export function AutomationShowcase({ dict }: { dict: Dictionary }) {
   const a = dict.automationShowcase;
 
   return (
-    <section className="py-20 lg:py-28 bg-slate-950 text-white">
+    <section className="py-20 lg:py-28 bg-charcoal-950 text-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <div className="text-center mb-12">
             <SectionLabel>{a.label}</SectionLabel>
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">{a.title}</h2>
-            <p className="text-slate-400 max-w-2xl mx-auto">{a.subtitle}</p>
+            <p className="text-charcoal-400 max-w-2xl mx-auto">{a.subtitle}</p>
           </div>
         </FadeIn>
 
@@ -161,7 +161,7 @@ export function AutomationShowcase({ dict }: { dict: Dictionary }) {
                 className={`flex items-center gap-2 px-5 py-2.5 text-sm font-medium transition-all ${
                   i === activeTab
                     ? "bg-primary-500 text-white shadow-lg shadow-primary-500/25"
-                    : "bg-slate-800 text-slate-400 hover:bg-slate-700 hover:text-white"
+                    : "bg-charcoal-800 text-charcoal-400 hover:bg-charcoal-700 hover:text-white"
                 }`}
               >
                 {tabs[i].icon}
@@ -172,7 +172,7 @@ export function AutomationShowcase({ dict }: { dict: Dictionary }) {
         </FadeIn>
 
         <FadeIn delay={0.2}>
-          <div className="bg-slate-900 border border-slate-800 overflow-hidden">
+          <div className="bg-charcoal-900 border border-charcoal-800 overflow-hidden">
             <div className="p-6 md:p-8 min-h-[320px]">
               <AnimatePresence mode="wait">
                 <motion.div
@@ -185,7 +185,7 @@ export function AutomationShowcase({ dict }: { dict: Dictionary }) {
                   <h3 className="text-lg font-semibold text-white mb-2">
                     {a.tabs[activeTab].title}
                   </h3>
-                  <p className="text-sm text-slate-400 mb-6">
+                  <p className="text-sm text-charcoal-400 mb-6">
                     {a.tabs[activeTab].description}
                   </p>
                   {tabs[activeTab].visual}

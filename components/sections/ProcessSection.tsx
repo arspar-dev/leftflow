@@ -6,7 +6,7 @@ import type { Dictionary } from "@/lib/i18n";
 
 export function ProcessSection({ dict }: { dict: Dictionary }) {
   return (
-    <section className="py-20 lg:py-32 bg-slate-900">
+    <section className="py-20 lg:py-32 bg-charcoal-900">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn>
           <SectionLabel>{dict.process.label}</SectionLabel>
@@ -23,14 +23,14 @@ export function ProcessSection({ dict }: { dict: Dictionary }) {
             {dict.process.steps.map((step: any, i: number) => (
               <StaggerItem key={i}>
                 <div className="flex gap-6 items-start">
-                  <div className="relative z-10 w-12 h-12 rounded-full bg-primary-500 text-white flex items-center justify-center font-bold text-sm shrink-0 shadow-lg shadow-primary-500/30">
+                  <div className="relative z-10 w-12 h-12 bg-primary-500 text-white flex items-center justify-center font-bold text-sm shrink-0">
                     {i + 1}
                   </div>
                   <div className="pt-2">
                     <h3 className="text-xl font-semibold text-white mb-2">
                       {step.title}
                     </h3>
-                    <p className="text-slate-400 leading-relaxed">
+                    <p className="text-charcoal-400 leading-relaxed">
                       {step.description}
                     </p>
                   </div>

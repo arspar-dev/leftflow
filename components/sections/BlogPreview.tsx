@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations";
 import { blogPosts } from "@/lib/blog";
 import type { Locale, Dictionary } from "@/lib/i18n";
@@ -41,9 +42,15 @@ export function BlogPreview({ locale, dict }: Props) {
                   href={`/${locale}/blog/${post.slug}`}
                   className="group block"
                 >
-                  {/* Color block placeholder */}
-                  <div className="relative aspect-[16/10] rounded-lg overflow-hidden mb-4 bg-charcoal-100 flex items-center justify-center">
-                    <span className="text-4xl font-bold text-primary-500/20">{String(i + 1).padStart(2, "0")}</span>
+                  {/* Blog image */}
+                  <div className="relative aspect-[16/10] overflow-hidden mb-4 bg-charcoal-100">
+                    <Image
+                      src={`/images/blog-${post.slug}.jpg`}
+                      alt={postData.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, 33vw"
+                    />
                   </div>
 
                   <p className="text-xs font-medium text-primary-500 uppercase tracking-wide mb-2">

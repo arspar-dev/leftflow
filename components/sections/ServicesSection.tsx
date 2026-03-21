@@ -53,7 +53,7 @@ export function ServicesSection({ dict, locale }: Props) {
             <StaggerItem key={i}>
               <Link
                 href={`/${locale}/services/${serviceSlugs[i] || "ai-automation"}`}
-                className="group block p-6 bg-white border border-charcoal-200 rounded-xl hover:border-primary-500 hover:shadow-lg transition-all duration-300 h-full"
+                className="group block p-6 bg-white border border-charcoal-200 hover:border-primary-500 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 h-full"
               >
                 <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary-50 text-primary-500 mb-4 group-hover:bg-primary-500 group-hover:text-white transition-colors">
                   {serviceIcons[i]}

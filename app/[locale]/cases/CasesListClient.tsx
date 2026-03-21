@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import type { CaseStudy } from "@/lib/cases";
 import type { Locale, Dictionary } from "@/lib/i18n";
 
@@ -79,15 +78,10 @@ export function CasesListClient({ cases, categories, locale, dict }: Props) {
                 href={`/${locale}/cases/${c.slug}`}
                 className="group block"
               >
-                {/* Thumbnail */}
-                <div className="aspect-video rounded-xl overflow-hidden relative bg-charcoal-100 mb-4">
-                  <Image
-                    src={c.image}
-                    alt={content.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  />
+                {/* Metric highlight */}
+                <div className="bg-charcoal-950 p-6 mb-4 group-hover:bg-charcoal-900 transition-colors">
+                  <p className="text-3xl font-semibold text-white tracking-tight font-mono">{c.metric}</p>
+                  <p className="text-xs text-charcoal-500 mt-1 uppercase tracking-wide">{(dict as any).caseDetail?.keyResult || "Key Result"}</p>
                 </div>
 
                 {/* Category tag */}

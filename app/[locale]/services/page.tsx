@@ -15,7 +15,7 @@ export default async function ServicesPage({
     <>
       {/* Hero */}
       <section className="relative bg-charcoal-950 pt-[72px]">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0D0D0D] via-[#111827] to-[#1a1a2e]" />
+        <div className="absolute inset-0 bg-charcoal-950" />
         <div className="relative max-w-[1200px] mx-auto px-6 py-20 md:py-28">
           <FadeIn>
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
@@ -38,7 +38,7 @@ export default async function ServicesPage({
                 <StaggerItem key={service.slug}>
                   <Link
                     href={`/${locale}/services/${service.slug}`}
-                    className="group block p-6 bg-white border border-charcoal-200 rounded-xl hover:border-primary-500 hover:shadow-lg transition-all duration-300 h-full"
+                    className="group block p-6 bg-white border border-charcoal-200 hover:border-primary-500 hover:shadow-lg transition-all duration-300 h-full"
                   >
                     <div className="w-10 h-10 rounded-lg bg-primary-50 text-primary-500 flex items-center justify-center mb-4 group-hover:bg-primary-500 group-hover:text-white transition-colors">
                       <span className="text-sm font-bold">{String(i + 1).padStart(2, "0")}</span>

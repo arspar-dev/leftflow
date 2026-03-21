@@ -32,7 +32,7 @@ export function Button({
 
   const variants = {
     primary:
-      "bg-primary-500 text-white hover:bg-primary-600 shadow-lg shadow-primary-500/25 hover:shadow-primary-500/40",
+      "bg-primary-500 text-white hover:bg-primary-600",
     secondary:
       "bg-charcoal-800 text-white hover:bg-charcoal-700",
     outline:

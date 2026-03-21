@@ -10,6 +10,7 @@ export { WorkflowSection } from "./WorkflowSection";
 export { TrendingSection } from "./TrendingSection";
 export { CasesPreview } from "./CasesPreview";
 export { TrustedBySection } from "./TrustedBySection";
+export { ValuePropositions } from "./ValuePropositions";
 export { LocationsSection } from "./LocationsSection";
 export { ContactCTA } from "./ContactCTA";
 export { BlogPreview } from "./BlogPreview";

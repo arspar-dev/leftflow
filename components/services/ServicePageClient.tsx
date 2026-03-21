@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations";
 import type { ServiceLocaleData } from "@/lib/services";
 import type { Dictionary, Locale } from "@/lib/i18n";
@@ -32,6 +33,20 @@ export function ServicePageClient({ service, slug, locale, dict }: Props) {
             <Link href={`/${locale}/contact`} className="btn-glow">
               {service.ctaText} →
             </Link>
+          </FadeIn>
+
+          {/* Service Image */}
+          <FadeIn delay={0.2}>
+            <div className="mt-12 relative aspect-video max-w-4xl overflow-hidden">
+              <Image
+                src={`/images/service-${slug}.jpg`}
+                alt={service.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1200px) 100vw, 900px"
+                priority
+              />
+            </div>
           </FadeIn>
         </div>
       </section>
@@ -89,7 +104,7 @@ export function ServicePageClient({ service, slug, locale, dict }: Props) {
           <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {service.features.map((feature, i) => (
               <StaggerItem key={i}>
-                <div className="p-6 bg-white rounded-xl border border-charcoal-200 h-full">
+                <div className="p-6 bg-white border border-charcoal-200 h-full">
                   <div className="w-10 h-10 rounded-lg bg-primary-50 text-primary-500 flex items-center justify-center mb-4">
                     <span className="text-sm font-bold">{String(i + 1).padStart(2, "0")}</span>
                   </div>

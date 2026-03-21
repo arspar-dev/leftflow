@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations";
 import { SectionLabel } from "@/components/ui";
 import type { Dictionary } from "@/lib/i18n";
@@ -22,19 +21,8 @@ const featureIcons = [
 
 export function FeaturesSection({ dict }: { dict: Dictionary }) {
   return (
-    <section className="relative py-20 lg:py-32 bg-slate-950 overflow-hidden">
-      {/* Background visual */}
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src="/images/feature-dashboard.jpg"
-          alt=""
-          fill
-          className="object-cover opacity-10"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-950/95 to-slate-950" />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 lg:py-32 bg-charcoal-950">
+      <div className="max-w-[1200px] mx-auto px-6">
         <FadeIn>
           <SectionLabel>{dict.features.label}</SectionLabel>
           <h2 className="text-3xl lg:text-4xl font-bold text-white text-center mb-16">
@@ -45,14 +33,14 @@ export function FeaturesSection({ dict }: { dict: Dictionary }) {
         <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {dict.features.items.map((item: any, i: number) => (
             <StaggerItem key={i}>
-              <div className="h-full text-center p-8 rounded-2xl bg-slate-900/60 backdrop-blur-sm border border-slate-800 hover:border-primary-500/30 transition-all duration-300">
-                <div className="w-14 h-14 rounded-2xl bg-primary-500/10 border border-primary-500/20 flex items-center justify-center text-primary-400 mx-auto mb-5">
+              <div className="h-full text-center p-8 bg-charcoal-900 border border-charcoal-800 hover:border-charcoal-700 transition-colors duration-300">
+                <div className="w-12 h-12 bg-charcoal-800 border border-charcoal-700 flex items-center justify-center text-primary-400 mx-auto mb-5">
                   {featureIcons[i]}
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">
                   {item.title}
                 </h3>
-                <p className="text-sm text-slate-400 leading-relaxed">
+                <p className="text-sm text-charcoal-400 leading-relaxed">
                   {item.description}
                 </p>
               </div>

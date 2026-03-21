@@ -156,6 +156,32 @@ export function ContactClient({ dict, locale }: Props) {
         </div>
       </section>
 
+      {/* Email CTA */}
+      <section className="py-16 bg-charcoal-950">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <FadeIn>
+            <div className="text-center">
+              <p className="text-xs font-medium tracking-[0.2em] uppercase text-charcoal-500 mb-4">
+                {(dict as any).contact?.emailSection?.label || "Direct Contact"}
+              </p>
+              <h2 className="text-2xl md:text-3xl font-semibold text-white mb-3">
+                {(dict as any).contact?.emailSection?.title || "Prefer email?"}
+              </h2>
+              <p className="text-charcoal-400 mb-6 max-w-lg mx-auto">
+                {(dict as any).contact?.emailSection?.description || "Send us your project details directly."}
+              </p>
+              <a
+                href="mailto:teklif@leftflow.ai"
+                className="btn-hh-white text-sm inline-flex items-center gap-2"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                teklif@leftflow.ai
+              </a>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
       {/* Contact Form */}
       <section className="py-16 bg-charcoal-50">
         <div className="max-w-[1200px] mx-auto px-6">

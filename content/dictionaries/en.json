@@ -29,9 +29,9 @@
   "hero": {
     "badge": "200+ businesses scaled",
     "rating": "4.7/5",
-    "title": "Transform Your Business with AI",
-    "subtitle": "Chatbots, voice assistants, automation workflows and custom AI solutions to boost your business efficiency by up to 300%.",
-    "cta": "Get Free Consultation"
+    "title": "Work smarter.\nAutomate everything.",
+    "subtitle": "AI-powered automation that transforms how your business operates.",
+    "cta": "Book a call"
   },
   "services": {
     "label": "Services",
@@ -275,6 +275,11 @@
     "bookCall": "Book a call",
     "challengeTitle": "What's your challenge?",
     "challengeDescription": "Curious about what we can do for your results? Challenge us and we'll contact you within 2 business days.",
+    "emailSection": {
+      "label": "Direct Contact",
+      "title": "Prefer email?",
+      "description": "Send us your project details and we'll get back to you within 24 hours."
+    },
     "officesTitle": "Our Offices",
     "officesSubtitle": "Visit us at our locations in the Netherlands."
   },
@@ -445,5 +450,67 @@
     "ctaTitle": "Ready for similar results?",
     "ctaButton": "Schedule a Call",
     "moreCases": "More Cases"
+  },
+  "valuePropositions": {
+    "label": "Why LeftFlow",
+    "title": "We turn complexity into competitive advantage",
+    "items": [
+      {
+        "title": "Process Automation",
+        "description": "We map your workflows and automate repetitive tasks — so your team focuses on what matters."
+      },
+      {
+        "title": "Intelligent Assistants",
+        "description": "Chatbots and voice agents that handle 80% of queries, available 24/7 without burnout."
+      },
+      {
+        "title": "ROI in Weeks",
+        "description": "Sprint-based delivery with measurable results from day one. No lengthy roadmaps."
+      },
+      {
+        "title": "Full Ownership",
+        "description": "We build it, train your team, and hand over the keys. No vendor lock-in, ever."
+      }
+    ]
+  },
+  "howWeWork": {
+    "label": "How We Work",
+    "title": "From challenge to result",
+    "tabs": [
+      {
+        "title": "Analysis",
+        "heading": "Deep-dive into your operations",
+        "description": "We start by mapping your current processes, identifying bottlenecks, and defining clear automation opportunities with measurable KPIs.",
+        "points": [
+          "Stakeholder interviews & process mapping",
+          "Data flow analysis & integration audit",
+          "Prioritized automation roadmap",
+          "ROI projection per initiative"
+        ]
+      },
+      {
+        "title": "Technology",
+        "heading": "The right tools for the job",
+        "description": "We combine best-in-class AI platforms with proven automation tools to build solutions that scale with your business.",
+        "points": [
+          "OpenAI, LangChain & custom LLMs",
+          "n8n, Make & Zapier for workflow orchestration",
+          "Supabase, Pinecone & vector databases",
+          "Next.js, Vercel & modern web stack"
+        ]
+      },
+      {
+        "title": "Team",
+        "heading": "Sprint-based, transparent delivery",
+        "description": "Our cross-functional team works in focused sprints with weekly demos, so you always know what's happening and can steer the direction.",
+        "points": [
+          "Dedicated project lead & weekly check-ins",
+          "2-week sprint cycles with live demos",
+          "Continuous deployment & testing",
+          "Knowledge transfer & documentation"
+        ],
+        "sprintLabels": ["Discovery & Setup", "Build & Iterate", "Launch & Optimize"]
+      }
+    ]
   }
 }

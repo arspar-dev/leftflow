@@ -29,9 +29,9 @@
   "hero": {
     "badge": "200+ işletme ölçeklendi",
     "rating": "4.7/5",
-    "title": "AI ile İşinizi Dönüştürün",
-    "subtitle": "Chatbotlar, sesli asistanlar, otomasyon iş akışları ve özel AI çözümleri ile işletmenizin verimliliğini %300'e kadar artırın.",
-    "cta": "Ücretsiz Danışmanlık Al"
+    "title": "Daha akıllı çalışın.\nHer şeyi otomatikleştirin.",
+    "subtitle": "İşletmenizin çalışma biçimini dönüştüren AI destekli otomasyon.",
+    "cta": "Hadi Konuşalım"
   },
   "services": {
     "label": "Hizmetler",
@@ -275,6 +275,11 @@
     "bookCall": "Görüşme Planla",
     "challengeTitle": "Zorluğunuz nedir?",
     "challengeDescription": "Sonuçlarınız için neler yapabileceğimizi merak ediyor musunuz? Bize meydan okuyun, 2 iş günü içinde sizinle iletişime geçelim.",
+    "emailSection": {
+      "label": "Doğrudan İletişim",
+      "title": "E-posta mı tercih edersiniz?",
+      "description": "Proje detaylarınızı gönderin, 24 saat içinde dönüş yapalım."
+    },
     "officesTitle": "Ofislerimiz",
     "officesSubtitle": "Hollanda'daki lokasyonlarımızı ziyaret edin."
   },
@@ -445,5 +450,67 @@
     "ctaTitle": "Benzer sonuçlara hazır mısınız?",
     "ctaButton": "Görüşme Planla",
     "moreCases": "Diğer Projeler"
+  },
+  "valuePropositions": {
+    "label": "Neden LeftFlow",
+    "title": "Karmaşıklığı rekabet avantajına çeviriyoruz",
+    "items": [
+      {
+        "title": "Süreç Otomasyonu",
+        "description": "İş akışlarınızı haritalıyor, tekrarlayan görevleri otomatikleştiriyoruz — ekibiniz önemli işlere odaklansın."
+      },
+      {
+        "title": "Akıllı Asistanlar",
+        "description": "Sorguların %80'ini karşılayan chatbot ve sesli ajanlar, 7/24 kesintisiz hizmet."
+      },
+      {
+        "title": "Haftalarda ROI",
+        "description": "Sprint bazlı teslimat, ilk günden ölçülebilir sonuçlar. Uzun yol haritaları yok."
+      },
+      {
+        "title": "Tam Sahiplik",
+        "description": "Kuruyoruz, eğitiyoruz, anahtarları teslim ediyoruz. Bağımlılık yok, hiçbir zaman."
+      }
+    ]
+  },
+  "howWeWork": {
+    "label": "Nasıl Çalışıyoruz",
+    "title": "Zorluktan sonuca",
+    "tabs": [
+      {
+        "title": "Analiz",
+        "heading": "Operasyonlarınıza derinlemesine dalış",
+        "description": "Mevcut süreçlerinizi haritalayarak, darboğazları belirleyerek ve ölçülebilir KPI'larla net otomasyon fırsatlarını tanımlayarak başlıyoruz.",
+        "points": [
+          "Paydaş görüşmeleri ve süreç haritalama",
+          "Veri akışı analizi ve entegrasyon denetimi",
+          "Önceliklendirilmiş otomasyon yol haritası",
+          "İnisiyatif başına ROI projeksiyonu"
+        ]
+      },
+      {
+        "title": "Teknoloji",
+        "heading": "İş için doğru araçlar",
+        "description": "İşletmenizle birlikte ölçeklenen çözümler oluşturmak için en iyi AI platformlarını kanıtlanmış otomasyon araçlarıyla birleştiriyoruz.",
+        "points": [
+          "OpenAI, LangChain ve özel LLM'ler",
+          "n8n, Make ve Zapier ile iş akışı düzenlemesi",
+          "Supabase, Pinecone ve vektör veritabanları",
+          "Next.js, Vercel ve modern web yığını"
+        ]
+      },
+      {
+        "title": "Ekip",
+        "heading": "Sprint bazlı, şeffaf teslimat",
+        "description": "Çapraz fonksiyonlu ekibimiz haftalık demolarla odaklanmış sprintlerde çalışır — her zaman neler olduğunu bilir ve yön verebilirsiniz.",
+        "points": [
+          "Özel proje lideri ve haftalık görüşmeler",
+          "2 haftalık sprint döngüleri ve canlı demolar",
+          "Sürekli dağıtım ve test",
+          "Bilgi transferi ve dokümantasyon"
+        ],
+        "sprintLabels": ["Keşif & Kurulum", "Geliştirme & İterasyon", "Lansman & Optimizasyon"]
+      }
+    ]
   }
 }

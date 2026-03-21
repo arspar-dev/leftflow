@@ -17,7 +17,7 @@ export function AnimatedLogo({ locale, variant = "dark" }: AnimatedLogoProps) {
       <motion.div
         whileHover={{ scale: 1.05, rotate: 3 }}
         whileTap={{ scale: 0.95 }}
-        className="w-9 h-9 bg-gradient-to-br from-primary-500 to-primary-700 rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/20 group-hover:shadow-primary-500/40 transition-shadow"
+        className="w-9 h-9 bg-primary-500 flex items-center justify-center"
       >
         <svg
           width="20"
