@@ -69,46 +69,34 @@ const labels = {
 
 export function ContactClient({ dict, locale }: Props) {
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
   const [privacyChecked, setPrivacyChecked] = useState(false);
   const l = labels[locale] || labels.en;
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!privacyChecked) return;
-    setLoading(true);
-    setError("");
 
     const form = e.currentTarget;
     const formData = new FormData(form);
-    const data = {
-      name: `${formData.get("firstName")} ${formData.get("lastName")}`,
-      email: formData.get("email"),
-      company: formData.get("company"),
-      phone: "",
-      budget: formData.get("discuss"),
-      message: formData.get("message"),
-    };
 
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+    const firstName = formData.get("firstName") as string;
+    const lastName = formData.get("lastName") as string;
+    const email = formData.get("email") as string;
+    const company = formData.get("company") as string;
+    const discuss = formData.get("discuss") as string;
+    const message = formData.get("message") as string;
 
-      if (res.ok) {
-        setSubmitted(true);
-      } else {
-        const json = await res.json();
-        setError(json.error || l.errorGeneric);
-      }
-    } catch {
-      setError(l.errorNetwork);
-    } finally {
-      setLoading(false);
-    }
+    const subject = encodeURIComponent(`Yeni İletişim Formu: ${firstName} ${lastName}`);
+    const body = encodeURIComponent(
+      `Ad Soyad: ${firstName} ${lastName}\n` +
+      `E-posta: ${email}\n` +
+      (company ? `Şirket: ${company}\n` : "") +
+      (discuss ? `Konu: ${discuss}\n` : "") +
+      `\nMesaj:\n${message}`
+    );
+
+    window.location.href = `mailto:teklif@leftflow.ai?subject=${subject}&body=${body}`;
+    setSubmitted(true);
   };
 
   return (
@@ -231,28 +219,16 @@ export function ContactClient({ dict, locale }: Props) {
 
                       <button
                         type="submit"
-                        disabled={loading || !privacyChecked}
+                        disabled={!privacyChecked}
                         className="flex items-center gap-3 px-8 py-4 border border-black text-black text-sm font-medium tracking-[0.15em] uppercase hover:bg-black hover:text-white transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed flex-shrink-0"
                       >
-                        {loading ? (
-                          <svg className="animate-spin h-4 w-4" viewBox="0 0 24 24">
-                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-                          </svg>
-                        ) : (
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
-                          </svg>
-                        )}
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
                         {l.submit}
                       </button>
                     </div>
 
-                    {error && (
-                      <div className="px-6 py-8 md:px-8 md:py-10">
-                        <p className="text-sm text-red-600 bg-red-50 border border-red-200 px-4 py-3">{error}</p>
-                      </div>
-                    )}
                   </form>
                 </FadeIn>
               )}
