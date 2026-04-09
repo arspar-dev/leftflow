@@ -105,7 +105,9 @@ export function BlogDetailClient({ post, dict, locale, relatedPosts }: Props) {
                     <h2 className="text-xl lg:text-2xl font-bold text-charcoal-800 mb-4">
                       {postData.headings[i]}
                     </h2>
-                    <p className="text-charcoal-600 leading-relaxed text-[17px]">{paragraph}</p>
+                    {paragraph.split('\n\n').map((p, j) => (
+                      <p key={j} className="text-charcoal-600 leading-relaxed text-[17px] mb-4 last:mb-0">{p}</p>
+                    ))}
                   </div>
                 </FadeIn>
               ))}

@@ -21,6 +21,9 @@ export function HeroSection({ dict, locale }: HeroSectionProps) {
   const videoScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
   const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
 
+  const newHero = (dict as any).newHero || {};
+  const trustBar = (dict as any).trustBar?.items || [];
+
   return (
     <section ref={heroRef} className="relative bg-[#0a0a0a] min-h-[100dvh] flex items-end overflow-hidden">
       {/* Parallax video background */}
@@ -54,7 +57,7 @@ export function HeroSection({ dict, locale }: HeroSectionProps) {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
         >
-          AI Automation Agency
+          {newHero.kicker || "AI Transformation Firm"}
         </motion.p>
 
         {/* Display heading — word reveal */}
@@ -62,26 +65,30 @@ export function HeroSection({ dict, locale }: HeroSectionProps) {
           as="h1"
           delay={0.5}
           staggerDelay={0.06}
-          className="heading-display text-white text-[2.75rem] md:text-[4rem] lg:text-[5rem] xl:text-[5.5rem] max-w-4xl mb-8 leading-[1.05]"
+          className="heading-display text-white text-[2.75rem] md:text-[4rem] lg:text-[5rem] xl:text-[5.5rem] max-w-5xl mb-8 leading-[1.05]"
         >
-          {dict.hero.title}
+          {newHero.title || dict.hero.title}
         </TextReveal>
 
         {/* Subtitle */}
         <LineReveal delay={1}>
-          <p className="body-18 text-white/55 max-w-xl mb-12">
-            {dict.hero.subtitle}
+          <p className="body-18 text-white/55 max-w-2xl mb-10">
+            {newHero.subtitle || dict.hero.subtitle}
           </p>
         </LineReveal>
 
-        {/* CTA */}
+        {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 1.3, ease: [0.16, 1, 0.3, 1] }}
+          className="flex flex-wrap items-center gap-4"
         >
-          <Link href={`/${locale}/contact`} className="btn-hh-white group">
-            {dict.hero.cta}
+          <Link
+            href={`/${locale}/contact?topic=advisory`}
+            className="btn-hh-white group"
+          >
+            {newHero.primaryCta || dict.hero.cta}
             <svg
               className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1"
               fill="none"
@@ -92,7 +99,37 @@ export function HeroSection({ dict, locale }: HeroSectionProps) {
               <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>
           </Link>
+          <Link
+            href={`/${locale}/advisory`}
+            className="inline-flex items-center gap-1.5 px-6 py-[14px] text-[0.875rem] font-medium text-white/85 border border-white/20 hover:border-white/50 hover:text-white transition-colors"
+          >
+            {newHero.secondaryCta || "See our packages"}
+            <span className="text-white/60">→</span>
+          </Link>
         </motion.div>
+
+        {/* Trust bar — 4 stat items */}
+        {trustBar.length > 0 && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 1.55, ease: [0.16, 1, 0.3, 1] }}
+            className="mt-14 pt-8 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-10 max-w-3xl"
+          >
+            {trustBar.map(
+              (item: { value: string; label: string }, i: number) => (
+                <div key={i} className="flex flex-col gap-1">
+                  <div className="text-white font-semibold text-[1.375rem] tracking-[-0.02em] leading-none">
+                    {item.value}
+                  </div>
+                  <div className="text-white/45 text-[0.75rem] uppercase tracking-[0.06em]">
+                    {item.label}
+                  </div>
+                </div>
+              )
+            )}
+          </motion.div>
+        )}
       </motion.div>
 
       {/* Scroll indicator */}

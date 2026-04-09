@@ -512,5 +512,353 @@
         "sprintLabels": ["Keşif & Kurulum", "Geliştirme & İterasyon", "Lansman & Optimizasyon"]
       }
     ]
+  },
+  "navExtra": {
+    "advisory": "Advisory",
+    "systems": "Systems",
+    "diagnosticNote": "Ücretsiz teşhis çağrısı"
+  },
+  "partner": {
+    "lockup": "ortağı",
+    "name": "Amsterdam Tech",
+    "tagline": "Woolf akredite EU yüksek öğretim kurumu",
+    "strategicPartner": "Stratejik Ortak",
+    "description": "Woolf akredite, EU tanınan yüksek öğretim kurumu. QS 5★ online rating · 30 yıllık eğitim mirası · Amsterdam, NL",
+    "aboutLink": "Ortaklık hakkında"
+  },
+  "newHero": {
+    "kicker": "AI DÖNÜŞÜM",
+    "title": "AI işi gerçekten üstlenen bir ekip.",
+    "subtitle": "Şirketinize özel AI stratejisi çıkarıyoruz, ardından aynı ekip sistemleri kuruyor ve aylık operasyonunu üstleniyor. Orta ve büyük ölçekli şirketler için, Amsterdam Tech ortaklığında.",
+    "primaryCta": "Teşhis çağrısı al",
+    "secondaryCta": "Hizmetlerimizi gör"
+  },
+  "trustBar": {
+    "items": [
+      { "value": "200+", "label": "tamamlanmış proje" },
+      { "value": "QS 5★", "label": "akredite ortak" },
+      { "value": "2 ofis", "label": "Rotterdam · Istanbul" },
+      { "value": "30 yıl", "label": "eğitim mirası" }
+    ]
+  },
+  "twoLines": {
+    "kicker": "İKİ HAT",
+    "title": "Önce strateji, sonra teslim.",
+    "subtitle": "Leftflow iki ayrı hat üzerinde çalışır. Advisory size yol haritasını çıkarır; Systems o yolu hayata geçirir. İkisini ayrı ayrı veya birlikte alabilirsiniz.",
+    "advisory": {
+      "tag": "ADVISORY",
+      "title": "Yol haritası, karar desteği, üst yönetim sunumu.",
+      "description": "3 aylık paketlerle şirketinize özel AI ve otomasyon stratejisi çıkarıyoruz: süreç envanteri, pilot proje tanımları, bütçe modeli ve yatırım kurulu sunumu. Uygulama bu hatta dahil değil — burada amaç 'ne yapılacağını' netleştirmek.",
+      "items": [
+        { "name": "AI Adaptasyon Yol Haritası" },
+        { "name": "Otomasyon Stratejisi" },
+        { "name": "Cloud & Veri Mimarisi" },
+        { "name": "Strateji Çalıştayı (1 gün)" },
+        { "name": "Mentorluk Retainer (CEO/CTO)" }
+      ],
+      "cta": "Advisory paketleri"
+    },
+    "systems": {
+      "tag": "SYSTEMS",
+      "title": "Canlı AI ajanları ve kurulu sistemler.",
+      "description": "Test edilmiş AI agent paketleri + özel geliştirmeler. 4-10 haftada canlıya alıyoruz, ardından aylık operasyon desteği veriyoruz. Stratejiniz hazırsa doğrudan başlarız; değilse önce Advisory'den geçilir.",
+      "items": [
+        { "name": "Müşteri Destek Agent (7/24)" },
+        { "name": "Satış Outreach Agent (B2B)" },
+        { "name": "İçerik Üretim Agent" },
+        { "name": "Operasyon & Muhasebe Agent" },
+        { "name": "Workflow Otomasyon Agent" },
+        { "name": "Özel AI Geliştirme" }
+      ],
+      "cta": "Systems ürünleri"
+    }
+  },
+  "dualCta": {
+    "kicker": "BAŞLAYALIM",
+    "title": "Size hangisi uyar?",
+    "advisoryTitle": "\"Yol haritamız henüz net değil\"",
+    "advisoryDesc": "Advisory paketlerinden biriyle 12 hafta içinde yol haritanızı, pilot projelerinizi ve yatırım kurulu sunumunuzu çıkarıyoruz.",
+    "advisoryBtn": "Advisory'yi incele",
+    "systemsTitle": "\"Ne istediğimizi biliyoruz\"",
+    "systemsDesc": "Systems tarafında hazır AI agent paketleri ve özel geliştirme var. 4-10 haftada canlıya alırız, sonra aylık operasyonu biz yürütürüz.",
+    "systemsBtn": "Systems'i incele",
+    "footer": "Emin değilseniz 30 dakikalık ücretsiz bir teşhis çağrısı yeterli — satış görüşmesi değil.",
+    "footerCta": "Çağrı planla"
+  },
+  "serviceRelocate": {
+    "banner": "Bu hizmet artık Leftflow <0>Systems</0> hattının bir parçası. Yeni paket yapısı ve fiyatlandırmayı görmek için",
+    "bannerLinkFallback": "sayfasını ziyaret edin.",
+    "secondary": "Bu hizmet hâlâ aktiftir ama Leftflow'un yeni odak noktası Advisory ve Systems hattıdır. Web sitesi veya e-ticaret projesi için doğrudan <0>iletişime geçin</0>."
+  },
+  "contactTopics": {
+    "label": "Neleri görüşmek istersiniz?",
+    "groups": {
+      "advisory": "ADVISORY",
+      "systems": "SYSTEMS",
+      "other": "DİĞER"
+    },
+    "options": {
+      "advisoryRoadmap": "Advisory: AI Adaptasyon Yol Haritası",
+      "advisoryAutomation": "Advisory: Otomasyon Stratejisi",
+      "advisoryCloud": "Advisory: Cloud & Veri Mimarisi",
+      "advisoryWorkshop": "Advisory: Strateji Çalıştayı (1 gün)",
+      "advisoryRetainer": "Advisory: Mentorluk Retainer",
+      "systemsMuhasebe": "Systems: Müşteri Destek Agent",
+      "systemsAgency": "Systems: Satış Outreach Agent",
+      "systemsN8n": "Systems: Workflow Otomasyon Agent",
+      "systemsCustom": "Systems: Custom AI Build",
+      "aiAutomation": "AI Otomasyon & Chatbotlar",
+      "workflow": "Workflow Otomasyonu",
+      "b2bSales": "B2B Satış Otomasyonları",
+      "website": "Kurumsal Website / E-Commerce",
+      "dataIntel": "Veri Zekası & Analitik",
+      "amsterdamTech": "Amsterdam Tech ortaklığı",
+      "partnership": "İş Ortaklığı",
+      "other": "Diğer"
+    }
+  },
+  "newContact": {
+    "heroTitle": "30 dakika, net cevaplar.",
+    "heroSubtitle": "Teşhis çağrılarımızda satış yapmayız. Problemi anlarız, uygun hattı (Advisory veya Systems) öneririz. Uygun değilsek, onu da söyleriz."
+  },
+  "newCases": {
+    "subtitle": "200+ tamamlanmış projeden seçilmiş 9 vaka çalışması. Her case'te hangi hattı (Advisory, Systems veya ikisi) kullandık, net olarak işaretledik.",
+    "bottomTitle": "Sizin durumunuza benzer bir case var mı?",
+    "bottomDesc": "Westwing veya YENA gibi bir hikayeniz olabilir. 30 dakikalık ücretsiz teşhis çağrısında konuşalım.",
+    "bottomCta": "Çağrıyı planla",
+    "filters": {
+      "advisory": "Advisory",
+      "systems": "Systems"
+    }
+  },
+  "amsterdamTechSection": {
+    "kicker": "STRATEJİK ORTAKLIK",
+    "title": "Amsterdam Tech",
+    "lead": "Leftflow, 2026 yılında Amsterdam Tech ile resmi bir stratejik ortaklık kurdu.",
+    "whoTitle": "Amsterdam Tech kim?",
+    "whoBody": "30 yıllık eğitim mirasına dayanan, Woolf akreditasyonu ile Hollanda Yüksek Öğretim Kanunu altında tanınan EU diploması veren bir kurum. QS 5★ online rating'i ile dünyanın en yüksek puanlı online eğitim kurumlarından biri. Programları arasında BSc Tech Entrepreneurship, BSc AI & ML ve Tech MBA bulunuyor.",
+    "benefitsTitle": "Bu ortaklık Leftflow'a ne katıyor?",
+    "benefits": [
+      { "title": "Akademik quality check", "body": "Her Advisory teslimi Amsterdam Tech akademik komitesinden geçer. Önerilerin mantıksal bütünlüğü ve stratejik tutarlılığı kurumsal bir gözle denetlenir." },
+      { "title": "EU kurumsal kimlik", "body": "Türkiye ve EU'daki kurumsal alıcılar için Amsterdam Tech bağlantısı, Leftflow'u klasik agency pazarından çıkarıp kurumsal danışmanlık katmanına taşır." },
+      { "title": "Mid-market erişim", "body": "Amsterdam Tech'in alumni ağı ve kurumsal bağlantıları, Leftflow için ortak iş geliştirme kaynağı olarak kullanılır." }
+    ],
+    "footer": "Ortaklık Rotterdam'da resmi olarak yapılandırılmıştır ve Leftflow'un Advisory ile Systems hatlarının her ikisini de kapsar.",
+    "linkAdvisory": "Advisory hakkında",
+    "linkSystems": "Systems hakkında"
+  },
+  "advisoryPage": {
+    "kicker": "ADVISORY",
+    "heroTitle": "AI işine başlamadan önce ne yapacağınızı netleştirin.",
+    "heroSubtitle": "3 aylık sabit kapsamlı strateji paketleri. Şirketinizin süreçlerini çıkarıyor, AI ile nerede gerçek fayda çıkacağını tespit ediyor, uygulanabilir bir yol haritası ve yatırım kurulu sunumu teslim ediyoruz. Her teslim Amsterdam Tech akademik gözden geçirmesinden geçer.",
+    "primaryCta": "Ücretsiz teşhis çağrısı",
+    "secondaryCta": "Nasıl çalışıyoruz",
+    "packagesKicker": "ANA PAKETLER",
+    "packagesTitle": "3 aylık strateji paketleri",
+    "packages": [
+      {
+        "code": "A",
+        "name": "AI Adaptasyon Yol Haritası",
+        "duration": "12 hafta · 6 atölye · 12 toplantı",
+        "description": "Şirketinizin 18 aylık AI yol haritası. Hangi süreçlere dokunacağız, hangi araçları kuracağız, ilk 3 pilot proje ne olacak — hepsini sabit kapsamda çıkarıyoruz.",
+        "scope": [
+          "Mevcut süreç envanteri ve teknoloji haritası",
+          "AI'ın gerçek fayda çıkaracağı alanların analizi",
+          "Build vs buy kararı için araç ve vendor önerileri",
+          "3 pilot proje için kısa PRD",
+          "18 aylık yol haritası, öncelik sırası, bütçe modeli",
+          "Yatırım kurulu sunumu (90 dk)"
+        ],
+        "fit": "50M TL+ ciro, AI'a nereden başlayacağını netleştirmek isteyen şirketler"
+      },
+      {
+        "code": "B",
+        "name": "Otomasyon Stratejisi",
+        "duration": "12 hafta · 4 atölye · 10 toplantı",
+        "description": "Operasyonel süreçlerinizin hangi noktalarında ne kadar zaman ve para kaybediliyor, onu haritalandırıyoruz. Sonunda hangi workflow'ların önce otomatize edileceği ve hangi altyapıyla kurulacağı netleşmiş olur.",
+        "scope": [
+          "Süreç haritalama (time-motion çalışması)",
+          "Her süreç için ROI hesabı ve önceliklendirme",
+          "SaaS mı self-hosted mı: araç seçim kararı",
+          "İş akışı mimari tasarımı",
+          "İlk 3 workflow için PRD",
+          "İç ekip için eğitim ve devir planı"
+        ],
+        "fit": "10M TL+ ciro, operasyonu hâlâ çok manuel yürüyen şirketler"
+      },
+      {
+        "code": "C",
+        "name": "Cloud & Veri Mimarisi",
+        "duration": "12 hafta · 6 atölye · 12 toplantı",
+        "description": "Veri altyapınızı cloud-native bir modele nasıl taşıyacağımızın planı. AWS / GCP / Azure arasında kıyas, güvenlik ve KVKK uyum raporu, maliyet modeli ve göç yol haritası.",
+        "scope": [
+          "Veri envanter analizi (hangi veri, nerede, kim erişiyor)",
+          "Cloud göçü hazır olma değerlendirmesi",
+          "Mimari öneri ve provider seçimi",
+          "Veri yönetişim modeli",
+          "İlk analitik dashboard taslağı",
+          "Maliyet ve güvenlik analizi",
+          "Göç yol haritası"
+        ],
+        "fit": "Veri yoğun şirketler, on-prem'den çıkmak isteyen mid-market ve kurumsal"
+      }
+    ],
+    "shortKicker": "KISA FORMATLAR",
+    "shortTitle": "Daha küçük başlangıç seçenekleri",
+    "short": [
+      { "name": "Strateji Çalıştayı", "duration": "1 gün", "description": "Ekibinizle tek günlük yoğun atölye. Mevcut fikirleri masaya yatırıp öncelikleri birlikte netleştiriyoruz." },
+      { "name": "Hızlı Teşhis", "duration": "2 hafta", "description": "Mevcut durumu ve en yüksek ROI'lı fırsatları hızlıca haritalandırıyoruz. Kısa rapor ve öneri listesi." },
+      { "name": "Mentorluk Retainer", "duration": "Aylık · min 3 ay", "description": "CEO ve CTO için sürekli stratejik sparring partner. Haftalık görüşme, ara değerlendirmeler, kritik karar noktalarında destek." }
+    ],
+    "approachKicker": "NASIL ÇALIŞIYORUZ",
+    "approachTitle": "4 adımda teslim",
+    "approach": [
+      { "step": "01", "title": "Teşhis çağrısı (30 dk, ücretsiz)", "body": "Problem alanını birlikte netleştiriyoruz. Hangi paket uygun, hangisi değil — açıkça söylüyoruz. Uymuyorsak öyle söylüyoruz." },
+      { "step": "02", "title": "Kickoff ve keşif (Hafta 1-4)", "body": "Süreç envanteri, paydaş görüşmeleri, ilk bulgular. 4. haftanın sonunda ara rapor paylaşıyoruz." },
+      { "step": "03", "title": "Strateji ve yol haritası (Hafta 5-8)", "body": "Atölyeler, karar önerileri, pilot proje tanımları. Yatırım kurulu sunumu prova ediliyor." },
+      { "step": "04", "title": "Teslim ve sunum (Hafta 9-12)", "body": "Yol haritası dokümanı, üst yönetim sunumu ve 30-60-90 günlük eylem planı teslim ediliyor." }
+    ],
+    "hourlyTitle": "Sabit kapsam, sabit fiyat.",
+    "hourlyBody": "Advisory tarafında saatlik çalışma yok. Her paketin kapsamı ve teslim kalemleri başlangıçta yazılı olarak belirleniyor — süreç içinde genişlerse birlikte yeniden fiyatlanıyor. Paket fiyatlarını teşhis çağrısında size özel veriyoruz; şirketin büyüklüğüne ve kapsama göre değişiyor.",
+    "academicTitle": "Her teslim akademik gözden geçirmeden geçer.",
+    "academicBody": "Amsterdam Tech (Woolf akredite, EU yüksek öğretim kurumu) her Advisory teslimi öncesinde stratejik önerilerin mantıksal bütünlüğünü ve tutarlılığını denetliyor. Bu, Leftflow Advisory'yi klasik danışmanlık firmalarından ayıran tek nokta.",
+    "faqKicker": "SIKÇA SORULAN",
+    "faqTitle": "Advisory hakkında",
+    "faq": [
+      { "q": "Küçük bir işletmeyiz, bu paketler bize uyar mı?", "a": "Ana paketlerimiz 10M TL+ ciro şirketler için tasarlandı. Daha küçük ekipler için Strateji Çalıştayı (1 gün) ya da Hızlı Teşhis (2 hafta) formatı daha uygun." },
+      { "q": "Fiyatları neden sitede yazmıyorsunuz?", "a": "Her paket kapsamı şirkete göre değişiyor — aynı 'AI Adaptasyon Yol Haritası' 40 kişilik bir firma için farklı, 400 kişilik bir firma için farklı yapılıyor. Teşhis çağrısında size özel kapsam ve fiyat çıkarıyoruz." },
+      { "q": "Sonuç garantiniz var mı?", "a": "Teslim kalemlerini (dokümanlar, sunumlar, yol haritası) garanti ediyoruz. Ancak iş sonuçları uygulamaya bağlıdır — strateji kadar uygulama ekibi de önemli." },
+      { "q": "Amsterdam Tech burada ne yapıyor?", "a": "Her Advisory teslimi, Amsterdam Tech akademik komitesinden geçiyor. Mantıksal bütünlük, strateji-uygulama hizalaması ve eksik argümanlar denetleniyor." },
+      { "q": "Gizlilik nasıl korunuyor?", "a": "NDA standart. Tüm veri KVKK ve GDPR uyumlu işleniyor. Kurumsal müşteriler için ek güvenlik protokolleri mevcut." },
+      { "q": "Strateji çıktıktan sonra kim uygular?", "a": "İki seçenek: ya iç ekibiniz uygular, ya da Systems hattımıza devreder uygulamayı da biz yaparız. Uygulama Advisory paketine dahil değil." },
+      { "q": "Ödeme koşulu nedir?", "a": "%40 kickoff, %30 orta teslim (hafta 6), %30 final teslim. EUR ya da TL faturalandırma, TR ve EU hesap." }
+    ],
+    "finalTitle": "Teşhis çağrısı ücretsiz.",
+    "finalBody": "30 dakikada problem alanını birlikte netleştiriyoruz. Size paket önermek zorunda değiliz — uymuyorsak onu da açıkça söylüyoruz. Bu bir satış görüşmesi değil, teşhis görüşmesi.",
+    "finalCta": "Çağrı planla"
+  },
+  "systemsPage": {
+    "kicker": "SYSTEMS",
+    "heroTitle": "Kurulu çalışan AI ajanları ve otomasyon sistemleri.",
+    "heroSubtitle": "Test edilmiş hazır AI agent paketleri artı özel geliştirmeler. 4-10 hafta içinde canlıya alıyoruz; ardından aylık operasyonu ve bakımı biz üstleniyoruz. Türkçe kullanıma ve KVKK'ya uyumlu.",
+    "primaryCta": "Ürünleri incele",
+    "secondaryCta": "45 dk keşif çağrısı",
+    "techBar": ["Modal.com", "Anthropic Claude", "OpenAI", "Next.js", "Supabase", "Vercel"],
+    "productsKicker": "ÜRÜNLER",
+    "productsTitle": "6 hazır paket, bir de tamamen özel geliştirme",
+    "products": [
+      {
+        "slug": "customer-support-agent",
+        "name": "Müşteri Destek Agent",
+        "tag": "7/24 Destek Otomasyonu",
+        "duration": "4-6 hafta",
+        "description": "E-posta, canlı chat ve WhatsApp üzerinden gelen müşteri mesajlarını 7/24 yanıtlayan bir AI çalışan. Şirketinizin ürün bilgisine, SSS'lerine ve iç dokümanlarına göre eğitilir; çözemediklerini doğru kişiye yönlendirir.",
+        "features": [
+          "Web chat, e-posta ve WhatsApp entegrasyonu",
+          "Şirket içi dokümanlar üzerinde RAG",
+          "Zendesk, Intercom, Freshdesk aktarımı",
+          "Çok dilli yanıt (TR, EN, ek diller)",
+          "Duygu analizi ve escalation tetikleyici",
+          "Yanıt kalite panosu ve haftalık rapor"
+        ]
+      },
+      {
+        "slug": "sales-outreach-agent",
+        "name": "Satış Outreach Agent",
+        "tag": "B2B Pipeline Otomasyonu",
+        "duration": "5-7 hafta",
+        "description": "Hedef müşteri listesini birlikte tanımlıyoruz, agent bu listeyi günlük olarak zenginleştirip kişiselleştirilmiş outreach mesajları yazıyor, toplantıları takvime düşürüyor. Westwing projesinde €65K+ direkt gelir ürettiği model.",
+        "features": [
+          "Apollo, LinkedIn, Sales Navigator veri çekimi",
+          "ICP analizi ve lead skorlama",
+          "Kişiselleştirilmiş e-posta sekansları",
+          "Toplantı takvimi entegrasyonu (Calendly, Google)",
+          "HubSpot / Pipedrive / Salesforce senkronu",
+          "A/B test ve haftalık pipeline raporu"
+        ]
+      },
+      {
+        "slug": "content-engine",
+        "name": "İçerik Üretim Agent",
+        "tag": "Pazarlama & İçerik",
+        "duration": "4-6 hafta",
+        "description": "Şirketinizin ton ve markasına göre eğitilen bir içerik ekibi. Blog yazıları, sosyal medya postları, e-posta kampanyaları ve video senaryoları üretiyor; onay akışından sonra otomatik yayınlıyor.",
+        "features": [
+          "Marka tonu ve stil kılavuzu eğitimi",
+          "Blog, LinkedIn, Instagram, X, e-posta formatları",
+          "Görsel ve video thumbnail üretimi",
+          "Yayın takvimi ve otomatik schedule",
+          "SEO analiz ve anahtar kelime önerileri",
+          "Aylık performans raporu"
+        ]
+      },
+      {
+        "slug": "operations-agent",
+        "name": "Operasyon & Muhasebe Agent",
+        "tag": "Back-office Otomasyonu",
+        "duration": "6-8 hafta",
+        "description": "Fatura, sipariş, gider, stok gibi back-office operasyonlarını yürüten bir AI çalışan. Logo, Netsis, Mikro, ERP sistemlerine bağlanır; ekibinizin tekrar eden manuel işlerini üstlenir.",
+        "features": [
+          "Fatura OCR ve otomatik kayıt",
+          "Gider kategorileme ve onay akışı",
+          "Sipariş ve stok senkronizasyonu",
+          "Logo / Netsis / Mikro / ERP entegrasyonu",
+          "Aylık otomatik rapor ve anomali tespiti",
+          "Yetki yönetimi ve denetim kaydı"
+        ]
+      },
+      {
+        "slug": "automation-agent",
+        "name": "Workflow Otomasyon Agent",
+        "tag": "Genel İş Akışı Otomasyonu",
+        "duration": "4-6 hafta",
+        "description": "Şirket içi araçlarınız arasında gidip gelen tekrarlayan işleri otomatize ediyoruz. Slack, Notion, Airtable, Google Workspace, HubSpot, Shopify gibi 300+ araç destekleniyor. Kısa brief ile yeni akış ekleyebiliyoruz.",
+        "features": [
+          "300+ araç entegrasyonu",
+          "Hazır akış kütüphanesi (2000+)",
+          "Prompt ile yeni akış kurma",
+          "Onay adımları ve insan-in-the-loop",
+          "Hata izleme ve otomatik yeniden deneme",
+          "Ekip içi handover ve eğitim"
+        ]
+      },
+      {
+        "slug": "custom-build",
+        "name": "Özel AI Geliştirme",
+        "tag": "Sektöre Özel Çözümler",
+        "duration": "8-16 hafta",
+        "description": "Hazır paketlere sığmayan ihtiyaçlar için sıfırdan geliştirme. Sektöre özel agent, kurumsal sistem entegrasyonu, şirket dokümanları üzerinde RAG sistemleri, fine-tuned modeller.",
+        "features": [
+          "Sektöre özel agent (sağlık, finans, hukuk, üretim)",
+          "ERP / CRM / özel sistem entegrasyonu",
+          "Şirket dokümanları üzerinde RAG",
+          "Fine-tuned model eğitimi",
+          "Özel dashboard ve kullanıcı yönetimi",
+          "On-premises ya da özel cloud deployment"
+        ]
+      }
+    ],
+    "retainerKicker": "TESLİMDEN SONRASI",
+    "retainerTitle": "Aylık operasyon ve bakım",
+    "retainerBody": "Kurulum bittiğinde işimiz bitmiyor. Agentları canlı tutuyoruz, prompt'ları güncelliyoruz, yeni özellikleri ekliyoruz. 3 seviye retainer seçeneği var.",
+    "retainers": [
+      { "name": "TEMEL", "price": "400 EUR/ay", "items": ["Bug fix ve küçük düzenlemeler", "Üç aylık sağlık kontrolü", "E-posta desteği"] },
+      { "name": "STANDART", "price": "1.200 EUR/ay", "items": ["Temel kapsam + ayda 10 saate kadar yeni özellik", "Haftalık toplantı", "Prompt güncellemeleri"] },
+      { "name": "PREMİUM", "price": "2.500 EUR/ay", "items": ["Standart kapsam + 4 saat yanıt SLA'sı", "Üç aylık mimari review", "Öncelikli destek hattı"] }
+    ],
+    "faqKicker": "SIKÇA SORULAN",
+    "faqTitle": "Systems hakkında",
+    "faq": [
+      { "q": "Fiyatları neden sitede yazmıyorsunuz?", "a": "Paket fiyatı şirketin büyüklüğüne, mevcut sistemlerinize ve entegrasyon karmaşıklığına göre değişiyor. Keşif çağrısında kapsama göre size özel SOW ve fiyat çıkarıyoruz." },
+      { "q": "Hazır ürün mü, sıfırdan mı?", "a": "İkisi de. 5 hazır paket (Müşteri Destek, Satış Outreach, İçerik, Operasyon, Otomasyon) özelleştirilebilir; bunlara uymayan ihtiyaçlar için Özel Geliştirme seçeneği var." },
+      { "q": "Kod sahipliği kimde?", "a": "Teslim sonrası size geçiyor. Tüm kaynak kod, dokümanlar ve deployment yapılandırması sizin hesabınıza aktarılıyor. Vendor lock yok." },
+      { "q": "Altyapı bize bağımlılık yaratır mı?", "a": "Modal.com varsayılan altyapımız ama AWS, GCP, Azure ya da tamamen self-hosted deployment mümkün. Kullandığımız modeller de değiştirilebilir (Claude, GPT, açık kaynak)." },
+      { "q": "Veri güvenliği ve KVKK?", "a": "Tüm sistemler KVKK ve GDPR uyumlu. EU data residency seçeneği standart; hassas veri için on-premises deployment opsiyonu mevcut." },
+      { "q": "Teslim sonrası destek ne kadar?", "a": "30 gün garanti dahil. Sonrasında üç seviye retainer: Temel 400 EUR/ay, Standart 1.200 EUR/ay, Premium 2.500 EUR/ay." },
+      { "q": "Amsterdam Tech burada ne yapıyor?", "a": "Systems tarafında daha az doğrudan. Advisory yol haritası Amsterdam Tech'in akademik gözden geçirmesinden geçer, sonra Systems o yolu uygular. İki hat birlikte çalışıyor." }
+    ],
+    "finalTitle": "Ne teslim edelim?",
+    "finalBody": "45 dakikalık keşif çağrısında teknik kapsamı, entegrasyonları ve takvimi birlikte netleştirelim. Görüşme sonunda size özel bir SOW çerçevesi paylaşıyoruz.",
+    "finalCta": "Keşif çağrısı"
   }
 }

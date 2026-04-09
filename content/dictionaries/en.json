@@ -512,5 +512,353 @@
         "sprintLabels": ["Discovery & Setup", "Build & Iterate", "Launch & Optimize"]
       }
     ]
+  },
+  "navExtra": {
+    "advisory": "Advisory",
+    "systems": "Systems",
+    "diagnosticNote": "Free diagnostic call"
+  },
+  "partner": {
+    "lockup": "partnered with",
+    "name": "Amsterdam Tech",
+    "tagline": "Woolf-accredited EU higher education institution",
+    "strategicPartner": "Strategic Partner",
+    "description": "Woolf-accredited, EU-recognized higher education institution. QS 5★ online rating · 30 years of educational heritage · Amsterdam, NL",
+    "aboutLink": "About the partnership"
+  },
+  "newHero": {
+    "kicker": "AI TRANSFORMATION",
+    "title": "A team that actually does the AI work.",
+    "subtitle": "We draft an AI strategy tailored to your company, then the same team builds the systems and runs them monthly. For mid-market and enterprise companies, in partnership with Amsterdam Tech.",
+    "primaryCta": "Book a diagnostic call",
+    "secondaryCta": "See what we do"
+  },
+  "trustBar": {
+    "items": [
+      { "value": "200+", "label": "completed projects" },
+      { "value": "QS 5★", "label": "accredited partner" },
+      { "value": "2 offices", "label": "Rotterdam · Istanbul" },
+      { "value": "30 yrs", "label": "of educational heritage" }
+    ]
+  },
+  "twoLines": {
+    "kicker": "TWO LINES",
+    "title": "First the strategy, then the delivery.",
+    "subtitle": "Leftflow runs on two distinct lines. Advisory draws your roadmap; Systems puts it into production. You can pick either one, or both.",
+    "advisory": {
+      "tag": "ADVISORY",
+      "title": "Roadmaps, decisions, board-ready strategy.",
+      "description": "3-month fixed-scope strategy packages: process inventory, AI opportunity map, pilot project definitions, budget model and investment committee presentation. Implementation is not included here — the goal is to get crystal clear on what to do.",
+      "items": [
+        { "name": "AI Adoption Roadmap" },
+        { "name": "Automation Strategy" },
+        { "name": "Cloud & Data Architecture" },
+        { "name": "Strategy Workshop (1 day)" },
+        { "name": "Mentorship Retainer (CEO/CTO)" }
+      ],
+      "cta": "Advisory packages"
+    },
+    "systems": {
+      "tag": "SYSTEMS",
+      "title": "Live AI agents and running systems.",
+      "description": "Productized AI agent packages plus custom builds. We ship in 4–10 weeks and run monthly operations and maintenance. If you already have a strategy we execute it; if not, start with Advisory.",
+      "items": [
+        { "name": "Customer Support Agent (24/7)" },
+        { "name": "Sales Outreach Agent (B2B)" },
+        { "name": "Content Engine Agent" },
+        { "name": "Operations & Accounting Agent" },
+        { "name": "Workflow Automation Agent" },
+        { "name": "Custom AI Build" }
+      ],
+      "cta": "Systems products"
+    }
+  },
+  "dualCta": {
+    "kicker": "LET'S BEGIN",
+    "title": "Which fits you?",
+    "advisoryTitle": "\"Our roadmap isn't clear yet\"",
+    "advisoryDesc": "One of our Advisory packages gives you a roadmap, pilot project definitions and a board-ready presentation in 12 weeks.",
+    "advisoryBtn": "Explore Advisory",
+    "systemsTitle": "\"We know what we want\"",
+    "systemsDesc": "Systems ships productized agent packages plus custom builds. 4–10 weeks to live, then we run the monthly operations.",
+    "systemsBtn": "Explore Systems",
+    "footer": "Not sure? A 30-minute diagnostic call is free — it's not a sales pitch.",
+    "footerCta": "Book the call"
+  },
+  "serviceRelocate": {
+    "banner": "This service is now part of Leftflow <0>Systems</0>. To see the new package structure and pricing, visit",
+    "bannerLinkFallback": "the new page.",
+    "secondary": "This service is still active, but Leftflow's new focus is the Advisory and Systems lines. For website or e-commerce projects, <0>get in touch directly</0>."
+  },
+  "contactTopics": {
+    "label": "What would you like to discuss?",
+    "groups": {
+      "advisory": "ADVISORY",
+      "systems": "SYSTEMS",
+      "other": "OTHER"
+    },
+    "options": {
+      "advisoryRoadmap": "Advisory: AI Adoption Roadmap",
+      "advisoryAutomation": "Advisory: Automation Strategy",
+      "advisoryCloud": "Advisory: Cloud & Data Architecture",
+      "advisoryWorkshop": "Advisory: Strategy Workshop (1 day)",
+      "advisoryRetainer": "Advisory: Mentorship Retainer",
+      "systemsMuhasebe": "Systems: Customer Support Agent",
+      "systemsAgency": "Systems: Sales Outreach Agent",
+      "systemsN8n": "Systems: Workflow Automation Agent",
+      "systemsCustom": "Systems: Custom AI Build",
+      "aiAutomation": "AI Automation & Chatbots",
+      "workflow": "Workflow Automation",
+      "b2bSales": "B2B Sales Automation",
+      "website": "Corporate Website / E-Commerce",
+      "dataIntel": "Data Intelligence & Analytics",
+      "amsterdamTech": "Amsterdam Tech partnership",
+      "partnership": "Partnership",
+      "other": "Other"
+    }
+  },
+  "newContact": {
+    "heroTitle": "30 minutes, clear answers.",
+    "heroSubtitle": "Our diagnostic calls are not sales pitches. We understand the problem, recommend the right line (Advisory or Systems), and tell you honestly if we're not a fit."
+  },
+  "newCases": {
+    "subtitle": "9 case studies selected from 200+ completed projects. Each one is clearly tagged with the line we used — Advisory, Systems, or both.",
+    "bottomTitle": "Is there a case similar to yours?",
+    "bottomDesc": "You might have a story like Westwing or YENA. Let's talk in a free 30-minute diagnostic call.",
+    "bottomCta": "Book the call",
+    "filters": {
+      "advisory": "Advisory",
+      "systems": "Systems"
+    }
+  },
+  "amsterdamTechSection": {
+    "kicker": "STRATEGIC PARTNERSHIP",
+    "title": "Amsterdam Tech",
+    "lead": "In 2026, Leftflow entered a formal strategic partnership with Amsterdam Tech.",
+    "whoTitle": "Who is Amsterdam Tech?",
+    "whoBody": "Building on 30 years of educational heritage, Amsterdam Tech is a Woolf-accredited EU higher education institution recognized under the Dutch Higher Education Act. With a QS 5★ online rating it is one of the highest-rated online institutions in the world. Programs include BSc Tech Entrepreneurship, BSc AI & ML, and a Tech MBA.",
+    "benefitsTitle": "What this partnership brings to Leftflow",
+    "benefits": [
+      { "title": "Academic quality check", "body": "Every Advisory deliverable passes through the Amsterdam Tech academic committee. The logical integrity and strategic coherence of our recommendations are audited with an institutional eye." },
+      { "title": "EU institutional identity", "body": "For enterprise buyers in Turkey and the EU, the Amsterdam Tech link moves Leftflow out of the classic agency market and into the enterprise advisory layer." },
+      { "title": "Mid-market reach", "body": "Amsterdam Tech's alumni network and corporate connections are used as a shared business development channel for Leftflow." }
+    ],
+    "footer": "The partnership is formally structured in Rotterdam and covers both Leftflow's Advisory and Systems lines.",
+    "linkAdvisory": "About Advisory",
+    "linkSystems": "About Systems"
+  },
+  "advisoryPage": {
+    "kicker": "ADVISORY",
+    "heroTitle": "Get clarity on what to do before you start building.",
+    "heroSubtitle": "3-month fixed-scope strategy packages. We inventory your processes, identify where AI creates real value, and deliver an actionable roadmap with a board-ready presentation. Every deliverable passes Amsterdam Tech academic review.",
+    "primaryCta": "Free diagnostic call",
+    "secondaryCta": "How we work",
+    "packagesKicker": "MAIN PACKAGES",
+    "packagesTitle": "3-month strategy packages",
+    "packages": [
+      {
+        "code": "A",
+        "name": "AI Adoption Roadmap",
+        "duration": "12 weeks · 6 workshops · 12 check-ins",
+        "description": "Your company's 18-month AI roadmap. Which processes to tackle, which tools to deploy, what the first 3 pilots look like — all scoped and delivered as a fixed engagement.",
+        "scope": [
+          "Current process inventory and technology map",
+          "AI value extraction analysis",
+          "Build vs buy decision — vendor and tool recommendations",
+          "3 pilot project PRDs",
+          "18-month roadmap, priority order, budget model",
+          "Board presentation (90 min)"
+        ],
+        "fit": "50M+ TL revenue companies looking for a concrete AI starting point"
+      },
+      {
+        "code": "B",
+        "name": "Automation Strategy",
+        "duration": "12 weeks · 4 workshops · 10 check-ins",
+        "description": "We map where your operational processes bleed time and money. By the end, you'll know exactly which workflows to automate first and what infrastructure to build them on.",
+        "scope": [
+          "Process mapping (time-motion study)",
+          "ROI calculation and prioritization per process",
+          "SaaS vs self-hosted: tool selection decision",
+          "Workflow architecture design",
+          "PRDs for first 3 workflows",
+          "Internal team training and handover plan"
+        ],
+        "fit": "10M+ TL revenue companies with highly manual operations"
+      },
+      {
+        "code": "C",
+        "name": "Cloud & Data Architecture",
+        "duration": "12 weeks · 6 workshops · 12 check-ins",
+        "description": "A plan for moving your data infrastructure to a cloud-native model. AWS / GCP / Azure comparison, security and compliance report, cost model, and migration roadmap.",
+        "scope": [
+          "Data inventory analysis (what data, where, who accesses it)",
+          "Cloud migration readiness assessment",
+          "Architecture recommendation and provider selection",
+          "Data governance model",
+          "First analytics dashboard draft",
+          "Cost and security analysis",
+          "Migration roadmap"
+        ],
+        "fit": "Data-heavy mid-market / enterprise looking to move off on-prem"
+      }
+    ],
+    "shortKicker": "SHORT FORMATS",
+    "shortTitle": "Smaller starting points",
+    "short": [
+      { "name": "Strategy Workshop", "duration": "1 day", "description": "One-day intensive workshop with your team. We put existing ideas on the table and align priorities together." },
+      { "name": "Rapid Diagnostic", "duration": "2 weeks", "description": "Quick map of current state and highest-ROI opportunities. Short report and recommendation list." },
+      { "name": "Mentorship Retainer", "duration": "Monthly · min 3 months", "description": "Ongoing strategic sparring partner for CEO and CTO. Weekly calls, interim reviews, support at critical decision points." }
+    ],
+    "approachKicker": "HOW WE WORK",
+    "approachTitle": "Delivered in 4 steps",
+    "approach": [
+      { "step": "01", "title": "Diagnostic call (30 min, free)", "body": "We clarify your problem space together. Which package fits, which doesn't — we'll tell you straight. If we're not a fit, we'll say so." },
+      { "step": "02", "title": "Kickoff and discovery (Week 1-4)", "body": "Process inventory, stakeholder interviews, first findings. Interim report shared at end of week 4." },
+      { "step": "03", "title": "Strategy and roadmap (Week 5-8)", "body": "Workshops, decision recommendations, pilot project definitions. Board presentation rehearsal." },
+      { "step": "04", "title": "Delivery and presentation (Week 9-12)", "body": "Roadmap document, board presentation, and 30-60-90 day action plan delivered." }
+    ],
+    "hourlyTitle": "Fixed scope, fixed price.",
+    "hourlyBody": "No hourly billing on the Advisory side. Every package has its scope and deliverables defined upfront in writing — if scope expands during the engagement, we re-price together. Package pricing is shared during the diagnostic call; it varies by company size and scope.",
+    "academicTitle": "Every deliverable passes academic review.",
+    "academicBody": "Amsterdam Tech (Woolf-accredited, EU higher education institution) audits the logical integrity of strategic recommendations before every Advisory delivery. This partnership is the single feature that separates Leftflow Advisory from classic consulting firms.",
+    "faqKicker": "FAQ",
+    "faqTitle": "About Advisory",
+    "faq": [
+      { "q": "We're a small business — do these packages fit us?", "a": "Our main packages are designed for 10M+ TL revenue companies. For smaller teams, the Strategy Workshop (1 day) or Rapid Diagnostic (2 weeks) format is a better fit." },
+      { "q": "Why aren't prices listed on the website?", "a": "Every package scope varies by company — the same AI Adoption Roadmap is scoped differently for a 40-person firm vs. a 400-person firm. We share custom scope and pricing during the diagnostic call." },
+      { "q": "Do you guarantee outcomes?", "a": "We guarantee deliverable scope (documents, presentations, roadmap). Business outcomes depend on execution — strategy matters as much as the team implementing it." },
+      { "q": "What does Amsterdam Tech do here?", "a": "Every Advisory deliverable passes through the Amsterdam Tech academic committee. Logical integrity, strategy-execution alignment, and argument gaps are audited." },
+      { "q": "How is confidentiality protected?", "a": "NDA is standard. All data is handled in compliance with KVKK and GDPR. Enterprise customers get custom security protocols." },
+      { "q": "Who implements the strategy once delivered?", "a": "Two options: your internal team implements it, or you hand it to our Systems line and we implement it. Implementation is not included in the Advisory package." },
+      { "q": "Payment terms?", "a": "40% kickoff, 30% midpoint (week 6), 30% final delivery. EUR or TL invoicing, TR and EU bank accounts." }
+    ],
+    "finalTitle": "The diagnostic call is free.",
+    "finalBody": "30 minutes. We clarify the problem space together. We don't have to recommend a package — if we're not a fit, we'll say so honestly. This is a diagnostic call, not a sales pitch.",
+    "finalCta": "Book the call"
+  },
+  "systemsPage": {
+    "kicker": "SYSTEMS",
+    "heroTitle": "Production-ready AI agents and automation systems.",
+    "heroSubtitle": "Battle-tested AI agent packages plus custom builds. We go live in 4–10 weeks, then handle monthly operations and maintenance. Turkish-language ready and KVKK-compliant.",
+    "primaryCta": "Browse products",
+    "secondaryCta": "45-min discovery call",
+    "techBar": ["Modal.com", "Anthropic Claude", "OpenAI", "Next.js", "Supabase", "Vercel"],
+    "productsKicker": "PRODUCTS",
+    "productsTitle": "6 ready-made packages, plus fully custom builds",
+    "products": [
+      {
+        "slug": "customer-support-agent",
+        "name": "Customer Support Agent",
+        "tag": "24/7 Support Automation",
+        "duration": "4-6 weeks",
+        "description": "An AI worker that answers customer messages 24/7 across email, live chat, and WhatsApp. Trained on your product knowledge, FAQs, and internal docs; escalates what it can't handle to the right person.",
+        "features": [
+          "Web chat, email, and WhatsApp integration",
+          "RAG on internal company documents",
+          "Zendesk, Intercom, Freshdesk handoff",
+          "Multi-language responses (TR, EN, additional languages)",
+          "Sentiment analysis and escalation triggers",
+          "Response quality dashboard and weekly report"
+        ]
+      },
+      {
+        "slug": "sales-outreach-agent",
+        "name": "Sales Outreach Agent",
+        "tag": "B2B Pipeline Automation",
+        "duration": "5-7 weeks",
+        "description": "We define the target customer list together, and the agent enriches it daily, writes personalized outreach messages, and books meetings on your calendar. The same model that generated €65K+ direct revenue in the Westwing project.",
+        "features": [
+          "Apollo, LinkedIn, Sales Navigator data enrichment",
+          "ICP analysis and lead scoring",
+          "Personalized email sequences",
+          "Calendar integration (Calendly, Google)",
+          "HubSpot / Pipedrive / Salesforce sync",
+          "A/B testing and weekly pipeline report"
+        ]
+      },
+      {
+        "slug": "content-engine",
+        "name": "Content Engine Agent",
+        "tag": "Marketing & Content",
+        "duration": "4-6 weeks",
+        "description": "A content team trained on your brand voice and tone. Produces blog posts, social media content, email campaigns, and video scripts; auto-publishes after your approval flow.",
+        "features": [
+          "Brand tone and style guide training",
+          "Blog, LinkedIn, Instagram, X, email formats",
+          "Visual and video thumbnail generation",
+          "Publishing calendar and auto-scheduling",
+          "SEO analysis and keyword suggestions",
+          "Monthly performance report"
+        ]
+      },
+      {
+        "slug": "operations-agent",
+        "name": "Operations & Accounting Agent",
+        "tag": "Back-office Automation",
+        "duration": "6-8 weeks",
+        "description": "An AI worker that handles back-office operations: invoices, orders, expenses, inventory. Connects to Logo, Netsis, Mikro, and ERP systems; takes over your team's repetitive manual work.",
+        "features": [
+          "Invoice OCR and automated booking",
+          "Expense categorization and approval workflow",
+          "Order and inventory synchronization",
+          "Logo / Netsis / Mikro / ERP integration",
+          "Automated monthly reports and anomaly detection",
+          "Access management and audit trail"
+        ]
+      },
+      {
+        "slug": "automation-agent",
+        "name": "Workflow Automation Agent",
+        "tag": "General Workflow Automation",
+        "duration": "4-6 weeks",
+        "description": "We automate the repetitive work flowing between your internal tools. Slack, Notion, Airtable, Google Workspace, HubSpot, Shopify — 300+ tools supported. Add new flows with a short brief.",
+        "features": [
+          "300+ tool integrations",
+          "Ready-made flow library (2,000+)",
+          "Prompt-to-flow creation",
+          "Approval steps and human-in-the-loop",
+          "Error tracking and automatic retry",
+          "Team handover and training"
+        ]
+      },
+      {
+        "slug": "custom-build",
+        "name": "Custom AI Build",
+        "tag": "Industry-specific Solutions",
+        "duration": "8-16 weeks",
+        "description": "For needs that don't fit ready-made packages. Industry-specific agents, enterprise system integration, RAG systems on company documents, fine-tuned models — built from scratch.",
+        "features": [
+          "Industry-specific agent (healthcare, finance, legal, manufacturing)",
+          "ERP / CRM / custom system integration",
+          "RAG on company documents",
+          "Fine-tuned model training",
+          "Custom dashboard and user management",
+          "On-premises or private cloud deployment"
+        ]
+      }
+    ],
+    "retainerKicker": "POST-DELIVERY",
+    "retainerTitle": "Monthly operations and maintenance",
+    "retainerBody": "Our job doesn't end when setup is done. We keep agents running, update prompts, and add new features. Three retainer tiers available.",
+    "retainers": [
+      { "name": "BASIC", "price": "400 EUR/mo", "items": ["Bug fixes and small tweaks", "Quarterly health check", "Email support"] },
+      { "name": "STANDARD", "price": "1,200 EUR/mo", "items": ["Basic scope + up to 10 hrs/mo new features", "Weekly check-in", "Prompt updates"] },
+      { "name": "PREMIUM", "price": "2,500 EUR/mo", "items": ["Standard scope + 4-hour response SLA", "Quarterly architecture review", "Priority support line"] }
+    ],
+    "faqKicker": "FAQ",
+    "faqTitle": "About Systems",
+    "faq": [
+      { "q": "Why aren't prices listed on the website?", "a": "Package pricing varies by company size, existing systems, and integration complexity. We share custom scope and pricing in the discovery call." },
+      { "q": "Ready-made or from scratch?", "a": "Both. 5 ready-made packages (Customer Support, Sales Outreach, Content, Operations, Automation) are customizable; Custom Build is fully bespoke for needs that don't fit." },
+      { "q": "Who owns the code?", "a": "You, post-delivery. All source code, docs, and deployment config are transferred to your account. No vendor lock-in." },
+      { "q": "Does the infrastructure create lock-in?", "a": "Modal.com is our default infrastructure, but AWS, GCP, Azure, or fully self-hosted deployment is possible. Models are swappable too (Claude, GPT, open-source)." },
+      { "q": "Data security and KVKK?", "a": "All systems are KVKK and GDPR compliant. EU data residency is standard; on-premises deployment option available for sensitive data." },
+      { "q": "How much post-delivery support?", "a": "30-day warranty included. After that: three-tier retainer — Basic 400 EUR/mo, Standard 1,200 EUR/mo, Premium 2,500 EUR/mo." },
+      { "q": "What's Amsterdam Tech's role here?", "a": "Less direct in Systems. Amsterdam Tech audits your Advisory roadmap, then Systems executes it. The two lines work together." }
+    ],
+    "finalTitle": "What should we ship?",
+    "finalBody": "45-minute discovery call. We'll scope the technical requirements, integrations, and timeline together. At the end, we share a custom SOW framework.",
+    "finalCta": "Discovery call"
   }
 }

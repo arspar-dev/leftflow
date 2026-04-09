@@ -17,6 +17,87 @@ import type { Dictionary, Locale } from "@/lib/i18n";
 
 /* ── Static data maps ─────────────────────────────────── */
 
+// Maps legacy service slugs to their new Advisory/Systems destination.
+// "systems" = banner points to /systems. "website" = secondary copy (stays active).
+const SERVICE_RELOCATE_MAP: Record<string, "systems" | "website"> = {
+  "ai-automation": "systems",
+  "chatbots-voice-agents": "systems",
+  "workflow-automation": "systems",
+  "custom-ai-solutions": "systems",
+  "b2b-sales-automation": "systems",
+  "content-creation": "website",
+  "corporate-website": "website",
+  "ecommerce-webshop": "website",
+};
+
+function ServiceRelocateBanner({
+  slug,
+  locale,
+  dict,
+}: {
+  slug: string;
+  locale: Locale;
+  dict: Dictionary;
+}) {
+  const sr = (dict as any).serviceRelocate;
+  if (!sr) return null;
+  const target = SERVICE_RELOCATE_MAP[slug];
+  if (!target) return null;
+
+  if (target === "systems") {
+    // Banner with link to /systems. Split the TR/EN banner on the <0>Systems</0> marker.
+    const raw: string = sr.banner || "";
+    const parts = raw.split(/<0>|<\/0>/);
+    // parts[0] = before, parts[1] = "Systems", parts[2] = after
+    return (
+      <div className="bg-[#e63b2e]/5 border-b border-[#e63b2e]/20">
+        <div className="max-w-[1400px] mx-auto px-8 md:px-12 py-4 md:py-5 flex flex-wrap items-center gap-3">
+          <span className="inline-flex items-center gap-2 text-[10px] font-semibold tracking-[0.14em] px-2.5 py-1 border border-[#e63b2e]/40 text-[#e63b2e] bg-[#e63b2e]/10 uppercase flex-shrink-0">
+            <span className="w-1.5 h-1.5 bg-[#e63b2e] rounded-full" />
+            Systems
+          </span>
+          <p className="text-[0.875rem] md:text-[0.9375rem] text-black/75 leading-relaxed flex-1 min-w-0">
+            {parts[0]}
+            <Link
+              href={`/${locale}/systems`}
+              className="font-semibold text-[#e63b2e] underline decoration-[#e63b2e]/40 underline-offset-2 hover:decoration-[#e63b2e] mx-1"
+            >
+              {parts[1] || "Systems"}
+            </Link>
+            {parts[2]}{" "}
+            <Link
+              href={`/${locale}/systems`}
+              className="font-semibold text-black hover:text-[#e63b2e] underline underline-offset-2"
+            >
+              {sr.bannerLinkFallback || "→"}
+            </Link>
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  // Website / e-commerce / content variant — "still active, but new focus is Advisory+Systems"
+  const raw: string = sr.secondary || "";
+  const parts = raw.split(/<0>|<\/0>/);
+  return (
+    <div className="bg-black/[0.03] border-b border-black/10">
+      <div className="max-w-[1400px] mx-auto px-8 md:px-12 py-4 md:py-5">
+        <p className="text-[0.875rem] md:text-[0.9375rem] text-black/70 leading-relaxed max-w-4xl">
+          {parts[0]}
+          <Link
+            href={`/${locale}/contact`}
+            className="font-semibold text-black underline decoration-black/40 underline-offset-2 hover:decoration-black mx-1"
+          >
+            {parts[1] || "contact"}
+          </Link>
+          {parts[2]}
+        </p>
+      </div>
+    </div>
+  );
+}
+
 const serviceVideoMap: Record<string, string> = {
   "ai-automation": "/videos/ai-workflow-demo.mp4",
   "chatbots-voice-agents": "/videos/service-ai-agents.mp4",
@@ -90,6 +171,11 @@ export function ServicePageClient({ service, slug, locale, dict }: Props) {
 
   return (
     <>
+      {/* Relocate banner — points legacy services to new Advisory/Systems lines */}
+      <div className="pt-[72px]">
+        <ServiceRelocateBanner slug={slug} locale={locale} dict={dict} />
+      </div>
+
       {/* ════════════════════════════════════════════════════
           HERO — Full-bleed video with parallax zoom
           ════════════════════════════════════════════════════ */}

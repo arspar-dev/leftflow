@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { getDictionary, type Locale } from "@/lib/i18n";
 import { ContactClient } from "./ContactClient";
 
@@ -17,5 +18,9 @@ export default async function ContactPage({
 }) {
   const { locale } = await params;
   const dict = await getDictionary(locale as Locale);
-  return <ContactClient dict={dict} locale={locale as Locale} />;
+  return (
+    <Suspense fallback={null}>
+      <ContactClient dict={dict} locale={locale as Locale} />
+    </Suspense>
+  );
 }

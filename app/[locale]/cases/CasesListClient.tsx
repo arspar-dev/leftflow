@@ -14,13 +14,29 @@ interface Props {
 
 const ITEMS_PER_PAGE = 9;
 
+// Line tags per case slug: advisory / systems / both
+const CASE_LINE_TAGS: Record<string, ("advisory" | "systems")[]> = {
+  westwing: ["advisory", "systems"],
+  yena: ["systems"],
+  steelify: ["systems"],
+  "naz-teknik": ["advisory"],
+  tolon: ["advisory", "systems"],
+  boutiquerugs: ["systems"],
+  arkman: ["systems"],
+  "steps-agency": ["systems"],
+  "tuva-home": ["systems"],
+};
+
 export function CasesListClient({ cases, categories, locale, dict }: Props) {
   const [activeFilter, setActiveFilter] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
+  const nc = (dict as any).newCases || {};
 
-  // Filter cases
+  // Filter cases — filter supports category OR advisory/systems line tag
   const filtered = activeFilter
-    ? cases.filter((c) => c.category === activeFilter)
+    ? activeFilter === "advisory" || activeFilter === "systems"
+      ? cases.filter((c) => (CASE_LINE_TAGS[c.slug] || []).includes(activeFilter as "advisory" | "systems"))
+      : cases.filter((c) => c.category === activeFilter)
     : cases;
 
   // Pagination
@@ -48,18 +64,27 @@ export function CasesListClient({ cases, categories, locale, dict }: Props) {
         </nav>
 
         {/* Page title */}
-        <h1 className="text-5xl font-bold text-charcoal-950 pb-8">
+        <h1 className="text-5xl font-bold text-charcoal-950 pb-4">
           {(dict as any).casesPage?.title || "Cases"}
         </h1>
 
+        {/* Subtitle */}
+        {nc.subtitle && (
+          <p className="body-16 text-charcoal-500 max-w-2xl pb-10 leading-relaxed">
+            {nc.subtitle}
+          </p>
+        )}
+
         {/* Filter dropdown */}
-        <div className="mb-10">
+        <div className="mb-10 flex flex-wrap items-center gap-3">
           <select
             value={activeFilter}
             onChange={(e) => handleFilterChange(e.target.value)}
             className="border border-charcoal-200 rounded-lg px-4 py-2 text-sm text-charcoal-950 bg-white focus:outline-none focus:ring-2 focus:ring-charcoal-200"
           >
             <option value="">{(dict as any).casesPage?.filterPlaceholder || "-- Filter --"}</option>
+            {nc.filters?.advisory && <option value="advisory">{nc.filters.advisory}</option>}
+            {nc.filters?.systems && <option value="systems">{nc.filters.systems}</option>}
             {categories.map((cat) => (
               <option key={cat} value={cat}>
                 {cat.charAt(0).toUpperCase() + cat.slice(1)}
@@ -72,6 +97,7 @@ export function CasesListClient({ cases, categories, locale, dict }: Props) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {paginatedCases.map((c) => {
             const content = c[locale] || c.en;
+            const lineTags = CASE_LINE_TAGS[c.slug] || [];
             return (
               <Link
                 key={c.slug}
@@ -79,9 +105,25 @@ export function CasesListClient({ cases, categories, locale, dict }: Props) {
                 className="group block"
               >
                 {/* Metric highlight */}
-                <div className="bg-charcoal-950 p-6 mb-4 group-hover:bg-charcoal-900 transition-colors">
+                <div className="bg-charcoal-950 p-6 mb-4 group-hover:bg-charcoal-900 transition-colors relative">
                   <p className="text-3xl font-semibold text-white tracking-tight font-mono">{c.metric}</p>
                   <p className="text-xs text-charcoal-500 mt-1 uppercase tracking-wide">{(dict as any).caseDetail?.keyResult || "Key Result"}</p>
+                  {lineTags.length > 0 && (
+                    <div className="absolute top-4 right-4 flex gap-1">
+                      {lineTags.map((t) => (
+                        <span
+                          key={t}
+                          className={`text-[9px] font-semibold tracking-[0.12em] px-1.5 py-0.5 border uppercase ${
+                            t === "advisory"
+                              ? "border-[#e63b2e]/40 text-[#e63b2e] bg-[#e63b2e]/10"
+                              : "border-white/30 text-white/80 bg-white/5"
+                          }`}
+                        >
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 {/* Category tag */}
@@ -112,6 +154,23 @@ export function CasesListClient({ cases, categories, locale, dict }: Props) {
         {filtered.length === 0 && (
           <div className="text-center py-20 text-charcoal-500">
             {(dict as any).casesPage?.noResults || "No cases found for this filter."}
+          </div>
+        )}
+
+        {/* Bottom CTA */}
+        {nc.bottomTitle && (
+          <div className="border-t border-charcoal-100 mt-20 pt-16 pb-20 max-w-2xl">
+            <h2 className="text-3xl md:text-4xl font-bold text-charcoal-950 mb-4 tracking-tight">
+              {nc.bottomTitle}
+            </h2>
+            <p className="text-charcoal-500 mb-8 leading-relaxed">{nc.bottomDesc}</p>
+            <Link
+              href={`/${locale}/contact?topic=advisory`}
+              className="inline-flex items-center gap-2 px-6 py-3 bg-charcoal-950 text-white font-medium text-sm uppercase tracking-wide hover:bg-[#e63b2e] transition-colors"
+            >
+              {nc.bottomCta}
+              <span>→</span>
+            </Link>
           </div>
         )}
 

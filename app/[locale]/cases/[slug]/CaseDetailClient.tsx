@@ -53,18 +53,12 @@ export function CaseDetailClient({ caseStudy, otherCases, locale, dict }: Props)
           {/* Key Metrics */}
           <FadeIn delay={0.1}>
             <div className="grid grid-cols-3 gap-px bg-charcoal-200 mb-16">
-              <div className="bg-charcoal-50 p-8 text-center">
-                <div className="text-4xl md:text-5xl font-semibold text-charcoal-950 tracking-tight font-mono mb-2">{caseStudy.metric}</div>
-                <div className="text-xs text-charcoal-500 uppercase tracking-wider">{(dict as any).caseDetail?.keyResult || "Key Result"}</div>
-              </div>
-              <div className="bg-charcoal-50 p-8 text-center">
-                <div className="text-4xl md:text-5xl font-semibold text-charcoal-950 tracking-tight font-mono mb-2">3x</div>
-                <div className="text-xs text-charcoal-500 uppercase tracking-wider">ROI</div>
-              </div>
-              <div className="bg-charcoal-50 p-8 text-center">
-                <div className="text-4xl md:text-5xl font-semibold text-charcoal-950 tracking-tight font-mono mb-2">-40%</div>
-                <div className="text-xs text-charcoal-500 uppercase tracking-wider">Cost</div>
-              </div>
+              {caseStudy.metrics.map((m, i) => (
+                <div key={i} className="bg-charcoal-50 p-8 text-center">
+                  <div className="text-4xl md:text-5xl font-semibold text-charcoal-950 tracking-tight font-mono mb-2">{m.value}</div>
+                  <div className="text-xs text-charcoal-500 uppercase tracking-wider">{m.label}</div>
+                </div>
+              ))}
             </div>
           </FadeIn>
 

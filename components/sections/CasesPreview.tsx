@@ -11,8 +11,27 @@ interface CasesPreviewProps {
   dict: Dictionary;
 }
 
+// Line tag mapping — each homepage case is tagged with Advisory, Systems, or both.
+// Mapping lives here per the website-changes.md table.
+export const caseLineTags: Record<string, ("advisory" | "systems")[]> = {
+  westwing: ["advisory", "systems"],
+  yena: ["systems"],
+  steelify: ["systems"],
+  "naz-teknik": ["advisory"],
+  tolon: ["advisory", "systems"],
+  arkman: ["systems"],
+  "steps-agency": ["systems"],
+  "tuva-home": ["systems"],
+  boutiquerugs: ["systems"],
+};
+
+// Featured on homepage: Westwing → YENA → Steelify (per spec)
+const HOMEPAGE_CASE_SLUGS = ["westwing", "yena", "steelify"];
+
 export function CasesPreview({ locale, dict }: CasesPreviewProps) {
-  const cases = caseStudies.slice(0, 6);
+  const cases = HOMEPAGE_CASE_SLUGS.map((slug) =>
+    caseStudies.find((c) => c.slug === slug)
+  ).filter((c): c is (typeof caseStudies)[number] => Boolean(c));
 
   return (
     <section className="py-20 md:py-28 bg-charcoal-950 text-white">
@@ -33,6 +52,7 @@ export function CasesPreview({ locale, dict }: CasesPreviewProps) {
         <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.06]">
           {cases.map((c) => {
             const caseData = c[locale] ?? c.en;
+            const tags = caseLineTags[c.slug] || [];
             return (
               <StaggerItem key={c.slug}>
                 <Link href={`/${locale}/cases/${c.slug}`} className="group block relative aspect-[4/3] overflow-hidden bg-charcoal-950">
@@ -45,10 +65,19 @@ export function CasesPreview({ locale, dict }: CasesPreviewProps) {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20 group-hover:from-black/70 group-hover:via-black/30 transition-all duration-500" />
 
-                  <div className="absolute top-4 right-4 z-10">
-                    <span className="px-2.5 py-1 text-[10px] font-medium uppercase tracking-wider text-white/70 border border-white/20 bg-black/30 backdrop-blur-sm">
-                      {c.category === "ecommerce" ? "E-commerce" : c.category.charAt(0).toUpperCase() + c.category.slice(1)}
-                    </span>
+                  <div className="absolute top-4 right-4 z-10 flex gap-1.5">
+                    {tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className={`px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[0.1em] backdrop-blur-sm ${
+                          tag === "advisory"
+                            ? "text-[#e63b2e] border border-[#e63b2e]/50 bg-[#e63b2e]/10"
+                            : "text-white border border-white/25 bg-white/10"
+                        }`}
+                      >
+                        {tag}
+                      </span>
+                    ))}
                   </div>
 
                   <div className="absolute top-4 left-4 z-10">

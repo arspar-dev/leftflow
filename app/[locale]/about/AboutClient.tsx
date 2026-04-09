@@ -191,6 +191,90 @@ export function AboutClient({ dict, locale }: Props) {
         </div>
       </section>
 
+      {/* Amsterdam Tech Partnership */}
+      {(dict as any).amsterdamTechSection && (
+        <section id="amsterdam-tech" className="bg-[#0a0a0a] py-24 md:py-32 border-t border-white/5">
+          <div className="max-w-[1400px] mx-auto px-8 md:px-12">
+            <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-16">
+              <div className="md:col-span-4">
+                <FadeIn>
+                  <p className="section-label accent-dot text-white/50 mb-6">
+                    {(dict as any).amsterdamTechSection.kicker}
+                  </p>
+                  <div className="inline-flex items-center gap-3 px-5 py-3 border border-white/15 bg-white/[0.03] mb-6">
+                    <span className="w-2 h-2 bg-[#DA1219] rounded-full" />
+                    <span className="font-semibold tracking-[0.05em] text-white uppercase text-[0.875rem]">
+                      Amsterdam Tech
+                    </span>
+                  </div>
+                </FadeIn>
+              </div>
+              <div className="md:col-span-8">
+                <FadeIn>
+                  <h2 className="heading-display text-white text-[2rem] md:text-[2.75rem] lg:text-[3.25rem] leading-[1.05] mb-6">
+                    {(dict as any).amsterdamTechSection.title}
+                  </h2>
+                  <p className="body-18 text-white/60 leading-relaxed mb-10 max-w-2xl">
+                    {(dict as any).amsterdamTechSection.lead}
+                  </p>
+                </FadeIn>
+              </div>
+            </div>
+
+            <div className="grid md:grid-cols-12 gap-10 md:gap-16 mb-16 pt-16 border-t border-white/10">
+              <div className="md:col-span-5">
+                <h3 className="heading-display text-white text-[1.5rem] md:text-[1.875rem] mb-5">
+                  {(dict as any).amsterdamTechSection.whoTitle}
+                </h3>
+                <p className="body-16 text-white/55 leading-relaxed">
+                  {(dict as any).amsterdamTechSection.whoBody}
+                </p>
+              </div>
+              <div className="md:col-span-7">
+                <h3 className="heading-display text-white text-[1.5rem] md:text-[1.875rem] mb-8">
+                  {(dict as any).amsterdamTechSection.benefitsTitle}
+                </h3>
+                <div className="space-y-6">
+                  {((dict as any).amsterdamTechSection.benefits || []).map((b: any, i: number) => (
+                    <div key={i} className="flex gap-5 border-t border-white/10 pt-6">
+                      <span className="text-[#e63b2e] font-semibold tabular-nums text-[0.875rem] mt-1 min-w-[2ch]">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <div>
+                        <h4 className="text-white font-medium text-[1.0625rem] mb-2">{b.title}</h4>
+                        <p className="text-white/55 text-[0.9375rem] leading-relaxed">{b.body}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-6 pt-10 border-t border-white/10">
+              <p className="text-white/50 text-[0.9375rem] max-w-xl flex-1">
+                {(dict as any).amsterdamTechSection.footer}
+              </p>
+              <div className="flex gap-3">
+                <Link
+                  href={`/${locale}/advisory`}
+                  className="inline-flex items-center gap-2 px-5 py-3 border border-white/20 text-white text-[0.875rem] font-medium hover:border-white/50 transition-colors"
+                >
+                  {(dict as any).amsterdamTechSection.linkAdvisory}
+                  <span>→</span>
+                </Link>
+                <Link
+                  href={`/${locale}/systems`}
+                  className="inline-flex items-center gap-2 px-5 py-3 border border-white/20 text-white text-[0.875rem] font-medium hover:border-white/50 transition-colors"
+                >
+                  {(dict as any).amsterdamTechSection.linkSystems}
+                  <span>→</span>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* CTA */}
       <section className="bg-charcoal-950 py-24 md:py-32">
         <div className="max-w-[800px] mx-auto px-8 md:px-12 text-center">

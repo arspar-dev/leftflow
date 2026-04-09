@@ -7,7 +7,8 @@ interface FooterProps {
   dict: Dictionary;
 }
 
-const serviceLinks = [
+// Legacy services are preserved but moved into a secondary "Other Services" column.
+const legacyServiceLinks = [
   { slug: "ai-automation", tr: "AI Otomasyon", en: "AI Automation", nl: "AI Automatisering" },
   { slug: "chatbots-voice-agents", tr: "AI Chatbots", en: "AI Chatbots", nl: "AI Chatbots" },
   { slug: "workflow-automation", tr: "Workflow Automation", en: "Workflow Automation", nl: "Workflow Automatisering" },
@@ -29,12 +30,47 @@ const industryLinks = [
 
 export function Footer({ locale, dict }: FooterProps) {
   const f = (dict as any).footer || {};
+  const partner = (dict as any).partner || {};
+  const navExtra = (dict as any).navExtra || {};
+
+  const otherServicesLabel =
+    locale === "tr" ? "Diğer Hizmetler" : locale === "nl" ? "Overige Diensten" : "Other Services";
 
   return (
     <footer className="bg-[#0a0a0a]">
-      <div className="max-w-[1400px] mx-auto px-8 md:px-12 py-20">
+      <div className="max-w-[1400px] mx-auto px-8 md:px-12 pt-16 pb-20">
+        {/* Strategic Partner strip */}
+        <div className="pb-14 mb-14 border-b border-white/5">
+          <div className="grid md:grid-cols-[auto_1fr] gap-8 items-start">
+            <div>
+              <div className="text-[10px] uppercase tracking-[0.12em] text-white/35 mb-3">
+                {partner.strategicPartner || "Strategic Partner"}
+              </div>
+              <div className="flex items-center gap-2.5">
+                <span className="w-2 h-2 rounded-full bg-[#DA1219]" />
+                <span className="text-white text-xl font-semibold tracking-[-0.01em]">
+                  {partner.name || "Amsterdam Tech"}
+                </span>
+              </div>
+            </div>
+            <div className="max-w-2xl">
+              <p className="text-white/45 text-sm leading-relaxed">
+                {partner.description ||
+                  "Woolf-accredited, EU-recognized higher education institution."}
+              </p>
+              <Link
+                href={`/${locale}/about#amsterdam-tech`}
+                className="inline-flex items-center gap-1.5 mt-4 text-sm text-white/60 hover:text-white transition-colors"
+              >
+                {partner.aboutLink || "About the partnership"}
+                <span>→</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+
         {/* Logo + description */}
-        <div className="mb-16 flex flex-col md:flex-row md:items-start md:justify-between gap-8">
+        <div className="mb-14 flex flex-col md:flex-row md:items-start md:justify-between gap-8">
           <div>
             <AnimatedLogo locale={locale} variant="light" />
             <p className="body-14 text-white/30 mt-4 max-w-xs">
@@ -61,13 +97,33 @@ export function Footer({ locale, dict }: FooterProps) {
         {/* Multi-column links */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
           <div>
-            <h4 className="section-label text-white/30 mb-5">
-              {f.services || dict.nav?.services || "Services"}
-            </h4>
+            <h4 className="section-label text-white/30 mb-5">{otherServicesLabel}</h4>
             <ul className="space-y-3">
-              {serviceLinks.map((s) => (
+              <li>
+                <Link
+                  href={`/${locale}/advisory`}
+                  className="body-14 text-white hover:text-white/70 transition-colors font-medium"
+                >
+                  {navExtra.advisory || "Advisory"}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={`/${locale}/systems`}
+                  className="body-14 text-white hover:text-white/70 transition-colors font-medium"
+                >
+                  {navExtra.systems || "Systems"}
+                </Link>
+              </li>
+              <li className="py-1">
+                <span className="block h-px bg-white/10" />
+              </li>
+              {legacyServiceLinks.map((s) => (
                 <li key={s.slug}>
-                  <Link href={`/${locale}/services/${s.slug}`} className="body-14 text-white/40 hover:text-white transition-colors">
+                  <Link
+                    href={`/${locale}/services/${s.slug}`}
+                    className="body-14 text-white/40 hover:text-white transition-colors"
+                  >
                     {s[locale]}
                   </Link>
                 </li>
@@ -106,6 +162,7 @@ export function Footer({ locale, dict }: FooterProps) {
             </h4>
             <ul className="space-y-3">
               <li><Link href={`/${locale}/about`} className="body-14 text-white/40 hover:text-white transition-colors">{f.aboutUs || "About Us"}</Link></li>
+              <li><Link href={`/${locale}/about#amsterdam-tech`} className="body-14 text-white/40 hover:text-white transition-colors">Amsterdam Tech</Link></li>
               <li><Link href={`/${locale}/contact`} className="body-14 text-white/40 hover:text-white transition-colors">{f.contact || "Contact"}</Link></li>
             </ul>
           </div>
@@ -116,7 +173,7 @@ export function Footer({ locale, dict }: FooterProps) {
       <div className="border-t border-white/5">
         <div className="max-w-[1400px] mx-auto px-8 md:px-12 py-6 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="body-14 text-white/25">
-            &copy; 2026 LeftFlow - {f.allRightsReserved || "All Rights Reserved"}
+            &copy; 2026 LeftFlow — {f.allRightsReserved || "All Rights Reserved"}
           </p>
           <div className="flex gap-6 body-14 text-white/25">
             <a href="#" className="hover:text-white/50 transition-colors">{f.privacyPolicy || "Privacy Policy"}</a>
