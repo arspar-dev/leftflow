@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getDictionary, type Locale } from "@/lib/i18n";
 import { locales } from "@/lib/i18n";
 import { FadeIn } from "@/components/animations";
+import { buildPageMeta } from "@/lib/seo";
 
 const PRODUCT_SLUGS = ["customer-support-agent", "sales-outreach-agent", "content-engine", "operations-agent", "automation-agent", "custom-build"] as const;
 
@@ -22,10 +23,12 @@ export async function generateMetadata({
   const sp = (dict as any).systemsPage || {};
   const product = (sp.products || []).find((p: any) => p.slug === slug);
   if (!product) return { title: "Systems | LeftFlow" };
-  return {
+  return buildPageMeta({
+    locale,
+    path: `/systems/${slug}`,
     title: `${product.name} — Systems | LeftFlow`,
     description: product.description,
-  };
+  });
 }
 
 export default async function SystemsProductPage({

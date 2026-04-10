@@ -1,15 +1,18 @@
 import Link from "next/link";
 import { getDictionary, type Locale } from "@/lib/i18n";
 import { FadeIn, StaggerContainer, StaggerItem } from "@/components/animations";
+import { buildPageMeta } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const dict = await getDictionary(locale as Locale);
   const sp = (dict as any).systemsPage || {};
-  return {
+  return buildPageMeta({
+    locale,
+    path: "/systems",
     title: `Systems — ${sp.heroTitle || "Leftflow"} | LeftFlow`,
     description: sp.heroSubtitle || "Productized AI agent systems with enterprise fit.",
-  };
+  });
 }
 
 export default async function SystemsPage({
